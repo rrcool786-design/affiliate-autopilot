@@ -1,0 +1,34 @@
+name: Affiliate Autopilot - 10x/day Telegram Posts
+
+on:
+  schedule:
+    - cron: '30 1 * * *'
+    - cron: '0 3 * * *'
+    - cron: '30 4 * * *'
+    - cron: '0 6 * * *'
+    - cron: '30 7 * * *'
+    - cron: '0 9 * * *'
+    - cron: '30 10 * * *'
+    - cron: '0 12 * * *'
+    - cron: '30 13 * * *'
+    - cron: '30 15 * * *'
+  workflow_dispatch:
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install openai requests
+      - name: Run auto-post
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+        run: python post_once.py
