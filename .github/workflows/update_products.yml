@@ -1,0 +1,41 @@
+name: Weekly Products Update
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'   # Sunday 05:30 IST (00:00 UTC)
+
+  workflow_dispatch:       # Manual trigger bhi possible
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write      # products.json commit karne ke liye
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Fetch trending products from Amazon India
+        run: python update_products.py
+
+      - name: Commit products.json if updated
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add products.json
+          if git diff --staged --quiet; then
+            echo "No changes in products.json — nothing to commit"
+          else
+            git commit -m "Weekly products update — $(date +'%d %b %Y')"
+            git push
+            echo "products.json committed and pushed!"
+          fi
