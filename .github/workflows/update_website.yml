@@ -1,0 +1,40 @@
+name: Daily Website Update
+
+on:
+  schedule:
+    - cron: '0 1 * * *'    # Har roz 06:30 IST (01:00 UTC)
+  workflow_dispatch:         # Manual trigger bhi possible
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Generate professional website
+        run: python generate_website.py
+
+      - name: Commit updated website
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/
+          if git diff --staged --quiet; then
+            echo "No changes — nothing to commit"
+          else
+            git commit -m "Daily website update — $(date +'%d %b %Y %H:%M')"
+            git push
+            echo "Website updated successfully!"
+          fi
