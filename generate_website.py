@@ -141,6 +141,8 @@ def generate_html(products):
     date_str  = now.strftime("%d %B %Y")
     time_str  = now.strftime("%I:%M %p IST")
     categories = sorted(set(p["category"] for p in products))
+
+    # ── Product Cards ──────────────────────────────────────────
     cards_html = ""
     for i, p in enumerate(products):
         asin     = p.get("asin","")
@@ -152,122 +154,390 @@ def generate_html(products):
         viewers  = random.randint(12, 89)
         badge    = ""
         if i < 3:
-            badge = '<span class="badge hot">HOT DEAL</span>'
+            badge = '<span class="badge hot">🔥 HOT DEAL</span>'
         elif discount >= 30:
-            badge = '<span class="badge save">BEST PRICE</span>'
-        cards_html += f'<div class="product-card" data-category="{p["category"]}"><a href="{link}" target="_blank" rel="nofollow" class="card-link"><div class="discount-tag">-{discount}%</div><div class="product-img-wrap"><img src="{img_url}" alt="{p["name"]}" loading="lazy" onerror="this.src=\'https://placehold.co/200x200/f0f0f0/999?text=Deal\'"></div><div class="product-info"><span class="category-tag">{p["emoji"]} {p["category"]}</span><h3 class="product-name">{p["name"]}</h3><div class="price-block"><span class="price">Rs.{price:,}</span><span class="original-price">Rs.{orig:,}</span></div><div class="save-amount">Save Rs.{orig-price:,} ({discount}% off)</div><div class="buy-btn">Get This Deal on Amazon</div><div class="amazon-tag">Verified Amazon Deal</div></div></a></div>'
-    tab_html = '<button class="tab active" onclick="filterCat(\'all\', this)">All Deals</button>\n'
+            badge = '<span class="badge save">💰 BEST PRICE</span>'
+        elif i % 4 == 0:
+            badge = '<span class="badge trending">📈 TRENDING</span>'
+
+        cards_html += f"""
+        <div class="product-card" data-category="{p['category']}">
+            {badge}
+            <div class="discount-tag">-{discount}%</div>
+            <div class="product-img-wrap">
+                <img src="{img_url}" alt="{p['name']}" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/f0f0f0/999?text=Deal'">
+            </div>
+            <div class="product-info">
+                <span class="category-tag">{p['emoji']} {p['category']}</span>
+                <h3 class="product-name">{p['name']}</h3>
+                <div class="price-block">
+                    <span class="price">₹{price:,}</span>
+                    <span class="original-price">₹{orig:,}</span>
+                    <span class="save-amount">Save ₹{orig-price:,}</span>
+                </div>
+                <div class="viewers">👁️ {viewers} people viewing this now</div>
+                <a href="{link}" target="_blank" rel="nofollow" class="buy-btn" onclick="trackClick('{asin}')">
+                    🛒 Get This Deal
+                </a>
+                <div class="amazon-tag">✅ Verified Amazon Deal</div>
+            </div>
+        </div>"""
+
+    # ── Category Tabs ──────────────────────────────────────────
+    tab_html = '<button class="tab active" onclick="filterCat(\'all\', this)">🔥 All Deals</button>\n'
     for cat in categories:
-        emoji = next((p["emoji"] for p in products if p["category"] == cat), "")
+        emoji = next((p["emoji"] for p in products if p["category"] == cat), "🏷️")
         tab_html += f'<button class="tab" onclick="filterCat(\'{cat}\', this)">{emoji} {cat}</button>\n'
+
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TechDeals India - Best Amazon Deals Today {date_str}</title>
-<meta name="description" content="Best Amazon India deals today - up to 70% off Electronics, Mobiles, Laptops, Kitchen, Fashion. Updated daily. Verified deals only.">
-<meta name="keywords" content="amazon deals india, best amazon offers today, amazon sale india, mobile deals india, laptop deals">
+<title>TechDeals India 🔥 — Best Amazon Deals Today | {date_str}</title>
+<meta name="description" content="Today's best Amazon India deals — up to 70% off on Electronics, Mobiles, Laptops, Kitchen, Fashion & more. Updated daily. Verified deals only.">
+<meta name="keywords" content="amazon deals india, best amazon offers today, amazon sale india, mobile deals india, laptop deals, amazon discount">
+<meta property="og:title" content="TechDeals India — Best Amazon Deals {date_str}">
+<meta property="og:description" content="Har roz ke best Amazon deals — verified aur hand-picked!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-*{{margin:0;padding:0;box-sizing:border-box}}
-body{{font-family:'Inter',sans-serif;background:#f5f5f5;color:#1a1a1a}}
-header{{background:linear-gradient(135deg,#131921,#1f2d3d);padding:0;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.3)}}
-.header-top{{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;max-width:1400px;margin:0 auto}}
-.logo{{color:#fff;font-size:1.5rem;font-weight:800;text-decoration:none}}.logo span{{color:#FF6B00}}
-.tg-btn{{background:#0088cc;color:#fff;padding:8px 16px;border-radius:20px;text-decoration:none;font-size:.85rem;font-weight:600}}
-.live-badge{{background:#00a650;color:#fff;padding:4px 10px;border-radius:12px;font-size:.75rem;font-weight:700}}
-.banner{{background:linear-gradient(135deg,#FF6B00,#ff8c00);text-align:center;padding:10px 20px;color:#fff;font-size:.9rem;font-weight:600}}
-.banner a{{color:#fff;text-decoration:underline}}
-.hero{{background:linear-gradient(135deg,#131921,#232f3e);padding:40px 20px;text-align:center;color:#fff}}
-.hero h1{{font-size:clamp(1.5rem,4vw,2.5rem);font-weight:800;margin-bottom:8px}}.hero h1 span{{color:#FF6B00}}
-.hero p{{font-size:1rem;opacity:.8;margin-bottom:16px}}
-.update-info{{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);padding:6px 14px;border-radius:20px;font-size:.82rem;color:#ccc}}
-.search-wrap{{max-width:600px;margin:20px auto 0;position:relative}}
-.search-wrap input{{width:100%;padding:14px 50px 14px 20px;border-radius:30px;border:none;font-size:1rem;outline:none}}
-.search-wrap button{{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:#FF6B00;border:none;width:36px;height:36px;border-radius:50%;cursor:pointer;color:#fff;font-size:1rem}}
-.tabs-wrap{{background:#fff;border-bottom:2px solid #e0e0e0;position:sticky;top:60px;z-index:90}}
-.tabs{{display:flex;gap:4px;padding:0 20px;overflow-x:auto;max-width:1400px;margin:0 auto;scrollbar-width:none}}
-.tab{{padding:12px 18px;border:none;background:none;cursor:pointer;font-size:.88rem;font-weight:600;color:#666;white-space:nowrap;border-bottom:3px solid transparent;transition:all .2s}}
-.tab.active,.tab:hover{{color:#FF6B00}}.tab.active{{border-bottom-color:#FF6B00}}
-main{{max-width:1400px;margin:0 auto;padding:20px}}
-.trust-bar{{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;background:#fff;padding:20px;border-radius:12px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,.08)}}
-.trust-item{{display:flex;align-items:center;gap:8px;font-size:.85rem;font-weight:600}}
-.section-header{{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid #e0e0e0}}
-.section-title{{font-size:1.3rem;font-weight:800}}
-.deal-count{{font-size:.85rem;color:#666;font-weight:500}}
-.products-grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}}
-.product-card{{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.08);transition:all .3s;position:relative}}
-.product-card:hover{{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.15)}}
-.card-link{{text-decoration:none;color:inherit;display:flex;flex-direction:column;height:100%}}
-.discount-tag{{position:absolute;top:10px;right:10px;z-index:2;background:#FF6B00;color:#fff;padding:4px 8px;border-radius:8px;font-size:.75rem;font-weight:800}}
-.product-img-wrap{{background:#f8f8f8;padding:20px;display:flex;align-items:center;justify-content:center;min-height:180px}}
-.product-img-wrap img{{max-height:160px;max-width:100%;object-fit:contain}}
-.product-info{{padding:14px;flex:1;display:flex;flex-direction:column;gap:6px}}
-.category-tag{{font-size:.72rem;font-weight:600;color:#FF6B00;background:#fff5ee;padding:2px 8px;border-radius:8px;display:inline-block}}
-.product-name{{font-size:.9rem;font-weight:600;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}}
-.price-block{{display:flex;align-items:center;gap:8px;flex-wrap:wrap}}
-.price{{font-size:1.3rem;font-weight:800;color:#B12704}}
-.original-price{{font-size:.85rem;color:#666;text-decoration:line-through}}
-.save-amount{{font-size:.78rem;font-weight:700;color:#00a650}}
-.buy-btn{{display:block;background:linear-gradient(135deg,#FFD814,#F7CA00);color:#111;text-align:center;padding:10px;border-radius:8px;font-weight:700;font-size:.9rem;margin-top:auto;border:1px solid #F2C200}}
-.amazon-tag{{font-size:.72rem;color:#00a650;text-align:center;font-weight:600}}
-.tg-cta{{background:linear-gradient(135deg,#0088cc,#005f8f);border-radius:16px;padding:32px;text-align:center;color:#fff;margin:30px 0}}
-.tg-cta h2{{font-size:1.5rem;margin-bottom:8px}}
-.tg-cta p{{opacity:.85;margin-bottom:20px}}
-.tg-cta-btn{{display:inline-block;background:#fff;color:#0088cc;padding:12px 30px;border-radius:25px;font-weight:700;text-decoration:none;font-size:1rem}}
-footer{{background:#131921;color:#aaa;text-align:center;padding:30px 20px;margin-top:40px}}
-footer a{{color:#ccc;text-decoration:none;margin:0 8px}}
-footer p{{margin:6px 0;font-size:.82rem}}
-.hidden{{display:none!important}}
-@media(max-width:600px){{.products-grid{{grid-template-columns:repeat(2,1fr);gap:10px}}.trust-bar{{gap:15px}}}}
+  :root {{
+    --primary: #FF6B00;
+    --primary-dark: #e05e00;
+    --bg: #f5f5f5;
+    --card: #ffffff;
+    --text: #1a1a1a;
+    --text-light: #666;
+    --border: #e0e0e0;
+    --success: #00a650;
+    --shadow: 0 2px 12px rgba(0,0,0,0.08);
+    --shadow-hover: 0 8px 30px rgba(0,0,0,0.15);
+  }}
+  * {{ margin:0; padding:0; box-sizing:border-box; }}
+  body {{ font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); }}
+
+  /* ── HEADER ── */
+  header {{
+    background: linear-gradient(135deg, #131921 0%, #1f2d3d 100%);
+    padding: 0;
+    position: sticky; top:0; z-index:100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }}
+  .header-top {{
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 12px 20px; max-width:1400px; margin:0 auto;
+  }}
+  .logo {{ color:#fff; font-size:1.5rem; font-weight:800; text-decoration:none; }}
+  .logo span {{ color:var(--primary); }}
+  .header-right {{ display:flex; align-items:center; gap:12px; }}
+  .tg-btn {{
+    background: #0088cc; color:#fff; padding:8px 16px; border-radius:20px;
+    text-decoration:none; font-size:0.85rem; font-weight:600;
+    display:flex; align-items:center; gap:6px; transition:all 0.2s;
+  }}
+  .tg-btn:hover {{ background:#006fa6; transform:translateY(-1px); }}
+  .live-badge {{
+    background:#00a650; color:#fff; padding:4px 10px; border-radius:12px;
+    font-size:0.75rem; font-weight:700; display:flex; align-items:center; gap:4px;
+  }}
+  .live-dot {{ width:7px; height:7px; background:#fff; border-radius:50%; animation:pulse 1.5s infinite; }}
+  @keyframes pulse {{ 0%,100%{{opacity:1}} 50%{{opacity:0.3}} }}
+
+  /* ── BANNER ── */
+  .banner {{
+    background: linear-gradient(135deg, var(--primary) 0%, #ff8c00 100%);
+    text-align:center; padding:10px 20px; color:#fff; font-size:0.9rem; font-weight:600;
+  }}
+  .banner a {{ color:#fff; text-decoration:underline; }}
+
+  /* ── HERO ── */
+  .hero {{
+    background: linear-gradient(135deg, #131921 0%, #232f3e 100%);
+    padding: 40px 20px; text-align:center; color:#fff;
+  }}
+  .hero h1 {{ font-size:clamp(1.5rem,4vw,2.5rem); font-weight:800; margin-bottom:8px; }}
+  .hero h1 span {{ color:var(--primary); }}
+  .hero p {{ font-size:1rem; opacity:0.8; margin-bottom:16px; }}
+  .update-info {{
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(255,255,255,0.1); padding:6px 14px; border-radius:20px;
+    font-size:0.82rem; color:#ccc;
+  }}
+
+  /* ── SEARCH ── */
+  .search-wrap {{ max-width:600px; margin:20px auto 0; position:relative; }}
+  .search-wrap input {{
+    width:100%; padding:14px 50px 14px 20px; border-radius:30px; border:none;
+    font-size:1rem; outline:none; box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }}
+  .search-wrap button {{
+    position:absolute; right:8px; top:50%; transform:translateY(-50%);
+    background:var(--primary); border:none; width:36px; height:36px;
+    border-radius:50%; cursor:pointer; font-size:1rem;
+  }}
+
+  /* ── TABS ── */
+  .tabs-wrap {{ background:#fff; border-bottom:2px solid var(--border); position:sticky; top:60px; z-index:90; }}
+  .tabs {{ display:flex; gap:4px; padding:0 20px; overflow-x:auto; max-width:1400px; margin:0 auto; scrollbar-width:none; }}
+  .tabs::-webkit-scrollbar {{ display:none; }}
+  .tab {{
+    padding:12px 18px; border:none; background:none; cursor:pointer;
+    font-size:0.88rem; font-weight:600; color:var(--text-light); white-space:nowrap;
+    border-bottom:3px solid transparent; transition:all 0.2s;
+  }}
+  .tab:hover {{ color:var(--primary); }}
+  .tab.active {{ color:var(--primary); border-bottom-color:var(--primary); }}
+
+  /* ── MAIN ── */
+  main {{ max-width:1400px; margin:0 auto; padding:20px; }}
+
+  .section-header {{
+    display:flex; align-items:center; justify-content:space-between;
+    margin-bottom:16px; padding-bottom:10px; border-bottom:2px solid var(--border);
+  }}
+  .section-title {{ font-size:1.3rem; font-weight:800; display:flex; align-items:center; gap:8px; }}
+  .deal-count {{ font-size:0.85rem; color:var(--text-light); font-weight:500; }}
+
+  /* ── GRID ── */
+  .products-grid {{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap:16px;
+  }}
+
+  /* ── CARD ── */
+  .product-card {{
+    background:var(--card); border-radius:12px; overflow:hidden;
+    box-shadow:var(--shadow); transition:all 0.3s; position:relative;
+    display:flex; flex-direction:column;
+  }}
+  .product-card:hover {{
+    transform:translateY(-4px); box-shadow:var(--shadow-hover);
+  }}
+  .badge {{
+    position:absolute; top:10px; left:10px; z-index:2;
+    padding:4px 10px; border-radius:12px; font-size:0.72rem; font-weight:700;
+  }}
+  .badge.hot {{ background:#ff4444; color:#fff; }}
+  .badge.save {{ background:#00a650; color:#fff; }}
+  .badge.trending {{ background:#6c5ce7; color:#fff; }}
+  .discount-tag {{
+    position:absolute; top:10px; right:10px; z-index:2;
+    background:var(--primary); color:#fff; padding:4px 8px;
+    border-radius:8px; font-size:0.75rem; font-weight:800;
+  }}
+  .product-img-wrap {{
+    background:#f8f8f8; padding:20px; display:flex;
+    align-items:center; justify-content:center; min-height:180px;
+  }}
+  .product-img-wrap img {{ max-height:160px; max-width:100%; object-fit:contain; }}
+  .product-info {{ padding:14px; flex:1; display:flex; flex-direction:column; gap:6px; }}
+  .category-tag {{
+    font-size:0.72rem; font-weight:600; color:var(--primary);
+    background:#fff5ee; padding:2px 8px; border-radius:8px; display:inline-block;
+  }}
+  .product-name {{
+    font-size:0.9rem; font-weight:600; line-height:1.4;
+    display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+  }}
+  .price-block {{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }}
+  .price {{ font-size:1.3rem; font-weight:800; color:#B12704; }}
+  .original-price {{ font-size:0.85rem; color:var(--text-light); text-decoration:line-through; }}
+  .save-amount {{ font-size:0.78rem; font-weight:700; color:var(--success); }}
+  .viewers {{ font-size:0.75rem; color:var(--text-light); }}
+  .buy-btn {{
+    display:block; background:linear-gradient(135deg, #FFD814 0%, #F7CA00 100%);
+    color:#111; text-align:center; padding:10px; border-radius:8px;
+    font-weight:700; font-size:0.9rem; text-decoration:none;
+    transition:all 0.2s; margin-top:auto;
+    border:1px solid #F2C200;
+  }}
+  .buy-btn:hover {{ background:linear-gradient(135deg, #F7CA00 0%, #e6b800 100%); transform:scale(1.02); }}
+  .amazon-tag {{ font-size:0.72rem; color:var(--success); text-align:center; font-weight:600; }}
+
+  /* ── TELEGRAM CTA ── */
+  .tg-cta {{
+    background: linear-gradient(135deg, #0088cc 0%, #005f8f 100%);
+    border-radius:16px; padding:32px; text-align:center; color:#fff; margin:30px 0;
+  }}
+  .tg-cta h2 {{ font-size:1.5rem; margin-bottom:8px; }}
+  .tg-cta p {{ opacity:0.85; margin-bottom:20px; }}
+  .tg-cta-btn {{
+    display:inline-block; background:#fff; color:#0088cc;
+    padding:12px 30px; border-radius:25px; font-weight:700;
+    text-decoration:none; font-size:1rem; transition:all 0.2s;
+  }}
+  .tg-cta-btn:hover {{ transform:scale(1.05); box-shadow:0 4px 20px rgba(0,0,0,0.2); }}
+
+  /* ── TRUST BAR ── */
+  .trust-bar {{
+    display:flex; justify-content:center; gap:30px; flex-wrap:wrap;
+    background:#fff; padding:20px; border-radius:12px; margin:20px 0;
+    box-shadow:var(--shadow);
+  }}
+  .trust-item {{ display:flex; align-items:center; gap:8px; font-size:0.85rem; font-7eight:600; color:#333; }}
+
+  /* ── FOOTER ── */
+  footer {{
+    background:#131921; color:#aaa; text-align:center; padding:30px 20px; margin-top:40px;
+  }}
+  footer a {{ color:#ccc; text-decoration:none; margin:0 8px; }}
+  footer p {{ margin:6px 0; font-size:0.82rem; }}
+
+  /* ── RESPONSIVE ── */
+  @media(max-width:600px) {{
+    .products-grid {{ grid-template-columns: repeat(2, 1fr); gap:10px; }}
+    .hero h1 {{ font-size:1.4rem; }}
+    .trust-bar {{ gap:15px; }}
+  }}
+
+  /* ── HIDDEN ── */
+  .hidden {{ display:none !important; }}
+
+  /* ── TOAST ── */
+  .toast {{
+    position:fixed; bottom:20px; right:20px; background:#131921; color:#fff;
+    padding:12px 20px; border-radius:10px; font-size:0.85rem; font-weight:600;
+    transform:translateY(100px); transition:transform 0.3s; z-index:999;
+  }}
+  .toast.show {{ transform:translateY(0); }}
 </style>
 </head>
 <body>
+
+<!-- HEADER -->
 <header>
-<div class="header-top">
-<a href="/" class="logo">TechDeals<span>India</span> 🔥</a>
-<div style="display:flex;align-items:center;gap:12px">
-<div class="live-badge">● LIVE</div>
-<a href="https://t.me/TechDealsIndia_channel" target="_blank" class="tg-btn">✈️ Join Telegram</a>
-</div>
-</div>
+  <div class="header-top">
+    <a href="/" class="logo">TechDeals<span>India</span> 🔥</a>
+    <div class="header-right">
+      <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+      <a href="{TELEBRAM_CHANNEL}" target="_blank" class="tg-btn">
+        ✈️ Join Telegram
+      </a>
+    </div>
+  </div>
 </header>
-<div class="banner">🎉 <strong>Aaj ke best deals!</strong> — Daily updated, verified Amazon deals &nbsp;|&nbsp; <a href="https://t.me/TechDealsIndia_channel" target="_blank">Join Telegram for instant alerts →</a></div>
+
+<!-- BANNER -->
+<div class="banner">
+  🎉 <strong>Aaj ke best deals!</strong> — Daily updated, verified Amazon deals &nbsp;|&nbsp;
+  <a href="{TELEGRAM_CHANNEL}" target="_blank">Join Telegram for instant alerts →</a>
+</div>
+
+<!-- HERO -->
 <div class="hero">
-<h1>Best Amazon India Deals <span>Today</span> 🔥</h1>
-<p>Hand-picked, verified deals — updated daily. Up to 70% off!</p>
-<div class="update-info">🕐 Last updated: {date_str} at {time_str} &nbsp;•&nbsp; {len(products)} deals live</div>
-<div class="search-wrap"><input type="text" id="searchInput" placeholder="Search deals... phone, laptop, earbuds" oninput="searchProducts()"><button>🔍</button></div>
+  <h1>Best Amazon India Deals <span>Today</span> 🔥</h1>
+  <p>Hand-picked, verified deals — updated daily. Up to 70% off!</p>
+  <div class="update-info">
+    🕐 Last updated: {date_str} at {time_str} &nbsp;•&nbsp; {len(products)} deals live
+  </div>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search deals... (e.g. phone, laptop, earbuds)" oninput="searchProducts()">
+    <button>🔍</button>
+  </div>
 </div>
-<div class="tabs-wrap"><div class="tabs">{tab_html}</div></div>
+
+<!-- TABS -->
+<div class="tabs-wrap">
+  <div class="tabs">
+    {tab_html}
+  </div>
+</div>
+
+<!-- MAIN -->
 <main>
-<div class="trust-bar">
-<div class="trust-item">✅ Verified Deals Only</div>
-<div class="trust-item">🔄 Updated Daily</div>
-<div class="trust-item">🛒 Direct Amazon Links</div>
-<div class="trust-item">💰 Best Prices</div>
-<div class="trust-item">🔒 100% Safe</div>
-</div>
-<div class="section-header">
-<div class="section-title">🔥 Today's Best Deals</div>
-<div class="deal-count" id="dealCount">{len(products)} deals found</div>
-</div>
-<div class="products-grid" id="productsGrid">{cards_html}</div>
-<div class="tg-cta">
-<h2>📲 Never Miss a Deal Again!</h2>
-<p>Join thousands of smart shoppers on our Telegram channel.<br>Get instant alerts for flash sales and limited-time offers!</p>
-<a href="https://t.me/TechDealsIndia_channel" target="_blank" class="tg-cta-btn">✈️ Join Free Telegram Channel</a>
-</div>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-item">✅ Verified Deals Only</div>
+    <div class="trust-item">🔄 Updated Daily</div>
+    <div class="trust-item">🛒 Direct Amazon Links</div>
+    <div class="trust-item">💰 Best Prices Guaranteed</div>
+    <div class="trust-item">🔒 100% Safe & Secure</div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <div class="section-header">
+    <div class="section-title">🔥 Today's Best Deals</div>
+    <div class="deal-count" id="dealCount">{len(products)} deals found</div>
+  </div>
+
+  <div class="products-grid" id="productsGrid">
+    {cards_html}
+  </div>
+
+  <!-- TELEGRAM CTA -->
+  <div class="tg-cta">
+    <h2>📲 Never Miss a Deal Again!</h2>
+    <p>Join 10,000+ smart shoppers on our Telegram channel.<br>Get instant alerts for flash sales & limited-time offers!</p>
+    <a href="{TELEBRAM_CHANNEL}" target="_blank" class="tg-cta-btn">
+      ✈️ Join Free Telegram Channel
+    </a>
+  </div>
+
 </main>
+
+<!-- FOOTER -->
 <footer>
-<p>🔥 <strong style="color:#fff">TechDeals India</strong> — India's Most Trusted Deal Site</p>
-<p><a href="https://t.me/TechDealsIndia_channel" target="_blank">Telegram</a> • <a href="#">Privacy Policy</a> • <a href="#">Disclaimer</a></p>
-<p style="margin-top:12px;font-size:.75rem;opacity:.6">We earn affiliate commission when you buy through our links. Prices may vary. Last updated: {date_str}.</p>
+  <p>🔥 <strong style="color:#fff">TechDeals India</strong> — India's Most Trusted Deal Site</p>
+  <p>
+    <a href="{TELEGRAM_CHANNEL}" target="_blank">Telegram</a> •
+    <a href="#">Privacy Policy</a> •
+    <a href="#">Disclaimer</a>
+  </p>
+  <p style="margin-top:12px; font-size:0.75rem; opacity:0.6">
+    We earn affiliate commission when you buy through our links. Prices may vary. Last updated: {date_str}.
+  </p>
 </footer>
+
+<div class="toast" id="toast">🛒 Opening Amazon deal...</div>
+
 <script>
-function filterCat(cat,btn){{document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));btn.classList.add('active');let cards=document.querySelectorAll('.product-card'),count=0;cards.forEach(c=>{{if(cat==='all'||c.dataset.category===cat){{c.classList.remove('hidden');count++;}}else{{c.classList.add('hidden');}}});document.getElementById('dealCount').textContent=count+' deals found';}}
-function searchProducts(){{let q=document.getElementById('searchInput').value.toLowerCase(),cards=document.querySelectorAll('.product-card'),count=0;cards.forEach(c=>{{let name=c.querySelector('.product-name').textContent.toLowerCase(),cat2=c.querySelector('.category-tag').textContent.toLowerCase();if(!q||name.includes(q)||cat2.includes(q)){{c.classList.remove('hidden');count++;}}else{{c.classList.add('hidden');}}}});document.getElementById('dealCount').textContent=count+' deals found';}}
+function filterCat(cat, btn) {{
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  let cards = document.querySelectorAll('.product-card');
+  let count = 0;
+  cards.forEach(c => {{
+    if (cat === 'all' || c.dataset.category === cat) {{
+      c.classList.remove('hidden'); count++;
+    }} else {{
+      c.classList.add('hidden');
+    }}
+  }});
+  document.getElementById('dealCount').textContent = count + ' deals found';
+}}
+
+function searchProducts() {{
+  let q = document.getElementById('searchInput').value.toLowerCase();
+  let cards = document.querySelectorAll('.product-card');
+  let count = 0;
+  cards.forEach(c => {{
+    let name = c.querySelector('.product-name').textContent.toLowerCase();
+    let cat  = c.querySelector('.category-tag').textContent.toLowerCase();
+    if (!q || name.includes(q) || cat.includes(q)) {{
+      c.classList.remove('hidden'); count++;
+    }} else {{
+      c.classList.add('hidden');
+    }}
+  }});
+  document.getElementById('dealCount').textContent = count + ' deals found';
+}}
+
+function trackClick(asin) {{
+  let toast = document.getElementById('toast');
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2500);
+}}
+
+// Random viewers update (live feel)
+setInterval(() => {{
+  document.querySelectorAll('.viewers').forEach(el => {{
+    let n = Math.floor(Math.random() * 60) + 10;
+    el.textContent = '👁️ ' + n + ' people viewing this now';
+  }});
+}}, 8000);
 </script>
 </body>
 </html>"""
@@ -275,25 +545,33 @@ function searchProducts(){{let q=document.getElementById('searchInput').value.to
 
 if __name__ == "__main__":
     os.makedirs(OUTPUT_DIR, exist_ok=True)
-    print("="*55)
+
+    print("=" * 55)
     print("  PROFESSIONAL WEBSITE GENERATOR")
     print(f"  {datetime.now().strftime('%d %B %Y, %I:%M %p')}")
-    print("="*55)
+    print("=" * 55)
+
     print("\n[Layer 1] Amazon se live scraping...")
     products = scrape_products()
     source = "Amazon Live"
+
     if not products:
         print("[Layer 2] products.json se load ho raha hai...")
         products = load_json_products()
         source = "products.json"
+
     if not products:
         print("[Layer 3] Emergency backup products...")
         products = EMERGENCY_PRODUCTS
         source = "Emergency Backup"
+
     print(f"  Source  : {source}")
     print(f"  Products: {len(products)}")
+
     html = generate_html(products)
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(html)
-    print(f"\n  Website generated: docs/index.html ({len(html):,} chars)")
-    print("="*55)
+
+    print(f"\n  ✅ Website generated: docs/index.html")
+    print(f"  Size: {len(html):,} characters")
+    print("=" * 55)
