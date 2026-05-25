@@ -1,0 +1,27 @@
+name: Daily Mass Group Post
+
+on:
+  schedule:
+    - cron: '30 1 * * *'
+  workflow_dispatch:
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install telethon requests beautifulsoup4
+
+      - name: Run mass poster
+        env:
+          TELEGRAM_API_ID:   ${{ secrets.TELEGRAM_API_ID }}
+          TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
+          TELETHON_SESSION:  ${{ secrets.TELETHON_SESSION }}
+          TELEGRAM_GROUPS:   ${{ secrets.TELEGRAM_GROUPS }}
+        run: python mass_post.py
