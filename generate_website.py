@@ -99,15 +99,24 @@ def scrape_products():
                                 break
                     original_price = int(price * random.uniform(1.2, 1.5))
                     discount = int((1 - price/original_price) * 100)
-                    # Extract product image
+                    # Extract real product image URL
                     img_url = ""
-                    for img_sel in ["img.s-image", "img[src*='media-amazon']", "img"]:
-                        img_el = item.select_one(img_sel)
-                        if img_el:
-                            src = img_el.get("src","") or img_el.get("data-src","")
-                            if src and "amazon" in src:
-                                img_url = re.sub(r'\._[A-Z]{2}\d+_\.','._AC_SL300_.',src)
-                                break
+                    for img in item.find_all("img"):
+                        # 1. data-a-dynamic-image = JSON {url: [w,h], ...} — most reliable
+                        dyn = img.get("data-a-dynamic-image", "")
+                        if dyn:
+                            try:
+                                urls = list(json.loads(dyn).keys())
+                                if urls:
+                                    img_url = re.sub(r'\._[A-Z]{2,3}\d+_\.', '._AC_SL300_.', urls[0])
+                                    break
+                            except Exception:
+                                pass
+                        # 2. src / data-src
+                        src = img.get("src", "") or img.get("data-src", "")
+                        if src and ("media-amazon" in src or "ssl-images-amazon" in src) and ".gif" not in src:
+                            img_url = re.sub(r'\._[A-Z]{2,3}\d+_\.', '._AC_SL300_.', src)
+                            break
                     all_products.append({
                         "name": name, "asin": asin,
                         "category": cat["name"], "emoji": cat["emoji"],
@@ -156,7 +165,8 @@ def generate_html(products):
     cards_html = ""
     for i, p in enumerate(products):
         asin     = p.get("asin","")
-        img_url  = p.get("image","") or (f"https://m.media-amazon.com/images/I/{asin}._AC_SL300_.jpg" if asin else "")
+        # Use scraped image URL only — ASIN ≠ Image ID so CDN fallback is removed
+        img_url  = p.get("image", "")
         link     = f"https://www.amazon.in/dp/{asin}/?tag={AFFILIATE_TAG}" if asin else "#"
         discount = p.get("discount", 20)
         price    = p.get("price", 999)
@@ -175,7 +185,7 @@ def generate_html(products):
             {badge}
             <div class="discount-tag">-{discount}%</div>
             <div class="product-img-wrap">
-                <img src="{img_url}" alt="{p['name']}" loading="lazy" onerror="this.style.display='none'">
+                <img src="{img_url}" alt="{p['name']}" loading="lazy" onerror="this.style.display='none';this.parentNode.querySelector('.img-fallback').style.display='flex'"><div class="img-fallback" style="display:none;align-items:center;justify-content:center;height:160px;font-size:60px;background:#f8f8f8;border-radius:8px">{p.get('emoji','🛒')}</div>
             </div>
             <div class="product-info">
                 <span class="category-tag">{p['emoji']} {p['category']}</span>
@@ -386,7 +396,7 @@ def generate_html(products):
     background:#fff; padding:20px; border-radius:12px; margin:20px 0;
     box-shadow:var(--shadow);
   }}
-  .trust-item {{ display:flex; align-items:center; gap:8px; font-size:0.85rem; font-7eight:600; color:#333; }}
+  .trust-item {{ display:flex; align-items:center; gap:8px; font-size:0.85rem; font-weight:600; color:#333; }}
 
   /* ── FOOTER ── */
   footer {{
