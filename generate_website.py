@@ -412,7 +412,7 @@ def generate_html(products):
     <a href="/" class="logo">TechDeals<span>India</span> 🔥</a>
     <div class="header-right">
       <div class="live-badge"><div class="live-dot"></div> LIVE</div>
-      <a href="{TELEBRAM_CHANNEL}" target="_blank" class="tg-btn">
+      <a href="{TELEGRAM_CHANNEL}" target="_blank" class="tg-btn">
         ✈️ Join Telegram
       </a>
     </div>
@@ -471,7 +471,7 @@ def generate_html(products):
   <div class="tg-cta">
     <h2>📲 Never Miss a Deal Again!</h2>
     <p>Join 10,000+ smart shoppers on our Telegram channel.<br>Get instant alerts for flash sales & limited-time offers!</p>
-    <a href="{TELEBRAM_CHANNEL}" target="_blank" class="tg-cta-btn">
+    <a href="{TELEGRAM_CHANNEL}" target="_blank" class="tg-cta-btn">
       ✈️ Join Free Telegram Channel
     </a>
   </div>
