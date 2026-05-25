@@ -99,10 +99,20 @@ def scrape_products():
                                 break
                     original_price = int(price * random.uniform(1.2, 1.5))
                     discount = int((1 - price/original_price) * 100)
+                    # Extract product image
+                    img_url = ""
+                    for img_sel in ["img.s-image", "img[src*='media-amazon']", "img"]:
+                        img_el = item.select_one(img_sel)
+                        if img_el:
+                            src = img_el.get("src","") or img_el.get("data-src","")
+                            if src and "amazon" in src:
+                                img_url = re.sub(r'\._[A-Z]{2}\d+_\.','._AC_SL300_.',src)
+                                break
                     all_products.append({
                         "name": name, "asin": asin,
                         "category": cat["name"], "emoji": cat["emoji"],
                         "price": price, "original_price": original_price, "discount": discount,
+                        "image": img_url,
                     })
                     count += 1
                 except Exception:
@@ -146,7 +156,7 @@ def generate_html(products):
     cards_html = ""
     for i, p in enumerate(products):
         asin     = p.get("asin","")
-        img_url  = f"https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN={asin}&Format=_SL250_&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1&tag={AFFILIATE_TAG}" if asin else ""
+        img_url  = p.get("image","") or (f"https://m.media-amazon.com/images/I/{asin}._AC_SL300_.jpg" if asin else "")
         link     = f"https://www.amazon.in/dp/{asin}/?tag={AFFILIATE_TAG}" if asin else "#"
         discount = p.get("discount", 20)
         price    = p.get("price", 999)
@@ -165,7 +175,7 @@ def generate_html(products):
             {badge}
             <div class="discount-tag">-{discount}%</div>
             <div class="product-img-wrap">
-                <img src="{img_url}" alt="{p['name']}" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/f0f0f0/999?text=Deal'">
+                <img src="{img_url}" alt="{p['name']}" loading="lazy" onerror="this.style.display='none'">
             </div>
             <div class="product-info">
                 <span class="category-tag">{p['emoji']} {p['category']}</span>
