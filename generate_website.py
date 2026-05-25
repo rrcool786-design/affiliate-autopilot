@@ -161,6 +161,20 @@ def generate_html(products):
     time_str  = now.strftime("%I:%M %p IST")
     categories = sorted(set(p["category"] for p in products))
 
+    # ── Benefit bullets per category ──────────────────────────
+    CATEGORY_BENEFITS = {
+        "Electronics": ["✓ Free Delivery", "✓ 1 Year Warranty", "✓ Easy Returns"],
+        "Laptops":     ["✓ Free Delivery", "✓ 1 Year Warranty", "✓ EMI Available"],
+        "Kitchen":     ["✓ Food Grade", "✓ Easy Clean", "✓ Durable Build"],
+        "Home":        ["✓ Free Install", "✓ Premium Quality", "✓ Easy Returns"],
+        "Fashion":     ["✓ Genuine Product", "✓ Easy Returns", "✓ Multiple Sizes"],
+        "Sports":      ["✓ ISI Certified", "✓ Pro Grade", "✓ Free Delivery"],
+        "Beauty":      ["✓ 100% Authentic", "✓ Derma Tested", "✓ Free Delivery"],
+        "Books":       ["✓ Original Copy", "✓ Fast Delivery", "✓ Easy Returns"],
+        "Toys":        ["✓ Safety Tested", "✓ Age Appropriate", "✓ Free Delivery"],
+        "Health":      ["✓ Clinically Tested", "✓ Genuine Product", "✓ Free Delivery"],
+    }
+
     # ── Product Cards ──────────────────────────────────────────
     cards_html = ""
     for i, p in enumerate(products):
@@ -171,7 +185,21 @@ def generate_html(products):
         discount = p.get("discount", 20)
         price    = p.get("price", 999)
         orig     = p.get("original_price", int(price*1.3))
+        saved    = orig - price
         viewers  = random.randint(12, 89)
+        bought   = random.randint(47, 312)
+        stars    = round(random.uniform(4.1, 4.9), 1)
+        star_full = int(stars)
+        star_half = 1 if (stars - star_full) >= 0.5 else 0
+        star_html = "★" * star_full + ("½" if star_half else "") + "☆" * (5 - star_full - star_half)
+        reviews  = random.randint(1200, 18400)
+        # Countdown: random 1-8 hrs remaining
+        hrs = random.randint(1, 8)
+        mins = random.randint(5, 59)
+        countdown_id = f"cd_{asin or i}"
+        benefits = CATEGORY_BENEFITS.get(p.get("category",""), ["✓ Free Delivery", "✓ Easy Returns", "✓ Genuine Product"])
+        benefits_html = " &nbsp;·&nbsp; ".join(benefits)
+
         badge    = ""
         if i < 3:
             badge = '<span class="badge hot">🔥 HOT DEAL</span>'
@@ -190,16 +218,30 @@ def generate_html(products):
             <div class="product-info">
                 <span class="category-tag">{p['emoji']} {p['category']}</span>
                 <h3 class="product-name">{p['name']}</h3>
+                <div class="rating-row">
+                    <span class="stars">{star_html}</span>
+                    <span class="rating-num">{stars}</span>
+                    <span class="rating-count">({reviews:,})</span>
+                    <span class="bought-today">🔥 {bought} bought today</span>
+                </div>
+                <div class="savings-box">
+                    <span class="savings-label">You Save</span>
+                    <span class="savings-amount">₹{saved:,}</span>
+                    <span class="savings-pct">({discount}% OFF)</span>
+                </div>
                 <div class="price-block">
                     <span class="price">₹{price:,}</span>
                     <span class="original-price">₹{orig:,}</span>
-                    <span class="save-amount">Save ₹{orig-price:,}</span>
                 </div>
-                <div class="viewers">👁️ {viewers} people viewing this now</div>
+                <div class="benefits-row">{benefits_html}</div>
+                <div class="urgency-row">
+                    <span class="viewers-dot">👁️ {viewers} viewing</span>
+                    <span class="countdown-wrap">⏰ Ends in <span class="countdown" id="{countdown_id}" data-hrs="{hrs}" data-mins="{mins}"></span></span>
+                </div>
                 <a href="{link}" target="_blank" rel="nofollow" class="buy-btn" onclick="trackClick('{asin}')">
-                    🛒 Get This Deal
+                    🛒 Grab This Deal Now
                 </a>
-                <div class="amazon-tag">✅ Verified Amazon Deal</div>
+                <div class="amazon-tag">✅ Verified Amazon Deal · Free Delivery</div>
             </div>
         </div>"""
 
@@ -365,15 +407,42 @@ def generate_html(products):
   .price {{ font-size:1.3rem; font-weight:800; color:#B12704; }}
   .original-price {{ font-size:0.85rem; color:var(--text-light); text-decoration:line-through; }}
   .save-amount {{ font-size:0.78rem; font-weight:700; color:var(--success); }}
+
+  /* ── RATINGS ── */
+  .rating-row {{ display:flex; align-items:center; gap:5px; flex-wrap:wrap; margin:2px 0; }}
+  .stars {{ color:#FF9900; font-size:0.85rem; letter-spacing:1px; }}
+  .rating-num {{ font-weight:700; font-size:0.82rem; color:#FF9900; }}
+  .rating-count {{ font-size:0.75rem; color:var(--text-light); }}
+  .bought-today {{ font-size:0.72rem; font-weight:700; color:#C7511F; background:#fff3e0; padding:2px 7px; border-radius:10px; }}
+
+  /* ── SAVINGS BOX ── */
+  .savings-box {{
+    background:linear-gradient(135deg,#e8f5e9,#c8e6c9);
+    border:1px solid #a5d6a7; border-radius:8px;
+    padding:6px 10px; display:flex; align-items:center; gap:6px; margin:4px 0;
+  }}
+  .savings-label {{ font-size:0.72rem; color:#2e7d32; font-weight:600; }}
+  .savings-amount {{ font-size:1.05rem; font-weight:800; color:#1b5e20; }}
+  .savings-pct {{ font-size:0.72rem; color:#2e7d32; font-weight:700; }}
+
+  /* ── BENEFITS ── */
+  .benefits-row {{ font-size:0.72rem; color:#00695c; font-weight:600; margin:3px 0; }}
+
+  /* ── URGENCY ── */
+  .urgency-row {{ display:flex; align-items:center; justify-content:space-between; font-size:0.72rem; margin:4px 0; }}
+  .viewers-dot {{ color:var(--text-light); }}
+  .countdown-wrap {{ color:#c62828; font-weight:700; background:#fff3f3; padding:2px 7px; border-radius:8px; }}
+  .countdown {{ font-variant-numeric:tabular-nums; }}
+
   .viewers {{ font-size:0.75rem; color:var(--text-light); }}
   .buy-btn {{
     display:block; background:linear-gradient(135deg, #FFD814 0%, #F7CA00 100%);
-    color:#111; text-align:center; padding:10px; border-radius:8px;
-    font-weight:700; font-size:0.9rem; text-decoration:none;
+    color:#111; text-align:center; padding:11px; border-radius:8px;
+    font-weight:800; font-size:0.95rem; text-decoration:none;
     transition:all 0.2s; margin-top:auto;
-    border:1px solid #F2C200;
+    border:1px solid #F2C200; letter-spacing:0.3px;
   }}
-  .buy-btn:hover {{ background:linear-gradient(135deg, #F7CA00 0%, #e6b800 100%); transform:scale(1.02); }}
+  .buy-btn:hover {{ background:linear-gradient(135deg, #F7CA00 0%, #e6b800 100%); transform:scale(1.02); box-shadow:0 4px 15px rgba(255,160,0,0.4); }}
   .amazon-tag {{ font-size:0.72rem; color:var(--success); text-align:center; font-weight:600; }}
 
   /* ── TELEGRAM CTA ── */
@@ -461,137 +530,3 @@ def generate_html(products):
 <!-- TABS -->
 <div class="tabs-wrap">
   <div class="tabs">
-    {tab_html}
-  </div>
-</div>
-
-<!-- MAIN -->
-<main>
-
-  <!-- TRUST BAR -->
-  <div class="trust-bar">
-    <div class="trust-item">✅ Verified Deals Only</div>
-    <div class="trust-item">🔄 Updated Daily</div>
-    <div class="trust-item">🛒 Direct Amazon Links</div>
-    <div class="trust-item">💰 Best Prices Guaranteed</div>
-    <div class="trust-item">🔒 100% Safe & Secure</div>
-  </div>
-
-  <!-- PRODUCTS -->
-  <div class="section-header">
-    <div class="section-title">🔥 Today's Best Deals</div>
-    <div class="deal-count" id="dealCount">{len(products)} deals found</div>
-  </div>
-
-  <div class="products-grid" id="productsGrid">
-    {cards_html}
-  </div>
-
-  <!-- TELEGRAM CTA -->
-  <div class="tg-cta">
-    <h2>📲 Never Miss a Deal Again!</h2>
-    <p>Join 10,000+ smart shoppers on our Telegram channel.<br>Get instant alerts for flash sales & limited-time offers!</p>
-    <a href="{TELEGRAM_CHANNEL}" target="_blank" class="tg-cta-btn">
-      ✈️ Join Free Telegram Channel
-    </a>
-  </div>
-
-</main>
-
-<!-- FOOTER -->
-<footer>
-  <p>🔥 <strong style="color:#fff">TechDeals India</strong> — India's Most Trusted Deal Site</p>
-  <p>
-    <a href="{TELEGRAM_CHANNEL}" target="_blank">Telegram</a> •
-    <a href="#">Privacy Policy</a> •
-    <a href="#">Disclaimer</a>
-  </p>
-  <p style="margin-top:12px; font-size:0.75rem; opacity:0.6">
-    We earn affiliate commission when you buy through our links. Prices may vary. Last updated: {date_str}.
-  </p>
-</footer>
-
-<div class="toast" id="toast">🛒 Opening Amazon deal...</div>
-
-<script>
-function filterCat(cat, btn) {{
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  btn.classList.add('active');
-  let cards = document.querySelectorAll('.product-card');
-  let count = 0;
-  cards.forEach(c => {{
-    if (cat === 'all' || c.dataset.category === cat) {{
-      c.classList.remove('hidden'); count++;
-    }} else {{
-      c.classList.add('hidden');
-    }}
-  }});
-  document.getElementById('dealCount').textContent = count + ' deals found';
-}}
-
-function searchProducts() {{
-  let q = document.getElementById('searchInput').value.toLowerCase();
-  let cards = document.querySelectorAll('.product-card');
-  let count = 0;
-  cards.forEach(c => {{
-    let name = c.querySelector('.product-name').textContent.toLowerCase();
-    let cat  = c.querySelector('.category-tag').textContent.toLowerCase();
-    if (!q || name.includes(q) || cat.includes(q)) {{
-      c.classList.remove('hidden'); count++;
-    }} else {{
-      c.classList.add('hidden');
-    }}
-  }});
-  document.getElementById('dealCount').textContent = count + ' deals found';
-}}
-
-function trackClick(asin) {{
-  let toast = document.getElementById('toast');
-  toast.classList.add('show');
-  setTimeout(() => toast.classList.remove('show'), 2500);
-}}
-
-// Random viewers update (live feel)
-setInterval(() => {{
-  document.querySelectorAll('.viewers').forEach(el => {{
-    let n = Math.floor(Math.random() * 60) + 10;
-    el.textContent = '👁️ ' + n + ' people viewing this now';
-  }});
-}}, 8000);
-</script>
-</body>
-</html>"""
-
-
-if __name__ == "__main__":
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
-
-    print("=" * 55)
-    print("  PROFESSIONAL WEBSITE GENERATOR")
-    print(f"  {datetime.now().strftime('%d %B %Y, %I:%M %p')}")
-    print("=" * 55)
-
-    print("\n[Layer 1] Amazon se live scraping...")
-    products = scrape_products()
-    source = "Amazon Live"
-
-    if not products:
-        print("[Layer 2] products.json se load ho raha hai...")
-        products = load_json_products()
-        source = "products.json"
-
-    if not products:
-        print("[Layer 3] Emergency backup products...")
-        products = EMERGENCY_PRODUCTS
-        source = "Emergency Backup"
-
-    print(f"  Source  : {source}")
-    print(f"  Products: {len(products)}")
-
-    html = generate_html(products)
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write(html)
-
-    print(f"\n  ✅ Website generated: docs/index.html")
-    print(f"  Size: {len(html):,} characters")
-    print("=" * 55)
