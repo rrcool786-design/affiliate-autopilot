@@ -42,10 +42,65 @@ HEADERS_LIST = [
 ]
 
 EMERGENCY_PRODUCTS = [
-    {"name": "Redmi A7 Pro 5G",      "asin": "B0GS5Y6BD3",  "category": "Electronics", "emoji": "📱", "price": 15999, "original_price": 19999, "discount": 20},
-    {"name": "OnePlus Buds 3r",       "asin": "B0FMDL81GS", "category": "Electronics", "emoji": "🎧", "price": 1999,  "original_price": 2999,  "discount": 33},
-    {"name": "iQOO Z10R 5G",          "asin": "B0FHB5V36G", "category": "Electronics", "emoji": "📱", "price": 22999, "original_price": 29999, "discount": 23},
-    {"name": "OnePlus Nord CE6 Lite", "asin": "B0GVYDLJJQ", "category": "Electronics", "emoji": "📱", "price": 17999, "original_price": 22999, "discount": 22},
+    # ── ELECTRONICS / MOBILES ─────────────────────────────────────────────
+    {"name": "Redmi A7 Pro 5G",                          "asin": "B0GS5Y6BD3",  "category": "Electronics", "emoji": "📱", "price": 15999, "original_price": 19999, "discount": 20},
+    {"name": "OnePlus Buds 3r TWS Earbuds",               "asin": "B0FMDL81GS", "category": "Electronics", "emoji": "🎧", "price": 1999,  "original_price": 2999,  "discount": 33},
+    {"name": "iQOO Z10R 5G",                              "asin": "B0FHB5V36G", "category": "Electronics", "emoji": "📱", "price": 22999, "original_price": 29999, "discount": 23},
+    {"name": "OnePlus Nord CE6 Lite 5G",                  "asin": "B0GVYDLJJQ", "category": "Electronics", "emoji": "📱", "price": 17999, "original_price": 22999, "discount": 22},
+    {"name": "Samsung Galaxy A16 5G",                     "asin": "B0DJZZ7BPH", "category": "Electronics", "emoji": "📱", "price": 16999, "original_price": 21999, "discount": 23},
+    {"name": "Poco M7 Pro 5G",                            "asin": "B0DJWMV6KL", "category": "Electronics", "emoji": "📱", "price": 14999, "original_price": 19999, "discount": 25},
+    {"name": "Realme 14x 5G",                             "asin": "B0DHNKJXQZ", "category": "Electronics", "emoji": "📱", "price": 13999, "original_price": 17999, "discount": 22},
+    {"name": "Redmi Note 14 5G",                          "asin": "B0CXVBT9Y5", "category": "Electronics", "emoji": "📱", "price": 17999, "original_price": 24999, "discount": 28},
+    {"name": "Samsung Galaxy M35 5G",                     "asin": "B0D3L9T3ZN", "category": "Electronics", "emoji": "📱", "price": 18999, "original_price": 25999, "discount": 27},
+    {"name": "boAt Airdopes 141 TWS Earbuds",             "asin": "B09B1NBWFQ", "category": "Electronics", "emoji": "🎧", "price": 799,   "original_price": 2990,  "discount": 73},
+    {"name": "JBL Tune 130NC TWS",                        "asin": "B09ZFXBPTZ", "category": "Electronics", "emoji": "🎧", "price": 2499,  "original_price": 5999,  "discount": 58},
+    {"name": "Noise ColorFit Pro 5 Smartwatch",           "asin": "B0CFR1GDLX", "category": "Electronics", "emoji": "⌚", "price": 2199,  "original_price": 7999,  "discount": 72},
+    {"name": "Fire-Boltt Phoenix Ultra Smartwatch",       "asin": "B0BR95QQRV", "category": "Electronics", "emoji": "⌚", "price": 1399,  "original_price": 4999,  "discount": 72},
+    {"name": "Realme Watch S2",                           "asin": "B0DHQBSXLB", "category": "Electronics", "emoji": "⌚", "price": 2499,  "original_price": 5999,  "discount": 58},
+    {"name": "Anker 65W USB-C Fast Charger",              "asin": "B08N5NDP16", "category": "Electronics", "emoji": "🔌", "price": 1299,  "original_price": 2499,  "discount": 48},
+    {"name": "MI 10000mAh Power Bank 3i",                 "asin": "B07WK1S5Y6", "category": "Electronics", "emoji": "🔋", "price": 799,   "original_price": 1499,  "discount": 47},
+    {"name": "boAt Stone 650 Bluetooth Speaker",          "asin": "B07PQTFGQD", "category": "Electronics", "emoji": "🔊", "price": 1799,  "original_price": 3990,  "discount": 55},
+    {"name": "Portronics Toad 25 Wireless Mouse",         "asin": "B08JDFQBGS", "category": "Electronics", "emoji": "🖱️", "price": 449,   "original_price": 999,   "discount": 55},
+    # ── LAPTOPS ──────────────────────────────────────────────────────────
+    {"name": "ASUS VivoBook 15 Intel Core i3",            "asin": "B0BV3HQY8G", "category": "Laptops",     "emoji": "💻", "price": 32990, "original_price": 44990, "discount": 27},
+    {"name": "Lenovo IdeaPad Slim 3 Intel Core i5",       "asin": "B0CGXYKKGF", "category": "Laptops",     "emoji": "💻", "price": 38990, "original_price": 54990, "discount": 29},
+    {"name": "HP 15s Ryzen 5 7520U",                      "asin": "B0CSZJY92R", "category": "Laptops",     "emoji": "💻", "price": 44990, "original_price": 60990, "discount": 26},
+    {"name": "Acer Aspire Lite Ryzen 5",                  "asin": "B0C3XQKPFY", "category": "Laptops",     "emoji": "💻", "price": 37990, "original_price": 52990, "discount": 28},
+    {"name": "realme Book Prime Intel Core i5",           "asin": "B09SPCXQGF", "category": "Laptops",     "emoji": "💻", "price": 39990, "original_price": 55000, "discount": 27},
+    # ── KITCHEN ──────────────────────────────────────────────────────────
+    {"name": "Prestige Svachh Aluminium Pressure Cooker 5L", "asin": "B08BBFZSVB", "category": "Kitchen",  "emoji": "🍳", "price": 1299,  "original_price": 2295,  "discount": 43},
+    {"name": "Pigeon by Stovekraft Hot Kettle 1.5L",      "asin": "B07N7CFPD8", "category": "Kitchen",     "emoji": "☕", "price": 499,   "original_price": 1395,  "discount": 64},
+    {"name": "Butterfly Rapid Mixer Grinder 750W",        "asin": "B09LZTYD7D", "category": "Kitchen",     "emoji": "🥤", "price": 2299,  "original_price": 4500,  "discount": 49},
+    {"name": "Havells Prolife Slow Juicer",               "asin": "B08L18XTQL", "category": "Kitchen",     "emoji": "🍹", "price": 4499,  "original_price": 9000,  "discount": 50},
+    {"name": "Lifelong LLMG61 750W Mixer Grinder",        "asin": "B07CNZXB8F", "category": "Kitchen",     "emoji": "🥤", "price": 1499,  "original_price": 3499,  "discount": 57},
+    {"name": "Milton Thermosteel Flip Lid Flask 1000ml",  "asin": "B00OQNK3BS", "category": "Kitchen",     "emoji": "🫙", "price": 699,   "original_price": 1655,  "discount": 58},
+    {"name": "Philips HL7756 750W Mixer Grinder",         "asin": "B07K8X7DJN", "category": "Kitchen",     "emoji": "🥤", "price": 2499,  "original_price": 5995,  "discount": 58},
+    # ── BEAUTY ──────────────────────────────────────────────────────────
+    {"name": "Mamaearth Vitamin C Face Wash 100ml",       "asin": "B07K2GLCQK", "category": "Beauty",      "emoji": "✨", "price": 249,   "original_price": 499,   "discount": 50},
+    {"name": "WOW Apple Cider Vinegar Shampoo 300ml",     "asin": "B073QFVWKJ", "category": "Beauty",      "emoji": "🧴", "price": 299,   "original_price": 599,   "discount": 50},
+    {"name": "Minimalist 10% Niacinamide Face Serum",     "asin": "B08BPPK5W9", "category": "Beauty",      "emoji": "💧", "price": 449,   "original_price": 699,   "discount": 36},
+    {"name": "Lakme 9to5 Primer + Matte Lipstick",        "asin": "B00I8HGZCY", "category": "Beauty",      "emoji": "💄", "price": 399,   "original_price": 750,   "discount": 47},
+    {"name": "Plum Goodness E-Luminence Face Moisturizer","asin": "B07CLNWTPQ", "category": "Beauty",      "emoji": "🌿", "price": 599,   "original_price": 995,   "discount": 40},
+    {"name": "The Derma Co 1% Salicylic Acid Face Wash",  "asin": "B09BTKRCMT", "category": "Beauty",      "emoji": "🧼", "price": 299,   "original_price": 599,   "discount": 50},
+    # ── FASHION ──────────────────────────────────────────────────────────
+    {"name": "Campus Men's Running Shoes",                "asin": "B08CQFZJMB", "category": "Fashion",     "emoji": "👟", "price": 999,   "original_price": 2995,  "discount": 67},
+    {"name": "Wildcraft 30L Casual Backpack",             "asin": "B07D16KFML", "category": "Fashion",     "emoji": "🎒", "price": 1299,  "original_price": 2595,  "discount": 50},
+    {"name": "Peter England Men's Formal Shirt",          "asin": "B09QWVB65M", "category": "Fashion",     "emoji": "👔", "price": 649,   "original_price": 1299,  "discount": 50},
+    {"name": "Levi's Men's Slim Jeans",                   "asin": "B098NX31BY", "category": "Fashion",     "emoji": "👖", "price": 1799,  "original_price": 3999,  "discount": 55},
+    {"name": "Safari Polycarbonate 55cm Cabin Trolley",   "asin": "B074WDBMKP", "category": "Fashion",     "emoji": "🧳", "price": 2999,  "original_price": 7500,  "discount": 60},
+    {"name": "Fastrack Analog Watch Men",                 "asin": "B07BFMBQHG", "category": "Fashion",     "emoji": "⌚", "price": 1295,  "original_price": 2995,  "discount": 57},
+    # ── BOOKS ────────────────────────────────────────────────────────────
+    {"name": "Atomic Habits (Hindi) - James Clear",       "asin": "B09BSQK3X1", "category": "Books",       "emoji": "📚", "price": 299,   "original_price": 499,   "discount": 40},
+    {"name": "Rich Dad Poor Dad (Hindi Edition)",         "asin": "B07XBTLTDF", "category": "Books",       "emoji": "📖", "price": 179,   "original_price": 350,   "discount": 49},
+    {"name": "The Psychology of Money",                   "asin": "B08H5Y7TCC", "category": "Books",       "emoji": "📖", "price": 299,   "original_price": 499,   "discount": 40},
+    {"name": "Ikigai: The Japanese Secret",               "asin": "B07DX9CHHV", "category": "Books",       "emoji": "📚", "price": 199,   "original_price": 399,   "discount": 50},
+    {"name": "The Alchemist (Paulo Coelho)",              "asin": "B00U6SFUSS", "category": "Books",       "egory": "Books",       "emoji": "📚", "price": 149,   "original_price": 350,   "discount": 57},
+    # ── TOYS ─────────────────────────────────────────────────────────────
+    {"name": "Funskool Monopoly Board Game",              "asin": "B003YELKXE", "category": "Toys",        "emoji": "🎲", "price": 549,   "original_price": 1150,  "discount": 52},
+    {"name": "Hot Wheels 20 Car Gift Pack",               "asin": "B015X3VW4C", "category": "Toys",        "emoji": "🚗", "price": 799,   "original_price": 1650,  "discount": 52},
+    {"name": "Lego Classic Medium Creative Brick Box",    "asin": "B014YEB7LS", "category": "Toys",        "emoji": "🧱", "price": 2999,  "original_price": 4999,  "discount": 40},
+    {"name": "Crayola 64 Crayons",                       "asin": "B00004UCD4", "category": "Toys",        "emoji": "🖍️", "price": 499,   "original_price": 999,   "discount": 50},
+    {"name": "Rubik's Cube 3x3",                         "asin": "B00AOLSYV8", "category": "Toys",        "emoji": "🟧", "price": 299,   "original_price": 799,   "discount": 63},
 ]
 
 import time
@@ -653,7 +708,7 @@ setInterval(() => {{
     el.textContent = '🔥 ' + n + ' bought today';
   }});
 }}, 30000);
-</script>
+ </script>
 </body>
 </html>"""
 
@@ -671,7 +726,7 @@ if __name__ == "__main__":
     source = "Amazon Live"
 
     if not products:
-        print("[Layer 2] products.json se load ho raha hai...")
+        print("[Layer 2] products.json se load ho rahahai...")
         products = load_json_products()
         source = "products.json"
 
