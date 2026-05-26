@@ -530,3 +530,163 @@ def generate_html(products):
 <!-- TABS -->
 <div class="tabs-wrap">
   <div class="tabs">
+    {tab_html}
+  </div>
+</div>
+
+<!-- MAIN -->
+<main>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-item">✅ Verified Deals Only</div>
+    <div class="trust-item">🔄 Updated Daily</div>
+    <div class="trust-item">🛒 Direct Amazon Links</div>
+    <div class="trust-item">💰 Best Prices Guaranteed</div>
+    <div class="trust-item">🔒 100% Safe & Secure</div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <div class="section-header">
+    <div class="section-title">🔥 Today's Best Deals</div>
+    <div class="deal-count" id="dealCount">{len(products)} deals found</div>
+  </div>
+
+  <div class="products-grid" id="productsGrid">
+    {cards_html}
+  </div>
+
+  <!-- TELEGRAM CTA -->
+  <div class="tg-cta">
+    <h2>📲 Never Miss a Deal Again!</h2>
+    <p>Join 10,000+ smart shoppers on our Telegram channel.<br>Get instant alerts for flash sales & limited-time offers!</p>
+    <a href="{TELEGRAM_CHANNEL}" target="_blank" class="tg-cta-btn">
+      ✈️ Join Free Telegram Channel
+    </a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p>🔥 <strong style="color:#fff">TechDeals India</strong> — India's Most Trusted Deal Site</p>
+  <p>
+    <a href="{TELEGRAM_CHANNEL}" target="_blank">Telegram</a> •
+    <a href="#">Privacy Policy</a> •
+    <a href="#">Disclaimer</a>
+  </p>
+  <p style="margin-top:12px; font-size:0.75rem; opacity:0.6">
+    We earn affiliate commission when you buy through our links. Prices may vary. Last updated: {date_str}.
+  </p>
+</footer>
+
+<div class="toast" id="toast">🛒 Opening Amazon deal...</div>
+
+<script>
+function filterCat(cat, btn) {{
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  let cards = document.querySelectorAll('.product-card');
+  let count = 0;
+  cards.forEach(c => {{
+    if (cat === 'all' || c.dataset.category === cat) {{
+      c.classList.remove('hidden'); count++;
+    }} else {{
+      c.classList.add('hidden');
+    }}
+  }});
+  document.getElementById('dealCount').textContent = count + ' deals found';
+}}
+
+function searchProducts() {{
+  let q = document.getElementById('searchInput').value.toLowerCase();
+  let cards = document.querySelectorAll('.product-card');
+  let count = 0;
+  cards.forEach(c => {{
+    let name = c.querySelector('.product-name').textContent.toLowerCase();
+    let cat  = c.querySelector('.category-tag').textContent.toLowerCase();
+    if (!q || name.includes(q) || cat.includes(q)) {{
+      c.classList.remove('hidden'); count++;
+    }} else {{
+      c.classList.add('hidden');
+    }}
+  }});
+  document.getElementById('dealCount').textContent = count + ' deals found';
+}}
+
+function trackClick(asin) {{
+  let toast = document.getElementById('toast');
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2500);
+}}
+
+// Random viewers update (live feel)
+setInterval(() => {{
+  document.querySelectorAll('.viewers-dot').forEach(el => {{
+    let n = Math.floor(Math.random() * 60) + 10;
+    el.textContent = '👁️ ' + n + ' viewing';
+  }});
+}}, 8000);
+
+// Countdown timers
+function startCountdowns() {{
+  document.querySelectorAll('.countdown').forEach(el => {{
+    let h = parseInt(el.dataset.hrs) || 2;
+    let m = parseInt(el.dataset.mins) || 30;
+    let s = 0;
+    el.textContent = h + 'h ' + String(m).padStart(2,'0') + 'm';
+    setInterval(() => {{
+      s--;
+      if(s < 0) {{ s = 59; m--; }}
+      if(m < 0) {{ m = 59; h--; }}
+      if(h < 0) {{ h = 0; m = 0; s = 0; }}
+      el.textContent = h + 'h ' + String(m).padStart(2,'0') + 'm ' + String(s).padStart(2,'0') + 's';
+    }}, 1000);
+  }});
+}}
+startCountdowns();
+
+// Bought today random update
+setInterval(() => {{
+  document.querySelectorAll('.bought-today').forEach(el => {{
+    let n = Math.floor(Math.random() * 30) + parseInt(el.textContent) || 50;
+    el.textContent = '🔥 ' + n + ' bought today';
+  }});
+}}, 30000);
+</script>
+</body>
+</html>"""
+
+
+if __name__ == "__main__":
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+    print("=" * 55)
+    print("  PROFESSIONAL WEBSITE GENERATOR")
+    print(f"  {datetime.now().strftime('%d %B %Y, %I:%M %p')}")
+    print("=" * 55)
+
+    print("\n[Layer 1] Amazon se live scraping...")
+    products = scrape_products()
+    source = "Amazon Live"
+
+    if not products:
+        print("[Layer 2] products.json se load ho raha hai...")
+        products = load_json_products()
+        source = "products.json"
+
+    if not products:
+        print("[Layer 3] Emergency backup products...")
+        products = EMERGENCY_PRODUCTS
+        source = "Emergency Backup"
+
+    print(f"  Source  : {source}")
+    print(f"  Products: {len(products)}")
+
+    html = generate_html(products)
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        f.write(html)
+
+    print(f"\n  ✅ Website generated: docs/index.html")
+    print(f"  Size: {len(html):,} characters")
+    print("=" * 55)
