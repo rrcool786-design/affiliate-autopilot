@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://rrcool786-design.github.io/affiliate-autopilot/sitemap.xml
+
+# Deal Bazaar India — Best Amazon Deals
+# Updated daily by automated system
