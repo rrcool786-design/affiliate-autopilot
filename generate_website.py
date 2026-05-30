@@ -326,10 +326,26 @@ def generate_html(products):
     now_time = datetime.now().strftime("%I:%M %p")
     total = len(products)
 
-    # Build category list
+    # Category list + sort products
     cats = sorted(set(p["category"] for p in products))
+    top_deals = sorted(products, key=lambda x: x.get("discount", 0), reverse=True)
+    top = top_deals[0] if top_deals else {"name": "Amazon Deals", "price": 0, "discount": 0, "asin": "", "category": "Electronics", "original_price": 0}
 
-    # Build JS product array for autocomplete
+    # Category gradient backgrounds
+    cat_bg = {
+        "Electronics": "linear-gradient(135deg,#12103a,#0a0820)",
+        "Laptops":     "linear-gradient(135deg,#0a2010,#061408)",
+        "Kitchen":     "linear-gradient(135deg,#1a0e05,#120a04)",
+        "Home":        "linear-gradient(135deg,#05101a,#030a12)",
+        "Fashion":     "linear-gradient(135deg,#1a0510,#12030a)",
+        "Sports":      "linear-gradient(135deg,#051a05,#031203)",
+        "Beauty":      "linear-gradient(135deg,#1a0518,#120312)",
+        "Books":       "linear-gradient(135deg,#0f1005,#0a0c03)",
+        "Toys":        "linear-gradient(135deg,#05051a,#030312)",
+        "Health":      "linear-gradient(135deg,#051a0a,#031206)",
+    }
+
+    # JS products for autocomplete
     js_products = json.dumps([{
         "name": p["name"],
         "category": p["category"],
@@ -339,7 +355,38 @@ def generate_html(products):
         "emoji": p.get("emoji", "🛍️")
     } for p in products], ensure_ascii=False)
 
-    # Build product cards HTML
+    # ── Trending section (top 8 by discount) ─────────────────────────────────
+    trending_html = ""
+    for p in top_deals[:8]:
+        asin   = p["asin"]
+        name   = p["name"]
+        cat    = p["category"]
+        emoji  = p.get("emoji", "🛍️")
+        price  = p["price"]
+        orig   = p.get("original_price", int(price * 1.3))
+        disc   = p.get("discount", int((orig - price) / orig * 100))
+        savings = orig - price
+        aff_url = f"https://www.amazon.in/dp/{asin}?tag={AFFILIATE_TAG}"
+        img_url = f"https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN={asin}&Format=_SL250_&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1&tag={AFFILIATE_TAG}"
+        bg = cat_bg.get(cat, "linear-gradient(135deg,#1a1a2e,#0d0d1f)")
+        short_name = name[:38] + ('...' if len(name) > 38 else '')
+        safe_name = name.replace(chr(39), '')
+        trending_html += f"""
+<article class="t-card" data-asin="{asin}">
+  <div class="t-img-wrap" style="background:{bg}">
+    <img src="{img_url}" alt="{name} Amazon India deal" loading="lazy" class="t-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <span class="t-emoji-fb">{emoji}</span>
+  </div>
+  <div class="t-body">
+    <span class="t-disc-badge">{disc}% OFF</span>
+    <h3 class="t-name">{short_name}</h3>
+    <div class="t-price">₹{price:,} <s>₹{orig:,}</s></div>
+    <div class="t-save">Save ₹{savings:,}</div>
+    <a href="{aff_url}" target="_blank" class="t-btn" onclick="trackClick('{asin}','{safe_name}',{price},'{cat}',{disc})">Grab Deal 🔥</a>
+  </div>
+</article>"""
+
+    # ── Main product cards ────────────────────────────────────────────────────
     cards_html = ""
     for p in products:
         asin     = p["asin"]
@@ -355,53 +402,73 @@ def generate_html(products):
         stars    = generate_stars(rating)
         savings  = orig - price
         aff_url  = f"https://www.amazon.in/dp/{asin}?tag={AFFILIATE_TAG}"
-        wa_text  = f"🔥 {disc}% OFF! {name} ₹{price:,} (was ₹{orig:,}) - Save ₹{savings:,}! Buy: {aff_url}"
+        img_url  = f"https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN={asin}&Format=_SL250_&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1&tag={AFFILIATE_TAG}"
+        bg       = cat_bg.get(cat, "linear-gradient(135deg,#1a1a2e,#0d0d1f)")
+        safe_name = name.replace(chr(39), '')
+        cta_text  = f"Grab Deal 🔥 — ₹{price:,}"
+        hot_badge = f'<span class="badge-hot">🔥 HOT</span>' if disc >= 60 else ''
+        trend_badge = f'<span class="badge-trending">📈 TRENDING</span>' if disc >= 75 else ''
 
         cards_html += f"""
-<div class="card" data-category="{cat}" data-price="{price}" data-discount="{disc}" data-name="{name.lower()}" data-rating="{rating}" data-reviews="{reviews}">
+<article class="card" data-category="{cat}" data-price="{price}" data-discount="{disc}" data-name="{name.lower()}" data-rating="{rating}" data-reviews="{reviews}">
   <div class="badge-wrap">
     <span class="badge-disc">{disc}% OFF</span>
-    {f'<span class="badge-hot">🔥 HOT</span>' if disc >= 60 else ''}
+    {hot_badge}{trend_badge}
   </div>
-  <div class="card-emoji">{emoji}</div>
-  <div class="card-cat">{cat}</div>
-  <div class="card-name">{name}</div>
-  <div class="card-rating">{stars} <span class="rev-count">({reviews:,})</span></div>
-  <div class="price-row">
-    <span class="price-now">₹{price:,}</span>
-    <span class="price-orig">₹{orig:,}</span>
+  <div class="prod-img-wrap" style="background:{bg}">
+    <img src="{img_url}" alt="{name} — best price India Amazon" loading="lazy" class="prod-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="200" height="160">
+    <span class="prod-emoji-fb">{emoji}</span>
   </div>
-  <div class="savings">You save ₹{savings:,}</div>
-  <div class="bought-today">🔥 {bought} bought today</div>
-  <div class="cta-row">
-    <a href="{aff_url}" target="_blank" class="btn-buy" onclick="trackClick('{asin}','{name.replace(chr(39),'')}',{price},'{cat}',{disc})">Buy on Amazon</a>
-    <button class="btn-wa" onclick="shareWA('{aff_url}','{name.replace(chr(39),'')}','{price}','{disc}')" title="Share on WhatsApp">📲</button>
-    <button class="btn-wish" onclick="toggleWish(this,'{asin}','{name.replace(chr(39),'')}','{price}','{disc}','{emoji}')" title="Add to Wishlist">🤍</button>
+  <div class="card-body">
+    <div class="card-meta"><span class="card-cat">{cat}</span></div>
+    <h2 class="card-name">{name}</h2>
+    <div class="card-rating">{stars} <span class="rev-count">({reviews:,})</span></div>
+    <div class="price-row">
+      <span class="price-now">₹{price:,}</span>
+      <span class="price-orig">₹{orig:,}</span>
+    </div>
+    <div class="savings">✓ Save ₹{savings:,}</div>
+    <div class="bought-today">🔥 {bought} bought today</div>
+    <div class="cta-row">
+      <a href="{aff_url}" target="_blank" rel="noopener sponsored" class="btn-buy" onclick="trackClick('{asin}','{safe_name}',{price},'{cat}',{disc})">{cta_text}</a>
+      <button class="btn-wa" onclick="shareWA('{aff_url}','{safe_name}','{price}','{disc}')" title="Share on WhatsApp" aria-label="Share on WhatsApp">📲</button>
+      <button class="btn-wish" onclick="toggleWish(this,'{asin}','{safe_name}','{price}','{disc}','{emoji}')" title="Add to Wishlist" aria-label="Add to Wishlist">🤍</button>
+    </div>
+    <p class="aff-note">*Amazon affiliate link</p>
   </div>
-</div>"""
+</article>"""
 
-    # Build category buttons
+    # ── Category buttons ──────────────────────────────────────────────────────
     cat_btns = '<button class="cat-btn active" data-cat="All" onclick="filterCat(this)">🛍️ All</button>\n'
     cat_emojis = {"Electronics":"📱","Laptops":"💻","Kitchen":"🍳","Beauty":"💄","Fashion":"👕","Books":"📚","Toys":"🧸","Home":"🏠","Sports":"⚽","Health":"💊"}
     for c in cats:
         em = cat_emojis.get(c, "📦")
         cat_btns += f'<button class="cat-btn" data-cat="{c}" onclick="filterCat(this)">{em} {c}</button>\n'
 
-    # Top deal for OG image preview
-    top = products[0] if products else {"name": "Amazon Deals", "price": 0, "discount": 0}
-    og_title = f"🔥 {top['discount']}% OFF on {top['name']} | Deal Bazaar India"
-    og_desc  = f"Best Amazon India deals — {len(products)} products, up to 80% OFF. Electronics, Laptops, Kitchen, Fashion & more!"
+    # ── SEO meta ──────────────────────────────────────────────────────────────
+    top_asin = top.get("asin", "")
+    og_img = (
+        f"https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN={top_asin}&Format=_SL500_&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1&tag={AFFILIATE_TAG}"
+        if top_asin else f"{SITE_URL}/og-banner.png"
+    )
+    og_title = f"🔥 {top.get('discount',0)}% OFF on {top.get('name','Amazon Deals')} | Deal Bazaar India"
+    og_desc  = f"Best Amazon India deals today — {total} products, up to 80% OFF. Electronics, Laptops, Kitchen, Fashion & more. Updated daily!"
 
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Deal Bazaar India 🛍️ - Best Amazon Deals Today | Up to 80% OFF</title>
-<meta name="description" content="Best Amazon India deals today — {len(products)} products with up to 80% discount. Electronics, Laptops, Kitchen, Fashion, Beauty & more. Updated daily!">
-<meta name="keywords" content="amazon deals india, amazon sale today, best amazon offers, electronics deals india, mobile deals india, laptop deals india, amazon discount">
-<meta name="robots" content="index, follow">
+<title>Deal Bazaar India — Best Amazon Deals Today India | Up to 80% OFF</title>
+<meta name="description" content="Best Amazon India deals today — {total} products with up to 80% discount. Electronics, Laptops, Kitchen, Fashion, Beauty &amp; more. Updated daily!">
+<meta name="keywords" content="amazon deals india, amazon sale today, best amazon offers 2026, electronics deals india, mobile deals india, laptop deals india, amazon discount coupons, best deals under 500, best deals under 1000">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Deal Bazaar India">
 <link rel="canonical" href="{SITE_URL}/">
+<link rel="sitemap" type="application/xml" href="{SITE_URL}/sitemap.xml">
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
 <!-- Open Graph -->
 <meta property="og:title" content="{og_title}">
 <meta property="og:description" content="{og_desc}">
@@ -409,10 +476,14 @@ def generate_html(products):
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Deal Bazaar India">
 <meta property="og:locale" content="en_IN">
+<meta property="og:image" content="{og_img}">
+<meta property="og:image:width" content="500">
+<meta property="og:image:height" content="500">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{og_title}">
 <meta name="twitter:description" content="{og_desc}">
+<meta name="twitter:image" content="{og_img}">
 <!-- JSON-LD Schema -->
 <script type="application/ld+json">
 JSONLD_PLACEHOLDER
@@ -420,146 +491,211 @@ JSONLD_PLACEHOLDER
 <style>
 *{{box-sizing:border-box;margin:0;padding:0}}
 :root{{
-  --bg:#0f0f1a;--card:#1a1a2e;--card2:#16213e;--accent:#e94560;
-  --gold:#ffd700;--green:#00d4aa;--text:#e0e0e0;--muted:#8892a4;
-  --radius:16px;--shadow:0 8px 32px rgba(0,0,0,.5);
+  --bg:#0a0a14;--card:#141428;--card2:#101024;--accent:#e94560;
+  --gold:#ffd700;--green:#00d4aa;--text:#e8e8f0;--muted:#7a849a;
+  --radius:14px;--shadow:0 8px 32px rgba(0,0,0,.6);
+  --font:'Segoe UI','Inter',system-ui,-apple-system,sans-serif;
 }}
-body{{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh}}
+body{{background:var(--bg);color:var(--text);font-family:var(--font);min-height:100vh;-webkit-font-smoothing:antialiased}}
 
-/* HEADER */
-header{{background:linear-gradient(135deg,#1a1a3e,#0d0d1f);padding:20px;text-align:center;border-bottom:2px solid var(--accent);position:sticky;top:0;z-index:100;backdrop-filter:blur(10px)}}
-.logo{{font-size:1.8rem;font-weight:800;color:#fff}}
-.logo span{{color:var(--accent)}}
-.tagline{{color:var(--muted);font-size:.85rem;margin-top:4px}}
-.header-meta{{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:8px;font-size:.8rem;color:var(--muted)}}
+/* ── HEADER ────────────────────────────────────────────────────────── */
+header{{background:linear-gradient(135deg,#14143a 0%,#0a0a20 100%);padding:16px 20px;text-align:center;border-bottom:1.5px solid var(--accent);position:sticky;top:0;z-index:100;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}}
+.site-logo{{font-size:1.9rem;font-weight:900;color:#fff;letter-spacing:-.5px;line-height:1}}
+.site-logo span{{color:var(--accent)}}
+.tagline{{color:var(--muted);font-size:.8rem;margin-top:3px}}
+.header-meta{{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:8px;font-size:.75rem;color:var(--muted)}}
 .header-meta span{{background:rgba(255,255,255,.07);padding:3px 10px;border-radius:20px}}
+.header-meta a{{color:#00d4aa;text-decoration:none;background:rgba(0,212,170,.1);padding:3px 10px;border-radius:20px;transition:background .2s}}
+.header-meta a:hover{{background:rgba(0,212,170,.2)}}
 
-/* SEARCH */
-.search-section{{padding:20px;background:rgba(255,255,255,.03);border-bottom:1px solid rgba(255,255,255,.08)}}
-.search-wrap{{max-width:700px;margin:0 auto;position:relative}}
-.search-box{{width:100%;padding:14px 52px 14px 20px;font-size:1rem;border:2px solid rgba(233,69,96,.5);border-radius:30px;background:rgba(255,255,255,.07);color:var(--text);outline:none;transition:all .3s}}
-.search-box:focus{{border-color:var(--accent);background:rgba(255,255,255,.1);box-shadow:0 0 20px rgba(233,69,96,.3)}}
+/* ── TRUST BAR ─────────────────────────────────────────────────────── */
+.trust-bar{{background:rgba(0,212,170,.06);border-bottom:1px solid rgba(0,212,170,.15);padding:6px 20px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;font-size:.72rem;color:var(--green)}}
+.trust-bar span{{white-space:nowrap}}
+
+/* ── TICKER ────────────────────────────────────────────────────────── */
+.ticker-wrap{{background:rgba(233,69,96,.08);border-bottom:1px solid rgba(233,69,96,.2);overflow:hidden;padding:7px 0}}
+.ticker{{white-space:nowrap;animation:ticker 35s linear infinite;display:inline-block}}
+.ticker span{{margin:0 28px;font-size:.78rem;color:var(--gold)}}
+@keyframes ticker{{0%{{transform:translateX(100vw)}}100%{{transform:translateX(-100%)}}}}
+
+/* ── SEARCH ────────────────────────────────────────────────────────── */
+.search-section{{padding:18px 20px;background:rgba(255,255,255,.02);border-bottom:1px solid rgba(255,255,255,.07)}}
+.search-wrap{{max-width:680px;margin:0 auto;position:relative}}
+.search-box{{width:100%;padding:13px 50px 13px 20px;font-size:.95rem;border:2px solid rgba(233,69,96,.4);border-radius:28px;background:rgba(255,255,255,.06);color:var(--text);outline:none;transition:all .25s;font-family:var(--font)}}
+.search-box:focus{{border-color:var(--accent);background:rgba(255,255,255,.09);box-shadow:0 0 0 4px rgba(233,69,96,.12)}}
 .search-box::placeholder{{color:var(--muted)}}
-.search-icon{{position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:1.2rem;pointer-events:none}}
-.autocomplete-list{{position:absolute;top:calc(100% + 6px);left:0;right:0;background:#1e2040;border:1px solid rgba(233,69,96,.4);border-radius:12px;z-index:999;max-height:280px;overflow-y:auto;display:none;box-shadow:var(--shadow)}}
-.ac-item{{padding:10px 16px;cursor:pointer;display:flex;align-items:center;gap:10px;font-size:.9rem;transition:background .2s}}
-.ac-item:hover,.ac-item.ac-active{{background:rgba(233,69,96,.15)}}
-.ac-item .ac-emoji{{font-size:1.2rem}}
-.ac-item .ac-info{{flex:1}}
-.ac-item .ac-cat{{font-size:.75rem;color:var(--muted)}}
-.ac-item .ac-price{{color:var(--green);font-weight:700;font-size:.85rem}}
-.search-tags{{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;justify-content:center}}
-.stag{{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);color:var(--text);padding:5px 14px;border-radius:20px;font-size:.8rem;cursor:pointer;transition:all .2s;white-space:nowrap}}
+.search-icon{{position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:1.1rem;pointer-events:none}}
+.autocomplete-list{{position:absolute;top:calc(100% + 6px);left:0;right:0;background:#1a1c38;border:1px solid rgba(233,69,96,.35);border-radius:12px;z-index:999;max-height:280px;overflow-y:auto;display:none;box-shadow:var(--shadow)}}
+.ac-item{{padding:10px 14px;cursor:pointer;display:flex;align-items:center;gap:10px;font-size:.88rem;transition:background .15s}}
+.ac-item:hover,.ac-item.ac-active{{background:rgba(233,69,96,.14)}}
+.ac-item .ac-emoji{{font-size:1.15rem;flex-shrink:0}}
+.ac-item .ac-info{{flex:1;min-width:0}}
+.ac-item .ac-name{{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
+.ac-item .ac-cat{{font-size:.7rem;color:var(--muted)}}
+.ac-item .ac-price{{color:var(--green);font-weight:700;font-size:.82rem;flex-shrink:0}}
+.search-tags{{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px;justify-content:center}}
+.stag{{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);color:var(--text);padding:5px 13px;border-radius:20px;font-size:.77rem;cursor:pointer;transition:all .2s;white-space:nowrap;font-family:var(--font)}}
 .stag:hover,.stag.active{{background:var(--accent);border-color:var(--accent);color:#fff}}
 
-/* CONTROLS */
-.controls{{padding:16px 20px;background:rgba(255,255,255,.02);border-bottom:1px solid rgba(255,255,255,.06)}}
-.controls-inner{{max-width:1400px;margin:0 auto;display:flex;gap:10px;flex-wrap:wrap;align-items:center}}
-.sort-select,.price-select{{background:rgba(255,255,255,.08);color:var(--text);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:7px 12px;font-size:.85rem;cursor:pointer;outline:none}}
-.sort-select:focus,.price-select:focus{{border-color:var(--accent)}}
-.result-count{{color:var(--muted);font-size:.85rem;margin-left:auto}}
+/* ── TRENDING SECTION ──────────────────────────────────────────────── */
+.trending-section{{max-width:1400px;margin:24px auto 0;padding:0 20px}}
+.section-title{{font-size:1.2rem;font-weight:800;color:var(--text);margin-bottom:14px;display:flex;align-items:center;gap:8px}}
+.section-title small{{font-size:.75rem;font-weight:500;color:var(--muted);background:rgba(255,255,255,.07);padding:2px 10px;border-radius:20px}}
+.t-grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}}
+.t-card{{background:var(--card);border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.07);transition:all .25s;cursor:pointer;display:flex;flex-direction:column}}
+.t-card:hover{{transform:translateY(-3px);box-shadow:0 10px 32px rgba(233,69,96,.18);border-color:rgba(233,69,96,.25)}}
+.t-img-wrap{{height:140px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}}
+.t-img{{max-width:100%;max-height:100%;object-fit:contain;padding:8px}}
+.t-emoji-fb{{display:none;font-size:3rem;align-items:center;justify-content:center;width:100%;height:100%}}
+.t-body{{padding:10px 12px;display:flex;flex-direction:column;gap:5px;flex:1}}
+.t-disc-badge{{display:inline-block;background:var(--accent);color:#fff;font-size:.68rem;font-weight:800;padding:2px 7px;border-radius:5px;width:fit-content}}
+.t-name{{font-size:.8rem;font-weight:600;color:var(--text);line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}}
+.t-price{{font-size:.85rem;font-weight:800;color:var(--green)}}
+.t-price s{{font-size:.72rem;color:var(--muted);font-weight:400}}
+.t-save{{font-size:.68rem;color:#4ade80}}
+.t-btn{{display:block;background:linear-gradient(135deg,var(--accent),#c03030);color:#fff;text-decoration:none;text-align:center;padding:7px;border-radius:8px;font-size:.78rem;font-weight:700;margin-top:auto;transition:opacity .2s;border:none;cursor:pointer;font-family:var(--font)}}
+.t-btn:hover{{opacity:.9}}
 
-/* CATEGORIES */
-.cat-bar{{padding:12px 20px;overflow-x:auto;white-space:nowrap;border-bottom:1px solid rgba(255,255,255,.06)}}
+/* ── CONTROLS ──────────────────────────────────────────────────────── */
+.controls{{padding:12px 20px;background:rgba(255,255,255,.02);border-bottom:1px solid rgba(255,255,255,.05)}}
+.controls-inner{{max-width:1400px;margin:0 auto;display:flex;gap:10px;flex-wrap:wrap;align-items:center}}
+.sort-select,.price-select{{background:rgba(255,255,255,.07);color:var(--text);border:1px solid rgba(255,255,255,.13);border-radius:8px;padding:7px 12px;font-size:.83rem;cursor:pointer;outline:none;font-family:var(--font)}}
+.sort-select:focus,.price-select:focus{{border-color:var(--accent)}}
+.result-count{{color:var(--muted);font-size:.82rem;margin-left:auto}}
+
+/* ── CAT BAR ───────────────────────────────────────────────────────── */
+.cat-bar{{padding:10px 20px;overflow-x:auto;white-space:nowrap;border-bottom:1px solid rgba(255,255,255,.05)}}
 .cat-bar::-webkit-scrollbar{{height:3px}}
 .cat-bar::-webkit-scrollbar-thumb{{background:var(--accent);border-radius:3px}}
-.cat-btn{{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:var(--text);padding:7px 16px;border-radius:20px;cursor:pointer;font-size:.85rem;margin-right:8px;transition:all .2s;white-space:nowrap}}
+.cat-btn{{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.11);color:var(--text);padding:6px 15px;border-radius:20px;cursor:pointer;font-size:.82rem;margin-right:7px;transition:all .2s;white-space:nowrap;font-family:var(--font);min-height:36px}}
 .cat-btn:hover,.cat-btn.active{{background:var(--accent);border-color:var(--accent);color:#fff}}
 
-/* GRID */
+/* ── GRID ──────────────────────────────────────────────────────────── */
 .main{{max-width:1400px;margin:0 auto;padding:20px}}
-.grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px}}
+.section-divider{{height:1px;background:rgba(255,255,255,.06);margin:0 20px 4px}}
+.grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}}
 
-/* CARDS */
-.card{{background:var(--card);border-radius:var(--radius);padding:18px;border:1px solid rgba(255,255,255,.08);transition:all .3s;position:relative;display:flex;flex-direction:column;gap:8px}}
-.card:hover{{transform:translateY(-4px);box-shadow:0 12px 40px rgba(233,69,96,.2);border-color:rgba(233,69,96,.3)}}
-.badge-wrap{{display:flex;gap:6px;flex-wrap:wrap}}
-.badge-disc{{background:var(--accent);color:#fff;font-size:.72rem;font-weight:700;padding:3px 8px;border-radius:6px}}
-.badge-hot{{background:var(--gold);color:#111;font-size:.72rem;font-weight:700;padding:3px 8px;border-radius:6px}}
-.card-emoji{{font-size:2.2rem;text-align:center;margin:4px 0}}
-.card-cat{{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}}
-.card-name{{font-size:.9rem;font-weight:600;color:var(--text);line-height:1.4;min-height:2.8rem}}
-.card-rating{{font-size:.82rem;color:var(--gold)}}
+/* ── CARDS ─────────────────────────────────────────────────────────── */
+.card{{background:var(--card);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,.07);transition:all .25s;position:relative;display:flex;flex-direction:column;gap:0}}
+.card:hover{{transform:translateY(-4px);box-shadow:0 14px 44px rgba(233,69,96,.18);border-color:rgba(233,69,96,.28)}}
+.badge-wrap{{display:flex;gap:5px;flex-wrap:wrap;padding:10px 12px 0}}
+.badge-disc{{background:var(--accent);color:#fff;font-size:.68rem;font-weight:800;padding:3px 7px;border-radius:5px}}
+.badge-hot{{background:var(--gold);color:#111;font-size:.68rem;font-weight:800;padding:3px 7px;border-radius:5px}}
+.badge-trending{{background:#7c3aed;color:#fff;font-size:.68rem;font-weight:700;padding:3px 7px;border-radius:5px}}
+.prod-img-wrap{{height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin:8px 12px;border-radius:10px;position:relative}}
+.prod-img{{max-width:100%;max-height:100%;object-fit:contain}}
+.prod-emoji-fb{{display:none;font-size:3.5rem;align-items:center;justify-content:center;width:100%;height:100%}}
+.card-body{{padding:0 12px 12px;display:flex;flex-direction:column;gap:6px;flex:1}}
+.card-meta{{padding-top:4px}}
+.card-cat{{font-size:.67rem;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}}
+.card-name{{font-size:.88rem;font-weight:700;color:var(--text);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}}
+.card-rating{{font-size:.78rem;color:var(--gold)}}
 .rev-count{{color:var(--muted)}}
-.price-row{{display:flex;align-items:baseline;gap:8px}}
-.price-now{{font-size:1.3rem;font-weight:800;color:var(--green)}}
-.price-orig{{font-size:.85rem;text-decoration:line-through;color:var(--muted)}}
-.savings{{font-size:.78rem;color:#4ade80;font-weight:600}}
-.bought-today{{font-size:.75rem;color:#f97316}}
-.cta-row{{display:flex;gap:6px;margin-top:auto}}
-.btn-buy{{flex:1;background:linear-gradient(135deg,var(--accent),#c0392b);color:#fff;border:none;padding:9px;border-radius:10px;font-size:.82rem;font-weight:700;cursor:pointer;text-decoration:none;text-align:center;transition:all .2s}}
+.price-row{{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}}
+.price-now{{font-size:1.25rem;font-weight:900;color:var(--green)}}
+.price-orig{{font-size:.8rem;text-decoration:line-through;color:var(--muted)}}
+.savings{{font-size:.74rem;color:#4ade80;font-weight:600}}
+.bought-today{{font-size:.72rem;color:#f97316}}
+.cta-row{{display:flex;gap:6px;margin-top:auto;padding-top:4px}}
+.btn-buy{{flex:1;background:linear-gradient(135deg,#e94560,#c0302b);color:#fff;border:none;padding:10px 8px;border-radius:9px;font-size:.78rem;font-weight:800;cursor:pointer;text-decoration:none;text-align:center;transition:all .2s;line-height:1.25;font-family:var(--font)}}
 .btn-buy:hover{{opacity:.9;transform:scale(1.02)}}
-.btn-wa{{background:rgba(37,211,102,.15);color:#25d366;border:1px solid rgba(37,211,102,.3);padding:9px 11px;border-radius:10px;cursor:pointer;font-size:.9rem;transition:all .2s}}
-.btn-wa:hover{{background:rgba(37,211,102,.3)}}
-.btn-wish{{background:rgba(233,69,96,.1);color:var(--accent);border:1px solid rgba(233,69,96,.2);padding:9px 11px;border-radius:10px;cursor:pointer;font-size:.9rem;transition:all .2s}}
-.btn-wish:hover{{background:rgba(233,69,96,.25)}}
-.btn-wish.wished{{color:#ff4560;background:rgba(233,69,96,.25)}}
+.btn-wa{{background:rgba(37,211,102,.13);color:#25d366;border:1px solid rgba(37,211,102,.28);padding:9px 11px;border-radius:9px;cursor:pointer;font-size:.88rem;transition:all .2s;min-width:40px;min-height:40px}}
+.btn-wa:hover{{background:rgba(37,211,102,.28)}}
+.btn-wish{{background:rgba(233,69,96,.08);color:var(--accent);border:1px solid rgba(233,69,96,.18);padding:9px 11px;border-radius:9px;cursor:pointer;font-size:.88rem;transition:all .2s;min-width:40px;min-height:40px}}
+.btn-wish:hover{{background:rgba(233,69,96,.22)}}
+.btn-wish.wished{{color:#ff4560;background:rgba(233,69,96,.22)}}
+.aff-note{{font-size:.62rem;color:rgba(255,255,255,.2);text-align:center;padding-top:2px}}
 
-/* NO RESULTS */
+/* ── NO RESULTS ────────────────────────────────────────────────────── */
 #no-results{{display:none;text-align:center;padding:60px 20px;color:var(--muted)}}
-#no-results h2{{font-size:1.5rem;margin-bottom:10px;color:var(--text)}}
-.suggest-tags{{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:16px}}
-.suggest-tag{{background:rgba(233,69,96,.15);color:var(--accent);border:1px solid rgba(233,69,96,.3);padding:6px 16px;border-radius:20px;cursor:pointer;font-size:.85rem;transition:all .2s}}
+#no-results h2{{font-size:1.4rem;margin-bottom:10px;color:var(--text)}}
+.suggest-tags{{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:14px}}
+.suggest-tag{{background:rgba(233,69,96,.13);color:var(--accent);border:1px solid rgba(233,69,96,.28);padding:6px 15px;border-radius:20px;cursor:pointer;font-size:.82rem;transition:all .2s}}
 .suggest-tag:hover{{background:var(--accent);color:#fff}}
 
-/* WISHLIST FAB */
-#wish-fab{{position:fixed;bottom:80px;right:20px;width:52px;height:52px;background:linear-gradient(135deg,var(--accent),#c0392b);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 20px rgba(233,69,96,.5);z-index:200;font-size:1.4rem;transition:all .3s}}
+/* ── WISHLIST FAB ──────────────────────────────────────────────────── */
+#wish-fab{{position:fixed;bottom:72px;right:18px;width:50px;height:50px;background:linear-gradient(135deg,var(--accent),#c0392b);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 18px rgba(233,69,96,.5);z-index:200;font-size:1.3rem;transition:all .3s;border:none}}
 #wish-fab:hover{{transform:scale(1.1)}}
-#wish-badge{{position:absolute;top:-4px;right:-4px;background:var(--gold);color:#111;font-size:.65rem;font-weight:700;width:18px;height:18px;border-radius:50%;display:none;align-items:center;justify-content:center}}
-#wish-panel{{position:fixed;top:0;right:-340px;width:320px;height:100vh;background:#1a1a2e;border-left:1px solid rgba(233,69,96,.3);z-index:300;transition:right .3s;overflow-y:auto;padding:20px}}
+#wish-badge{{position:absolute;top:-3px;right:-3px;background:var(--gold);color:#111;font-size:.6rem;font-weight:800;width:17px;height:17px;border-radius:50%;display:none;align-items:center;justify-content:center}}
+#wish-panel{{position:fixed;top:0;right:-340px;width:320px;height:100vh;background:#14142a;border-left:1px solid rgba(233,69,96,.28);z-index:300;transition:right .3s;overflow-y:auto;padding:20px}}
 #wish-panel.open{{right:0}}
 .wish-header{{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}}
-.wish-header h3{{font-size:1.1rem;color:var(--text)}}
-#wish-close{{background:none;border:none;color:var(--muted);font-size:1.5rem;cursor:pointer}}
-.wish-item{{background:rgba(255,255,255,.05);border-radius:10px;padding:12px;margin-bottom:10px;display:flex;gap:10px;align-items:center}}
-.wish-item-info{{flex:1;font-size:.82rem}}
-.wish-item-name{{font-weight:600;margin-bottom:4px}}
+.wish-header h3{{font-size:1rem;color:var(--text)}}
+#wish-close{{background:none;border:none;color:var(--muted);font-size:1.4rem;cursor:pointer;padding:4px}}
+.wish-item{{background:rgba(255,255,255,.05);border-radius:10px;padding:11px;margin-bottom:9px;display:flex;gap:10px;align-items:center}}
+.wish-item-info{{flex:1;font-size:.8rem}}
+.wish-item-name{{font-weight:600;margin-bottom:3px}}
 .wish-item-price{{color:var(--green)}}
-.wish-item-rm{{background:none;border:none;color:var(--accent);cursor:pointer;font-size:.75rem;padding:3px 8px;border:1px solid rgba(233,69,96,.3);border-radius:6px}}
-#wish-empty{{text-align:center;color:var(--muted);padding:40px 0}}
+.wish-item-rm{{background:none;border:1px solid rgba(233,69,96,.3);color:var(--accent);cursor:pointer;font-size:.72rem;padding:3px 7px;border-radius:6px}}
+#wish-empty{{text-align:center;color:var(--muted);padding:40px 0;font-size:.88rem}}
 
-/* BACK TO TOP */
-#back-top{{position:fixed;bottom:20px;right:20px;width:44px;height:44px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:50%;display:none;align-items:center;justify-content:center;cursor:pointer;font-size:1.1rem;z-index:200;transition:all .3s}}
+/* ── BACK TO TOP ───────────────────────────────────────────────────── */
+#back-top{{position:fixed;bottom:16px;right:18px;width:42px;height:42px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);border-radius:50%;display:none;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;z-index:200;transition:all .3s}}
 #back-top:hover{{background:var(--accent);border-color:var(--accent)}}
 #back-top.visible{{display:flex}}
 
-/* TICKER */
-.ticker-wrap{{background:rgba(233,69,96,.1);border-top:1px solid rgba(233,69,96,.3);border-bottom:1px solid rgba(233,69,96,.3);overflow:hidden;padding:8px 0}}
-.ticker{{white-space:nowrap;animation:ticker 30s linear infinite;display:inline-block}}
-.ticker span{{margin:0 30px;font-size:.82rem;color:var(--gold)}}
-@keyframes ticker{{0%{{transform:translateX(100vw)}}100%{{transform:translateX(-100%)}}}}
-
-/* FOOTER */
-footer{{text-align:center;padding:24px;background:rgba(0,0,0,.3);color:var(--muted);font-size:.82rem;border-top:1px solid rgba(255,255,255,.07);margin-top:30px}}
-footer a{{color:var(--accent);text-decoration:none}}
-
-/* OVERLAY */
-#wish-overlay{{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:250}}
+/* ── WISHLIST OVERLAY ──────────────────────────────────────────────── */
+#wish-overlay{{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:250}}
 #wish-overlay.show{{display:block}}
 
-/* RESPONSIVE */
+/* ── FOOTER ────────────────────────────────────────────────────────── */
+footer{{background:rgba(0,0,0,.5);border-top:1px solid rgba(255,255,255,.07);margin-top:40px}}
+.footer-top{{max-width:1400px;margin:0 auto;padding:32px 20px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px}}
+.footer-brand .footer-logo{{font-size:1.4rem;font-weight:900;color:#fff;margin-bottom:6px}}
+.footer-brand .footer-logo span{{color:var(--accent)}}
+.footer-brand p{{color:var(--muted);font-size:.82rem;line-height:1.6;margin-bottom:14px}}
+.btn-tg{{display:inline-flex;align-items:center;gap:6px;background:rgba(0,136,204,.2);color:#29b6f6;border:1px solid rgba(0,136,204,.35);padding:8px 16px;border-radius:20px;text-decoration:none;font-size:.82rem;font-weight:600;transition:all .2s}}
+.btn-tg:hover{{background:rgba(0,136,204,.35)}}
+.footer-col h4{{font-size:.82rem;font-weight:700;color:var(--text);text-transform:uppercase;letter-spacing:.6px;margin-bottom:12px}}
+.footer-col a{{display:block;color:var(--muted);font-size:.8rem;text-decoration:none;margin-bottom:7px;transition:color .2s}}
+.footer-col a:hover{{color:var(--accent)}}
+.footer-bottom{{border-top:1px solid rgba(255,255,255,.05);padding:16px 20px;text-align:center;color:var(--muted);font-size:.73rem}}
+.footer-bottom a{{color:var(--accent);text-decoration:none}}
+
+/* ── RESPONSIVE ────────────────────────────────────────────────────── */
+@media(max-width:900px){{
+  .footer-top{{grid-template-columns:1fr 1fr;gap:24px}}
+  .footer-brand{{grid-column:1/-1}}
+}}
 @media(max-width:600px){{
-  .logo{{font-size:1.4rem}}
-  .grid{{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}}
-  .card{{padding:12px}}
+  .site-logo{{font-size:1.5rem}}
+  .trust-bar{{display:none}}
+  .trending-section{{padding:0 12px}}
+  .t-grid{{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}}
+  .grid{{grid-template-columns:repeat(2,1fr);gap:10px}}
+  .card{{font-size:.85rem}}
   .card-name{{font-size:.82rem}}
   .price-now{{font-size:1.1rem}}
+  .btn-buy{{font-size:.73rem;padding:9px 6px}}
+  .prod-img-wrap{{height:130px}}
+  .main{{padding:12px}}
+  .footer-top{{grid-template-columns:1fr;gap:20px;padding:24px 16px}}
+  .controls-inner{{gap:7px}}
+  header{{padding:12px 16px}}
+  .header-meta{{gap:5px}}
 }}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="logo">Deal<span>Bazaar</span> India 🛍️</div>
-  <div class="tagline">Sab kuch yahan milega — Best Amazon Deals, Curated Daily!</div>
+  <h1 class="site-logo">Deal<span>Bazaar</span> India 🛍️</h1>
+  <p class="tagline">India's Best Amazon Deals — Updated Daily, Curated for You!</p>
   <div class="header-meta">
     <span>📅 {today}</span>
     <span>🕐 {now_time}</span>
     <span>🛒 {total} Deals Live</span>
     <span>💰 Up to 83% OFF</span>
-    <a href="{TELEGRAM_CHANNEL}" target="_blank" style="color:#00d4aa;text-decoration:none;background:rgba(0,212,170,.1);padding:3px 10px;border-radius:20px;font-size:.8rem">📣 Telegram Channel</a>
+    <a href="{TELEGRAM_CHANNEL}" target="_blank" aria-label="Join Telegram Channel">📣 Join Telegram</a>
   </div>
 </header>
+<div class="trust-bar" role="banner">
+  <span>✓ 100% Free</span>
+  <span>✓ Genuine Amazon Links</span>
+  <span>✓ Updated Daily</span>
+  <span>✓ {total} Deals Today</span>
+  <span>✓ Amazon Associate Partner</span>
+</div>
 
 <div class="ticker-wrap">
   <div class="ticker">
@@ -598,20 +734,29 @@ footer a{{color:var(--accent);text-decoration:none}}
   </div>
 </div>
 
-<div class="cat-bar">
+<nav class="cat-bar" aria-label="Product categories">
   {cat_btns}
-</div>
+</nav>
 
-<div class="controls">
+<section class="trending-section" aria-label="Trending deals">
+  <h2 class="section-title">🔥 Trending Today — Highest Discounts <small>Top Picks</small></h2>
+  <div class="t-grid">
+    {trending_html}
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<div class="controls" role="search" aria-label="Filter and sort deals">
   <div class="controls-inner">
-    <select class="sort-select" id="sortSel" onchange="applyFilters()">
+    <select class="sort-select" id="sortSel" onchange="applyFilters()" aria-label="Sort deals">
       <option value="discount">🔥 Best Discount First</option>
       <option value="price_asc">💰 Price: Low to High</option>
       <option value="price_desc">💎 Price: High to Low</option>
       <option value="rating">⭐ Highest Rated</option>
       <option value="popular">👥 Most Popular</option>
     </select>
-    <select class="price-select" id="priceSel" onchange="applyFilters()">
+    <select class="price-select" id="priceSel" onchange="applyFilters()" aria-label="Filter by price">
       <option value="">💲 All Prices</option>
       <option value="500">Under ₹500</option>
       <option value="1000">Under ₹1,000</option>
@@ -657,14 +802,38 @@ footer a{{color:var(--accent);text-decoration:none}}
 <div id="back-top" onclick="window.scrollTo({{top:0,behavior:'smooth'}})">⬆️</div>
 
 <footer>
-  <p>🛒 <strong>Deal Bazaar India</strong> — Best Deals, Daily Updated</p>
-  <p style="margin-top:6px">Amazon Affiliate Partner | <a href="{TELEGRAM_CHANNEL}" target="_blank">📣 Join Telegram</a></p>
-  <p style="margin-top:6px;font-size:.75rem">Prices accurate as of {today}. Amazon affiliate links — we earn commission at no extra cost to you.</p>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">Deal<span>Bazaar</span> India 🛍️</div>
+      <p>India's #1 curated Amazon deals platform. We find the best discounts so you don't have to. Updated every day with genuine deals.</p>
+      <a href="{TELEGRAM_CHANNEL}" target="_blank" rel="noopener" class="btn-tg" aria-label="Join Telegram Channel">📣 Join Telegram Channel</a>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="about.html">About Us</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="contact.html">Contact</a>
+      <a href="sitemap.xml">Sitemap</a>
+      <a href="{TELEGRAM_CHANNEL}" target="_blank" rel="noopener">Telegram Channel</a>
+    </div>
+    <div class="footer-col">
+      <h4>Top Categories</h4>
+      <a href="#" onclick="filterCat(document.querySelector('[data-cat=Electronics]'));return false">📱 Electronics</a>
+      <a href="#" onclick="filterCat(document.querySelector('[data-cat=Laptops]'));return false">💻 Laptops</a>
+      <a href="#" onclick="filterCat(document.querySelector('[data-cat=Kitchen]'));return false">🍳 Kitchen</a>
+      <a href="#" onclick="filterCat(document.querySelector('[data-cat=Fashion]'));return false">👕 Fashion</a>
+      <a href="#" onclick="filterCat(document.querySelector('[data-cat=Health]'));return false">💊 Health</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Deal Bazaar India. Amazon Associate Partner (ID: rahulfinds20c-21) | Prices accurate as of {today}.</p>
+    <p style="margin-top:4px">*Affiliate links — we may earn a commission at no extra cost to you. <a href="privacy.html">Privacy Policy</a> | <a href="about.html">About</a></p>
+  </div>
 </footer>
 
 <script>
 // ── ALL PRODUCTS DATA ─────────────────────────────────────────────────────
-const ALL_PRODUCTS = {js_products};
+window.ALL_PRODUCTS = {js_products};
 
 // ── STATE ─────────────────────────────────────────────────────────────────
 let currentCat = 'All';
@@ -1011,6 +1180,178 @@ setInterval(() => {{
 </html>"""
 
 
+SHARED_CSS = """
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0a14;--card:#141428;--accent:#e94560;--text:#e8e8f0;--muted:#7a849a;--green:#00d4aa}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh;line-height:1.7}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.page-header{background:linear-gradient(135deg,#14143a,#0a0a20);padding:20px;text-align:center;border-bottom:2px solid var(--accent);position:sticky;top:0;z-index:10}
+.page-header h1{font-size:1.5rem;font-weight:900;color:#fff}
+.page-header h1 span{color:var(--accent)}
+.back-link{display:inline-block;margin-top:8px;color:var(--green);font-size:.85rem}
+.content{max-width:800px;margin:40px auto;padding:0 20px 60px}
+.content h2{font-size:1.3rem;font-weight:800;color:var(--text);margin:28px 0 10px;border-left:3px solid var(--accent);padding-left:12px}
+.content p{color:var(--muted);margin-bottom:12px;font-size:.92rem}
+.content ul{color:var(--muted);font-size:.92rem;margin:0 0 12px 20px}
+.content ul li{margin-bottom:5px}
+.card-block{background:var(--card);border-radius:12px;padding:20px;margin:20px 0;border:1px solid rgba(255,255,255,.07)}
+footer{text-align:center;padding:20px;color:var(--muted);font-size:.78rem;border-top:1px solid rgba(255,255,255,.07)}
+</style>
+"""
+
+
+def generate_about_page(site_url, telegram, today):
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>About Us — Deal Bazaar India | Amazon Deals Platform</title>
+<meta name="description" content="About Deal Bazaar India — India's best curated Amazon deals platform. Learn how we help you save money on every purchase.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
+{SHARED_CSS}
+</head>
+<body>
+<header class="page-header">
+  <h1>Deal<span>Bazaar</span> India 🛍️</h1>
+  <a href="index.html" class="back-link">← Back to Deals</a>
+</header>
+<div class="content">
+  <h2>Who We Are</h2>
+  <p>Deal Bazaar India is an independent Amazon affiliate deals platform dedicated to helping Indian shoppers find the best discounts, offers and deals on Amazon India every single day.</p>
+  <p>We curate 150+ product deals across Electronics, Laptops, Kitchen, Fashion, Beauty, Sports, Books, Toys, Home and Health — updated daily using our automated system.</p>
+
+  <div class="card-block">
+    <h2 style="border:none;padding:0;margin:0 0 10px">🎯 Our Mission</h2>
+    <p>Help every Indian shopper save money on genuine Amazon purchases by surfacing the best deals, highest discounts, and most popular products — all in one place, for free.</p>
+  </div>
+
+  <h2>What We Offer</h2>
+  <ul>
+    <li>✓ 150+ curated Amazon India deals updated daily</li>
+    <li>✓ Smart search with price filters and category filters</li>
+    <li>✓ Deals across all major categories</li>
+    <li>✓ WhatsApp sharing for deals you love</li>
+    <li>✓ Wishlist to save products for later</li>
+    <li>✓ Telegram channel for instant deal alerts</li>
+  </ul>
+
+  <h2>Affiliate Disclosure</h2>
+  <p>Deal Bazaar India participates in the Amazon Associates Programme, an affiliate advertising programme designed to provide a means for sites to earn advertising fees by advertising and linking to amazon.in.</p>
+  <p>When you click on product links and make a purchase, we may earn a small commission at <strong>no extra cost to you</strong>. This helps us keep the site free and updated daily.</p>
+
+  <h2>Contact Us</h2>
+  <p>For questions, deal suggestions or partnership inquiries, join our <a href="{telegram}" target="_blank" rel="noopener">Telegram Channel</a> or see our <a href="contact.html">Contact page</a>.</p>
+
+  <h2>Our Telegram Community</h2>
+  <p>Join <a href="{telegram}" target="_blank" rel="noopener">📣 TechDealsIndia Channel</a> for instant deal alerts, flash sale notifications and exclusive deals directly on your phone.</p>
+</div>
+<footer>© 2026 Deal Bazaar India | <a href="index.html">Home</a> | <a href="privacy.html">Privacy</a> | <a href="contact.html">Contact</a> | Updated: {today}</footer>
+</body>
+</html>"""
+
+
+def generate_privacy_page(site_url, today):
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Privacy Policy — Deal Bazaar India</title>
+<meta name="description" content="Privacy Policy for Deal Bazaar India. Learn how we handle your data and protect your privacy.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
+{SHARED_CSS}
+</head>
+<body>
+<header class="page-header">
+  <h1>Deal<span>Bazaar</span> India 🛍️</h1>
+  <a href="index.html" class="back-link">← Back to Deals</a>
+</header>
+<div class="content">
+  <h2>Privacy Policy</h2>
+  <p><em>Last updated: {today}</em></p>
+  <p>Deal Bazaar India ("we", "us", "our") is committed to protecting your privacy. This policy explains what information we collect and how we use it.</p>
+
+  <h2>Information We Collect</h2>
+  <p>We collect minimal data to improve your experience:</p>
+  <ul>
+    <li><strong>Wishlist data:</strong> Stored locally in your browser (localStorage). Never sent to our servers.</li>
+    <li><strong>Click data:</strong> Anonymous product click counts (if analytics is enabled) to improve deal curation. No personal data collected.</li>
+    <li><strong>Browser data:</strong> Standard web server logs (IP address, browser type) for security. Not shared with third parties.</li>
+  </ul>
+
+  <h2>Cookies</h2>
+  <p>This website does not use tracking cookies. Your wishlist is stored in your browser's localStorage only — it never leaves your device.</p>
+
+  <h2>Amazon Associates</h2>
+  <p>We participate in the Amazon Associates Programme. Amazon may use cookies to track purchases from links on this site. Please review <a href="https://www.amazon.in/gp/help/customer/display.html?nodeId=468496" target="_blank" rel="noopener">Amazon's Privacy Notice</a> for details.</p>
+
+  <h2>Third-Party Links</h2>
+  <p>All product links on this site lead to Amazon India. We are not responsible for Amazon's data practices. Please review their privacy policy before making purchases.</p>
+
+  <h2>Children's Privacy</h2>
+  <p>This website is not directed at children under 13. We do not knowingly collect personal information from children.</p>
+
+  <h2>Changes to This Policy</h2>
+  <p>We may update this policy from time to time. Continued use of the site after changes constitutes acceptance of the updated policy.</p>
+
+  <h2>Contact</h2>
+  <p>For privacy concerns, visit our <a href="contact.html">Contact page</a>.</p>
+</div>
+<footer>© 2026 Deal Bazaar India | <a href="index.html">Home</a> | <a href="about.html">About</a> | <a href="contact.html">Contact</a></footer>
+</body>
+</html>"""
+
+
+def generate_contact_page(site_url, telegram, today):
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Contact Us — Deal Bazaar India</title>
+<meta name="description" content="Contact Deal Bazaar India for deal suggestions, partnerships or feedback.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
+{SHARED_CSS}
+</head>
+<body>
+<header class="page-header">
+  <h1>Deal<span>Bazaar</span> India 🛍️</h1>
+  <a href="index.html" class="back-link">← Back to Deals</a>
+</header>
+<div class="content">
+  <h2>Contact Us</h2>
+  <p>We'd love to hear from you! Whether you have a deal suggestion, found an issue, or want to partner with us — reach out.</p>
+
+  <div class="card-block">
+    <h2 style="border:none;padding:0;margin:0 0 14px">📣 Best Way to Reach Us</h2>
+    <p>Join our Telegram Channel for the fastest response. We're active daily!</p>
+    <p style="margin-top:10px"><a href="{telegram}" target="_blank" rel="noopener" style="background:#0088cc;color:#fff;padding:10px 20px;border-radius:20px;display:inline-block;font-weight:700">Join Telegram Channel →</a></p>
+  </div>
+
+  <h2>Deal Suggestions</h2>
+  <p>Spotted a great deal we missed? Share it on our Telegram channel and we'll add it to the daily update!</p>
+
+  <h2>Report an Issue</h2>
+  <ul>
+    <li>Broken affiliate link? Telegram message us with the product name.</li>
+    <li>Wrong price? Prices change frequently on Amazon — let us know.</li>
+    <li>Website bug? Screenshot + message on Telegram.</li>
+  </ul>
+
+  <h2>Partnership & Advertising</h2>
+  <p>For brand partnerships or advertising enquiries, message us on Telegram with subject "Partnership".</p>
+
+  <h2>About This Site</h2>
+  <p>Deal Bazaar India is an independent Amazon affiliate deals website. We are not affiliated with Amazon India. All product links are Amazon affiliate links.</p>
+</div>
+<footer>© 2026 Deal Bazaar India | <a href="index.html">Home</a> | <a href="about.html">About</a> | <a href="privacy.html">Privacy</a></footer>
+</body>
+</html>"""
+
+
 def generate_sitemap(products):
     """Generate sitemap.xml for Google indexing"""
     today = datetime.now().strftime("%Y-%m-%d")
@@ -1053,7 +1394,7 @@ if __name__ == "__main__":
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     print("=" * 55)
-    print("  DEAL BAZAAR INDIA - 10x UPGRADED GENERATOR")
+    print("  DEAL BAZAAR INDIA - PRODUCTION v3.0")
     print(f"  {datetime.now().strftime('%d %B %Y, %I:%M %p')}")
     print("=" * 55)
 
@@ -1098,9 +1439,28 @@ if __name__ == "__main__":
         f.write(robots)
     print("  [OK] robots.txt: docs/robots.txt")
 
+    # Generate About / Privacy / Contact pages
+    today_str = datetime.now().strftime("%d %B %Y")
+    about_html = generate_about_page(SITE_URL, TELEGRAM_CHANNEL, today_str)
+    with open(os.path.join(OUTPUT_DIR, "about.html"), "w", encoding="utf-8") as f:
+        f.write(about_html)
+    print("  [OK] About page:   docs/about.html")
+
+    privacy_html = generate_privacy_page(SITE_URL, today_str)
+    with open(os.path.join(OUTPUT_DIR, "privacy.html"), "w", encoding="utf-8") as f:
+        f.write(privacy_html)
+    print("  [OK] Privacy page: docs/privacy.html")
+
+    contact_html = generate_contact_page(SITE_URL, TELEGRAM_CHANNEL, today_str)
+    with open(os.path.join(OUTPUT_DIR, "contact.html"), "w", encoding="utf-8") as f:
+        f.write(contact_html)
+    print("  [OK] Contact page: docs/contact.html")
+
     print("=" * 55)
     print("  SEO URLs for Google Search Console:")
     sc_url = SITE_URL
     print(f"     {sc_url}/")
     print(f"     {sc_url}/sitemap.xml")
+    print(f"     {sc_url}/about.html")
+    print(f"     {sc_url}/privacy.html")
     print("=" * 55)
