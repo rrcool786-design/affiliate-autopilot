@@ -29,6 +29,16 @@ TELEGRAM_CHANNEL_ID = os.environ.get("TELEGRAM_CHANNEL_ID", "@TechDealsIndia_cha
 AFFILIATE_TAG       = "rahulfinds20c-21"
 
 PRODUCTS_JSON = os.path.join(os.path.dirname(os.path.abspath(__file__)), "products.json")
+POSTED_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "posted_asins.json")
+
+def load_posted():
+    if os.path.exists(POSTED_FILE):
+        return json.load(open(POSTED_FILE))
+    return []
+
+def save_posted(posted):
+    json.dump(posted, open(POSTED_FILE,"w"), indent=2)
+
 
 BESTSELLER_URLS = [
     {"url": "https://www.amazon.in/gp/bestsellers/electronics/",    "category": "electronics", "emoji": "📱", "commission_pct": 0.04},
@@ -185,7 +195,19 @@ if __name__ == "__main__":
                 product = p; print(f"Promoting hot: {p['name']}"); break
 
     if not product:
-        product = random.choice(products)
+        posted=load_posted()
+        available=[]
+        for p in products:
+            asin=p["link"].split("/dp/")[1].split("/")[0]
+            if asin not in posted:
+                available.append(p)
+        if not available:
+            posted=[]
+            available=products
+        product=random.choice(available)
+        asin=product["link"].split("/dp/")[1].split("/")[0]
+        posted.append(asin)
+        save_posted(posted)
 
     style = random.choice(POST_STYLES)
     print(f"Source: {source} | Product: {product['name']} | Style: {style}")
