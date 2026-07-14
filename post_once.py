@@ -29,7 +29,6 @@ TELEGRAM_CHANNEL_ID = os.environ.get("TELEGRAM_CHANNEL_ID", "@TechDealsIndia_cha
 AFFILIATE_TAG       = "rahulfinds20c-21"
 
 PRODUCTS_JSON = os.path.join(os.path.dirname(os.path.abspath(__file__)), "products.json")
-POSTED_FILE=os.path.join(os.path.dirname(os.path.abspath(__file__)),"posted_asins.json")
 
 BESTSELLER_URLS = [
     {"url": "https://www.amazon.in/gp/bestsellers/electronics/",    "category": "electronics", "emoji": "📱", "commission_pct": 0.04},
@@ -130,14 +129,6 @@ def layer2_json_products():
         print(f"   [L2] error: {e}")
         return []
 
-def load_posted():
-    import json,os
-    return json.load(open(POSTED_FILE)) if os.path.exists(POSTED_FILE) else []
-
-def save_posted(x):
-    import json
-    json.dump(x,open(POSTED_FILE,'w'),indent=2)
-
 def generate_post(product, style):
     hashtags = HASHTAGS.get(product.get("category", "default"), HASHTAGS["default"])
     prompt = f"Viral Telegram post for: {product['name']} {product['emoji']}\nBenefit: {product['benefit']}\nLink: {product['link']}\nStyle: {style}\nHashtags: {hashtags}\nRules: Hinglish, 2-4 lines, no markdown, link on separate line"
@@ -194,17 +185,7 @@ if __name__ == "__main__":
                 product = p; print(f"Promoting hot: {p['name']}"); break
 
     if not product:
-        posted=load_posted()
-        available=[]
-        
-        for p in products:
-            asin=p['link'].split('/dp/')[1].split('/')[0]
-            if asin not in posted: available.append(p)
-        if not available:
-            posted=[];available=products
-        product=random.choice(available)
-        posted.append(product['link'].split('/dp/')[1].split('/')[0])
-        save_posted(posted)
+        product = random.choice(products)
 
     style = random.choice(POST_STYLES)
     print(f"Source: {source} | Product: {product['name']} | Style: {style}")
