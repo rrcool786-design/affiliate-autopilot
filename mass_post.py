@@ -35,9 +35,37 @@ TELEGRAM_CHANNEL = "https://t.me/TechDealsIndia_channel"
 # Groups: env var (GitHub Actions) OR hardcode below for local
 _groups_env = os.environ.get("TELEGRAM_GROUPS", "")
 TARGET_GROUPS = [g.strip() for g in _groups_env.split(",") if g.strip()] or [
-    # ← add groups here for local testing
-    # "@my_deals_group",
-    # "https://t.me/joinchat/XXXX",
+    # ── INDIA DEALS & OFFERS GROUPS ──────────────────────────
+    "@IndiaDealz",
+    "@amazonindiaoffers",
+    "@AmazonIndiaDeals",
+    "@dealsforindia",
+    "@IndiaLootDeals",
+    "@indiadeals",
+    "@DealHuntIndia",
+    "@BestDealsIndia",
+    "@TechDealsIndia",
+    "@cheap_deals_india",
+    # ── TECH / MOBILE GROUPS ─────────────────────────────────
+    "@TechNinja_India",
+    "@IndiaSmartphones",
+    "@budget_phones_india",
+    "@OnePlusIndia",
+    "@RedmiIndia_Fans",
+    "@iQOO_India",
+    # ── AMAZON SPECIFIC ───────────────────────────────────────
+    "@AmazonSaleIndia",
+    "@Amazon_India_Loot",
+    "@AmazonGreatIndia",
+    "@AmazonFlipkartDeals",
+    # ── SHOPPING / SAVINGS ───────────────────────────────────
+    "@OnlineShoppingIndia",
+    "@SaveMoneyIndia",
+    "@coupons_india",
+    "@IndiaOffers",
+    "@ShoppingDealsIndia",
+    # ── YOUR OWN CHANNEL (always post here first) ────────────
+    "https://t.me/TechDealsIndia_channel",
 ]
 
 PRODUCTS_JSON = os.path.join(os.path.dirname(os.path.abspath(__file__)), "products.json")

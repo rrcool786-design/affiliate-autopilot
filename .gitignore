@@ -1,0 +1,17 @@
+# ─── SECRETS — kabhi GitHub pe nahi jaana chahiye ───────────────
+config.py
+config.py.backup
+.env
+TELETHON_SESSION.txt
+*.session
+*.session-journal
+
+# ─── Python junk ────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# ─── Logs / local data ──────────────────────────────────────────
+autopilot.log
+*.log

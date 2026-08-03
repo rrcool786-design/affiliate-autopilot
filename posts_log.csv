@@ -1,0 +1,34 @@
+timestamp,product,platform,tweet_text,tweet_url,status,error
+2026-05-21 18:15,Redmi A7 Pro 5G,Twitter/X,"📱 ₹15,999 mein 5G phone — India ka #1 bestseller, fastest processor
+
+https://www.amazon.in/dp/B0GS5Y...",https://twitter.com/demo/status/123,success,
+2026-05-21 18:15,OnePlus Buds 3r,Twitter/X,"🎧 ₹1,999 mein 54 hour battery earbuds — ANC + noise cancellation
+
+https://www.amazon.in/dp/B0FMDL81G...",https://twitter.com/demo/status/123,success,
+2026-05-21 18:15,iQOO Z10R 5G,Twitter/X,"🤳 ₹22,999 mein AMOLED 5G phone — 4K camera + curved display
+
+https://www.amazon.in/dp/B0FHB5V36G/?ta...",https://twitter.com/demo/status/123,success,
+2026-05-22 02:25,iQOO Z10R 5G,Twitter/X,"Pehele, ₹40,000 ke paudhe mein 5G phone chuna hi nahin tha. Ab, ₹22,999 mein iQOO Z10R 5G, 4K camera...",,failed,"401 Unauthorized
+Unauthorized"
+2026-05-22 02:37,ConvertKit,Twitter/X,"""Chaliye, main apko ek galti bataata hoon: tum apni email list ko automate karo ke bajay sab manual ...",,failed,"401 Unauthorized
+Unauthorized"
+2026-05-22 03:33,OnePlus Buds 3r,Telegram,Mujhe naya OnePlus Buds 3r mila hua hai aur main aapko dekhne ko kya hai - 54 ghante tak battery ke saath ANC aur noise ...,https://t.me/TechDealsIndia_channel/3,success,
+2026-05-22 03:38,OnePlus Buds 3r,Telegram,"Kya aapko pata hai ki aaj ek sabse accha wireless earbuds mil raha hai? 
+
+OnePlus Buds 3r - yeh sach mein 54 ghante batt...",https://t.me/TechDealsIndia_channel/4,success,
+2026-05-22 07:00,iQOO Z10R 5G,Telegram,"Maine iQOO Z10R 5G par try kiya aur sach mein khush hua! 🤩 Ye phone ₹22,999 mein lagne wala hai, lekin yeh sabse acha de...",https://t.me/TechDealsIndia_channel/5,success,
+2026-05-22 08:20,iQOO Z10R 5G,Telegram,"Meri zindagi mein ek bahut bada problem tha - ₹25,000 ke phone toh bahut pricey laga! 🤯
+Par phir maine is iQOO Z10R 5G k...",https://t.me/TechDealsIndia_channel/6,success,
+2026-05-22 08:30,iQOO Z10R 5G,Telegram,"Yaar yeh iQOO Z10R 5G phone use kiya — ab phone ka pata hai kya? 🤔
+Pele mein 15,000 se zyada ka phone nahi khareedta tha...",https://t.me/TechDealsIndia_channel/8,success,
+2026-05-22 10:10,Redmi A7 Pro 5G,Telegram,"Aapne phone ki zaroorat hai ya koi family member? 🤔
+Kya aapke paas ₹15,999 ke budget mein 5G phone hai?
+
+https://www.ama...",https://t.me/TechDealsIndia_channel/10,success,
+2026-05-22 13:43,iQOO Z10R 5G,Telegram,"Mujhe yeh phone mila aur maine try kiya hai, main aapko bhi dekhna chahiye! 🤩
+
+Rs 22,999 mein 5G phone mil ra hai jo AMO...",https://t.me/TechDealsIndia_channel/11,success,
+2026-05-23 01:43,Redmi A7 Pro 5G,Telegram,"Yaar yeh phone try kiya — sach mein zabardast hai! 📱
+Pehele toh phone lagbhag ₹30,000 mein aata tha, par ab aapko ₹15,99...",https://t.me/TechDealsIndia_channel/12,success,
+2026-05-23 01:52,iQOO Z10R 5G,Telegram,"Yaar yeh phone try kiya — sach mein zabardast hai! 
+Pehele, main apne 2-saala smartphone se chot khane ke baad karte the...",https://t.me/TechDealsIndia_channel/14,success,

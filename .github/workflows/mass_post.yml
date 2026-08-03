@@ -2,8 +2,8 @@ name: Daily Mass Group Post
 
 on:
   schedule:
-    - cron: '30 1 * * *'
-  workflow_dispatch:
+    - cron: '30 1 * * *'   # 1:30 AM UTC daily (30 min after website update)
+  workflow_dispatch:         # manual trigger button
 
 jobs:
   post:

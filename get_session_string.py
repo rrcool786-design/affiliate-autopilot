@@ -11,8 +11,8 @@ import asyncio
 from telethon import TelegramClient
 from telethon.sessions import StringSession
 
-API_ID   = 0    # ← paste your API_ID  (number from my.telegram.org)
-API_HASH = ""   # ← paste your API_HASH (string from my.telegram.org)
+API_ID   = 38785528
+API_HASH = "11bd09c14887231674535ca85bbd725d"
 
 async def main():
     if API_ID == 0 or not API_HASH:
