@@ -1,6 +1,57 @@
 {
   "cycle": 1,
-  "posted": [],
-  "catalog": {},
-  "updated_at": "2026-08-06 00:00:00 UTC"
+  "posted": [
+    "B0821PN8L4"
+  ],
+  "catalog": {
+    "B09S6M7JQJ": {
+      "name": "Ghar Soaps Sandalwood & Saffron Magic Bar For Bath (300",
+      "link": "https://www.amazon.in/dp/B09S6M7JQJ/?tag=rahulfinds20c-21",
+      "category": "beauty",
+      "benefit": "Rs 355 mein Amazon bestseller trending beauty product",
+      "commission": 40,
+      "emoji": "💄"
+    },
+    "B000LQUA6M": {
+      "name": "Simple Kind To Skin Refreshing Facial Wash 150 ml",
+      "link": "https://www.amazon.in/dp/B000LQUA6M/?tag=rahulfinds20c-21",
+      "category": "beauty",
+      "benefit": "Rs 268 mein Amazon bestseller trending beauty product",
+      "commission": 40,
+      "emoji": "💄"
+    },
+    "B0H7S6LT9P": {
+      "name": "OnePlus N6x",
+      "link": "https://www.amazon.in/dp/B0H7S6LT9P/?tag=rahulfinds20c-21",
+      "category": "electronics",
+      "benefit": "Rs 20,999 mein Amazon bestseller trending electronics product",
+      "commission": 839,
+      "emoji": "📱"
+    },
+    "B0FMDL81GS": {
+      "name": "OnePlus Nord Buds 3r TWS Earbuds up to 54 Hours Playbac",
+      "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rahulfinds20c-21",
+      "category": "electronics",
+      "benefit": "Rs 1,900 mein Amazon bestseller trending electronics product",
+      "commission": 76,
+      "emoji": "📱"
+    },
+    "B07QP9PTZP": {
+      "name": "LPG cylinder booking",
+      "link": "https://www.amazon.in/dp/B07QP9PTZP/?tag=rahulfinds20c-21",
+      "category": "kitchen",
+      "benefit": "Rs 999 mein Amazon bestseller trending kitchen product",
+      "commission": 49,
+      "emoji": "🍳"
+    },
+    "B0821PN8L4": {
+      "name": "Amazon Brand - Presto! Garbage Bags",
+      "link": "https://www.amazon.in/dp/B0821PN8L4/?tag=rahulfinds20c-21",
+      "category": "kitchen",
+      "benefit": "Rs 297 mein Amazon bestseller trending kitchen product",
+      "commission": 40,
+      "emoji": "🍳"
+    }
+  },
+  "updated_at": "2026-08-06 18:11:10 UTC"
 }
