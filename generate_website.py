@@ -10,6 +10,7 @@ import os
 import re
 import random
 from datetime import datetime
+from urllib.parse import quote
 
 try:
     from bs4 import BeautifulSoup
@@ -222,36 +223,66 @@ EMERGENCY_PRODUCTS = [
 
 
 def scrape_products():
-    """Try scraping from Amazon (blocked in CI but works locally)"""
+    """
+    Amazon bestseller pages se products + UNKI ASLI IMAGE URL.
+
+    Image URL yahan capture karna zaroori hai — ASIN se image URL banana
+    kaam nahi karta (Amazon ka /dp/ page CAPTCHA deta hai, aur
+    /images/P/{ASIN} 1x1 blank pixel lautata hai).
+    """
     if not BS4_AVAILABLE:
         return []
     products = []
     for category in CATEGORIES:
         try:
-            headers = random.choice(HEADERS_LIST)
-            resp = requests.get(category["url"], headers=headers, timeout=10)
+            headers = dict(random.choice(HEADERS_LIST))
+            headers["Accept"]          = "text/html,application/xhtml+xml,*/*;q=0.8"
+            headers["Accept-Encoding"] = "gzip, deflate, br"
+
+            resp = requests.Session().get(category["url"], headers=headers, timeout=15)
             if resp.status_code != 200:
                 continue
             soup = BeautifulSoup(resp.text, "html.parser")
-            cards = soup.select(".zg-grid-general-faceout")[:5]
+
+            cards = []
+            for sel in [".zg-grid-general-faceout", "li.zg-item-immersion", "div[data-asin]"]:
+                cards = soup.select(sel)
+                if cards:
+                    break
+            cards = cards[:5]
+
             for card in cards:
-                name_el = card.select_one(".p13n-sc-truncate-desktop-type2, .p13n-sc-truncated")
-                price_el = card.select_one(".p13n-sc-price")
-                link_el  = card.select_one("a.a-link-normal")
+                name_el = card.select_one(".p13n-sc-truncate-desktop-type2, .p13n-sc-truncated, "
+                                          "._cDEzb_p13n-sc-css-line-clamp-3_g3dy1, a.a-link-normal span")
+                price_el = card.select_one(".p13n-sc-price, span.a-price span.a-offscreen, "
+                                           "._cDEzb_p13n-sc-price_3mJ9Z")
+                link_el  = card.select_one("a[href*='/dp/']") or card.select_one("a.a-link-normal")
                 if not name_el or not link_el:
                     continue
                 name = name_el.get_text(strip=True)
-                asin_match = re.search(r"/dp/([A-Z0-9]{10})", link_el.get("href",""))
+                asin_match = re.search(r"/dp/([A-Z0-9]{10})", link_el.get("href", ""))
                 if not asin_match:
                     continue
                 asin = asin_match.group(1)
+
+                # ── ASLI IMAGE URL — listing card ke <img> se ──────────
+                image = ""
+                img_el = card.select_one("img")
+                if img_el:
+                    for attr in ("src", "data-src", "data-a-hires"):
+                        v = img_el.get(attr, "")
+                        if v.startswith("http"):
+                            image = v
+                            break
+
                 price_text = price_el.get_text(strip=True) if price_el else "₹1000"
-                price = int(re.sub(r"[^\d]", "", price_text) or 1000)
+                price = int(re.sub(r"[^\d]", "", price_text.split(".")[0]) or 1000)
                 original_price = int(price * random.uniform(1.2, 1.6))
                 discount = int(((original_price - price) / original_price) * 100)
                 products.append({
                     "name": name,
                     "asin": asin,
+                    "image": image,
                     "category": category["name"],
                     "emoji": category["emoji"],
                     "price": price,
@@ -263,6 +294,92 @@ def scrape_products():
         except Exception:
             continue
     return products
+
+
+# ════════════════════════════════════════════════════════════════
+#  PRODUCT IMAGES — validate karo, warna apna fallback lagao
+# ════════════════════════════════════════════════════════════════
+# Bharose ke image CDN. amazon-adsystem.com JAAN-BUJH KAR nahi hai —
+# wo ad-serving domain hai: host resolve hi nahi hota aur adblocker
+# usse block karte hain. Purana code wahi use karta tha, isliye saari
+# images tooti hui thi.
+TRUSTED_IMAGE_HOSTS = (
+    "m.media-amazon.com",
+    "images-na.ssl-images-amazon.com",
+    "images-eu.ssl-images-amazon.com",
+    "images-fe.ssl-images-amazon.com",
+)
+
+_image_cache = {}   # url -> bool (ek hi URL baar baar check na ho)
+IMAGE_STATS = {"real": 0, "placeholder": 0, "rejected": []}
+
+
+def validate_image_url(url, timeout=8):
+    """
+    Publish se PEHLE check: URL sach mein ek asli image lautata hai?
+    1x1 blank GIF (43 bytes) ko bhi reject karta hai — Amazon aisa hi
+    bhejta hai jab uske paas us ASIN ki image nahi hoti, aur wo HTTP 200
+    hota hai isliye browser ka onerror kabhi fire nahi hota.
+    """
+    if not url or not url.startswith("https://"):
+        return False
+    if not any(h in url for h in TRUSTED_IMAGE_HOSTS):
+        return False
+    if url in _image_cache:
+        return _image_cache[url]
+
+    ok = False
+    try:
+        r = requests.get(url, timeout=timeout, stream=True,
+                         headers={"User-Agent": HEADERS_LIST[0]["User-Agent"]})
+        ctype = r.headers.get("Content-Type", "")
+        clen  = int(r.headers.get("Content-Length") or 0)
+        if not clen:
+            clen = len(r.content)
+        ok = r.status_code == 200 and ctype.startswith("image/") and clen > 2000
+    except Exception:
+        ok = False
+
+    _image_cache[url] = ok
+    return ok
+
+
+def placeholder_image(emoji, category):
+    """
+    Local SVG fallback — data URI hai to na network chahiye, na 404 ho
+    sakta hai. Emoji ke bare box ki jagah ek dhang ka branded card.
+    """
+    safe_cat = (category or "Deal")[:18]
+    svg = (
+        "<svg xmlns='http://www.w3.org/2000/svg' width='300' height='240' viewBox='0 0 300 240'>"
+        "<defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>"
+        "<stop offset='0%' stop-color='%231a1a2e'/><stop offset='100%' stop-color='%230d0d1f'/>"
+        "</linearGradient></defs>"
+        "<rect width='300' height='240' fill='url(%23g)'/>"
+        f"<text x='150' y='118' font-size='72' text-anchor='middle'>{quote(emoji or '🛍️')}</text>"
+        f"<text x='150' y='168' font-size='16' fill='%238b8ba7' text-anchor='middle' "
+        f"font-family='sans-serif'>{quote(safe_cat)}</text>"
+        "<text x='150' y='196' font-size='13' fill='%2300d4aa' text-anchor='middle' "
+        "font-family='sans-serif'>Deal Bazaar India</text>"
+        "</svg>"
+    )
+    return "data:image/svg+xml;charset=utf-8," + svg.replace("#", "%23").replace('"', "'")
+
+
+def resolve_image(product):
+    """
+    Product ke liye ek aisi image URL do jo pakka chalegi.
+    Scrape ki hui URL valid ho to wahi, warna local SVG placeholder.
+    """
+    url = (product.get("image") or "").strip()
+    if url and validate_image_url(url):
+        IMAGE_STATS["real"] += 1
+        return url, True
+
+    if url:   # thi to sahi, par validation mein fail hui
+        IMAGE_STATS["rejected"].append(f"{product.get('asin','?')} -> {url[:70]}")
+    IMAGE_STATS["placeholder"] += 1
+    return placeholder_image(product.get("emoji", ""), product.get("category", "")), False
 
 
 def load_json_products():
@@ -367,14 +484,14 @@ def generate_html(products):
         disc   = p.get("discount", int((orig - price) / orig * 100))
         savings = orig - price
         aff_url = f"https://www.amazon.in/dp/{asin}?tag={AFFILIATE_TAG}"
-        img_url = f"https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN={asin}&Format=_SL250_&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1&tag={AFFILIATE_TAG}"
+        img_url, img_is_real = resolve_image(p)
         bg = cat_bg.get(cat, "linear-gradient(135deg,#1a1a2e,#0d0d1f)")
         short_name = name[:38] + ('...' if len(name) > 38 else '')
         safe_name = name.replace(chr(39), '')
         trending_html += f"""
 <article class="t-card" data-asin="{asin}">
   <div class="t-img-wrap" style="background:{bg}">
-    <img src="{img_url}" alt="{name} Amazon India deal" loading="lazy" class="t-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <img src="{img_url}" alt="{name} Amazon India deal" loading="lazy" class="t-img" onerror="imgFallback(this)" onload="imgCheck(this)">
     <span class="t-emoji-fb">{emoji}</span>
   </div>
   <div class="t-body">
@@ -402,7 +519,7 @@ def generate_html(products):
         stars    = generate_stars(rating)
         savings  = orig - price
         aff_url  = f"https://www.amazon.in/dp/{asin}?tag={AFFILIATE_TAG}"
-        img_url  = f"https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN={asin}&Format=_SL250_&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1&tag={AFFILIATE_TAG}"
+        img_url, img_is_real = resolve_image(p)
         bg       = cat_bg.get(cat, "linear-gradient(135deg,#1a1a2e,#0d0d1f)")
         safe_name = name.replace(chr(39), '')
         cta_text  = f"Grab Deal 🔥 — ₹{price:,}"
@@ -416,7 +533,7 @@ def generate_html(products):
     {hot_badge}{trend_badge}
   </div>
   <div class="prod-img-wrap" style="background:{bg}">
-    <img src="{img_url}" alt="{name} — best price India Amazon" loading="lazy" class="prod-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="200" height="160">
+    <img src="{img_url}" alt="{name} — best price India Amazon" loading="lazy" class="prod-img" onerror="imgFallback(this)" onload="imgCheck(this)" width="200" height="160">
     <span class="prod-emoji-fb">{emoji}</span>
   </div>
   <div class="card-body">
@@ -447,10 +564,10 @@ def generate_html(products):
 
     # ── SEO meta ──────────────────────────────────────────────────────────────
     top_asin = top.get("asin", "")
-    og_img = (
-        f"https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN={top_asin}&Format=_SL500_&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1&tag={AFFILIATE_TAG}"
-        if top_asin else f"{SITE_URL}/og-banner.png"
-    )
+    # og:image ko asli, reachable URL chahiye — data URI social preview
+    # mein nahi chalti, isliye validate hone par hi product image lagao.
+    top_img = (top.get("image") or "").strip()
+    og_img = top_img if (top_img and validate_image_url(top_img)) else f"{SITE_URL}/og-banner.png"
     og_title = f"🔥 {top.get('discount',0)}% OFF on {top.get('name','Amazon Deals')} | Deal Bazaar India"
     og_desc  = f"Best Amazon India deals today — {total} products, up to 80% OFF. Electronics, Laptops, Kitchen, Fashion & more. Updated daily!"
 
@@ -832,6 +949,22 @@ footer{{background:rgba(0,0,0,.5);border-top:1px solid rgba(255,255,255,.07);mar
 </footer>
 
 <script>
+// ── PRODUCT IMAGE FALLBACK ────────────────────────────────────────────────
+// Do tarah se image kharab ho sakti hai:
+//   1. Load hi na ho (404 / DNS fail / adblocker)      -> onerror
+//   2. Load ho jaye par 1x1 blank pixel ho (HTTP 200)  -> onerror NAHI chalta
+// Isliye onload pe naturalWidth bhi check karte hain.
+function imgFallback(img) {{
+  if (img.dataset.fb) return;          // ek hi baar
+  img.dataset.fb = '1';
+  img.style.display = 'none';
+  const fb = img.nextElementSibling;
+  if (fb) fb.style.display = 'flex';
+}}
+function imgCheck(img) {{
+  if (img.naturalWidth <= 1 || img.naturalHeight <= 1) imgFallback(img);
+}}
+
 // ── ALL PRODUCTS DATA ─────────────────────────────────────────────────────
 window.ALL_PRODUCTS = {js_products};
 
@@ -1414,9 +1547,23 @@ if __name__ == "__main__":
 
     print(f"  Source  : {source}")
     print(f"  Products: {len(products)}")
+    with_img = sum(1 for p in products if (p.get("image") or "").strip())
+    print(f"  Image URL wale products: {with_img}/{len(products)}")
 
     # Generate main website
     html = generate_html(products)
+
+    # ── Image report — publish se pehle pata chale kya haal hai ──────
+    total = IMAGE_STATS["real"] + IMAGE_STATS["placeholder"]
+    print(f"\n[Images] validate ho kar lagi : {IMAGE_STATS['real']}/{total}")
+    print(f"[Images] placeholder lagi      : {IMAGE_STATS['placeholder']}/{total}")
+    if IMAGE_STATS["rejected"]:
+        print(f"[Images] validation mein fail  : {len(IMAGE_STATS['rejected'])}")
+        for line in IMAGE_STATS["rejected"][:5]:
+            print(f"           {line}")
+    if IMAGE_STATS["real"] == 0 and total:
+        print("[Images] WARNING: ek bhi asli product image nahi mili — "
+              "sab placeholder pe hain (Amazon scraping fail hui hogi)")
     # Inject JSON-LD schema post-render (avoids f-string brace conflicts)
     html = html.replace("JSONLD_PLACEHOLDER", build_jsonld(products), 1)
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
