@@ -32,6 +32,11 @@ AFFILIATE_TAG       = "rahulfinds20c-21"
 # products.json — same folder mein hoga
 PRODUCTS_JSON = os.path.join(os.path.dirname(os.path.abspath(__file__)), "products.json")
 
+# posted_asins.json — kaunse products post ho chuke, ye yaad rakhta hai.
+# GitHub Actions ka runner har run ke baad mit jaata hai, isliye workflow
+# is file ko wapas repo mein commit karta hai — tabhi memory tikti hai.
+STATE_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "posted_asins.json")
+
 # ─── AMAZON CATEGORIES ───────────────────────────────────────────────
 BESTSELLER_URLS = [
     {"url": "https://www.amazon.in/gp/bestsellers/electronics/",    "category": "electronics", "emoji": "📱", "commission_pct": 0.04},
@@ -204,6 +209,104 @@ def layer2_json_products():
 
 
 # ════════════════════════════════════════════════════════════════
+#  POST HISTORY — ek product sirf ek baar, catalog khatam hone tak
+# ════════════════════════════════════════════════════════════════
+ASIN_RE = re.compile(r'/dp/([A-Z0-9]{10})')
+
+
+def extract_asin(product):
+    """Product link se ASIN nikalo — yahi uska unique ID hai."""
+    m = ASIN_RE.search(product.get("link", ""))
+    return m.group(1) if m else ""
+
+
+def load_state():
+    """posted_asins.json padho. Purana format (plain list) bhi chal jayega."""
+    empty = {"cycle": 1, "posted": [], "catalog": {}}
+
+    if not os.path.exists(STATE_FILE):
+        print("   [STATE] posted_asins.json nahi mila — pehla run maan raha hoon")
+        return empty
+
+    try:
+        with open(STATE_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception as e:
+        # File corrupt ho to bhi post rukni nahi chahiye
+        print(f"   [STATE] read error ({e}) — fresh state se shuru")
+        return empty
+
+    # Purana format tha sirf ASIN ki list — usse migrate kar lo
+    if isinstance(data, list):
+        posted = [a for a in data if isinstance(a, str)]
+        print(f"   [STATE] purana list format mila ({len(posted)} ASIN) — naye format mein migrate")
+        return {"cycle": 1, "posted": posted, "catalog": {}}
+
+    if not isinstance(data, dict):
+        return empty
+
+    catalog = data.get("catalog")
+    return {
+        "cycle":   data.get("cycle", 1),
+        "posted":  [a for a in data.get("posted", []) if isinstance(a, str)],
+        "catalog": catalog if isinstance(catalog, dict) else {},
+    }
+
+
+def save_state(state):
+    """Atomic write — aadhi likhi file kabhi nahi banegi."""
+    state["updated_at"] = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
+    tmp = STATE_FILE + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(state, f, ensure_ascii=False, indent=2)
+    os.replace(tmp, STATE_FILE)
+
+
+def merge_into_catalog(catalog, products):
+    """
+    Scrape kiye products ko catalog mein jodo.
+    Har run mein Amazon sirf 4-6 product deta hai, par catalog jama hota
+    rehta hai — isliye rotate karne ko pool bada hota jaata hai.
+    """
+    added = 0
+    for p in products:
+        asin = extract_asin(p)
+        if not asin:
+            continue
+        if asin not in catalog:
+            added += 1
+        catalog[asin] = p          # naam/price hamesha taaza rakho
+    return added
+
+
+def pick_product(state, hot_asins):
+    """
+    Sirf un products mein se chuno jo is cycle mein post NAHI hue.
+    Poora catalog khatam ho jaaye tabhi naya cycle shuru hota hai.
+    """
+    posted   = set(state["posted"])
+    catalog  = state["catalog"]
+    unposted = {a: p for a, p in catalog.items() if a not in posted}
+
+    if not unposted:
+        state["cycle"] += 1
+        state["posted"] = []
+        unposted = dict(catalog)
+        print(f"   [CYCLE] poora catalog ({len(catalog)}) post ho chuka — "
+              f"cycle {state['cycle']} shuru, history reset")
+
+    # Hot product ko preference — par sirf unposted mein se (50% chance)
+    if hot_asins and random.random() < 0.50:
+        for asin in hot_asins:
+            if asin in unposted:
+                print(f"   [HOT] click data se hot product chuna: {unposted[asin]['name']}")
+                return asin, unposted[asin]
+
+    asin = random.choice(sorted(unposted.keys()))
+    return asin, unposted[asin]
+
+
+# ════════════════════════════════════════════════════════════════
 #  AI POST GENERATION
 # ════════════════════════════════════════════════════════════════
 def generate_post(product, style):
@@ -290,45 +393,64 @@ if __name__ == "__main__":
         products = EMERGENCY_PRODUCTS
         source   = "Emergency Backup"
 
+    # ── Post history load karo ─────────────────────────────────
+    print("\nPost history load ho rahi hai...")
+    state = load_state()
+    print(f"   [STATE] cycle {state['cycle']} | catalog: {len(state['catalog'])} products "
+          f"| ab tak post: {len(state['posted'])}")
+    print(f"   [STATE] Previously Posted IDs: {state['posted'] if state['posted'] else '(abhi koi nahi)'}")
+
+    # ── Naye products catalog mein jodo ────────────────────────
+    added = merge_into_catalog(state["catalog"], products)
+    print(f"   [STATE] is run se {added} naye product jude (source: {source}) "
+          f"— catalog ab {len(state['catalog'])}")
+
+    if not state["catalog"]:
+        print("ERROR: catalog khali hai — post nahi ho sakti")
+        exit(1)
+
     # ── Boost hot products (from click_report.py data) ────────
-    hot_json = os.path.join(os.path.dirname(os.path.abspath(__file__)), "hot_products.json")
+    hot_json  = os.path.join(os.path.dirname(os.path.abspath(__file__)), "hot_products.json")
     hot_asins = []
     if os.path.exists(hot_json):
         try:
             with open(hot_json) as f:
                 hot_data = json.load(f)
             hot_asins = hot_data.get("hot_asins", [])
-            print(f"🔥 Hot ASINs (from click data): {hot_asins}")
+            print(f"   [HOT] click data se hot ASINs: {hot_asins}")
         except Exception:
             pass
 
-    # 50% chance: post a hot product if available & it's in our product list
-    product = None
-    if hot_asins and random.random() < 0.50:
-        for p in products:
-            link = p.get("link", "")
-            # Match ASIN anywhere in the link string
-            for asin in hot_asins:
-                if asin in link:
-                    product = p
-                    print(f"📈 Promoting hot product: {p['name']}")
-                    break
-            if product:
-                break
+    # ── Product chuno — sirf jo post nahi hua ──────────────────
+    asin, product = pick_product(state, hot_asins)
 
-    if not product:
-        product = random.choice(products)
+    already    = set(state["posted"])
+    remaining  = [a for a in sorted(state["catalog"]) if a not in already and a != asin]
+    next_up    = state["catalog"][remaining[0]]["name"] if remaining else "(cycle poora — history reset hogi)"
+    style      = random.choice(POST_STYLES)
 
-    # ── Select & Post ──────────────────────────────────────────
-    style = random.choice(POST_STYLES)
-
-    print(f"\nSource  : {source}")
-    print(f"Product : {product['name']} ({product.get('category','-')})")
-    print(f"Style   : {style}")
+    print(f"\nSource              : {source}")
+    print(f"Selected Product ID : {asin}")
+    print(f"Selected Product    : {product['name']} ({product.get('category','-')})")
+    print(f"Next Product        : {next_up}")
+    print(f"Remaining unposted  : {len(remaining)} / {len(state['catalog'])}")
+    print(f"Style               : {style}")
 
     post_text = generate_post(product, style)
     print(f"\nPost:\n{post_text}\n")
 
     success = post_to_telegram(post_text)
+
+    # ── Sirf post SAFAL hone par hi history save ───────────────
+    # Fail hone par kuch save nahi hota, to agli baar wahi product
+    # dobara try hoga — aur duplicate kabhi nahi banega.
+    if success:
+        state["posted"].append(asin)
+        save_state(state)
+        print(f"   [STATE] {asin} history mein save — "
+              f"{len(state['posted'])}/{len(state['catalog'])} post ho chuke")
+    else:
+        print("   [STATE] post fail — history nahi badli")
+
     print("-" * 45)
     exit(0 if success else 1)

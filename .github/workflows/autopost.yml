@@ -16,9 +16,17 @@ on:
 
   workflow_dispatch:  # Manual trigger bhi possible
 
+# Ek waqt pe sirf EK post run chalega. Do run saath chal gaye to dono
+# ek hi purani history padhkar same product post kar sakte the.
+concurrency:
+  group: telegram-autopost
+  cancel-in-progress: false
+
 jobs:
   post:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write      # posted_asins.json wapas commit karne ke liye
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -37,3 +45,31 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
         run: python post_once.py
+
+      # Runner har run ke baad mit jaata hai. Agar ye file wapas repo mein
+      # commit na ho, to agle run ko kuch yaad hi nahi rahega — aur wahi
+      # product dobara post ho jayega.
+      - name: Save post history
+        if: success()
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add posted_asins.json
+          if git diff --staged --quiet; then
+            echo "posted_asins.json mein koi change nahi — commit ki zaroorat nahi"
+            exit 0
+          fi
+          git commit -m "Post history update — $(date +'%d %b %Y %H:%M')"
+          # Website bot bhi isi branch pe commit karta hai, to rebase karke retry
+          for i in 1 2 3; do
+            git fetch origin main
+            git rebase origin/main || { git rebase --abort; echo "rebase fail (try $i)"; sleep 5; continue; }
+            if git push origin HEAD:main; then
+              echo "Post history save ho gayi"
+              exit 0
+            fi
+            echo "push fail (try $i) — dobara koshish"
+            sleep 5
+          done
+          echo "::error::posted_asins.json save nahi ho payi — agla run duplicate post kar sakta hai"
+          exit 1
