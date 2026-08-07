@@ -1,7 +1,8 @@
 {
   "cycle": 1,
   "posted": [
-    "B0821PN8L4"
+    "B0821PN8L4",
+    "B09S6M7JQJ"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -48,10 +49,26 @@
       "name": "Amazon Brand - Presto! Garbage Bags",
       "link": "https://www.amazon.in/dp/B0821PN8L4/?tag=rahulfinds20c-21",
       "category": "kitchen",
-      "benefit": "Rs 297 mein Amazon bestseller trending kitchen product",
+      "benefit": "Rs 275 mein Amazon bestseller trending kitchen product",
       "commission": 40,
       "emoji": "🍳"
+    },
+    "9392820402": {
+      "name": "Musafir Café",
+      "link": "https://www.amazon.in/dp/9392820402/?tag=rahulfinds20c-21",
+      "category": "books",
+      "benefit": "Rs 144 mein Amazon bestseller trending books product",
+      "commission": 40,
+      "emoji": "📚"
+    },
+    "9357291008": {
+      "name": "NCERT CLASS 9 Understanding Society – India and Beyond,",
+      "link": "https://www.amazon.in/dp/9357291008/?tag=rahulfinds20c-21",
+      "category": "books",
+      "benefit": "Rs 156 mein Amazon bestseller trending books product",
+      "commission": 40,
+      "emoji": "📚"
     }
   },
-  "updated_at": "2026-08-06 18:11:10 UTC"
+  "updated_at": "2026-08-07 04:08:56 UTC"
 }
