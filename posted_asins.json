@@ -2,7 +2,8 @@
   "cycle": 1,
   "posted": [
     "B0821PN8L4",
-    "B09S6M7JQJ"
+    "B09S6M7JQJ",
+    "B0FDW55HNT"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -68,7 +69,39 @@
       "benefit": "Rs 156 mein Amazon bestseller trending books product",
       "commission": 40,
       "emoji": "📚"
+    },
+    "B010FMJKFS": {
+      "name": "Jockey 1406 Women High Coverage Super Combed Cotton Hip",
+      "link": "https://www.amazon.in/dp/B010FMJKFS/?tag=rahulfinds20c-21",
+      "category": "fashion",
+      "benefit": "Rs 498 mein Amazon bestseller trending fashion product",
+      "commission": 44,
+      "emoji": "👕"
+    },
+    "B0FDW55HNT": {
+      "name": "KLOSIA Women's Rayon Printed Anarkali Kurta and Pant wi",
+      "link": "https://www.amazon.in/dp/B0FDW55HNT/?tag=rahulfinds20c-21",
+      "category": "fashion",
+      "benefit": "Rs 749 mein Amazon bestseller trending fashion product",
+      "commission": 67,
+      "emoji": "👕"
+    },
+    "B0C94QBB52": {
+      "name": "Kaku Fancy Dresses National Heros Freedom Fighters Cost",
+      "link": "https://www.amazon.in/dp/B0C94QBB52/?tag=rahulfinds20c-21",
+      "category": "toys",
+      "benefit": "Rs 679 mein Amazon bestseller trending toys product",
+      "commission": 40,
+      "emoji": "🧸"
+    },
+    "B0H5Q25SPP": {
+      "name": "Raj Costume Freedom Fighter Costume for Kids",
+      "link": "https://www.amazon.in/dp/B0H5Q25SPP/?tag=rahulfinds20c-21",
+      "category": "toys",
+      "benefit": "Rs 799 mein Amazon bestseller trending toys product",
+      "commission": 40,
+      "emoji": "🧸"
     }
   },
-  "updated_at": "2026-08-07 04:08:56 UTC"
+  "updated_at": "2026-08-07 04:47:11 UTC"
 }
