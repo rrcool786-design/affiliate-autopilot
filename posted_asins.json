@@ -8,7 +8,8 @@
     "9357291008",
     "B0H7S6LT9P",
     "B0H5Q25SPP",
-    "B0C94QBB52"
+    "B0C94QBB52",
+    "B08LHTJTBB"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -122,7 +123,23 @@
       "benefit": "Rs 359 mein Amazon bestseller trending computers product",
       "commission": 40,
       "emoji": "💻"
+    },
+    "B0FQFYXCC4": {
+      "name": "Apple iPhone 17 256 GB: 15.93 cm (6.3″) Display with Pr",
+      "link": "https://www.amazon.in/dp/B0FQFYXCC4/?tag=rahulfinds20c-21",
+      "category": "electronics",
+      "benefit": "Rs 999 mein Amazon bestseller trending electronics product",
+      "commission": 40,
+      "emoji": "📱"
+    },
+    "B0DGJHBX5Y": {
+      "name": "iPhone 16 128 GB: 5G Mobile Phone with Camera Control, ",
+      "link": "https://www.amazon.in/dp/B0DGJHBX5Y/?tag=rahulfinds20c-21",
+      "category": "electronics",
+      "benefit": "Rs 999 mein Amazon bestseller trending electronics product",
+      "commission": 40,
+      "emoji": "📱"
     }
   },
-  "updated_at": "2026-08-07 11:21:59 UTC"
+  "updated_at": "2026-08-07 12:39:18 UTC"
 }
