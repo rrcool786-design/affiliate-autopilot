@@ -16,7 +16,8 @@
     "B010FMJKFS",
     "B0FMDL81GS",
     "B000LQUA6M",
-    "B097JJ2CK6"
+    "B097JJ2CK6",
+    "9392820402"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -47,8 +48,8 @@
       "name": "OnePlus Nord Buds 3r TWS Earbuds up to 54 Hours Playbac",
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rahulfinds20c-21",
       "category": "electronics",
-      "benefit": "Rs 1,900 mein Amazon bestseller trending electronics product",
-      "commission": 76,
+      "benefit": "Rs 1,799 mein Amazon bestseller trending electronics product",
+      "commission": 71,
       "emoji": "📱"
     },
     "B07QP9PTZP": {
@@ -178,7 +179,15 @@
       "benefit": "Rs 599 mein Amazon bestseller trending fashion product",
       "commission": 53,
       "emoji": "👕"
+    },
+    "B0G822MS12": {
+      "name": "Samsung Galaxy M06 5G Mobile (Sage Green, 4GB RAM, 128G",
+      "link": "https://www.amazon.in/dp/B0G822MS12/?tag=rahulfinds20c-21",
+      "category": "electronics",
+      "benefit": "Rs 13,498 mein Amazon bestseller trending electronics product",
+      "commission": 539,
+      "emoji": "📱"
     }
   },
-  "updated_at": "2026-08-08 08:04:39 UTC"
+  "updated_at": "2026-08-08 09:39:45 UTC"
 }
