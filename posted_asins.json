@@ -15,7 +15,8 @@
     "B0FQFYXCC4",
     "B010FMJKFS",
     "B0FMDL81GS",
-    "B000LQUA6M"
+    "B000LQUA6M",
+    "B097JJ2CK6"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -169,7 +170,15 @@
       "benefit": "Rs 722 mein Amazon bestseller trending toys product",
       "commission": 40,
       "emoji": "🧸"
+    },
+    "B06Y2FG6R7": {
+      "name": "Allen Solly Men’s Polo T‑Shirt",
+      "link": "https://www.amazon.in/dp/B06Y2FG6R7/?tag=rahulfinds20c-21",
+      "category": "fashion",
+      "benefit": "Rs 599 mein Amazon bestseller trending fashion product",
+      "commission": 53,
+      "emoji": "👕"
     }
   },
-  "updated_at": "2026-08-08 06:54:03 UTC"
+  "updated_at": "2026-08-08 08:04:39 UTC"
 }
