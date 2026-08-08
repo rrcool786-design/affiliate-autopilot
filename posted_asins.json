@@ -14,7 +14,8 @@
     "B0DGJHBX5Y",
     "B0FQFYXCC4",
     "B010FMJKFS",
-    "B0FMDL81GS"
+    "B0FMDL81GS",
+    "B000LQUA6M"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -144,7 +145,31 @@
       "benefit": "Rs 999 mein Amazon bestseller trending electronics product",
       "commission": 40,
       "emoji": "📱"
+    },
+    "B097JJ2CK6": {
+      "name": "Safari Omega spacious/large laptop backpack with Rainco",
+      "link": "https://www.amazon.in/dp/B097JJ2CK6/?tag=rahulfinds20c-21",
+      "category": "computers",
+      "benefit": "Rs 659 mein Amazon bestseller trending computers product",
+      "commission": 40,
+      "emoji": "💻"
+    },
+    "B0C862R9VF": {
+      "name": "Lifelong LLKS03 Foldable Kick Skating Cycle",
+      "link": "https://www.amazon.in/dp/B0C862R9VF/?tag=rahulfinds20c-21",
+      "category": "toys",
+      "benefit": "Rs 699 mein Amazon bestseller trending toys product",
+      "commission": 40,
+      "emoji": "🧸"
+    },
+    "B0C94RMBZX": {
+      "name": "Kaku Fancy Dresses National Heros Freedom Fighters Cost",
+      "link": "https://www.amazon.in/dp/B0C94RMBZX/?tag=rahulfinds20c-21",
+      "category": "toys",
+      "benefit": "Rs 722 mein Amazon bestseller trending toys product",
+      "commission": 40,
+      "emoji": "🧸"
     }
   },
-  "updated_at": "2026-08-08 05:20:25 UTC"
+  "updated_at": "2026-08-08 06:54:03 UTC"
 }
