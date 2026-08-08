@@ -11,7 +11,8 @@
     "B0C94QBB52",
     "B08LHTJTBB",
     "B098NS6PVG",
-    "B0DGJHBX5Y"
+    "B0DGJHBX5Y",
+    "B0FQFYXCC4"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -58,7 +59,7 @@
       "name": "Amazon Brand - Presto! Garbage Bags",
       "link": "https://www.amazon.in/dp/B0821PN8L4/?tag=rahulfinds20c-21",
       "category": "kitchen",
-      "benefit": "Rs 275 mein Amazon bestseller trending kitchen product",
+      "benefit": "Rs 259 mein Amazon bestseller trending kitchen product",
       "commission": 40,
       "emoji": "🍳"
     },
@@ -143,5 +144,5 @@
       "emoji": "📱"
     }
   },
-  "updated_at": "2026-08-07 16:13:49 UTC"
+  "updated_at": "2026-08-08 03:07:44 UTC"
 }
