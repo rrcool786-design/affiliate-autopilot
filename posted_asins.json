@@ -21,7 +21,8 @@
     "B0C862R9VF",
     "B0C94RMBZX",
     "B06Y2FG6R7",
-    "B0G822MS12"
+    "B0G822MS12",
+    "9387779262"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -191,7 +192,15 @@
       "benefit": "Rs 14,210 mein Amazon bestseller trending electronics product",
       "commission": 568,
       "emoji": "📱"
+    },
+    "9387779262": {
+      "name": "My First Library: Boxset of 10 Board Books for Kids (Pa",
+      "link": "https://www.amazon.in/dp/9387779262/?tag=rahulfinds20c-21",
+      "category": "books",
+      "benefit": "Rs 349 mein Amazon bestseller trending books product",
+      "commission": 40,
+      "emoji": "📚"
     }
   },
-  "updated_at": "2026-08-08 15:53:41 UTC"
+  "updated_at": "2026-08-09 03:14:58 UTC"
 }
