@@ -6,7 +6,8 @@
     "B0FQFYXCC4",
     "B07QP9PTZP",
     "B097JJ2CK6",
-    "B0821PN8L4"
+    "B0821PN8L4",
+    "B000LQUA6M"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -184,7 +185,15 @@
       "benefit": "Rs 349 mein Amazon bestseller trending books product",
       "commission": 40,
       "emoji": "📚"
+    },
+    "B0D2R2MXXJ": {
+      "name": "Samsung Original 25W USB Type-C Travel Adaptor Without ",
+      "link": "https://www.amazon.in/dp/B0D2R2MXXJ/?tag=rahulfinds20c-21",
+      "category": "electronics",
+      "benefit": "Rs 625 mein Amazon bestseller trending electronics product",
+      "commission": 40,
+      "emoji": "📱"
     }
   },
-  "updated_at": "2026-08-09 11:02:03 UTC"
+  "updated_at": "2026-08-09 12:27:55 UTC"
 }
