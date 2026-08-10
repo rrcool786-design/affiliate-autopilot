@@ -11,14 +11,15 @@
     "B098NS6PVG",
     "B0C862R9VF",
     "B0FDW55HNT",
-    "B06Y2FG6R7"
+    "B06Y2FG6R7",
+    "B0G822MS12"
   ],
   "catalog": {
     "B09S6M7JQJ": {
       "name": "Ghar Soaps Sandalwood & Saffron Magic Bar For Bath (300",
       "link": "https://www.amazon.in/dp/B09S6M7JQJ/?tag=rahulfinds20c-21",
       "category": "beauty",
-      "benefit": "Rs 349 mein Amazon bestseller trending beauty product",
+      "benefit": "Rs 369 mein Amazon bestseller trending beauty product",
       "commission": 40,
       "emoji": "💄"
     },
@@ -194,10 +195,18 @@
       "name": "Samsung Original 25W USB Type-C Travel Adaptor Without ",
       "link": "https://www.amazon.in/dp/B0D2R2MXXJ/?tag=rahulfinds20c-21",
       "category": "electronics",
-      "benefit": "Rs 635 mein Amazon bestseller trending electronics product",
+      "benefit": "Rs 620 mein Amazon bestseller trending electronics product",
       "commission": 40,
       "emoji": "📱"
+    },
+    "B0D926HYDM": {
+      "name": "Biotique Morning Nectar Flawless Skin Moisturizer Lotio",
+      "link": "https://www.amazon.in/dp/B0D926HYDM/?tag=rahulfinds20c-21",
+      "category": "beauty",
+      "benefit": "Rs 999 mein Amazon bestseller trending beauty product",
+      "commission": 59,
+      "emoji": "💄"
     }
   },
-  "updated_at": "2026-08-10 04:21:47 UTC"
+  "updated_at": "2026-08-10 05:54:46 UTC"
 }
