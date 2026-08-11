@@ -3,7 +3,8 @@
   "posted": [
     "B0821PN8L4",
     "B06Y2FG6R7",
-    "B0D2R2MXXJ"
+    "B0D2R2MXXJ",
+    "B07QP9PTZP"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -58,7 +59,7 @@
       "name": "Musafir Café",
       "link": "https://www.amazon.in/dp/9392820402/?tag=rahulfinds20c-21",
       "category": "books",
-      "benefit": "Rs 144 mein Amazon bestseller trending books product",
+      "benefit": "Rs 168 mein Amazon bestseller trending books product",
       "commission": 40,
       "emoji": "📚"
     },
@@ -175,7 +176,7 @@
       "emoji": "📱"
     },
     "9387779262": {
-      "name": "My First Library: Boxset of 10 Board Books for Kids (Pa",
+      "name": "My First Library Boxset For Kids (10 Board Books)",
       "link": "https://www.amazon.in/dp/9387779262/?tag=rahulfinds20c-21",
       "category": "books",
       "benefit": "Rs 349 mein Amazon bestseller trending books product",
@@ -207,5 +208,5 @@
       "emoji": "🧸"
     }
   },
-  "updated_at": "2026-08-11 14:33:44 UTC"
+  "updated_at": "2026-08-11 16:14:53 UTC"
 }
