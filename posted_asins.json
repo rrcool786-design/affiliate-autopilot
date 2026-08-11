@@ -24,7 +24,8 @@
     "9387779262",
     "B0C94QBB52",
     "B010FMJKFS",
-    "B0FMDL81GS"
+    "B0FMDL81GS",
+    "B0C94JLX77"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -218,7 +219,15 @@
       "benefit": "Rs 999 mein Amazon bestseller trending beauty product",
       "commission": 59,
       "emoji": "💄"
+    },
+    "B0C94JLX77": {
+      "name": "Kaku Fancy Dresses National Heros Freedom Fighters Cost",
+      "link": "https://www.amazon.in/dp/B0C94JLX77/?tag=rahulfinds20c-21",
+      "category": "toys",
+      "benefit": "Rs 779 mein Amazon bestseller trending toys product",
+      "commission": 40,
+      "emoji": "🧸"
     }
   },
-  "updated_at": "2026-08-11 08:28:53 UTC"
+  "updated_at": "2026-08-11 10:01:42 UTC"
 }
