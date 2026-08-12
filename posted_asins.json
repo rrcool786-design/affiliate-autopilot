@@ -6,14 +6,15 @@
     "B0D2R2MXXJ",
     "B07QP9PTZP",
     "B0FQFYXCC4",
-    "B0H7S6LT9P"
+    "B0H7S6LT9P",
+    "B0DGJHBX5Y"
   ],
   "catalog": {
     "B09S6M7JQJ": {
       "name": "Ghar Soaps Sandalwood & Saffron Magic Bar For Bath (300",
       "link": "https://www.amazon.in/dp/B09S6M7JQJ/?tag=rahulfinds20c-21",
       "category": "beauty",
-      "benefit": "Rs 369 mein Amazon bestseller trending beauty product",
+      "benefit": "Rs 368 mein Amazon bestseller trending beauty product",
       "commission": 40,
       "emoji": "💄"
     },
@@ -208,7 +209,15 @@
       "benefit": "Rs 779 mein Amazon bestseller trending toys product",
       "commission": 40,
       "emoji": "🧸"
+    },
+    "B0DDHM6D3L": {
+      "name": "Portronics Conch Theta C in Ear Type C Wired Earphones ",
+      "link": "https://www.amazon.in/dp/B0DDHM6D3L/?tag=rahulfinds20c-21",
+      "category": "electronics",
+      "benefit": "Rs 303 mein Amazon bestseller trending electronics product",
+      "commission": 40,
+      "emoji": "📱"
     }
   },
-  "updated_at": "2026-08-12 04:40:22 UTC"
+  "updated_at": "2026-08-12 05:55:07 UTC"
 }
