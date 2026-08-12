@@ -12,7 +12,8 @@
     "B0H5Q25SPP",
     "B0C94RMBZX",
     "B0DDHM6D3L",
-    "B098NS6PVG"
+    "B098NS6PVG",
+    "B09S6M7JQJ"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -222,7 +223,15 @@
       "benefit": "Rs 303 mein Amazon bestseller trending electronics product",
       "commission": 40,
       "emoji": "📱"
+    },
+    "B0DGX12XXV": {
+      "name": "SWAGR 12 Pairs Sports Cotton Ankle Length Socks for Men",
+      "link": "https://www.amazon.in/dp/B0DGX12XXV/?tag=rahulfinds20c-21",
+      "category": "fashion",
+      "benefit": "Rs 184 mein Amazon bestseller trending fashion product",
+      "commission": 40,
+      "emoji": "👕"
     }
   },
-  "updated_at": "2026-08-12 12:43:08 UTC"
+  "updated_at": "2026-08-12 14:34:16 UTC"
 }
