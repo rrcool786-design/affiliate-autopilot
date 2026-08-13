@@ -15,7 +15,8 @@
     "B098NS6PVG",
     "B09S6M7JQJ",
     "B0D926HYDM",
-    "B097JJ2CK6"
+    "B097JJ2CK6",
+    "B0FDW55HNT"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -150,7 +151,7 @@
       "name": "Safari Omega spacious/large laptop backpack with Rainco",
       "link": "https://www.amazon.in/dp/B097JJ2CK6/?tag=rahulfinds20c-21",
       "category": "computers",
-      "benefit": "Rs 659 mein Amazon bestseller trending computers product",
+      "benefit": "Rs 809 mein Amazon bestseller trending computers product",
       "commission": 40,
       "emoji": "💻"
     },
@@ -233,7 +234,15 @@
       "benefit": "Rs 184 mein Amazon bestseller trending fashion product",
       "commission": 40,
       "emoji": "👕"
+    },
+    "9353456363": {
+      "name": "FRACTURED COMMUNITIES",
+      "link": "https://www.amazon.in/dp/9353456363/?tag=rahulfinds20c-21",
+      "category": "books",
+      "benefit": "Rs 424 mein Amazon bestseller trending books product",
+      "commission": 40,
+      "emoji": "📚"
     }
   },
-  "updated_at": "2026-08-13 03:39:29 UTC"
+  "updated_at": "2026-08-13 04:44:11 UTC"
 }
