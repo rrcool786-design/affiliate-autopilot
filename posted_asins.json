@@ -19,7 +19,8 @@
     "B0FDW55HNT",
     "B0C862R9VF",
     "B0DGX12XXV",
-    "9353456363"
+    "9353456363",
+    "B0FMDL81GS"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -178,8 +179,8 @@
       "name": "Allen Solly Men’s Polo T‑Shirt",
       "link": "https://www.amazon.in/dp/B06Y2FG6R7/?tag=rahulfinds20c-21",
       "category": "fashion",
-      "benefit": "Rs 599 mein Amazon bestseller — trending fashion product",
-      "commission": 53,
+      "benefit": "Rs 699 mein Amazon bestseller trending fashion product",
+      "commission": 62,
       "emoji": "👕"
     },
     "B0G822MS12": {
@@ -293,7 +294,15 @@
       "benefit": "Rs 739 mein Amazon bestseller trending toys product",
       "commission": 40,
       "emoji": "🧸"
+    },
+    "B0FRFXX2C3": {
+      "name": "KLOSIA Women's Rayon Printed Anarkali Kurta and Pant wi",
+      "link": "https://www.amazon.in/dp/B0FRFXX2C3/?tag=rahulfinds20c-21",
+      "category": "fashion",
+      "benefit": "Rs 799 mein Amazon bestseller trending fashion product",
+      "commission": 71,
+      "emoji": "👕"
     }
   },
-  "updated_at": "2026-08-13 08:48:34 UTC"
+  "updated_at": "2026-08-13 10:09:26 UTC"
 }
