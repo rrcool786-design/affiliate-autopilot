@@ -17,7 +17,8 @@
     "B0D926HYDM",
     "B097JJ2CK6",
     "B0FDW55HNT",
-    "B0C862R9VF"
+    "B0C862R9VF",
+    "B0DGX12XXV"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -48,8 +49,8 @@
       "name": "OnePlus Nord Buds 3r TWS Earbuds up to 54 Hours Playbac",
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rahulfinds20c-21",
       "category": "electronics",
-      "benefit": "Rs 1,799 mein Amazon bestseller — trending electronics product",
-      "commission": 71,
+      "benefit": "Rs 1,760 mein Amazon bestseller trending electronics product",
+      "commission": 70,
       "emoji": "📱"
     },
     "B07QP9PTZP": {
@@ -120,7 +121,7 @@
       "name": "Ambrane Unbreakable 3A Fast Charging 1.5m Braided Type ",
       "link": "https://www.amazon.in/dp/B098NS6PVG/?tag=rahulfinds20c-21",
       "category": "computers",
-      "benefit": "Rs 149 mein Amazon bestseller — trending computers product",
+      "benefit": "Rs 149 mein Amazon bestseller trending computers product",
       "commission": 40,
       "emoji": "💻"
     },
@@ -152,7 +153,7 @@
       "name": "Safari Omega spacious/large laptop backpack with Rainco",
       "link": "https://www.amazon.in/dp/B097JJ2CK6/?tag=rahulfinds20c-21",
       "category": "computers",
-      "benefit": "Rs 659 mein Amazon bestseller — trending computers product",
+      "benefit": "Rs 809 mein Amazon bestseller trending computers product",
       "commission": 40,
       "emoji": "💻"
     },
@@ -160,8 +161,8 @@
       "name": "Lifelong LLKS03 Foldable Kick Skating Cycle",
       "link": "https://www.amazon.in/dp/B0C862R9VF/?tag=rahulfinds20c-21",
       "category": "toys",
-      "benefit": "Rs 699 mein Amazon bestseller — trending toys product",
-      "commission": 40,
+      "benefit": "Rs 899 mein Amazon bestseller trending toys product",
+      "commission": 44,
       "emoji": "🧸"
     },
     "B0C94RMBZX": {
@@ -283,7 +284,15 @@
       "benefit": "Rs 999 mein Amazon bestseller — trending toys product",
       "commission": 49,
       "emoji": "🧸"
+    },
+    "B0C8JSQLM4": {
+      "name": "Kaku Fancy Dresses National Heros Freedom Fighters Cost",
+      "link": "https://www.amazon.in/dp/B0C8JSQLM4/?tag=rahulfinds20c-21",
+      "category": "toys",
+      "benefit": "Rs 739 mein Amazon bestseller trending toys product",
+      "commission": 40,
+      "emoji": "🧸"
     }
   },
-  "updated_at": "2026-08-13 05:56:46 UTC"
+  "updated_at": "2026-08-13 07:27:43 UTC"
 }
