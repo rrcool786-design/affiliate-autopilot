@@ -14,7 +14,8 @@
     "B0DDHM6D3L",
     "B098NS6PVG",
     "B09S6M7JQJ",
-    "B0D926HYDM"
+    "B0D926HYDM",
+    "B097JJ2CK6"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -61,7 +62,7 @@
       "name": "Amazon Brand - Presto! Garbage Bags",
       "link": "https://www.amazon.in/dp/B0821PN8L4/?tag=rahulfinds20c-21",
       "category": "kitchen",
-      "benefit": "Rs 269 mein Amazon bestseller trending kitchen product",
+      "benefit": "Rs 325 mein Amazon bestseller trending kitchen product",
       "commission": 40,
       "emoji": "🍳"
     },
@@ -173,8 +174,8 @@
       "name": "Allen Solly Men’s Polo T‑Shirt",
       "link": "https://www.amazon.in/dp/B06Y2FG6R7/?tag=rahulfinds20c-21",
       "category": "fashion",
-      "benefit": "Rs 581 mein Amazon bestseller trending fashion product",
-      "commission": 52,
+      "benefit": "Rs 752 mein Amazon bestseller trending fashion product",
+      "commission": 67,
       "emoji": "👕"
     },
     "B0G822MS12": {
@@ -234,5 +235,5 @@
       "emoji": "👕"
     }
   },
-  "updated_at": "2026-08-12 16:23:10 UTC"
+  "updated_at": "2026-08-13 03:39:29 UTC"
 }
