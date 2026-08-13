@@ -18,7 +18,8 @@
     "B097JJ2CK6",
     "B0FDW55HNT",
     "B0C862R9VF",
-    "B0DGX12XXV"
+    "B0DGX12XXV",
+    "9353456363"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -57,7 +58,7 @@
       "name": "LPG cylinder booking",
       "link": "https://www.amazon.in/dp/B07QP9PTZP/?tag=rahulfinds20c-21",
       "category": "kitchen",
-      "benefit": "Rs 999 mein Amazon bestseller — trending kitchen product",
+      "benefit": "Rs 999 mein Amazon bestseller trending kitchen product",
       "commission": 49,
       "emoji": "🍳"
     },
@@ -65,7 +66,7 @@
       "name": "Amazon Brand - Presto! Garbage Bags",
       "link": "https://www.amazon.in/dp/B0821PN8L4/?tag=rahulfinds20c-21",
       "category": "kitchen",
-      "benefit": "Rs 275 mein Amazon bestseller — trending kitchen product",
+      "benefit": "Rs 325 mein Amazon bestseller trending kitchen product",
       "commission": 40,
       "emoji": "🍳"
     },
@@ -294,5 +295,5 @@
       "emoji": "🧸"
     }
   },
-  "updated_at": "2026-08-13 07:27:43 UTC"
+  "updated_at": "2026-08-13 08:48:34 UTC"
 }
