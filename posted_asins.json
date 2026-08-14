@@ -28,7 +28,8 @@
     "B0C94JLX77",
     "B0H1WVW8VY",
     "9392820402",
-    "B0C94QBB52"
+    "B0C94QBB52",
+    "B010FMJKFS"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -59,7 +60,7 @@
       "name": "OnePlus Nord Buds 3r TWS Earbuds up to 54 Hours Playbac",
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rahulfinds20c-21",
       "category": "electronics",
-      "benefit": "Rs 1,769 mein Amazon bestseller trending electronics product",
+      "benefit": "Rs 1,755 mein Amazon bestseller trending electronics product",
       "commission": 70,
       "emoji": "📱"
     },
@@ -99,7 +100,7 @@
       "name": "Jockey 1406 Women High Coverage Super Combed Cotton Hip",
       "link": "https://www.amazon.in/dp/B010FMJKFS/?tag=rahulfinds20c-21",
       "category": "fashion",
-      "benefit": "Rs 498 mein Amazon bestseller — trending fashion product",
+      "benefit": "Rs 498 mein Amazon bestseller trending fashion product",
       "commission": 44,
       "emoji": "👕"
     },
@@ -318,7 +319,15 @@
       "benefit": "Rs 1,299 mein Amazon bestseller trending computers product",
       "commission": 51,
       "emoji": "💻"
+    },
+    "B0GVYXPZBS": {
+      "name": "OnePlus Nord CE6 Lite",
+      "link": "https://www.amazon.in/dp/B0GVYXPZBS/?tag=rahulfinds20c-21",
+      "category": "electronics",
+      "benefit": "Rs 26,999 mein Amazon bestseller trending electronics product",
+      "commission": 1079,
+      "emoji": "📱"
     }
   },
-  "updated_at": "2026-08-14 07:25:24 UTC"
+  "updated_at": "2026-08-14 08:41:25 UTC"
 }
