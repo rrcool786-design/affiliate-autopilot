@@ -26,7 +26,8 @@
     "B0FRFXX2C3",
     "B0C8JSQLM4",
     "B0C94JLX77",
-    "B0H1WVW8VY"
+    "B0H1WVW8VY",
+    "9392820402"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -308,7 +309,15 @@
       "benefit": "Rs 799 mein Amazon bestseller trending fashion product",
       "commission": 71,
       "emoji": "👕"
+    },
+    "B0BTD4S4XF": {
+      "name": "American Tourister Valex",
+      "link": "https://www.amazon.in/dp/B0BTD4S4XF/?tag=rahulfinds20c-21",
+      "category": "computers",
+      "benefit": "Rs 1,299 mein Amazon bestseller trending computers product",
+      "commission": 51,
+      "emoji": "💻"
     }
   },
-  "updated_at": "2026-08-14 04:41:40 UTC"
+  "updated_at": "2026-08-14 05:55:10 UTC"
 }
