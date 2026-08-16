@@ -7,7 +7,8 @@
     "B0C94QBB52",
     "B0G822MS12",
     "B0DDHM6D3L",
-    "B0C8JSQLM4"
+    "B0C8JSQLM4",
+    "B0BTD4S4XF"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -313,7 +314,15 @@
       "benefit": "Rs 159 mein Amazon bestseller trending toys product",
       "commission": 40,
       "emoji": "🧸"
+    },
+    "935886592X": {
+      "name": "PARMAR SSC Fatman",
+      "link": "https://www.amazon.in/dp/935886592X/?tag=rahulfinds20c-21",
+      "category": "books",
+      "benefit": "Rs 429 mein Amazon bestseller trending books product",
+      "commission": 40,
+      "emoji": "📚"
     }
   },
-  "updated_at": "2026-08-15 15:42:03 UTC"
+  "updated_at": "2026-08-16 02:40:17 UTC"
 }
