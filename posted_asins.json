@@ -20,7 +20,8 @@
     "B098NS6PVG",
     "B0FQFYXCC4",
     "B0FDW55HNT",
-    "B0C94JLX77"
+    "B0C94JLX77",
+    "B0B2F8XS9L"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -315,8 +316,8 @@
       "name": "OnePlus Nord CE6 Lite",
       "link": "https://www.amazon.in/dp/B0GVYXPZBS/?tag=rahulfinds20c-21",
       "category": "electronics",
-      "benefit": "Rs 26,999 mein Amazon bestseller trending electronics product",
-      "commission": 1079,
+      "benefit": "Rs 30,999 mein Amazon bestseller trending electronics product",
+      "commission": 1239,
       "emoji": "📱"
     },
     "B0B2F8XS9L": {
@@ -336,5 +337,5 @@
       "emoji": "📚"
     }
   },
-  "updated_at": "2026-08-17 05:08:03 UTC"
+  "updated_at": "2026-08-17 06:56:35 UTC"
 }
