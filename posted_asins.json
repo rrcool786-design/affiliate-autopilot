@@ -34,7 +34,8 @@
     "B0FRFW2S81",
     "B0H7S6LT9P",
     "B0FQ5JVLL8",
-    "B0FRFXX2C3"
+    "B0FRFXX2C3",
+    "9357291008"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -270,10 +271,10 @@
       "emoji": "📱"
     },
     "B0FQ5JVLL8": {
-      "name": "Fresh Assorted Roses",
+      "name": "Fresh Assorted Roses (Button Roses), 100g",
       "link": "https://www.amazon.in/dp/B0FQ5JVLL8/?tag=rahulfinds20c-21",
       "category": "kitchen",
-      "benefit": "Rs 999 mein Amazon bestseller — trending kitchen product",
+      "benefit": "Rs 999 mein Amazon bestseller trending kitchen product",
       "commission": 49,
       "emoji": "🍳"
     },
@@ -358,5 +359,5 @@
       "emoji": "🧸"
     }
   },
-  "updated_at": "2026-08-18 10:55:59 UTC"
+  "updated_at": "2026-08-18 12:22:49 UTC"
 }
