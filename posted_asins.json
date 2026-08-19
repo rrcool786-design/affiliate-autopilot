@@ -1,7 +1,8 @@
 {
   "cycle": 5,
   "posted": [
-    "B0C94JLX77"
+    "B0C94JLX77",
+    "9353456363"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -323,7 +324,15 @@
       "benefit": "Rs 546 mein Amazon bestseller trending toys product",
       "commission": 40,
       "emoji": "🧸"
+    },
+    "B0CFFRBSGG": {
+      "name": "eCraftIndia Set of 2 Purple Floral & Pearl Designer Rak",
+      "link": "https://www.amazon.in/dp/B0CFFRBSGG/?tag=rahulfinds20c-21",
+      "category": "kitchen",
+      "benefit": "Rs 149 mein Amazon bestseller trending kitchen product",
+      "commission": 40,
+      "emoji": "🍳"
     }
   },
-  "updated_at": "2026-08-19 06:43:57 UTC"
+  "updated_at": "2026-08-19 07:58:50 UTC"
 }
