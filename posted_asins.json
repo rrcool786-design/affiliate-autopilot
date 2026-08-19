@@ -38,7 +38,8 @@
     "9357291008",
     "935886592X",
     "B0DRPCR5VK",
-    "B0H1WVW8VY"
+    "B0H1WVW8VY",
+    "9353456363"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -140,10 +141,10 @@
     "B098NS6PVG": {
       "name": "Ambrane Unbreakable 3A Fast Charging 1.5m Braided Type ",
       "link": "https://www.amazon.in/dp/B098NS6PVG/?tag=rahulfinds20c-21",
-      "category": "computers",
-      "benefit": "Rs 179 mein Amazon bestseller trending computers product",
+      "category": "electronics",
+      "benefit": "Rs 179 mein Amazon bestseller trending electronics product",
       "commission": 40,
-      "emoji": "💻"
+      "emoji": "📱"
     },
     "B08LHTJTBB": {
       "name": "Dyazo 6 Angles Adjustable Aluminum Ergonomic Foldable P",
@@ -362,5 +363,5 @@
       "emoji": "🧸"
     }
   },
-  "updated_at": "2026-08-19 02:37:21 UTC"
+  "updated_at": "2026-08-19 03:37:29 UTC"
 }
