@@ -15,14 +15,15 @@
     "9392820402",
     "B0D926HYDM",
     "B07QP9PTZP",
-    "B0FRFW2S81"
+    "B0FRFW2S81",
+    "B0GVYXPZBS"
   ],
   "catalog": {
     "B09S6M7JQJ": {
       "name": "Ghar Soaps Sandalwood & Saffron Magic Bar For Bath (300",
       "link": "https://www.amazon.in/dp/B09S6M7JQJ/?tag=rahulfinds20c-21",
       "category": "beauty",
-      "benefit": "Rs 398 mein Amazon bestseller trending beauty product",
+      "benefit": "Rs 368 mein Amazon bestseller trending beauty product",
       "commission": 40,
       "emoji": "💄"
     },
@@ -30,7 +31,7 @@
       "name": "Simple Kind To Skin Refreshing Facial Wash 150 ml",
       "link": "https://www.amazon.in/dp/B000LQUA6M/?tag=rahulfinds20c-21",
       "category": "beauty",
-      "benefit": "Rs 269 mein Amazon bestseller trending beauty product",
+      "benefit": "Rs 267 mein Amazon bestseller trending beauty product",
       "commission": 40,
       "emoji": "💄"
     },
@@ -117,10 +118,10 @@
     "B098NS6PVG": {
       "name": "Ambrane Unbreakable 3A Fast Charging 1.5m Braided Type ",
       "link": "https://www.amazon.in/dp/B098NS6PVG/?tag=rahulfinds20c-21",
-      "category": "computers",
-      "benefit": "Rs 179 mein Amazon bestseller trending computers product",
+      "category": "electronics",
+      "benefit": "Rs 179 mein Amazon bestseller trending electronics product",
       "commission": 40,
-      "emoji": "💻"
+      "emoji": "📱"
     },
     "B08LHTJTBB": {
       "name": "Dyazo 6 Angles Adjustable Aluminum Ergonomic Foldable P",
@@ -347,5 +348,5 @@
       "emoji": "🍳"
     }
   },
-  "updated_at": "2026-08-20 12:25:57 UTC"
+  "updated_at": "2026-08-20 14:06:13 UTC"
 }
