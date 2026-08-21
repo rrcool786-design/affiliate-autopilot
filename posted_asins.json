@@ -19,7 +19,8 @@
     "B0GVYXPZBS",
     "B0DRPCR5VK",
     "B0H5Q25SPP",
-    "B0B2F8XS9L"
+    "B0B2F8XS9L",
+    "935886592X"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -349,7 +350,15 @@
       "benefit": "Rs 149 mein Amazon bestseller trending kitchen product",
       "commission": 40,
       "emoji": "🍳"
+    },
+    "B0GP8XYL7H": {
+      "name": "iQOO Z11x 5G (Prismatic Green, 8GB RAM, 128 GB Storage)",
+      "link": "https://www.amazon.in/dp/B0GP8XYL7H/?tag=rahulfinds20c-21",
+      "category": "electronics",
+      "benefit": "Rs 27,999 mein Amazon bestseller trending electronics product",
+      "commission": 1119,
+      "emoji": "📱"
     }
   },
-  "updated_at": "2026-08-21 03:41:23 UTC"
+  "updated_at": "2026-08-21 05:04:46 UTC"
 }
