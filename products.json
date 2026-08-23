@@ -1,30 +1,14 @@
 {
-  "updated_at": "2026-08-16 01:38 IST",
-  "total": 17,
+  "updated_at": "2026-08-23 01:40 IST",
+  "total": 18,
   "products": [
-    {
-      "name": "OnePlus Nord Buds 3r TWS Earbuds up to 54 Hours Playbac",
-      "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rahulfinds20c-21",
-      "category": "electronics",
-      "benefit": "Rs 1,767 mein Amazon bestseller — trending electronics product",
-      "commission": 70,
-      "emoji": "📱"
-    },
-    {
-      "name": "OnePlus Nord CE6 Lite",
-      "link": "https://www.amazon.in/dp/B0GVYXPZBS/?tag=rahulfinds20c-21",
-      "category": "electronics",
-      "benefit": "Rs 26,999 mein Amazon bestseller — trending electronics product",
-      "commission": 1079,
-      "emoji": "📱"
-    },
     {
       "name": "Ambrane Unbreakable 3A Fast Charging 1.5m Braided Type ",
       "link": "https://www.amazon.in/dp/B098NS6PVG/?tag=rahulfinds20c-21",
-      "category": "electronics",
-      "benefit": "Rs 99 mein Amazon bestseller — trending electronics product",
+      "category": "computers",
+      "benefit": "Rs 179 mein Amazon bestseller — trending computers product",
       "commission": 40,
-      "emoji": "📱"
+      "emoji": "💻"
     },
     {
       "name": "Dyazo 6 Angles Adjustable Aluminum Ergonomic Foldable P",
@@ -38,7 +22,7 @@
       "name": "ZEBRONICS Blanc Slim Wireless Mouse with Rechargeable B",
       "link": "https://www.amazon.in/dp/B0CQRNWJM2/?tag=rahulfinds20c-21",
       "category": "computers",
-      "benefit": "Rs 379 mein Amazon bestseller — trending computers product",
+      "benefit": "Rs 429 mein Amazon bestseller — trending computers product",
       "commission": 40,
       "emoji": "💻"
     },
@@ -51,10 +35,10 @@
       "emoji": "🍳"
     },
     {
-      "name": "Amazon Brand - Presto! Garbage Bags",
-      "link": "https://www.amazon.in/dp/B0821PN8L4/?tag=rahulfinds20c-21",
+      "name": "eCraftIndia Set of 2 Purple Floral & Pearl Designer Rak",
+      "link": "https://www.amazon.in/dp/B0CFFRBSGG/?tag=rahulfinds20c-21",
       "category": "kitchen",
-      "benefit": "Rs 325 mein Amazon bestseller — trending kitchen product",
+      "benefit": "Rs 149 mein Amazon bestseller — trending kitchen product",
       "commission": 40,
       "emoji": "🍳"
     },
@@ -67,14 +51,6 @@
       "emoji": "🍳"
     },
     {
-      "name": "Allen Solly Men’s Polo T‑Shirt",
-      "link": "https://www.amazon.in/dp/B06Y2FG6R7/?tag=rahulfinds20c-21",
-      "category": "fashion",
-      "benefit": "Rs 699 mein Amazon bestseller — trending fashion product",
-      "commission": 62,
-      "emoji": "👕"
-    },
-    {
       "name": "Jockey 1406 Women High Coverage Super Combed Cotton Hip",
       "link": "https://www.amazon.in/dp/B010FMJKFS/?tag=rahulfinds20c-21",
       "category": "fashion",
@@ -84,11 +60,43 @@
     },
     {
       "name": "KLOSIA Women's Rayon Printed Anarkali Kurta and Pant wi",
-      "link": "https://www.amazon.in/dp/B0FDW55HNT/?tag=rahulfinds20c-21",
+      "link": "https://www.amazon.in/dp/B0FRFXX2C3/?tag=rahulfinds20c-21",
       "category": "fashion",
       "benefit": "Rs 799 mein Amazon bestseller — trending fashion product",
       "commission": 71,
       "emoji": "👕"
+    },
+    {
+      "name": "Mehrang Stretchable Saree Shapewear Petticoat for Women",
+      "link": "https://www.amazon.in/dp/B09HMSDS8R/?tag=rahulfinds20c-21",
+      "category": "fashion",
+      "benefit": "Rs 249 mein Amazon bestseller — trending fashion product",
+      "commission": 40,
+      "emoji": "👕"
+    },
+    {
+      "name": "Ghar Soaps Sandalwood & Saffron Magic Bar For Bath",
+      "link": "https://www.amazon.in/dp/B09S6M7JQJ/?tag=rahulfinds20c-21",
+      "category": "beauty",
+      "benefit": "Rs 368 mein Amazon bestseller — trending beauty product",
+      "commission": 40,
+      "emoji": "💄"
+    },
+    {
+      "name": "Simple Kind To Skin Refreshing Facial Wash 150 ml",
+      "link": "https://www.amazon.in/dp/B000LQUA6M/?tag=rahulfinds20c-21",
+      "category": "beauty",
+      "benefit": "Rs 278 mein Amazon bestseller — trending beauty product",
+      "commission": 40,
+      "emoji": "💄"
+    },
+    {
+      "name": "Cetaphil Gentle Skin Hydrating Face Wash 118ml, Paraben",
+      "link": "https://www.amazon.in/dp/B01CCGW4OE/?tag=rahulfinds20c-21",
+      "category": "beauty",
+      "benefit": "Rs 999 mein Amazon bestseller — trending beauty product",
+      "commission": 59,
+      "emoji": "💄"
     },
     {
       "name": "My First Library Boxset For Kids",
@@ -99,20 +107,28 @@
       "emoji": "📚"
     },
     {
-      "name": "PARMAR SSC Fatman",
-      "link": "https://www.amazon.in/dp/935886592X/?tag=rahulfinds20c-21",
+      "name": "NCERT CLASS 9 Understanding Society – India and Beyond,",
+      "link": "https://www.amazon.in/dp/9357291008/?tag=rahulfinds20c-21",
       "category": "books",
-      "benefit": "Rs 429 mein Amazon bestseller — trending books product",
+      "benefit": "Rs 97 mein Amazon bestseller — trending books product",
       "commission": 40,
       "emoji": "📚"
     },
     {
-      "name": "Musafir Café",
-      "link": "https://www.amazon.in/dp/9392820402/?tag=rahulfinds20c-21",
+      "name": "Atomic Habits: Tiny Changes, Remarkable Results",
+      "link": "https://www.amazon.in/dp/1847941834/?tag=rahulfinds20c-21",
       "category": "books",
-      "benefit": "Rs 152 mein Amazon bestseller — trending books product",
+      "benefit": "Rs 482 mein Amazon bestseller — trending books product",
       "commission": 40,
       "emoji": "📚"
+    },
+    {
+      "name": "Storio Pack of 1 Rakhi for Brother Kids Wrist Band for ",
+      "link": "https://www.amazon.in/dp/B0FHPJ8S66/?tag=rahulfinds20c-21",
+      "category": "toys",
+      "benefit": "Rs 179 mein Amazon bestseller — trending toys product",
+      "commission": 40,
+      "emoji": "🧸"
     },
     {
       "name": "Lifelong LLKS03 Foldable Kick Skating Cycle",
@@ -123,18 +139,10 @@
       "emoji": "🧸"
     },
     {
-      "name": "Babique Dog Plush Soft Toy Cute Kids Animal Home Decor ",
-      "link": "https://www.amazon.in/dp/B0B2F8XS9L/?tag=rahulfinds20c-21",
-      "category": "toys",
-      "benefit": "Rs 159 mein Amazon bestseller — trending toys product",
-      "commission": 40,
-      "emoji": "🧸"
-    },
-    {
       "name": "Wembley Rechargeable Karaoke Mic with Speaker for Singi",
       "link": "https://www.amazon.in/dp/B0DRPCR5VK/?tag=rahulfinds20c-21",
       "category": "toys",
-      "benefit": "Rs 547 mein Amazon bestseller — trending toys product",
+      "benefit": "Rs 546 mein Amazon bestseller — trending toys product",
       "commission": 40,
       "emoji": "🧸"
     }
