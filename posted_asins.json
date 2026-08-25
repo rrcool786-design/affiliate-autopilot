@@ -17,7 +17,8 @@
     "9357291008",
     "B0FMDL81GS",
     "B000LQUA6M",
-    "B0D2R2MXXJ"
+    "B0D2R2MXXJ",
+    "B0BTD4S4XF"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -119,10 +120,10 @@
     "B098NS6PVG": {
       "name": "Ambrane Unbreakable 3A Fast Charging 1.5m Braided Type ",
       "link": "https://www.amazon.in/dp/B098NS6PVG/?tag=rahulfinds20c-21",
-      "category": "computers",
-      "benefit": "Rs 179 mein Amazon bestseller trending computers product",
+      "category": "electronics",
+      "benefit": "Rs 179 mein Amazon bestseller trending electronics product",
       "commission": 40,
-      "emoji": "💻"
+      "emoji": "📱"
     },
     "B08LHTJTBB": {
       "name": "Dyazo 6 Angles Adjustable Aluminum Ergonomic Foldable P",
@@ -387,7 +388,15 @@
       "benefit": "Rs 200 mein Amazon bestseller trending beauty product",
       "commission": 40,
       "emoji": "💄"
+    },
+    "B0CCSLGB6G": {
+      "name": "Amazon Pay Digital Gift Card",
+      "link": "https://www.amazon.in/dp/B0CCSLGB6G/?tag=rahulfinds20c-21",
+      "category": "kitchen",
+      "benefit": "Rs 2,000 mein Amazon bestseller trending kitchen product",
+      "commission": 100,
+      "emoji": "🍳"
     }
   },
-  "updated_at": "2026-08-25 05:04:52 UTC"
+  "updated_at": "2026-08-25 06:49:16 UTC"
 }
