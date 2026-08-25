@@ -16,14 +16,15 @@
     "B07QP9PTZP",
     "9357291008",
     "B0FMDL81GS",
-    "B000LQUA6M"
+    "B000LQUA6M",
+    "B0D2R2MXXJ"
   ],
   "catalog": {
     "B09S6M7JQJ": {
       "name": "Ghar Soaps Sandalwood & Saffron Magic Bar For Bath (300",
       "link": "https://www.amazon.in/dp/B09S6M7JQJ/?tag=rahulfinds20c-21",
       "category": "beauty",
-      "benefit": "Rs 398 mein Amazon bestseller trending beauty product",
+      "benefit": "Rs 368 mein Amazon bestseller trending beauty product",
       "commission": 40,
       "emoji": "💄"
     },
@@ -378,7 +379,15 @@
       "benefit": "Rs 413 mein Amazon bestseller trending books product",
       "commission": 40,
       "emoji": "📚"
+    },
+    "B0CKF48RRR": {
+      "name": "Simple Kind to Skin Refreshing Facial Wash",
+      "link": "https://www.amazon.in/dp/B0CKF48RRR/?tag=rahulfinds20c-21",
+      "category": "beauty",
+      "benefit": "Rs 200 mein Amazon bestseller trending beauty product",
+      "commission": 40,
+      "emoji": "💄"
     }
   },
-  "updated_at": "2026-08-25 03:39:30 UTC"
+  "updated_at": "2026-08-25 05:04:52 UTC"
 }
