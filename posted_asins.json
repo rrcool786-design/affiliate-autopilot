@@ -14,7 +14,8 @@
     "B0821PN8L4",
     "B0GVYXPZBS",
     "B07QP9PTZP",
-    "9357291008"
+    "9357291008",
+    "B0FMDL81GS"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -368,7 +369,15 @@
       "benefit": "Rs 30,999 mein Amazon bestseller trending electronics product",
       "commission": 1239,
       "emoji": "📱"
+    },
+    "9368974934": {
+      "name": "PW EaJEE Handwritten Notes For Organic Chemistry By Roh",
+      "link": "https://www.amazon.in/dp/9368974934/?tag=rahulfinds20c-21",
+      "category": "books",
+      "benefit": "Rs 413 mein Amazon bestseller trending books product",
+      "commission": 40,
+      "emoji": "📚"
     }
   },
-  "updated_at": "2026-08-24 16:01:58 UTC"
+  "updated_at": "2026-08-25 02:37:07 UTC"
 }
