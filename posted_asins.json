@@ -29,7 +29,8 @@
     "B0C8JSQLM4",
     "B0FQFYXCC4",
     "B0FRFW2S81",
-    "B0C94JLX77"
+    "B0C94JLX77",
+    "B0C94QBB52"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -60,7 +61,7 @@
       "name": "OnePlus Nord Buds 3r TWS Earbuds up to 54 Hours Playbac",
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rahulfinds20c-21",
       "category": "electronics",
-      "benefit": "Rs 1,999 mein Amazon bestseller trending electronics product",
+      "benefit": "Rs 1,998 mein Amazon bestseller trending electronics product",
       "commission": 79,
       "emoji": "📱"
     },
@@ -131,10 +132,10 @@
     "B098NS6PVG": {
       "name": "Ambrane Unbreakable 3A Fast Charging 1.5m Braided Type ",
       "link": "https://www.amazon.in/dp/B098NS6PVG/?tag=rahulfinds20c-21",
-      "category": "computers",
-      "benefit": "Rs 179 mein Amazon bestseller — trending computers product",
+      "category": "electronics",
+      "benefit": "Rs 179 mein Amazon bestseller trending electronics product",
       "commission": 40,
-      "emoji": "💻"
+      "emoji": "📱"
     },
     "B08LHTJTBB": {
       "name": "Dyazo 6 Angles Adjustable Aluminum Ergonomic Foldable P",
@@ -201,10 +202,10 @@
       "emoji": "📱"
     },
     "9387779262": {
-      "name": "My First Library Boxset For Kids",
+      "name": "My First Library Boxset For Kids (10 Board Books)",
       "link": "https://www.amazon.in/dp/9387779262/?tag=rahulfinds20c-21",
       "category": "books",
-      "benefit": "Rs 375 mein Amazon bestseller — trending books product",
+      "benefit": "Rs 375 mein Amazon bestseller trending books product",
       "commission": 40,
       "emoji": "📚"
     },
@@ -441,5 +442,5 @@
       "emoji": "📚"
     }
   },
-  "updated_at": "2026-08-26 08:05:42 UTC"
+  "updated_at": "2026-08-26 09:44:12 UTC"
 }
