@@ -24,7 +24,8 @@
     "B0H1WVW8VY",
     "B0CCSLGB6G",
     "B0D926HYDM",
-    "B0C862R9VF"
+    "B0C862R9VF",
+    "B0FQ5JVLL8"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -402,7 +403,15 @@
       "benefit": "Rs 2,000 mein Amazon bestseller trending kitchen product",
       "commission": 100,
       "emoji": "🍳"
+    },
+    "B01CCGW4OE": {
+      "name": "Cetaphil Gentle Skin Hydrating Face Wash 118ml, Paraben",
+      "link": "https://www.amazon.in/dp/B01CCGW4OE/?tag=rahulfinds20c-21",
+      "category": "beauty",
+      "benefit": "Rs 368 mein Amazon bestseller trending beauty product",
+      "commission": 40,
+      "emoji": "💄"
     }
   },
-  "updated_at": "2026-08-25 16:06:02 UTC"
+  "updated_at": "2026-08-26 02:45:31 UTC"
 }
