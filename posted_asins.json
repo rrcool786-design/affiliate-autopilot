@@ -31,14 +31,15 @@
     "B0FRFW2S81",
     "B0C94JLX77",
     "B0C94QBB52",
-    "B09HMSDS8R"
+    "B09HMSDS8R",
+    "B01CCGW4OE"
   ],
   "catalog": {
     "B09S6M7JQJ": {
-      "name": "Ghar Soaps Sandalwood & Saffron Magic Bar For Bath",
+      "name": "Ghar Soaps Sandalwood & Saffron Magic Bar For Bath (300",
       "link": "https://www.amazon.in/dp/B09S6M7JQJ/?tag=rahulfinds20c-21",
       "category": "beauty",
-      "benefit": "Rs 368 mein Amazon bestseller — trending beauty product",
+      "benefit": "Rs 368 mein Amazon bestseller trending beauty product",
       "commission": 40,
       "emoji": "💄"
     },
@@ -414,8 +415,8 @@
       "name": "Cetaphil Gentle Skin Hydrating Face Wash 118ml, Paraben",
       "link": "https://www.amazon.in/dp/B01CCGW4OE/?tag=rahulfinds20c-21",
       "category": "beauty",
-      "benefit": "Rs 999 mein Amazon bestseller — trending beauty product",
-      "commission": 59,
+      "benefit": "Rs 362 mein Amazon bestseller trending beauty product",
+      "commission": 40,
       "emoji": "💄"
     },
     "B0CQRNWJM2": {
@@ -443,5 +444,5 @@
       "emoji": "📚"
     }
   },
-  "updated_at": "2026-08-26 11:01:22 UTC"
+  "updated_at": "2026-08-26 12:28:51 UTC"
 }
