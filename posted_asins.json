@@ -33,7 +33,8 @@
     "B0C94QBB52",
     "B09HMSDS8R",
     "B01CCGW4OE",
-    "B0CQRNWJM2"
+    "B0CQRNWJM2",
+    "B0DGJHBX5Y"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -104,7 +105,7 @@
       "name": "Jockey 1406 Women High Coverage Super Combed Cotton Hip",
       "link": "https://www.amazon.in/dp/B010FMJKFS/?tag=rahulfinds20c-21",
       "category": "fashion",
-      "benefit": "Rs 498 mein Amazon bestseller — trending fashion product",
+      "benefit": "Rs 499 mein Amazon bestseller trending fashion product",
       "commission": 44,
       "emoji": "👕"
     },
@@ -352,7 +353,7 @@
       "name": "Wembley Rechargeable Karaoke Mic with Speaker for Singi",
       "link": "https://www.amazon.in/dp/B0DRPCR5VK/?tag=rahulfinds20c-21",
       "category": "toys",
-      "benefit": "Rs 546 mein Amazon bestseller — trending toys product",
+      "benefit": "Rs 546 mein Amazon bestseller trending toys product",
       "commission": 40,
       "emoji": "🧸"
     },
@@ -443,7 +444,23 @@
       "benefit": "Rs 482 mein Amazon bestseller — trending books product",
       "commission": 40,
       "emoji": "📚"
+    },
+    "B0FRFYL6ML": {
+      "name": "KLOSIA Women's Rayon Printed Anarkali Kurta and Pant wi",
+      "link": "https://www.amazon.in/dp/B0FRFYL6ML/?tag=rahulfinds20c-21",
+      "category": "fashion",
+      "benefit": "Rs 799 mein Amazon bestseller trending fashion product",
+      "commission": 71,
+      "emoji": "👕"
+    },
+    "B0H9RLKZ6F": {
+      "name": "Marvel Spider-Man Metal Fidget Spinner Rakhi",
+      "link": "https://www.amazon.in/dp/B0H9RLKZ6F/?tag=rahulfinds20c-21",
+      "category": "toys",
+      "benefit": "Rs 149 mein Amazon bestseller trending toys product",
+      "commission": 40,
+      "emoji": "🧸"
     }
   },
-  "updated_at": "2026-08-26 14:09:07 UTC"
+  "updated_at": "2026-08-26 16:35:13 UTC"
 }
