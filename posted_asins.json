@@ -37,7 +37,8 @@
     "B0DGJHBX5Y",
     "B0H7S6LT9P",
     "B06Y2FG6R7",
-    "9392820402"
+    "9392820402",
+    "B0H9RLKZ6F"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -68,7 +69,7 @@
       "name": "OnePlus Nord Buds 3r TWS Earbuds up to 54 Hours Playbac",
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rahulfinds20c-21",
       "category": "electronics",
-      "benefit": "Rs 1,998 mein Amazon bestseller trending electronics product",
+      "benefit": "Rs 1,995 mein Amazon bestseller trending electronics product",
       "commission": 79,
       "emoji": "📱"
     },
@@ -471,7 +472,15 @@
       "benefit": "Rs 289 mein Amazon bestseller trending books product",
       "commission": 40,
       "emoji": "📚"
+    },
+    "B0HCNC1Z9X": {
+      "name": "iQOO Z11 5G (Aurora Green, 8GB RAM, 128GB Storage)",
+      "link": "https://www.amazon.in/dp/B0HCNC1Z9X/?tag=rahulfinds20c-21",
+      "category": "electronics",
+      "benefit": "Rs 39,999 mein Amazon bestseller trending electronics product",
+      "commission": 1599,
+      "emoji": "📱"
     }
   },
-  "updated_at": "2026-08-27 15:23:45 UTC"
+  "updated_at": "2026-08-27 17:24:10 UTC"
 }
