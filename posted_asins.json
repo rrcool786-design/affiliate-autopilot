@@ -34,7 +34,8 @@
     "B09HMSDS8R",
     "B01CCGW4OE",
     "B0CQRNWJM2",
-    "B0DGJHBX5Y"
+    "B0DGJHBX5Y",
+    "B0H7S6LT9P"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -460,7 +461,15 @@
       "benefit": "Rs 149 mein Amazon bestseller trending toys product",
       "commission": 40,
       "emoji": "🧸"
+    },
+    "9390166268": {
+      "name": "The Psychology of Money",
+      "link": "https://www.amazon.in/dp/9390166268/?tag=rahulfinds20c-21",
+      "category": "books",
+      "benefit": "Rs 289 mein Amazon bestseller trending books product",
+      "commission": 40,
+      "emoji": "📚"
     }
   },
-  "updated_at": "2026-08-26 16:35:13 UTC"
+  "updated_at": "2026-08-27 11:45:52 UTC"
 }
