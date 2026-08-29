@@ -54,7 +54,8 @@
     "935886592X",
     "B0H9RGLC3Q",
     "B09CWXFDBG",
-    "B098NS6PVG"
+    "B098NS6PVG",
+    "B0FRFXX2C3"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -501,16 +502,16 @@
       "name": "Marvel Spider-Man Logo Silicone Band Rakhi",
       "link": "https://www.amazon.in/dp/B0H9RGLC3Q/?tag=rahulfinds20c-21",
       "category": "toys",
-      "benefit": "Rs 999 mein Amazon bestseller trending toys product",
-      "commission": 49,
+      "benefit": "Rs 99 mein Amazon bestseller trending toys product",
+      "commission": 40,
       "emoji": "🧸"
     },
     "B09CWXFDBG": {
       "name": "ITSMYCOSTUME Krishna Dress for Baby Boy Kids Set of 10(",
       "link": "https://www.amazon.in/dp/B09CWXFDBG/?tag=rahulfinds20c-21",
       "category": "toys",
-      "benefit": "Rs 719 mein Amazon bestseller trending toys product",
-      "commission": 40,
+      "benefit": "Rs 999 mein Amazon bestseller trending toys product",
+      "commission": 49,
       "emoji": "🧸"
     },
     "B0FDWK7PK9": {
@@ -522,5 +523,5 @@
       "emoji": "👕"
     }
   },
-  "updated_at": "2026-08-29 00:02:53 UTC"
+  "updated_at": "2026-08-29 08:04:45 UTC"
 }
