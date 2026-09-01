@@ -27,7 +27,8 @@
     "9387779262",
     "B0H9RGLC3Q",
     "B0DGJHBX5Y",
-    "B0FQ5JVLL8"
+    "B0FQ5JVLL8",
+    "B09S6M7JQJ"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -509,7 +510,23 @@
       "benefit": "Rs 999 mein Amazon bestseller trending toys product",
       "commission": 49,
       "emoji": "🧸"
+    },
+    "B0CDC6PT1Q": {
+      "name": "Kaku Fancy Dresses Krishna Costume with Dhoti for Boy/J",
+      "link": "https://www.amazon.in/dp/B0CDC6PT1Q/?tag=rahulfinds20c-21",
+      "category": "toys",
+      "benefit": "Rs 999 mein Amazon bestseller trending toys product",
+      "commission": 49,
+      "emoji": "🧸"
+    },
+    "B09B5KBL5S": {
+      "name": "Raj Costume Shri Krishna Dress for Kids, Bal Krishna Co",
+      "link": "https://www.amazon.in/dp/B09B5KBL5S/?tag=rahulfinds20c-21",
+      "category": "toys",
+      "benefit": "Rs 379 mein Amazon bestseller trending toys product",
+      "commission": 40,
+      "emoji": "🧸"
     }
   },
-  "updated_at": "2026-09-01 06:30:52 UTC"
+  "updated_at": "2026-09-01 08:05:37 UTC"
 }
