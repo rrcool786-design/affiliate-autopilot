@@ -17,7 +17,8 @@
     "B0CDC617XQ",
     "B07WN3PM9C",
     "B0FQ5JVLL8",
-    "B06Y2FG6R7"
+    "B06Y2FG6R7",
+    "B07VBL21JV"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -547,7 +548,15 @@
       "benefit": "Rs 388 mein Amazon bestseller trending computers product",
       "commission": 40,
       "emoji": "💻"
+    },
+    "9309961414": {
+      "name": "Belonging: A Journey of Love",
+      "link": "https://www.amazon.in/dp/9309961414/?tag=rahulfinds20c-21",
+      "category": "books",
+      "benefit": "Rs 1,099 mein Amazon bestseller trending books product",
+      "commission": 54,
+      "emoji": "📚"
     }
   },
-  "updated_at": "2026-09-06 12:41:41 UTC"
+  "updated_at": "2026-09-06 13:44:54 UTC"
 }
