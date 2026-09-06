@@ -1,15 +1,7 @@
 {
-  "updated_at": "2026-08-30 04:39 IST",
-  "total": 21,
+  "updated_at": "2026-09-06 03:50 IST",
+  "total": 18,
   "products": [
-    {
-      "name": "OnePlus Nord Buds 3r TWS Earbuds up to 54 Hours Playbac",
-      "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rahulfinds20c-21",
-      "category": "electronics",
-      "benefit": "Rs 1,814 mein Amazon bestseller — trending electronics product",
-      "commission": 72,
-      "emoji": "📱"
-    },
     {
       "name": "Portronics Conch Theta C in Ear Type C Wired Earphones ",
       "link": "https://www.amazon.in/dp/B0DDHM6D3L/?tag=rahulfinds20c-21",
@@ -19,10 +11,18 @@
       "emoji": "📱"
     },
     {
+      "name": "OnePlus Nord Buds 3r TWS Earbuds up to 54 Hours Playbac",
+      "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rahulfinds20c-21",
+      "category": "electronics",
+      "benefit": "Rs 1,849 mein Amazon bestseller — trending electronics product",
+      "commission": 73,
+      "emoji": "📱"
+    },
+    {
       "name": "Samsung Original 25W USB Type-C Travel Adaptor Without ",
       "link": "https://www.amazon.in/dp/B0D2R2MXXJ/?tag=rahulfinds20c-21",
       "category": "electronics",
-      "benefit": "Rs 607 mein Amazon bestseller — trending electronics product",
+      "benefit": "Rs 583 mein Amazon bestseller — trending electronics product",
       "commission": 40,
       "emoji": "📱"
     },
@@ -46,57 +46,41 @@
       "name": "Samsung Original Type C to C Cable - 3.28 Feet",
       "link": "https://www.amazon.in/dp/B008FWZ5MS/?tag=rahulfinds20c-21",
       "category": "computers",
-      "benefit": "Rs 398 mein Amazon bestseller — trending computers product",
+      "benefit": "Rs 388 mein Amazon bestseller — trending computers product",
       "commission": 40,
       "emoji": "💻"
     },
     {
-      "name": "LPG cylinder booking",
-      "link": "https://www.amazon.in/dp/B07QP9PTZP/?tag=rahulfinds20c-21",
-      "category": "kitchen",
-      "benefit": "Rs 999 mein Amazon bestseller — trending kitchen product",
-      "commission": 49,
-      "emoji": "🍳"
-    },
-    {
-      "name": "Amazon Pay Digital Gift Card",
-      "link": "https://www.amazon.in/dp/B0CCSLGB6G/?tag=rahulfinds20c-21",
-      "category": "kitchen",
-      "benefit": "Rs 2,000 mein Amazon bestseller — trending kitchen product",
-      "commission": 100,
-      "emoji": "🍳"
-    },
-    {
-      "name": "Amazon Brand - Presto! Garbage Bags",
-      "link": "https://www.amazon.in/dp/B0821PN8L4/?tag=rahulfinds20c-21",
-      "category": "kitchen",
-      "benefit": "Rs 325 mein Amazon bestseller — trending kitchen product",
-      "commission": 40,
-      "emoji": "🍳"
+      "name": "Jockey 1406 Women High Coverage Super Combed Cotton Hip",
+      "link": "https://www.amazon.in/dp/B010FMJKFS/?tag=rahulfinds20c-21",
+      "category": "fashion",
+      "benefit": "Rs 498 mein Amazon bestseller — trending fashion product",
+      "commission": 44,
+      "emoji": "👕"
     },
     {
       "name": "KLOSIA Women's Rayon Printed Anarkali Kurta and Pant wi",
-      "link": "https://www.amazon.in/dp/B0FDW55HNT/?tag=rahulfinds20c-21",
+      "link": "https://www.amazon.in/dp/B0FDWK7PK9/?tag=rahulfinds20c-21",
       "category": "fashion",
       "benefit": "Rs 799 mein Amazon bestseller — trending fashion product",
       "commission": 71,
       "emoji": "👕"
     },
     {
-      "name": "Jockey 1406 Women High Coverage Super Combed Cotton Hip",
-      "link": "https://www.amazon.in/dp/B010FMJKFS/?tag=rahulfinds20c-21",
+      "name": "TRYLO Riza T-FIT Women's Non-Padded,Non-Wired,Full Cove",
+      "link": "https://www.amazon.in/dp/B0DZCBQ225/?tag=rahulfinds20c-21",
       "category": "fashion",
-      "benefit": "Rs 499 mein Amazon bestseller — trending fashion product",
-      "commission": 44,
+      "benefit": "Rs 349 mein Amazon bestseller — trending fashion product",
+      "commission": 40,
       "emoji": "👕"
     },
     {
-      "name": "Allen Solly Men’s Polo T‑Shirt",
-      "link": "https://www.amazon.in/dp/B06Y2FG6R7/?tag=rahulfinds20c-21",
-      "category": "fashion",
-      "benefit": "Rs 699 mein Amazon bestseller — trending fashion product",
-      "commission": 62,
-      "emoji": "👕"
+      "name": "Cetaphil Gentle Skin Hydrating Face Wash 118ml, Paraben",
+      "link": "https://www.amazon.in/dp/B01CCGW4OE/?tag=rahulfinds20c-21",
+      "category": "beauty",
+      "benefit": "Rs 363 mein Amazon bestseller — trending beauty product",
+      "commission": 40,
+      "emoji": "💄"
     },
     {
       "name": "Ghar Soaps Sandalwood & Saffron Magic Bar For Bath",
@@ -107,18 +91,10 @@
       "emoji": "💄"
     },
     {
-      "name": "Cetaphil Gentle Skin Hydrating Face Wash 118ml, Paraben",
-      "link": "https://www.amazon.in/dp/B01CCGW4OE/?tag=rahulfinds20c-21",
-      "category": "beauty",
-      "benefit": "Rs 359 mein Amazon bestseller — trending beauty product",
-      "commission": 40,
-      "emoji": "💄"
-    },
-    {
       "name": "Simple Kind to Skin Refreshing Facial Wash",
       "link": "https://www.amazon.in/dp/B0CKF48RRR/?tag=rahulfinds20c-21",
       "category": "beauty",
-      "benefit": "Rs 192 mein Amazon bestseller — trending beauty product",
+      "benefit": "Rs 176 mein Amazon bestseller — trending beauty product",
       "commission": 40,
       "emoji": "💄"
     },
@@ -131,6 +107,14 @@
       "emoji": "📚"
     },
     {
+      "name": "Belonging: A Journey of Love",
+      "link": "https://www.amazon.in/dp/9309961414/?tag=rahulfinds20c-21",
+      "category": "books",
+      "benefit": "Rs 1,099 mein Amazon bestseller — trending books product",
+      "commission": 54,
+      "emoji": "📚"
+    },
+    {
       "name": "PARMAR SSC Fatman",
       "link": "https://www.amazon.in/dp/935886592X/?tag=rahulfinds20c-21",
       "category": "books",
@@ -139,34 +123,26 @@
       "emoji": "📚"
     },
     {
-      "name": "The Psychology of Money",
-      "link": "https://www.amazon.in/dp/9390166268/?tag=rahulfinds20c-21",
-      "category": "books",
-      "benefit": "Rs 289 mein Amazon bestseller — trending books product",
-      "commission": 40,
-      "emoji": "📚"
-    },
-    {
-      "name": "Marvel Spider-Man Logo Silicone Band Rakhi",
-      "link": "https://www.amazon.in/dp/B0H9RGLC3Q/?tag=rahulfinds20c-21",
+      "name": "Kaku Fancy Dresses Krishna Costume with Dhoti for Boy/J",
+      "link": "https://www.amazon.in/dp/B0CDC6PT1Q/?tag=rahulfinds20c-21",
       "category": "toys",
       "benefit": "Rs 999 mein Amazon bestseller — trending toys product",
       "commission": 49,
       "emoji": "🧸"
     },
     {
-      "name": "ITSMYCOSTUME Krishna Dress for Baby Boy Kids Set of 10",
-      "link": "https://www.amazon.in/dp/B09CWXFDBG/?tag=rahulfinds20c-21",
+      "name": "Kaku Fancy Dresses Krishna Costume for Kids, Baby Krish",
+      "link": "https://www.amazon.in/dp/B07VBL21JV/?tag=rahulfinds20c-21",
       "category": "toys",
-      "benefit": "Rs 719 mein Amazon bestseller — trending toys product",
+      "benefit": "Rs 199 mein Amazon bestseller — trending toys product",
       "commission": 40,
       "emoji": "🧸"
     },
     {
-      "name": "Wembley Rechargeable Karaoke Mic with Speaker for Singi",
-      "link": "https://www.amazon.in/dp/B0DRPCR5VK/?tag=rahulfinds20c-21",
+      "name": "Kaku Fancy Dresses Krishna Jewellery for Kids/Janmashta",
+      "link": "https://www.amazon.in/dp/B0FHKWN5R4/?tag=rahulfinds20c-21",
       "category": "toys",
-      "benefit": "Rs 546 mein Amazon bestseller — trending toys product",
+      "benefit": "Rs 149 mein Amazon bestseller — trending toys product",
       "commission": 40,
       "emoji": "🧸"
     }
