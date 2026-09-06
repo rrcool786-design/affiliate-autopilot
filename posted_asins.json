@@ -12,7 +12,8 @@
     "B0C94JLX77",
     "935886592X",
     "B097JJ2CK6",
-    "9390166268"
+    "9390166268",
+    "B0H7S6LT9P"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -395,7 +396,7 @@
       "name": "Cetaphil Gentle Skin Hydrating Face Wash 118ml, Paraben",
       "link": "https://www.amazon.in/dp/B01CCGW4OE/?tag=rahulfinds20c-21",
       "category": "beauty",
-      "benefit": "Rs 370 mein Amazon bestseller trending beauty product",
+      "benefit": "Rs 349 mein Amazon bestseller trending beauty product",
       "commission": 40,
       "emoji": "💄"
     },
@@ -534,7 +535,15 @@
       "benefit": "Rs 199 mein Amazon bestseller trending toys product",
       "commission": 40,
       "emoji": "🧸"
+    },
+    "B008FWZ5MS": {
+      "name": "Samsung Original Type C to C Cable - 3.28 Feet (1 Meter",
+      "link": "https://www.amazon.in/dp/B008FWZ5MS/?tag=rahulfinds20c-21",
+      "category": "computers",
+      "benefit": "Rs 388 mein Amazon bestseller trending computers product",
+      "commission": 40,
+      "emoji": "💻"
     }
   },
-  "updated_at": "2026-09-06 06:16:32 UTC"
+  "updated_at": "2026-09-06 07:24:28 UTC"
 }
