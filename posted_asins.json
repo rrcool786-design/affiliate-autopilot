@@ -22,14 +22,15 @@
     "B09HMSDS8R",
     "B0GVYXPZBS",
     "B0D2R2MXXJ",
-    "B0FMDL81GS"
+    "B0FMDL81GS",
+    "B01CCGW4OE"
   ],
   "catalog": {
     "B09S6M7JQJ": {
       "name": "Ghar Soaps Sandalwood & Saffron Magic Bar For Bath (300",
       "link": "https://www.amazon.in/dp/B09S6M7JQJ/?tag=rahulfinds20c-21",
       "category": "beauty",
-      "benefit": "Rs 398 mein Amazon bestseller trending beauty product",
+      "benefit": "Rs 360 mein Amazon bestseller trending beauty product",
       "commission": 40,
       "emoji": "💄"
     },
@@ -560,7 +561,15 @@
       "benefit": "Rs 1,099 mein Amazon bestseller trending books product",
       "commission": 54,
       "emoji": "📚"
+    },
+    "9377300584": {
+      "name": "Brief Case: How Brands Create Desire, Trust and Culture",
+      "link": "https://www.amazon.in/dp/9377300584/?tag=rahulfinds20c-21",
+      "category": "books",
+      "benefit": "Rs 293 mein Amazon bestseller trending books product",
+      "commission": 40,
+      "emoji": "📚"
     }
   },
-  "updated_at": "2026-09-07 06:24:35 UTC"
+  "updated_at": "2026-09-07 07:40:10 UTC"
 }
