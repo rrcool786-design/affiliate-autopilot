@@ -7,7 +7,18 @@
     "B0D2R2MXXJ",
     "B0FMDL81GS",
     "B098NS6PVG",
-    "B008FWZ5MS"
+    "B008FWZ5MS",
+    "B0B296NTFV"
+  ],
+  "posted_names": [
+    "ambrane unbreakable 3a fast",
+    "oneplus n6x",
+    "oneplus nord buds 3r",
+    "oneplus nord ce6 lite",
+    "safari omega spacious large",
+    "samsung original 25w usb",
+    "samsung original type c",
+    "portronics toad 23 wireless"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -23,9 +34,9 @@
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.3,
-      "reviews": 49291,
+      "reviews": 49293,
       "price": 1999,
-      "benefit": "4.3★ (49,291 reviews) — Rs 1,999",
+      "benefit": "4.3★ (49,293 reviews) — Rs 1,999",
       "commission": 79,
       "emoji": "📱"
     },
@@ -89,8 +100,8 @@
       "category": "electronics",
       "rating": 4.4,
       "reviews": 22634,
-      "price": 579,
-      "benefit": "4.4★ (22,634 reviews) — Rs 579",
+      "price": 569,
+      "benefit": "4.4★ (22,634 reviews) — Rs 569",
       "commission": 40,
       "emoji": "📱"
     },
@@ -99,9 +110,9 @@
       "link": "https://www.amazon.in/dp/B0DDHM6D3L/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 12448,
-      "price": 322,
-      "benefit": "4.1★ (12,448 reviews) — Rs 322",
+      "reviews": 12449,
+      "price": 303,
+      "benefit": "4.1★ (12,449 reviews) — Rs 303",
       "commission": 40,
       "emoji": "📱"
     },
@@ -159,8 +170,8 @@
       "category": "computers",
       "rating": 4.1,
       "reviews": 3198,
-      "price": 382,
-      "benefit": "4.1★ (3,198 reviews) — Rs 382",
+      "price": 380,
+      "benefit": "4.1★ (3,198 reviews) — Rs 380",
       "commission": 40,
       "emoji": "💻"
     },
@@ -180,9 +191,9 @@
       "link": "https://www.amazon.in/dp/B0FBRGKXHG/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 234027,
+      "reviews": 234026,
       "price": 1696,
-      "benefit": "4.1★ (234,027 reviews) — Rs 1,696",
+      "benefit": "4.1★ (234,026 reviews) — Rs 1,696",
       "commission": 67,
       "emoji": "📱"
     },
@@ -229,16 +240,18 @@
       "benefit": "4.4★ (20,904 reviews) — Rs 286",
       "commission": 40,
       "emoji": "💻"
+    },
+    "B0FM38916Y": {
+      "name": "boAt Bassheads 300C Wired Earphones,Type-C Jack, 10mm D",
+      "link": "https://www.amazon.in/dp/B0FM38916Y/?tag=rrcool786-21",
+      "category": "electronics",
+      "rating": 4.0,
+      "reviews": 120697,
+      "price": 549,
+      "benefit": "4.0★ (120,697 reviews) — Rs 549",
+      "commission": 40,
+      "emoji": "📱"
     }
   },
-  "updated_at": "2026-09-08 12:12:20 UTC",
-  "posted_names": [
-    "ambrane unbreakable 3a fast",
-    "oneplus n6x",
-    "oneplus nord buds 3r",
-    "oneplus nord ce6 lite",
-    "safari omega spacious large",
-    "samsung original 25w usb",
-    "samsung original type c"
-  ]
+  "updated_at": "2026-09-08 17:18:23 UTC"
 }
