@@ -137,14 +137,6 @@
       "commission": 40,
       "emoji": "📱"
     },
-    "B0GP8XTH7K": {
-      "name": "iQOO Z11x 5G (Prismatic Green, 8GB RAM, 256 GB Storage)",
-      "link": "https://www.amazon.in/dp/B0GP8XTH7K/?tag=rrcool786-21",
-      "category": "electronics",
-      "benefit": "Rs 30,999 mein Amazon bestseller trending electronics product",
-      "commission": 1239,
-      "emoji": "📱"
-    },
     "B0CQRNWJM2": {
       "name": "ZEBRONICS Blanc Slim Wireless Mouse with Rechargeable B",
       "link": "https://www.amazon.in/dp/B0CQRNWJM2/?tag=rrcool786-21",
@@ -159,14 +151,6 @@
       "category": "electronics",
       "benefit": "Rs 39,999 mein Amazon bestseller trending electronics product",
       "commission": 1599,
-      "emoji": "📱"
-    },
-    "B0H1WY1D37": {
-      "name": "iQOO Z11 Lite 44W 5G (Solar Flame, 4GB RAM, 128GB Stora",
-      "link": "https://www.amazon.in/dp/B0H1WY1D37/?tag=rrcool786-21",
-      "category": "electronics",
-      "benefit": "Rs 19,999 mein Amazon bestseller trending electronics product",
-      "commission": 799,
       "emoji": "📱"
     },
     "B008FWZ5MS": {
@@ -247,5 +231,14 @@
       "emoji": "💻"
     }
   },
-  "updated_at": "2026-09-08 12:12:20 UTC"
+  "updated_at": "2026-09-08 12:12:20 UTC",
+  "posted_names": [
+    "ambrane unbreakable 3a fast",
+    "oneplus n6x",
+    "oneplus nord buds 3r",
+    "oneplus nord ce6 lite",
+    "safari omega spacious large",
+    "samsung original 25w usb",
+    "samsung original type c"
+  ]
 }

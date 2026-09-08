@@ -280,9 +280,25 @@ def extract_asin(product):
     return m.group(1) if m else ""
 
 
+def norm_name(name):
+    """
+    Product ka 'family key' — naam ke pehle 4 asli shabd.
+
+    Kyun zaroori: Amazon ek hi product ki kai listing rakhta hai, har ki
+    ALAG ASIN (rang, size, RAM variant). Sirf ASIN pe dedup karne se
+    channel pe wahi cheez baar-baar dikhti thi —
+      KLOSIA Anarkali Kurta  -> 5 alag ASIN
+      Kaku Krishna Costume   -> 4 alag ASIN
+      iQOO Z11 Lite 44W 5G   -> 2 alag ASIN (4GB / 8GB)
+    Naam ke pehle 4 shabd match karke un sab ko ek hi maan lete hain.
+    """
+    words = re.sub(r"[^a-z0-9 ]", " ", (name or "").lower()).split()
+    return " ".join(words[:4])
+
+
 def load_state():
     """posted_asins.json padho. Purana format (plain list) bhi chal jayega."""
-    empty = {"cycle": 1, "posted": [], "catalog": {}}
+    empty = {"cycle": 1, "posted": [], "posted_names": [], "catalog": {}}
 
     if not os.path.exists(STATE_FILE):
         print("   [STATE] posted_asins.json nahi mila — pehla run maan raha hoon")
@@ -300,16 +316,24 @@ def load_state():
     if isinstance(data, list):
         posted = [a for a in data if isinstance(a, str)]
         print(f"   [STATE] purana list format mila ({len(posted)} ASIN) — naye format mein migrate")
-        return {"cycle": 1, "posted": posted, "catalog": {}}
+        return {"cycle": 1, "posted": posted, "posted_names": [], "catalog": {}}
 
     if not isinstance(data, dict):
         return empty
 
     catalog = data.get("catalog")
+    catalog = catalog if isinstance(catalog, dict) else {}
+    posted  = [a for a in data.get("posted", []) if isinstance(a, str)]
+
+    # posted_names purani file mein nahi hoga — posted ASIN ke naam se bana lo
+    pn = data.get("posted_names")
+    if not isinstance(pn, list):
+        pn = [norm_name(catalog[a].get("name", "")) for a in posted if a in catalog]
     return {
-        "cycle":   data.get("cycle", 1),
-        "posted":  [a for a in data.get("posted", []) if isinstance(a, str)],
-        "catalog": catalog if isinstance(catalog, dict) else {},
+        "cycle":        data.get("cycle", 1),
+        "posted":       posted,
+        "posted_names": [n for n in pn if n],
+        "catalog":      catalog,
     }
 
 
@@ -328,14 +352,35 @@ def merge_into_catalog(catalog, products):
     Har run mein Amazon sirf 4-6 product deta hai, par catalog jama hota
     rehta hai — isliye rotate karne ko pool bada hota jaata hai.
     """
-    added = 0
+    # Catalog mein pehle se kaunse product-family hain
+    seen_families = {norm_name(v.get("name", "")): a for a, v in catalog.items()}
+
+    added = skipped = 0
     for p in products:
         asin = extract_asin(p)
         if not asin:
             continue
-        if asin not in catalog:
-            added += 1
-        catalog[asin] = p          # naam/price hamesha taaza rakho
+
+        if asin in catalog:
+            catalog[asin] = p      # naam/price taaza rakho
+            continue
+
+        # Ek hi product ki doosri listing catalog mein rakhne ka koi
+        # fayda nahi — wo kabhi post hogi hi nahi (name dedup rok dega),
+        # bas "Remaining unposted" ka count jhootha bada dikhati hai.
+        fam = norm_name(p.get("name", ""))
+        if fam and fam in seen_families:
+            skipped += 1
+            continue
+
+        catalog[asin] = p
+        if fam:
+            seen_families[fam] = asin
+        added += 1
+
+    if skipped:
+        print(f"   [STATE] {skipped} listing skip — ye pehle se catalog mein "
+              f"maujood product ki hi doosri listing thi (alag ASIN, wahi cheez)")
     return added
 
 
@@ -344,13 +389,19 @@ def pick_product(state, hot_asins):
     Sirf un products mein se chuno jo is cycle mein post NAHI hue.
     Poora catalog khatam ho jaaye tabhi naya cycle shuru hota hai.
     """
-    posted   = set(state["posted"])
-    catalog  = state["catalog"]
-    unposted = {a: p for a, p in catalog.items() if a not in posted}
+    posted       = set(state["posted"])
+    posted_names = set(state.get("posted_names", []))
+    catalog      = state["catalog"]
+
+    # Do filter: ASIN pehle post na hua ho, AUR uska naam bhi pehle na aaya ho.
+    # Doosra filter isliye ki Amazon ek product ki 5-5 listing rakhta hai.
+    unposted = {a: p for a, p in catalog.items()
+                if a not in posted and norm_name(p.get("name", "")) not in posted_names}
 
     if not unposted:
         state["cycle"] += 1
         state["posted"] = []
+        state["posted_names"] = []
         unposted = dict(catalog)
         print(f"   [CYCLE] poora catalog ({len(catalog)}) post ho chuka — "
               f"cycle {state['cycle']} shuru, history reset")
@@ -522,6 +573,11 @@ if __name__ == "__main__":
     # dobara try hoga — aur duplicate kabhi nahi banega.
     if success:
         state["posted"].append(asin)
+        # Naam bhi save karo — taaki isi product ki doosri listing
+        # (alag ASIN, wahi cheez) dobara post na ho
+        nm = norm_name(product.get("name", ""))
+        if nm and nm not in state.setdefault("posted_names", []):
+            state["posted_names"].append(nm)
         save_state(state)
         print(f"   [STATE] {asin} history mein save — "
               f"{len(state['posted'])}/{len(state['catalog'])} post ho chuke")
