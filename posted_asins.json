@@ -6,7 +6,8 @@
     "B0GVYXPZBS",
     "B0D2R2MXXJ",
     "B0FMDL81GS",
-    "B098NS6PVG"
+    "B098NS6PVG",
+    "B008FWZ5MS"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -21,8 +22,11 @@
       "name": "OnePlus Nord Buds 3r TWS Earbuds up to 54 Hours Playbac",
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rrcool786-21",
       "category": "electronics",
-      "benefit": "Rs 1,849 mein Amazon bestseller — trending electronics product",
-      "commission": 73,
+      "rating": 4.3,
+      "reviews": 49291,
+      "price": 1999,
+      "benefit": "4.3★ (49,291 reviews) — Rs 1,999",
+      "commission": 79,
       "emoji": "📱"
     },
     "B098NS6PVG": {
@@ -37,7 +41,10 @@
       "name": "Dyazo 6 Angles Adjustable Aluminum Ergonomic Foldable P",
       "link": "https://www.amazon.in/dp/B08LHTJTBB/?tag=rrcool786-21",
       "category": "computers",
-      "benefit": "Rs 389 mein Amazon bestseller — trending computers product",
+      "rating": 4.2,
+      "reviews": 20186,
+      "price": 389,
+      "benefit": "4.2★ (20,186 reviews) — Rs 389",
       "commission": 40,
       "emoji": "💻"
     },
@@ -61,7 +68,10 @@
       "name": "Safari Omega spacious/large laptop backpack with Rainco",
       "link": "https://www.amazon.in/dp/B097JJ2CK6/?tag=rrcool786-21",
       "category": "computers",
-      "benefit": "Rs 809 mein Amazon bestseller trending computers product",
+      "rating": 4.2,
+      "reviews": 16864,
+      "price": 709,
+      "benefit": "4.2★ (16,864 reviews) — Rs 709",
       "commission": 40,
       "emoji": "💻"
     },
@@ -77,7 +87,10 @@
       "name": "Samsung Original 25W USB Type-C Travel Adaptor Without ",
       "link": "https://www.amazon.in/dp/B0D2R2MXXJ/?tag=rrcool786-21",
       "category": "electronics",
-      "benefit": "Rs 579 mein Amazon bestseller trending electronics product",
+      "rating": 4.4,
+      "reviews": 22634,
+      "price": 579,
+      "benefit": "4.4★ (22,634 reviews) — Rs 579",
       "commission": 40,
       "emoji": "📱"
     },
@@ -85,7 +98,10 @@
       "name": "Portronics Conch Theta C in Ear Type C Wired Earphones ",
       "link": "https://www.amazon.in/dp/B0DDHM6D3L/?tag=rrcool786-21",
       "category": "electronics",
-      "benefit": "Rs 322 mein Amazon bestseller trending electronics product",
+      "rating": 4.1,
+      "reviews": 12448,
+      "price": 322,
+      "benefit": "4.1★ (12,448 reviews) — Rs 322",
       "commission": 40,
       "emoji": "📱"
     },
@@ -157,10 +173,79 @@
       "name": "Samsung Original Type C to C Cable - 3.28 Feet (1 Meter",
       "link": "https://www.amazon.in/dp/B008FWZ5MS/?tag=rrcool786-21",
       "category": "computers",
-      "benefit": "Rs 382 mein Amazon bestseller trending computers product",
+      "rating": 4.1,
+      "reviews": 3198,
+      "price": 382,
+      "benefit": "4.1★ (3,198 reviews) — Rs 382",
+      "commission": 40,
+      "emoji": "💻"
+    },
+    "B0DCNWN8NZ": {
+      "name": "Apple EarPods (USB-C) ​​​​​​​",
+      "link": "https://www.amazon.in/dp/B0DCNWN8NZ/?tag=rrcool786-21",
+      "category": "electronics",
+      "rating": 4.3,
+      "reviews": 16448,
+      "price": 1659,
+      "benefit": "4.3★ (16,448 reviews) — Rs 1,659",
+      "commission": 66,
+      "emoji": "📱"
+    },
+    "B0FBRGKXHG": {
+      "name": "OnePlus Bullets Wireless Z3 in-Ear Neckband with 12.4mm",
+      "link": "https://www.amazon.in/dp/B0FBRGKXHG/?tag=rrcool786-21",
+      "category": "electronics",
+      "rating": 4.1,
+      "reviews": 234027,
+      "price": 1696,
+      "benefit": "4.1★ (234,027 reviews) — Rs 1,696",
+      "commission": 67,
+      "emoji": "📱"
+    },
+    "B0CF1M3PF9": {
+      "name": "Pikkme Flip Cover Leather Finish",
+      "link": "https://www.amazon.in/dp/B0CF1M3PF9/?tag=rrcool786-21",
+      "category": "electronics",
+      "rating": 4.0,
+      "reviews": 56691,
+      "price": 199,
+      "benefit": "4.0★ (56,691 reviews) — Rs 199",
+      "commission": 40,
+      "emoji": "📱"
+    },
+    "B0B296NTFV": {
+      "name": "Portronics Toad 23 Wireless Optical Mouse with 2.4GHz, ",
+      "link": "https://www.amazon.in/dp/B0B296NTFV/?tag=rrcool786-21",
+      "category": "computers",
+      "rating": 4.0,
+      "reviews": 16307,
+      "price": 259,
+      "benefit": "4.0★ (16,307 reviews) — Rs 259",
+      "commission": 40,
+      "emoji": "💻"
+    },
+    "B09BFV96TS": {
+      "name": "Dyazo Water Resistant Laptop Sleeve/Laptop case/laptop ",
+      "link": "https://www.amazon.in/dp/B09BFV96TS/?tag=rrcool786-21",
+      "category": "computers",
+      "rating": 4.3,
+      "reviews": 24243,
+      "price": 299,
+      "benefit": "4.3★ (24,243 reviews) — Rs 299",
+      "commission": 40,
+      "emoji": "💻"
+    },
+    "B01DGVKBC6": {
+      "name": "FEDUS Cat6 Ethernet Cable, 10M High Speed 550MHZ / 10 G",
+      "link": "https://www.amazon.in/dp/B01DGVKBC6/?tag=rrcool786-21",
+      "category": "computers",
+      "rating": 4.4,
+      "reviews": 20904,
+      "price": 286,
+      "benefit": "4.4★ (20,904 reviews) — Rs 286",
       "commission": 40,
       "emoji": "💻"
     }
   },
-  "updated_at": "2026-09-08 00:00:00 UTC"
+  "updated_at": "2026-09-08 12:12:20 UTC"
 }
