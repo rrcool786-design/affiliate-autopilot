@@ -31,7 +31,8 @@
     "B0821PN8L4",
     "B010FMJKFS",
     "9309961414",
-    "B0FHKWN5R4"
+    "B0FHKWN5R4",
+    "B0C94RMBZX"
   ],
   "catalog": {
     "B09S6M7JQJ": {
@@ -78,7 +79,7 @@
       "name": "Amazon Brand - Presto! Garbage Bags",
       "link": "https://www.amazon.in/dp/B0821PN8L4/?tag=rahulfinds20c-21",
       "category": "kitchen",
-      "benefit": "Rs 325 mein Amazon bestseller trending kitchen product",
+      "benefit": "Rs 319 mein Amazon bestseller trending kitchen product",
       "commission": 40,
       "emoji": "🍳"
     },
@@ -214,7 +215,7 @@
       "name": "Samsung Original 25W USB Type-C Travel Adaptor Without ",
       "link": "https://www.amazon.in/dp/B0D2R2MXXJ/?tag=rahulfinds20c-21",
       "category": "electronics",
-      "benefit": "Rs 583 mein Amazon bestseller — trending electronics product",
+      "benefit": "Rs 579 mein Amazon bestseller trending electronics product",
       "commission": 40,
       "emoji": "📱"
     },
@@ -238,7 +239,7 @@
       "name": "Portronics Conch Theta C in Ear Type C Wired Earphones ",
       "link": "https://www.amazon.in/dp/B0DDHM6D3L/?tag=rahulfinds20c-21",
       "category": "electronics",
-      "benefit": "Rs 303 mein Amazon bestseller — trending electronics product",
+      "benefit": "Rs 322 mein Amazon bestseller trending electronics product",
       "commission": 40,
       "emoji": "📱"
     },
@@ -595,5 +596,5 @@
       "emoji": "🧸"
     }
   },
-  "updated_at": "2026-09-07 19:17:41 UTC"
+  "updated_at": "2026-09-08 06:13:50 UTC"
 }
