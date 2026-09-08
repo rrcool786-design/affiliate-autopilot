@@ -21,6 +21,16 @@ except ImportError:
 AFFILIATE_TAG    = "rahulfinds20c-21"
 TELEGRAM_CHANNEL = "https://t.me/TechDealsIndia_channel"
 SITE_URL         = "https://rrcool786-design.github.io/affiliate-autopilot"
+
+# ─── ANALYTICS / CONVERSION TRACKING ─────────────────────────────────────
+# Env var se aate hain taaki GitHub Actions mein Secrets se set kar sako.
+# Khali chhodne par site bilkul theek chalti hai, bas measurement band rehta hai.
+#   GA4_MEASUREMENT_ID  → analytics.google.com se "G-XXXXXXXXXX"
+#   TRACKER_URL         → optional Cloudflare Worker (cloudflare_tracker.js)
+#   NEWSLETTER_ENDPOINT → optional email form ka POST URL
+GA4_ID              = os.environ.get("GA4_MEASUREMENT_ID", "").strip()
+TRACKER_URL         = os.environ.get("TRACKER_URL", "").strip()
+NEWSLETTER_ENDPOINT = os.environ.get("NEWSLETTER_ENDPOINT", "").strip()
 OUTPUT_DIR       = os.path.join(os.path.dirname(os.path.abspath(__file__)), "docs")
 OUTPUT_FILE      = os.path.join(OUTPUT_DIR, "index.html")
 PRODUCTS_JSON    = os.path.join(os.path.dirname(os.path.abspath(__file__)), "products.json")
@@ -251,7 +261,7 @@ def scrape_products():
                     break
             cards = cards[:5]
 
-            for card in cards:
+            for rank, card in enumerate(cards, 1):
                 name_el = card.select_one(".p13n-sc-truncate-desktop-type2, .p13n-sc-truncated, "
                                           "._cDEzb_p13n-sc-css-line-clamp-3_g3dy1, a.a-link-normal span")
                 price_el = card.select_one(".p13n-sc-price, span.a-price span.a-offscreen, "
@@ -275,10 +285,40 @@ def scrape_products():
                             image = v
                             break
 
-                price_text = price_el.get_text(strip=True) if price_el else "₹1000"
-                price = int(re.sub(r"[^\d]", "", price_text.split(".")[0]) or 1000)
-                original_price = int(price * random.uniform(1.2, 1.6))
-                discount = int(((original_price - price) / original_price) * 100)
+                # ── ASLI RATING — "4.3 out of 5 stars" ────────────────
+                rating = 0.0
+                rat_el = card.select_one("i[class*=a-icon-star] span.a-icon-alt, span.a-icon-alt")
+                if rat_el:
+                    m = re.search(r"([\d.]+)\s*out of", rat_el.get_text(strip=True))
+                    if m:
+                        try:
+                            rating = float(m.group(1))
+                        except ValueError:
+                            rating = 0.0
+
+                # ── ASLI REVIEW COUNT ─────────────────────────────────
+                reviews = 0
+                for rev_el in card.select("span.a-size-small, a.a-size-small span"):
+                    txt = rev_el.get_text(strip=True).replace(",", "")
+                    if txt.isdigit():
+                        reviews = int(txt)
+                        break
+
+                price_text = price_el.get_text(strip=True) if price_el else ""
+                digits = re.sub(r"[^\d]", "", price_text.split(".")[0])
+                price = int(digits) if digits else 0
+
+                # ── Junk listings hatao ───────────────────────────────
+                # Amazon ki bestseller list mein service/recharge listings
+                # bhi aa jaati hain ("LPG cylinder booking — ₹1"). Wo
+                # shopping site pe bharosa todti hain, isliye skip.
+                if price < MIN_PRODUCT_PRICE:
+                    continue
+                if len(name) < 8:
+                    continue
+                if any(bad in name.lower() for bad in JUNK_KEYWORDS):
+                    continue
+
                 products.append({
                     "name": name,
                     "asin": asin,
@@ -286,10 +326,12 @@ def scrape_products():
                     "category": category["name"],
                     "emoji": category["emoji"],
                     "price": price,
-                    "original_price": original_price,
-                    "discount": discount,
-                    "rating": round(random.uniform(3.8, 4.7), 1),
-                    "reviews": random.randint(500, 50000),
+                    "rating": rating,          # 0 = pata nahi
+                    "reviews": reviews,        # 0 = pata nahi
+                    "bestseller_rank": rank,   # is category ki bestseller list mein position
+                    # Ye flag batata hai ki data Amazon se ABHI aaya hai.
+                    # Sirf iske hone par hi rating/rank jaise claims dikhte hain.
+                    "data_source": "amazon_live",
                 })
         except Exception:
             continue
@@ -303,6 +345,14 @@ def scrape_products():
 # wo ad-serving domain hai: host resolve hi nahi hota aur adblocker
 # usse block karte hain. Purana code wahi use karta tha, isliye saari
 # images tooti hui thi.
+# Bestseller list mein service/recharge listings bhi aa jaati hain — inhe
+# site pe dikhane se koi commission nahi milta aur bharosa girta hai.
+MIN_PRODUCT_PRICE = 49
+JUNK_KEYWORDS = (
+    "cylinder booking", "gift card", "recharge", "subscription",
+    "prepaid", "e-gift", "top up", "top-up", "bill payment",
+)
+
 TRUSTED_IMAGE_HOSTS = (
     "m.media-amazon.com",
     "images-na.ssl-images-amazon.com",
@@ -400,42 +450,126 @@ def generate_stars(rating):
     return "★" * full + ("½" if half else "") + "☆" * empty
 
 
+FAQS = [
+    ("Are the prices on this site the same as Amazon?",
+     "We show the price captured from Amazon India at the time the page was last "
+     "built (rebuilt every morning). Amazon changes prices through the day, so the "
+     "price on Amazon is always the final one. Every product links straight to its "
+     "Amazon India page so you can check before buying."),
+    ("Does it cost me anything to buy through your links?",
+     "No. The price you pay on Amazon is exactly the same. As an Amazon Associate we "
+     "earn a small commission from Amazon on qualifying purchases, which is how the "
+     "site stays free."),
+    ("How do you choose the products?",
+     "We pull the current bestseller lists from Amazon India across ten categories. "
+     "The ranking you see is Amazon's own bestseller position — we do not re-order "
+     "products in exchange for payment."),
+    ("How often is the site updated?",
+     "Automatically every morning at about 6:30 AM IST. The date at the top of the "
+     "page shows the last update."),
+    ("Do you handle orders, payments or delivery?",
+     "No. We are not a shop. Every purchase happens on Amazon India, under Amazon's "
+     "own pricing, returns and delivery policies. We never see your payment details."),
+    ("How do I get deals on Telegram?",
+     "Join our free Telegram channel — new picks are posted through the day. "
+     "No signup or personal details needed."),
+]
+
+
 def build_jsonld(products):
-    """Build JSON-LD schema — called outside f-string to avoid brace conflicts."""
+    """
+    JSON-LD @graph — Organization, WebSite, BreadcrumbList, FAQPage, ItemList.
+
+    NOTE: aggregateRating sirf tab jaata hai jab rating ASLI Amazon se aayi ho.
+    Pehle yahan default 4.0 / 500 reviews bhej rahe the — wo Google ko galat
+    structured data bhejna tha, jiska manual action lag sakta hai.
+    """
     items = []
-    for i, p in enumerate(products[:20], 1):
+    for i, p in enumerate(products[:30], 1):
         aff_url = f"https://www.amazon.in/dp/{p['asin']}?tag={AFFILIATE_TAG}"
-        items.append({
-            "@type": "ListItem",
-            "position": i,
-            "item": {
-                "@type": "Product",
-                "name": p["name"],
+        product_node = {
+            "@type": "Product",
+            "name": p["name"],
+            "category": p.get("category", ""),
+            "url": aff_url,
+            "offers": {
+                "@type": "Offer",
+                "priceCurrency": "INR",
+                "price": str(p["price"]),
+                "availability": "https://schema.org/InStock",
                 "url": aff_url,
-                "offers": {
-                    "@type": "Offer",
-                    "priceCurrency": "INR",
-                    "price": str(p["price"]),
-                    "availability": "https://schema.org/InStock",
-                    "url": aff_url
-                },
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": str(p.get("rating", 4.0)),
-                    "reviewCount": str(p.get("reviews", 500))
-                }
+                "seller": {"@type": "Organization", "name": "Amazon.in"},
+            },
+        }
+        img = (p.get("image") or "").strip()
+        if img:
+            product_node["image"] = img
+
+        verified = p.get("data_source") == "amazon_live"
+        rating   = p.get("rating") or 0
+        reviews  = p.get("reviews") or 0
+        if verified and rating > 0 and reviews > 0:
+            product_node["aggregateRating"] = {
+                "@type": "AggregateRating",
+                "ratingValue": str(rating),
+                "reviewCount": str(reviews),
+                "bestRating": "5",
+                "worstRating": "1",
             }
-        })
-    schema = {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": "Best Amazon India Deals Today",
-        "description": "Top discounted products on Amazon India — updated daily",
-        "url": SITE_URL,
-        "numberOfItems": len(products),
-        "itemListElement": items
-    }
-    return json.dumps(schema, ensure_ascii=False, indent=2)
+
+        items.append({"@type": "ListItem", "position": i, "item": product_node})
+
+    graph = [
+        {
+            "@type": "Organization",
+            "@id": f"{SITE_URL}/#organization",
+            "name": "Deal Bazaar India",
+            "url": SITE_URL,
+            "description": "Independent Amazon India bestseller tracker and Amazon Associate.",
+            "sameAs": [TELEGRAM_CHANNEL],
+        },
+        {
+            "@type": "WebSite",
+            "@id": f"{SITE_URL}/#website",
+            "url": SITE_URL,
+            "name": "Deal Bazaar India",
+            "publisher": {"@id": f"{SITE_URL}/#organization"},
+            "inLanguage": "en-IN",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": {"@type": "EntryPoint", "urlTemplate": f"{SITE_URL}/?q={{search_term_string}}"},
+                "query-input": "required name=search_term_string",
+            },
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": f"{SITE_URL}/#breadcrumb",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{SITE_URL}/"},
+                {"@type": "ListItem", "position": 2, "name": "Amazon India Bestsellers", "item": f"{SITE_URL}/"},
+            ],
+        },
+        {
+            "@type": "FAQPage",
+            "@id": f"{SITE_URL}/#faq",
+            "mainEntity": [
+                {"@type": "Question", "name": q,
+                 "acceptedAnswer": {"@type": "Answer", "text": a}}
+                for q, a in FAQS
+            ],
+        },
+        {
+            "@type": "ItemList",
+            "@id": f"{SITE_URL}/#products",
+            "name": "Amazon India Bestsellers Today",
+            "description": "Current bestselling products on Amazon India, refreshed daily.",
+            "url": SITE_URL,
+            "numberOfItems": len(products),
+            "itemListElement": items,
+        },
+    ]
+    return json.dumps({"@context": "https://schema.org", "@graph": graph},
+                      ensure_ascii=False, indent=2)
 
 
 def generate_html(products):
@@ -445,8 +579,14 @@ def generate_html(products):
 
     # Category list + sort products
     cats = sorted(set(p["category"] for p in products))
-    top_deals = sorted(products, key=lambda x: x.get("discount", 0), reverse=True)
-    top = top_deals[0] if top_deals else {"name": "Amazon Deals", "price": 0, "discount": 0, "asin": "", "category": "Electronics", "original_price": 0}
+    # Pehle "sabse zyada discount" se sort hota tha — par wo discount banaya
+    # hua tha. Ab ASLI signals se: bestseller rank pehle, phir rating,
+    # phir review count. Ye teeno Amazon se sach mein aate hain.
+    def _rank_key(p):
+        rank = p.get("bestseller_rank") or 999
+        return (rank, -(p.get("rating") or 0), -(p.get("reviews") or 0))
+    top_deals = sorted(products, key=_rank_key)
+    top = top_deals[0] if top_deals else {"name": "Amazon Deals", "price": 0, "asin": "", "category": "Electronics"}
 
     # Category gradient backgrounds
     cat_bg = {
@@ -467,91 +607,109 @@ def generate_html(products):
         "name": p["name"],
         "category": p["category"],
         "price": p["price"],
-        "discount": p["discount"],
+        "rating": p.get("rating", 0) or 0,
+        "reviews": p.get("reviews", 0) or 0,
+        "rank": p.get("bestseller_rank", 0) or 0,
         "asin": p["asin"],
         "emoji": p.get("emoji", "🛍️")
     } for p in products], ensure_ascii=False)
 
     # ── Trending section (top 8 by discount) ─────────────────────────────────
     trending_html = ""
-    for p in top_deals[:8]:
+    for idx, p in enumerate(top_deals[:8]):
         asin   = p["asin"]
         name   = p["name"]
         cat    = p["category"]
         emoji  = p.get("emoji", "🛍️")
         price  = p["price"]
-        orig   = p.get("original_price", int(price * 1.3))
-        disc   = p.get("discount", int((orig - price) / orig * 100))
-        savings = orig - price
+        rank   = p.get("bestseller_rank", 0)
+        verified = p.get("data_source") == "amazon_live"
         aff_url = f"https://www.amazon.in/dp/{asin}?tag={AFFILIATE_TAG}"
         img_url, img_is_real = resolve_image(p)
         bg = cat_bg.get(cat, "linear-gradient(135deg,#1a1a2e,#0d0d1f)")
         short_name = name[:38] + ('...' if len(name) > 38 else '')
         safe_name = name.replace(chr(39), '')
+        # Badge sirf ASLI bestseller rank se — banaya hua discount nahi
+        rank_badge = (f'<span class="t-rank-badge">#{rank} in {cat}</span>'
+                      if verified and rank else '')
+        # Pehli 4 images fold ke andar hoti hain — inhe turant load karo
+        eager = ('loading="eager" fetchpriority="high"' if idx < 2
+                 else 'loading="lazy" decoding="async"')
         trending_html += f"""
 <article class="t-card" data-asin="{asin}">
   <div class="t-img-wrap" style="background:{bg}">
-    <img src="{img_url}" alt="{name} Amazon India deal" loading="lazy" class="t-img" onerror="imgFallback(this)" onload="imgCheck(this)">
+    <img src="{img_url}" alt="{name} — Amazon India price" {eager} class="t-img" width="200" height="140" onerror="imgFallback(this)" onload="imgCheck(this)">
     <span class="t-emoji-fb">{emoji}</span>
   </div>
   <div class="t-body">
-    <span class="t-disc-badge">{disc}% OFF</span>
+    {rank_badge}
     <h3 class="t-name">{short_name}</h3>
-    <div class="t-price">₹{price:,} <s>₹{orig:,}</s></div>
-    <div class="t-save">Save ₹{savings:,}</div>
-    <a href="{aff_url}" target="_blank" class="t-btn" onclick="trackClick('{asin}','{safe_name}',{price},'{cat}',{disc})">Grab Deal 🔥</a>
+    <div class="t-price">₹{price:,}</div>
+    <a href="{aff_url}" target="_blank" rel="noopener sponsored nofollow" class="t-btn" onclick="trackClick('{asin}','{safe_name}',{price},'{cat}')">Check price on Amazon →</a>
   </div>
 </article>"""
 
     # ── Main product cards ────────────────────────────────────────────────────
     cards_html = ""
-    for p in products:
+    for idx, p in enumerate(products):
         asin     = p["asin"]
         name     = p["name"]
         cat      = p["category"]
         emoji    = p.get("emoji", "🛍️")
         price    = p["price"]
-        orig     = p.get("original_price", int(price * 1.3))
-        disc     = p.get("discount", int((orig - price) / orig * 100))
-        rating   = p.get("rating", 4.0)
-        reviews  = p.get("reviews", random.randint(500, 50000))
-        bought   = random.randint(20, 300)
-        stars    = generate_stars(rating)
-        savings  = orig - price
+        rating   = p.get("rating", 0) or 0
+        reviews  = p.get("reviews", 0) or 0
+        rank     = p.get("bestseller_rank", 0)
+        verified = p.get("data_source") == "amazon_live"
         aff_url  = f"https://www.amazon.in/dp/{asin}?tag={AFFILIATE_TAG}"
         img_url, img_is_real = resolve_image(p)
         bg       = cat_bg.get(cat, "linear-gradient(135deg,#1a1a2e,#0d0d1f)")
         safe_name = name.replace(chr(39), '')
-        cta_text  = f"Grab Deal 🔥 — ₹{price:,}"
-        hot_badge = f'<span class="badge-hot">🔥 HOT</span>' if disc >= 60 else ''
-        trend_badge = f'<span class="badge-trending">📈 TRENDING</span>' if disc >= 75 else ''
+        cta_text  = f"Check price on Amazon →"
+
+        # ── Badges — sirf ASLI data se ────────────────────────────────
+        # Pehle yahan banaya hua "% OFF" aur "X bought today" lagta tha.
+        # Wo Amazon Associates policy todta tha aur click ke baad
+        # visitor ka bharosa bhi.
+        badges = ""
+        if verified and rank:
+            badges += f'<span class="badge-rank">🏆 #{rank} in {cat}</span>'
+        if verified and reviews >= 10000:
+            badges += f'<span class="badge-popular">{reviews:,}+ reviews</span>'
+        badge_wrap = f'<div class="badge-wrap">{badges}</div>' if badges else ''
+
+        # Rating sirf tab jab Amazon se asli mili ho
+        if verified and rating > 0:
+            stars = generate_stars(rating)
+            rev_txt = f' <span class="rev-count">{rating} ({reviews:,})</span>' if reviews else f' <span class="rev-count">{rating}</span>'
+            rating_html = f'<div class="card-rating" aria-label="Rating {rating} out of 5">{stars}{rev_txt}</div>'
+        else:
+            rating_html = ''
+
+        eager = ('loading="eager" decoding="async"' if idx < 3
+                 else 'loading="lazy" decoding="async"')
 
         cards_html += f"""
-<article class="card" data-category="{cat}" data-price="{price}" data-discount="{disc}" data-name="{name.lower()}" data-rating="{rating}" data-reviews="{reviews}">
-  <div class="badge-wrap">
-    <span class="badge-disc">{disc}% OFF</span>
-    {hot_badge}{trend_badge}
-  </div>
+<article class="card" data-category="{cat}" data-price="{price}" data-name="{name.lower()}" data-rating="{rating}" data-reviews="{reviews}" data-rank="{rank}">
+  {badge_wrap}
   <div class="prod-img-wrap" style="background:{bg}">
-    <img src="{img_url}" alt="{name} — best price India Amazon" loading="lazy" class="prod-img" onerror="imgFallback(this)" onload="imgCheck(this)" width="200" height="160">
+    <img src="{img_url}" alt="{name} — price on Amazon India" {eager} class="prod-img" onerror="imgFallback(this)" onload="imgCheck(this)" width="200" height="160">
     <span class="prod-emoji-fb">{emoji}</span>
   </div>
   <div class="card-body">
     <div class="card-meta"><span class="card-cat">{cat}</span></div>
-    <h2 class="card-name">{name}</h2>
-    <div class="card-rating">{stars} <span class="rev-count">({reviews:,})</span></div>
+    <h3 class="card-name">{name}</h3>
+    {rating_html}
     <div class="price-row">
       <span class="price-now">₹{price:,}</span>
-      <span class="price-orig">₹{orig:,}</span>
+      <span class="price-note">on Amazon</span>
     </div>
-    <div class="savings">✓ Save ₹{savings:,}</div>
-    <div class="bought-today">🔥 {bought} bought today</div>
     <div class="cta-row">
-      <a href="{aff_url}" target="_blank" rel="noopener sponsored" class="btn-buy" onclick="trackClick('{asin}','{safe_name}',{price},'{cat}',{disc})">{cta_text}</a>
-      <button class="btn-wa" onclick="shareWA('{aff_url}','{safe_name}','{price}','{disc}')" title="Share on WhatsApp" aria-label="Share on WhatsApp">📲</button>
-      <button class="btn-wish" onclick="toggleWish(this,'{asin}','{safe_name}','{price}','{disc}','{emoji}')" title="Add to Wishlist" aria-label="Add to Wishlist">🤍</button>
+      <a href="{aff_url}" target="_blank" rel="noopener sponsored nofollow" class="btn-buy" onclick="trackClick('{asin}','{safe_name}',{price},'{cat}')">{cta_text}</a>
+      <button class="btn-wa" onclick="shareWA('{aff_url}','{safe_name}','{price}')" title="Share on WhatsApp" aria-label="Share {safe_name} on WhatsApp">📲</button>
+      <button class="btn-wish" onclick="toggleWish(this,'{asin}','{safe_name}','{price}','{emoji}')" title="Save for later" aria-label="Save {safe_name} for later">🤍</button>
     </div>
-    <p class="aff-note">*Amazon affiliate link</p>
+    <p class="aff-note">Paid link — price checked {today}</p>
   </div>
 </article>"""
 
@@ -562,27 +720,90 @@ def generate_html(products):
         em = cat_emojis.get(c, "📦")
         cat_btns += f'<button class="cat-btn" data-cat="{c}" onclick="filterCat(this)">{em} {c}</button>\n'
 
+    # ── FAQ — SEO ke liye FAQPage schema, aur visitor ke wo sawaal jo
+    #    click se pehle rok dete hain ("kya price same hai?", "extra charge?")
+    faq_html = ""
+    for i, (q, a) in enumerate(FAQS):
+        open_attr = " open" if i == 0 else ""
+        faq_html += f"""
+  <details class="faq-item"{open_attr}>
+    <summary>{q}</summary>
+    <p>{a}</p>
+  </details>"""
+
+    # ── Ticker — pehle yahan hardcoded "77% OFF!" jaise nakli claims the.
+    #    Ab asli products ke asli naam aur asli price se banta hai.
+    ticker_items = ""
+    for p in top_deals[:10]:
+        nm = p["name"][:34] + ("…" if len(p["name"]) > 34 else "")
+        ticker_items += f'<span>{p.get("emoji","🛍️")} {nm} — ₹{p["price"]:,}</span>\n    '
+    if not ticker_items:
+        ticker_items = "<span>🛍️ Amazon India bestsellers — updated daily</span>"
+
     # ── SEO meta ──────────────────────────────────────────────────────────────
     top_asin = top.get("asin", "")
     # og:image ko asli, reachable URL chahiye — data URI social preview
     # mein nahi chalti, isliye validate hone par hi product image lagao.
     top_img = (top.get("image") or "").strip()
     og_img = top_img if (top_img and validate_image_url(top_img)) else f"{SITE_URL}/og-banner.png"
-    og_title = f"🔥 {top.get('discount',0)}% OFF on {top.get('name','Amazon Deals')} | Deal Bazaar India"
-    og_desc  = f"Best Amazon India deals today — {total} products, up to 80% OFF. Electronics, Laptops, Kitchen, Fashion & more. Updated daily!"
+    # Title/description ab sirf wahi kehte hain jo sach hai — "up to 80% OFF"
+    # jaisa claim hata diya kyunki uske peeche koi asli MRP data nahi tha.
+    og_title = f"Today's Amazon India Bestsellers — {total} Picks | Deal Bazaar India"
+    og_desc  = (f"{total} Amazon India bestsellers with live prices — Electronics, Laptops, "
+                f"Kitchen, Fashion & more. Updated {today}.")
+
+    # ── GA4 — sirf tab lagta hai jab Measurement ID set ho ────────────────
+    ga4_snippet = ""
+    if GA4_ID:
+        ga4_snippet = f"""<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id={GA4_ID}"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){{dataLayer.push(arguments);}}
+gtag('js', new Date());
+gtag('config', '{GA4_ID}', {{ anonymize_ip: true }});
+</script>"""
+
+    # ── Email capture — endpoint set ho tabhi form dikhega ────────────────
+    if NEWSLETTER_ENDPOINT:
+        email_form = f"""
+<section class="email-cta" aria-labelledby="email-h">
+  <h2 id="email-h">Roz ke bestsellers seedha inbox mein</h2>
+  <p>Hafte mein ek mail — Amazon India ke top picks. Kabhi spam nahi, ek click mein unsubscribe.</p>
+  <form class="email-form" action="{NEWSLETTER_ENDPOINT}" method="POST" onsubmit="trackSignup()">
+    <label for="email-in" class="sr-only">Your email address</label>
+    <input id="email-in" type="email" name="email" required placeholder="aapka@email.com" autocomplete="email">
+    <button type="submit">Subscribe free</button>
+  </form>
+  <small>Ya <a href="{TELEGRAM_CHANNEL}" target="_blank" rel="noopener">Telegram pe join karo</a> — wahan roz update aata hai.</small>
+</section>"""
+    else:
+        # Endpoint nahi hai to jhootha form dikhane ka koi matlab nahi —
+        # Telegram par bhej do, wo pehle se chal raha hai.
+        email_form = f"""
+<section class="email-cta" aria-labelledby="email-h">
+  <h2 id="email-h">Roz ke naye bestsellers chahiye?</h2>
+  <p>Telegram channel pe har roz Amazon India ke top picks aate hain — free, koi signup nahi.</p>
+  <a class="email-tg-btn" href="{TELEGRAM_CHANNEL}" target="_blank" rel="noopener" onclick="trackTelegram('inline')">📣 Join on Telegram</a>
+</section>"""
 
     return f"""<!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Deal Bazaar India — Best Amazon Deals Today India | Up to 80% OFF</title>
-<meta name="description" content="Best Amazon India deals today — {total} products with up to 80% discount. Electronics, Laptops, Kitchen, Fashion, Beauty &amp; more. Updated daily!">
-<meta name="keywords" content="amazon deals india, amazon sale today, best amazon offers 2026, electronics deals india, mobile deals india, laptop deals india, amazon discount coupons, best deals under 500, best deals under 1000">
+<title>Amazon India Bestsellers Today — {total} Top Picks | Deal Bazaar India</title>
+<meta name="description" content="{total} Amazon India bestsellers with live prices and real ratings — Electronics, Laptops, Kitchen, Fashion, Beauty &amp; more. Updated {today}.">
+<meta name="keywords" content="amazon india bestsellers, amazon best sellers today, top rated amazon india products, electronics bestsellers india, kitchen bestsellers india, amazon india price today">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Deal Bazaar India">
 <link rel="canonical" href="{SITE_URL}/">
 <link rel="sitemap" type="application/xml" href="{SITE_URL}/sitemap.xml">
+<!-- Image CDN se pehle hi connect kar lo — LCP tez hota hai -->
+<link rel="preconnect" href="https://images-eu.ssl-images-amazon.com" crossorigin>
+<link rel="preconnect" href="https://m.media-amazon.com" crossorigin>
+<link rel="dns-prefetch" href="https://images-na.ssl-images-amazon.com">
+{ga4_snippet}
 <!-- Favicon -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
 <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
@@ -651,11 +872,53 @@ header{{background:linear-gradient(135deg,#14143a 0%,#0a0a20 100%);padding:16px 
 .ac-item .ac-cat{{font-size:.7rem;color:var(--muted)}}
 .ac-item .ac-price{{color:var(--green);font-weight:700;font-size:.82rem;flex-shrink:0}}
 .search-tags{{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px;justify-content:center}}
-.stag{{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);color:var(--text);padding:5px 13px;border-radius:20px;font-size:.77rem;cursor:pointer;transition:all .2s;white-space:nowrap;font-family:var(--font)}}
+.stag{{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);color:var(--text);padding:11px 15px;min-height:44px;display:inline-flex;align-items:center;border-radius:20px;font-size:.77rem;cursor:pointer;transition:all .2s;white-space:nowrap;font-family:var(--font)}}
 .stag:hover,.stag.active{{background:var(--accent);border-color:var(--accent);color:#fff}}
 
 /* ── TRENDING SECTION ──────────────────────────────────────────────── */
 .trending-section{{max-width:1400px;margin:24px auto 0;padding:0 20px}}
+/* ── Accessibility ────────────────────────────────────────────── */
+.skip-link{{position:absolute;left:-9999px;top:0;background:var(--accent);color:#fff;padding:10px 16px;z-index:999;border-radius:0 0 8px 0}}
+/* Tap targets — mobile pe har clickable cheez comfortably tappable ho */
+.skip-link{{min-height:44px;display:inline-flex;align-items:center}}
+.header-meta a{{min-height:44px;display:inline-flex;align-items:center;padding:6px 12px}}
+.breadcrumb a{{display:inline-block;padding:8px 4px;min-height:34px}}
+#wish-close{{min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center}}
+.btn-tg{{min-height:44px;display:inline-flex;align-items:center;justify-content:center}}
+.footer-col a{{display:inline-block;padding:9px 0;min-height:38px}}
+.footer-bottom a{{display:inline-block;padding:6px 2px}}
+.skip-link:focus{{left:0}}
+.sr-only{{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{{outline:3px solid #ffd93d;outline-offset:2px}}
+
+/* ── Breadcrumb ───────────────────────────────────────────────── */
+.breadcrumb{{max-width:1400px;margin:0 auto;padding:10px 16px 0}}
+.breadcrumb ol{{display:flex;gap:8px;list-style:none;font-size:.76rem;color:var(--muted);flex-wrap:wrap}}
+.breadcrumb li+li::before{{content:"›";margin-right:8px;color:var(--muted)}}
+.breadcrumb a{{color:var(--muted)}}
+.breadcrumb a:hover{{color:var(--green)}}
+
+/* ── Email / Telegram CTA ─────────────────────────────────────── */
+.email-cta{{margin:26px auto;max-width:660px;background:var(--card);border:1px solid rgba(0,212,170,.22);border-radius:14px;padding:22px 18px;text-align:center}}
+.email-cta h2{{font-size:1.05rem;font-weight:800;margin-bottom:6px}}
+.email-cta p{{font-size:.83rem;color:var(--muted);margin-bottom:14px}}
+.email-form{{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}}
+.email-form input{{flex:1;min-width:210px;min-height:44px;padding:10px 14px;border-radius:9px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.05);color:var(--text);font-family:var(--font);font-size:.86rem}}
+.email-form button{{min-height:44px;padding:10px 20px;border:none;border-radius:9px;background:var(--green);color:#06231d;font-weight:800;cursor:pointer;font-family:var(--font);font-size:.86rem}}
+.email-cta small{{display:block;margin-top:10px;color:var(--muted);font-size:.76rem}}
+.email-tg-btn{{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 26px;border-radius:9px;background:#229ED9;color:#fff;font-weight:800;text-decoration:none;font-size:.9rem}}
+.email-tg-btn:hover{{opacity:.92;text-decoration:none}}
+
+/* ── FAQ ──────────────────────────────────────────────────────── */
+.faq-section{{margin:30px auto;max-width:820px}}
+.faq-item{{background:var(--card);border:1px solid rgba(255,255,255,.07);border-radius:10px;margin-bottom:8px;overflow:hidden}}
+.faq-item summary{{padding:14px 16px;min-height:44px;cursor:pointer;font-weight:700;font-size:.88rem;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px}}
+.faq-item summary::after{{content:"+";font-size:1.3rem;color:var(--green);flex-shrink:0}}
+.faq-item[open] summary::after{{content:"−"}}
+.faq-item p{{padding:0 16px 16px;font-size:.84rem;color:var(--muted);line-height:1.65}}
+.section-sub{{font-size:.79rem;color:var(--muted);margin:-8px 0 14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}}
+.countdown{{color:var(--green);font-variant-numeric:tabular-nums}}
+
 .section-title{{font-size:1.2rem;font-weight:800;color:var(--text);margin-bottom:14px;display:flex;align-items:center;gap:8px}}
 .section-title small{{font-size:.75rem;font-weight:500;color:var(--muted);background:rgba(255,255,255,.07);padding:2px 10px;border-radius:20px}}
 .t-grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}}
@@ -665,18 +928,16 @@ header{{background:linear-gradient(135deg,#14143a 0%,#0a0a20 100%);padding:16px 
 .t-img{{max-width:100%;max-height:100%;object-fit:contain;padding:8px}}
 .t-emoji-fb{{display:none;font-size:3rem;align-items:center;justify-content:center;width:100%;height:100%}}
 .t-body{{padding:10px 12px;display:flex;flex-direction:column;gap:5px;flex:1}}
-.t-disc-badge{{display:inline-block;background:var(--accent);color:#fff;font-size:.68rem;font-weight:800;padding:2px 7px;border-radius:5px;width:fit-content}}
+.t-rank-badge{{display:inline-block;background:var(--gold);color:#111;font-size:.68rem;font-weight:800;padding:2px 7px;border-radius:5px;width:fit-content}}
 .t-name{{font-size:.8rem;font-weight:600;color:var(--text);line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}}
 .t-price{{font-size:.85rem;font-weight:800;color:var(--green)}}
-.t-price s{{font-size:.72rem;color:var(--muted);font-weight:400}}
-.t-save{{font-size:.68rem;color:#4ade80}}
 .t-btn{{display:block;background:linear-gradient(135deg,var(--accent),#c03030);color:#fff;text-decoration:none;text-align:center;padding:7px;border-radius:8px;font-size:.78rem;font-weight:700;margin-top:auto;transition:opacity .2s;border:none;cursor:pointer;font-family:var(--font)}}
 .t-btn:hover{{opacity:.9}}
 
 /* ── CONTROLS ──────────────────────────────────────────────────────── */
 .controls{{padding:12px 20px;background:rgba(255,255,255,.02);border-bottom:1px solid rgba(255,255,255,.05)}}
 .controls-inner{{max-width:1400px;margin:0 auto;display:flex;gap:10px;flex-wrap:wrap;align-items:center}}
-.sort-select,.price-select{{background:rgba(255,255,255,.07);color:var(--text);border:1px solid rgba(255,255,255,.13);border-radius:8px;padding:7px 12px;font-size:.83rem;cursor:pointer;outline:none;font-family:var(--font)}}
+.sort-select,.price-select{{background:rgba(255,255,255,.07);color:var(--text);border:1px solid rgba(255,255,255,.13);border-radius:8px;padding:11px 12px;min-height:44px;font-size:.83rem;cursor:pointer;outline:none;font-family:var(--font)}}
 .sort-select:focus,.price-select:focus{{border-color:var(--accent)}}
 .result-count{{color:var(--muted);font-size:.82rem;margin-left:auto}}
 
@@ -684,7 +945,7 @@ header{{background:linear-gradient(135deg,#14143a 0%,#0a0a20 100%);padding:16px 
 .cat-bar{{padding:10px 20px;overflow-x:auto;white-space:nowrap;border-bottom:1px solid rgba(255,255,255,.05)}}
 .cat-bar::-webkit-scrollbar{{height:3px}}
 .cat-bar::-webkit-scrollbar-thumb{{background:var(--accent);border-radius:3px}}
-.cat-btn{{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.11);color:var(--text);padding:6px 15px;border-radius:20px;cursor:pointer;font-size:.82rem;margin-right:7px;transition:all .2s;white-space:nowrap;font-family:var(--font);min-height:36px}}
+.cat-btn{{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.11);color:var(--text);padding:10px 16px;border-radius:20px;cursor:pointer;font-size:.82rem;margin-right:7px;transition:all .2s;white-space:nowrap;font-family:var(--font);min-height:44px;display:inline-flex;align-items:center}}
 .cat-btn:hover,.cat-btn.active{{background:var(--accent);border-color:var(--accent);color:#fff}}
 
 /* ── GRID ──────────────────────────────────────────────────────────── */
@@ -696,9 +957,8 @@ header{{background:linear-gradient(135deg,#14143a 0%,#0a0a20 100%);padding:16px 
 .card{{background:var(--card);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,.07);transition:all .25s;position:relative;display:flex;flex-direction:column;gap:0}}
 .card:hover{{transform:translateY(-4px);box-shadow:0 14px 44px rgba(233,69,96,.18);border-color:rgba(233,69,96,.28)}}
 .badge-wrap{{display:flex;gap:5px;flex-wrap:wrap;padding:10px 12px 0}}
-.badge-disc{{background:var(--accent);color:#fff;font-size:.68rem;font-weight:800;padding:3px 7px;border-radius:5px}}
-.badge-hot{{background:var(--gold);color:#111;font-size:.68rem;font-weight:800;padding:3px 7px;border-radius:5px}}
-.badge-trending{{background:#7c3aed;color:#fff;font-size:.68rem;font-weight:700;padding:3px 7px;border-radius:5px}}
+.badge-rank{{background:var(--gold);color:#111;font-size:.68rem;font-weight:800;padding:3px 7px;border-radius:5px}}
+.badge-popular{{background:#7c3aed;color:#fff;font-size:.68rem;font-weight:700;padding:3px 7px;border-radius:5px}}
 .prod-img-wrap{{height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin:8px 12px;border-radius:10px;position:relative}}
 .prod-img{{max-width:100%;max-height:100%;object-fit:contain}}
 .prod-emoji-fb{{display:none;font-size:3.5rem;align-items:center;justify-content:center;width:100%;height:100%}}
@@ -710,15 +970,14 @@ header{{background:linear-gradient(135deg,#14143a 0%,#0a0a20 100%);padding:16px 
 .rev-count{{color:var(--muted)}}
 .price-row{{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}}
 .price-now{{font-size:1.25rem;font-weight:900;color:var(--green)}}
-.price-orig{{font-size:.8rem;text-decoration:line-through;color:var(--muted)}}
-.savings{{font-size:.74rem;color:#4ade80;font-weight:600}}
-.bought-today{{font-size:.72rem;color:#f97316}}
+.price-note{{font-size:.72rem;color:var(--muted)}}
 .cta-row{{display:flex;gap:6px;margin-top:auto;padding-top:4px}}
-.btn-buy{{flex:1;background:linear-gradient(135deg,#e94560,#c0302b);color:#fff;border:none;padding:10px 8px;border-radius:9px;font-size:.78rem;font-weight:800;cursor:pointer;text-decoration:none;text-align:center;transition:all .2s;line-height:1.25;font-family:var(--font)}}
+/* Tap target kam se kam 44px — Google mobile usability ka minimum */
+.btn-buy{{flex:1;min-height:44px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#e94560,#c0302b);color:#fff;border:none;padding:10px 8px;border-radius:9px;font-size:.8rem;font-weight:800;cursor:pointer;text-decoration:none;text-align:center;transition:all .2s;line-height:1.25;font-family:var(--font)}}
 .btn-buy:hover{{opacity:.9;transform:scale(1.02)}}
-.btn-wa{{background:rgba(37,211,102,.13);color:#25d366;border:1px solid rgba(37,211,102,.28);padding:9px 11px;border-radius:9px;cursor:pointer;font-size:.88rem;transition:all .2s;min-width:40px;min-height:40px}}
+.btn-wa{{background:rgba(37,211,102,.13);color:#25d366;border:1px solid rgba(37,211,102,.28);padding:9px 11px;border-radius:9px;cursor:pointer;font-size:.95rem;transition:all .2s;min-width:44px;min-height:44px}}
 .btn-wa:hover{{background:rgba(37,211,102,.28)}}
-.btn-wish{{background:rgba(233,69,96,.08);color:var(--accent);border:1px solid rgba(233,69,96,.18);padding:9px 11px;border-radius:9px;cursor:pointer;font-size:.88rem;transition:all .2s;min-width:40px;min-height:40px}}
+.btn-wish{{background:rgba(233,69,96,.08);color:var(--accent);border:1px solid rgba(233,69,96,.18);padding:9px 11px;border-radius:9px;cursor:pointer;font-size:.95rem;transition:all .2s;min-width:44px;min-height:44px}}
 .btn-wish:hover{{background:rgba(233,69,96,.22)}}
 .btn-wish.wished{{color:#ff4560;background:rgba(233,69,96,.22)}}
 .aff-note{{font-size:.62rem;color:rgba(255,255,255,.2);text-align:center;padding-top:2px}}
@@ -727,7 +986,7 @@ header{{background:linear-gradient(135deg,#14143a 0%,#0a0a20 100%);padding:16px 
 #no-results{{display:none;text-align:center;padding:60px 20px;color:var(--muted)}}
 #no-results h2{{font-size:1.4rem;margin-bottom:10px;color:var(--text)}}
 .suggest-tags{{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:14px}}
-.suggest-tag{{background:rgba(233,69,96,.13);color:var(--accent);border:1px solid rgba(233,69,96,.28);padding:6px 15px;border-radius:20px;cursor:pointer;font-size:.82rem;transition:all .2s}}
+.suggest-tag{{background:rgba(233,69,96,.13);color:var(--accent);border:1px solid rgba(233,69,96,.28);padding:11px 16px;min-height:44px;display:inline-flex;align-items:center;border-radius:20px;cursor:pointer;font-size:.82rem;transition:all .2s}}
 .suggest-tag:hover{{background:var(--accent);color:#fff}}
 
 /* ── WISHLIST FAB ──────────────────────────────────────────────────── */
@@ -795,43 +1054,37 @@ footer{{background:rgba(0,0,0,.5);border-top:1px solid rgba(255,255,255,.07);mar
 </head>
 <body>
 
+<a href="#main" class="skip-link">Skip to products</a>
+
 <header>
   <h1 class="site-logo">Deal<span>Bazaar</span> India 🛍️</h1>
-  <p class="tagline">India's Best Amazon Deals — Updated Daily, Curated for You!</p>
+  <p class="tagline">Amazon India ke aaj ke bestsellers — ek jagah, roz update</p>
   <div class="header-meta">
     <span>📅 {today}</span>
-    <span>🕐 {now_time}</span>
-    <span>🛒 {total} Deals Live</span>
-    <span>💰 Up to 83% OFF</span>
-    <a href="{TELEGRAM_CHANNEL}" target="_blank" aria-label="Join Telegram Channel">📣 Join Telegram</a>
+    <span>🛒 {total} products</span>
+    <span>✓ Live Amazon prices</span>
+    <a href="{TELEGRAM_CHANNEL}" target="_blank" rel="noopener" aria-label="Join our Telegram channel">📣 Join Telegram</a>
   </div>
 </header>
-<div class="trust-bar" role="banner">
-  <span>✓ 100% Free</span>
-  <span>✓ Genuine Amazon Links</span>
-  <span>✓ Updated Daily</span>
-  <span>✓ {total} Deals Today</span>
-  <span>✓ Amazon Associate Partner</span>
+
+<!-- Trust bar — har claim verify ho sakta hai -->
+<div class="trust-bar">
+  <span>✓ Free to use</span>
+  <span>✓ Direct Amazon.in links</span>
+  <span>✓ Updated {today}</span>
+  <span>✓ No signup needed</span>
+  <span>✓ Amazon Associate</span>
 </div>
 
-<div class="ticker-wrap">
+<div class="ticker-wrap" aria-hidden="true">
   <div class="ticker">
-    <span>🔥 boAt Earbuds 77% OFF!</span>
-    <span>⚡ Pressure Cooker 50% OFF!</span>
-    <span>💥 Smartwatch Under ₹1299!</span>
-    <span>🎯 Laptop from ₹27,990!</span>
-    <span>👟 Shoes Under ₹1000!</span>
-    <span>📚 Atomic Habits ₹299!</span>
-    <span>🏋️ Dumbbells 60% OFF!</span>
-    <span>💄 Beauty Products 50%+ OFF!</span>
-    <span>🍳 Kitchen Must-Haves Under ₹599!</span>
-    <span>🎮 Gaming Laptops 30% OFF!</span>
+    {ticker_items}
   </div>
 </div>
 
 <div class="search-section">
   <div class="search-wrap">
-    <input type="text" id="searchBox" class="search-box" placeholder="Search karo — earbuds, laptop under 35000, 70% off..." oninput="onSearch()" onkeydown="onSearchKey(event)" autocomplete="off">
+    <input type="text" id="searchBox" class="search-box" placeholder="Search karo — earbuds, laptop under 35000, 4 star..." oninput="onSearch()" onkeydown="onSearchKey(event)" autocomplete="off">
     <span class="search-icon">🔍</span>
     <div class="autocomplete-list" id="acList"></div>
   </div>
@@ -842,7 +1095,7 @@ footer{{background:rgba(0,0,0,.5);border-top:1px solid rgba(255,255,255,.07);mar
     <button class="stag" onclick="quickSearch('earbuds')">🎧 Earbuds</button>
     <button class="stag" onclick="quickSearch('smartwatch')">⌚ Smartwatch</button>
     <button class="stag" onclick="quickSearch('laptop')">💻 Laptop</button>
-    <button class="stag" onclick="quickSearch('70% off')">🔥 70%+ OFF</button>
+    <button class="stag" onclick="quickSearch('4 star')">⭐ 4★ & above</button>
     <button class="stag" onclick="quickSearch('mobile')">📱 Mobiles</button>
     <button class="stag" onclick="quickSearch('cricket')">🏏 Cricket</button>
     <button class="stag" onclick="quickSearch('books')">📚 Books</button>
@@ -851,12 +1104,20 @@ footer{{background:rgba(0,0,0,.5);border-top:1px solid rgba(255,255,255,.07);mar
   </div>
 </div>
 
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="{SITE_URL}/">Home</a></li>
+    <li aria-current="page">Amazon India Bestsellers</li>
+  </ol>
+</nav>
+
 <nav class="cat-bar" aria-label="Product categories">
   {cat_btns}
 </nav>
 
-<section class="trending-section" aria-label="Trending deals">
-  <h2 class="section-title">🔥 Trending Today — Highest Discounts <small>Top Picks</small></h2>
+<section class="trending-section" aria-label="Top bestsellers">
+  <h2 class="section-title">🏆 Top Bestsellers Right Now <small>Amazon rank</small></h2>
+  <p class="section-sub">Ye Amazon India ki apni bestseller list se hain — hamari nahi. <span class="countdown"></span></p>
   <div class="t-grid">
     {trending_html}
   </div>
@@ -867,11 +1128,11 @@ footer{{background:rgba(0,0,0,.5);border-top:1px solid rgba(255,255,255,.07);mar
 <div class="controls" role="search" aria-label="Filter and sort deals">
   <div class="controls-inner">
     <select class="sort-select" id="sortSel" onchange="applyFilters()" aria-label="Sort deals">
-      <option value="discount">🔥 Best Discount First</option>
+      <option value="bestseller">🏆 Bestsellers First</option>
       <option value="price_asc">💰 Price: Low to High</option>
       <option value="price_desc">💎 Price: High to Low</option>
       <option value="rating">⭐ Highest Rated</option>
-      <option value="popular">👥 Most Popular</option>
+      <option value="popular">👥 Most Reviewed</option>
     </select>
     <select class="price-select" id="priceSel" onchange="applyFilters()" aria-label="Filter by price">
       <option value="">💲 All Prices</option>
@@ -882,11 +1143,11 @@ footer{{background:rgba(0,0,0,.5);border-top:1px solid rgba(255,255,255,.07);mar
       <option value="10000">Under ₹10,000</option>
       <option value="25000">Under ₹25,000</option>
     </select>
-    <span class="result-count" id="resultCount">Showing {total} deals</span>
+    <span class="result-count" id="resultCount">{total} products</span>
   </div>
 </div>
 
-<main class="main">
+<main class="main" id="main">
   <div class="grid" id="dealsGrid">
     {cards_html}
   </div>
@@ -902,6 +1163,13 @@ footer{{background:rgba(0,0,0,.5);border-top:1px solid rgba(255,255,255,.07);mar
       <button class="suggest-tag" onclick="clearAll()">❌ Clear Filters</button>
     </div>
   </div>
+
+  {email_form}
+
+  <section class="faq-section" aria-labelledby="faq-h">
+    <h2 class="section-title" id="faq-h">❓ Common questions</h2>
+    {faq_html}
+  </section>
 </main>
 
 <!-- WISHLIST -->
@@ -943,8 +1211,18 @@ footer{{background:rgba(0,0,0,.5);border-top:1px solid rgba(255,255,255,.07);mar
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 Deal Bazaar India. Amazon Associate Partner (ID: rahulfinds20c-21) | Prices accurate as of {today}.</p>
-    <p style="margin-top:4px">*Affiliate links — we may earn a commission at no extra cost to you. <a href="privacy.html">Privacy Policy</a> | <a href="about.html">About</a></p>
+    <p><strong>As an Amazon Associate we earn from qualifying purchases.</strong> Deal Bazaar India
+       is a participant in the Amazon Services LLC Associates Program. Links to Amazon.in on this
+       site are paid links — if you buy through them, Amazon pays us a commission at no extra
+       cost to you.</p>
+    <p style="margin-top:6px">Prices and availability shown were captured from Amazon.in on
+       {today} and can change at any time. The price on the Amazon product page at the time of
+       purchase is the one that applies. We are not a retailer and do not process orders,
+       payments, returns or delivery.</p>
+    <p style="margin-top:6px">© 2026 Deal Bazaar India &nbsp;|&nbsp;
+       <a href="about.html">About</a> &nbsp;|&nbsp;
+       <a href="contact.html">Contact</a> &nbsp;|&nbsp;
+       <a href="privacy.html">Privacy &amp; Affiliate Disclosure</a></p>
   </div>
 </footer>
 
@@ -977,16 +1255,16 @@ let wishlist = JSON.parse(localStorage.getItem('dealwishlist') || '[]');
 // ── PARSE QUERY ───────────────────────────────────────────────────────────
 function parseQuery(q) {{
   q = q.toLowerCase().trim();
-  const result = {{ terms: [], maxPrice: null, minDiscount: null, category: null }};
+  const result = {{ terms: [], maxPrice: null, minRating: null, category: null }};
 
   // price range: "under 500", "500 se kam", "below 1000"
   let pm = q.match(/(?:under|below|less than|se kam|ke andar)\s*[₹]?\s*(\d+)/i)
          || q.match(/[₹]?\s*(\d+)\s*(?:se kam|ke under|ke andar|se niche)/i);
   if (pm) {{ result.maxPrice = parseInt(pm[1]); q = q.replace(pm[0], '').trim(); }}
 
-  // discount: "70% off", "50 percent off"
-  let dm = q.match(/(\d+)\s*%?\s*(?:off|discount|छूट)/i);
-  if (dm) {{ result.minDiscount = parseInt(dm[1]); q = q.replace(dm[0], '').trim(); }}
+  // rating: "4 star", "4+ rating", "4 star se upar"
+  let rm = q.match(/([\d.]+)\s*\+?\s*(?:star|stars|rating|rated)/i);
+  if (rm) {{ result.minRating = parseFloat(rm[1]); q = q.replace(rm[0], '').trim(); }}
 
   // keyword → category
   const catMap = {{
@@ -1032,10 +1310,10 @@ function applyFilters() {{
   cards.forEach(card => {{
     const cat     = card.dataset.category;
     const price   = parseInt(card.dataset.price);
-    const disc    = parseInt(card.dataset.discount);
     const name    = card.dataset.name;
-    const rating  = parseFloat(card.dataset.rating);
-    const reviews = parseInt(card.dataset.reviews);
+    const rating  = parseFloat(card.dataset.rating) || 0;
+    const reviews = parseInt(card.dataset.reviews) || 0;
+    const rank    = parseInt(card.dataset.rank) || 999;
 
     // category filter (sidebar btn)
     if (currentCat !== 'All' && cat !== currentCat) {{ card.style.display='none'; return; }}
@@ -1045,7 +1323,7 @@ function applyFilters() {{
     if (currentSearch) {{
       let match = true;
       if (parsed.maxPrice && price > parsed.maxPrice) match = false;
-      if (parsed.minDiscount && disc < parsed.minDiscount) match = false;
+      if (parsed.minRating && rating < parsed.minRating) match = false;
       if (parsed.category && cat !== parsed.category) match = false;
       if (parsed.terms.length) {{
         const allMatch = parsed.terms.every(t => name.includes(t));
@@ -1054,7 +1332,7 @@ function applyFilters() {{
       if (!match) {{ card.style.display='none'; return; }}
     }}
     card.style.display = '';
-    visible.push({{ el: card, price, disc, rating, reviews }});
+    visible.push({{ el: card, price, rating, reviews, rank }});
   }});
 
   // sort
@@ -1064,13 +1342,13 @@ function applyFilters() {{
     if (sort === 'price_desc') return b.price - a.price;
     if (sort === 'rating')     return b.rating - a.rating;
     if (sort === 'popular')    return b.reviews - a.reviews;
-    return b.disc - a.disc; // best discount
+    return a.rank - b.rank; // bestseller rank (asli Amazon rank)
   }});
   visible.forEach(v => grid.appendChild(v.el));
 
   // result count
   const count = visible.length;
-  document.getElementById('resultCount').textContent = count + ' deals found';
+  document.getElementById('resultCount').textContent = count + (count === 1 ? ' product' : ' products');
   document.getElementById('no-results').style.display = count === 0 ? 'block' : 'none';
 }}
 
@@ -1099,7 +1377,7 @@ function clearAll() {{
   currentSearch = '';
   currentCat = 'All';
   document.getElementById('priceSel').value = '';
-  document.getElementById('sortSel').value = 'discount';
+  document.getElementById('sortSel').value = 'bestseller';
   document.querySelectorAll('.cat-btn').forEach(b => b.classList.toggle('active', b.dataset.cat === 'All'));
   document.querySelectorAll('.stag').forEach(t => t.classList.remove('active'));
   applyFilters();
@@ -1117,11 +1395,11 @@ function showAutocomplete(query) {{
 
   // popular searches
   const popular = [
-    {{name:'Under ₹500 Deals', cat:'All', price:500, disc:60, emoji:'💰', asin:''}},
-    {{name:'Under ₹1000 Deals', cat:'All', price:1000, disc:60, emoji:'🛒', asin:''}},
-    {{name:'Earbuds Best Deals', cat:'Electronics', price:999, disc:70, emoji:'🎧', asin:''}},
-    {{name:'Smartwatch Deals', cat:'Electronics', price:1299, disc:65, emoji:'⌚', asin:''}},
-    {{name:'Laptop Under ₹35000', cat:'Laptops', price:35000, disc:30, emoji:'💻', asin:''}},
+    {{name:'Under ₹500', cat:'All', price:500, emoji:'💰', asin:''}},
+    {{name:'Under ₹1000', cat:'All', price:1000, emoji:'🛒', asin:''}},
+    {{name:'Earbuds', cat:'Electronics', price:999, emoji:'🎧', asin:''}},
+    {{name:'Smartwatch', cat:'Electronics', price:1299, emoji:'⌚', asin:''}},
+    {{name:'Laptop under ₹35000', cat:'Laptops', price:35000, emoji:'💻', asin:''}},
   ].filter(p => p.name.toLowerCase().includes(q) || p.cat.toLowerCase().includes(q));
 
   const combined = [...matches, ...popular].slice(0, 8);
@@ -1181,37 +1459,58 @@ function filterCat(btn) {{
   applyFilters();
 }}
 
-// ── CLICK TRACKER ─────────────────────────────────────────────────────────
-// Set TRACKER_URL to your Cloudflare Worker URL to enable click tracking
-// Leave empty to disable (site still works perfectly)
-const TRACKER_URL = '';  // e.g. 'https://deal-tracker.yourname.workers.dev'
+// ── CONVERSION TRACKING ───────────────────────────────────────────────────
+// Do jagah bhejta hai:
+//   1. GA4 (agar Measurement ID set hai) — outbound click ek event ban jaata hai
+//   2. Cloudflare Worker (agar TRACKER_URL set hai) — optional
+// Dono khali hon to bhi buy button bilkul theek chalta hai.
+const TRACKER_URL = '{TRACKER_URL}';
 
-function trackClick(asin, name, price, category, discount) {{
-  if (!TRACKER_URL) return;
+function trackClick(asin, name, price, category) {{
+  // GA4 — 'select_item' standard ecommerce event hai, GA4 reports isko samajhta hai
   try {{
-    navigator.sendBeacon(TRACKER_URL + '/track', JSON.stringify({{
-      asin, name, price, category, discount
-    }}));
-  }} catch(e) {{}}  // silent fail — never break buy button
+    if (typeof gtag === 'function') {{
+      gtag('event', 'select_item', {{
+        item_list_name: 'Amazon Bestsellers',
+        items: [{{ item_id: asin, item_name: name, item_category: category, price: price }}]
+      }});
+      gtag('event', 'affiliate_click', {{ asin: asin, item_name: name, value: price, currency: 'INR' }});
+    }}
+  }} catch(e) {{}}
+  try {{
+    if (TRACKER_URL) {{
+      navigator.sendBeacon(TRACKER_URL + '/track', JSON.stringify({{ asin, name, price, category }}));
+    }}
+  }} catch(e) {{}}  // silent fail — buy button kabhi nahi tootna chahiye
+}}
+
+// Telegram / newsletter conversions bhi GA4 mein jaayen
+function trackTelegram(where) {{
+  try {{ if (typeof gtag === 'function') gtag('event', 'telegram_join', {{ placement: where }}); }} catch(e) {{}}
+}}
+function trackSignup() {{
+  try {{ if (typeof gtag === 'function') gtag('event', 'sign_up', {{ method: 'newsletter' }}); }} catch(e) {{}}
 }}
 
 // ── WHATSAPP SHARE ────────────────────────────────────────────────────────
-function shareWA(url, name, price, disc) {{
-  const text = encodeURIComponent(`🔥 ${{disc}}% OFF! ${{name}}\\n💰 ₹${{parseInt(price).toLocaleString('en-IN')}}\\n🛒 Buy: ${{url}}\\n\\n🔔 More deals: {TELEGRAM_CHANNEL}`);
+function shareWA(url, name, price) {{
+  const text = encodeURIComponent(`${{name}}\\n₹${{parseInt(price).toLocaleString('en-IN')}} on Amazon\\n${{url}}\\n\\nMore picks: {TELEGRAM_CHANNEL}`);
   window.open(`https://wa.me/?text=${{text}}`, '_blank');
+  try {{ if (typeof gtag === 'function') gtag('event', 'share', {{ method: 'whatsapp', item_name: name }}); }} catch(e) {{}}
 }}
 
 // ── WISHLIST ──────────────────────────────────────────────────────────────
-function toggleWish(btn, asin, name, price, disc, emoji) {{
+function toggleWish(btn, asin, name, price, emoji) {{
   const idx = wishlist.findIndex(w => w.asin === asin);
   if (idx >= 0) {{
     wishlist.splice(idx, 1);
     btn.classList.remove('wished');
     btn.textContent = '🤍';
   }} else {{
-    wishlist.push({{ asin, name, price: parseInt(price), disc: parseInt(disc), emoji }});
+    wishlist.push({{ asin, name, price: parseInt(price), emoji }});
     btn.classList.add('wished');
     btn.textContent = '❤️';
+    try {{ if (typeof gtag === 'function') gtag('event', 'add_to_wishlist', {{ item_id: asin, item_name: name, value: parseInt(price), currency: 'INR' }}); }} catch(e) {{}}
   }}
   localStorage.setItem('dealwishlist', JSON.stringify(wishlist));
   updateWishBadge();
@@ -1239,10 +1538,10 @@ function renderWishlist() {{
       <span style="font-size:1.5rem">${{w.emoji}}</span>
       <div class="wish-item-info">
         <div class="wish-item-name">${{w.name.substring(0,30)}}...</div>
-        <div class="wish-item-price">₹${{w.price.toLocaleString('en-IN')}} <span style="color:#f97316;font-size:.75rem">${{w.disc}}% off</span></div>
+        <div class="wish-item-price">₹${{w.price.toLocaleString('en-IN')}}</div>
       </div>
       <div style="display:flex;flex-direction:column;gap:4px">
-        <a href="https://www.amazon.in/dp/${{w.asin}}?tag={AFFILIATE_TAG}" target="_blank" style="font-size:.72rem;color:var(--green);text-decoration:none;border:1px solid rgba(0,212,170,.3);padding:3px 7px;border-radius:6px">Buy</a>
+        <a href="https://www.amazon.in/dp/${{w.asin}}?tag={AFFILIATE_TAG}" target="_blank" rel="noopener sponsored nofollow" onclick="trackClick('${{w.asin}}','',0,'wishlist')" style="font-size:.72rem;color:var(--green);text-decoration:none;border:1px solid rgba(0,212,170,.3);padding:3px 7px;border-radius:6px">Buy</a>
         <button class="wish-item-rm" onclick="removeWish(${{i}})">❌</button>
       </div>
     </div>`).join('');
@@ -1279,35 +1578,50 @@ window.addEventListener('scroll', () => {{
   document.getElementById('back-top').classList.toggle('visible', window.scrollY > 400);
 }});
 
-// ── COUNTDOWNS ───────────────────────────────────────────────────────────
-function startCountdowns() {{
-  const end = new Date();
-  end.setHours(23,59,59,0);
+// ── NEXT REFRESH TIMER ───────────────────────────────────────────────────
+// Pehle ye ek nakli expiry countdown dikhata tha — jaise deal aadhi raat ko
+// khatam ho jayegi. Wo sach nahi tha (Amazon ki price khatam nahi hoti). Ab
+// wahi timer sach batata hai: agla auto-update kab hoga (roz 6:30 AM IST).
+function startRefreshTimer() {{
   setInterval(() => {{
-    const diff = end - new Date();
-    if (diff <= 0) return;
+    const now  = new Date();
+    const next = new Date(now);
+    next.setHours(6, 30, 0, 0);
+    if (next <= now) next.setDate(next.getDate() + 1);
+    const diff = next - now;
     const h = String(Math.floor(diff/3600000)).padStart(2,'0');
     const m = String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
     const s = String(Math.floor((diff%60000)/1000)).padStart(2,'0');
     document.querySelectorAll('.countdown').forEach(el => {{
-      el.textContent = `⏰ Ends in ${{h}}:${{m}}:${{s}}`;
+      el.textContent = `🔄 Next update in ${{h}}:${{m}}:${{s}}`;
     }});
   }}, 1000);
 }}
-startCountdowns();
+startRefreshTimer();
 
 // ── INIT ──────────────────────────────────────────────────────────────────
 updateWishBadge();
 initWishButtons();
 applyFilters();
 
-// Bought today random update
-setInterval(() => {{
-  document.querySelectorAll('.bought-today').forEach(el => {{
-    let n = Math.floor(Math.random()*15) + (parseInt(el.textContent.match(/\d+/)?.[0]) || 50);
-    el.textContent = '🔥 ' + n + ' bought today';
-  }});
-}}, 45000);
+// NOTE: yahan pehle ek setInterval tha jo har 45 second mein ek nakli
+// purchase-counter badha deta tha. Wo aankda kahin se nahi aata tha —
+// pura banaya hua tha. Hata diya gaya.
+
+// ── SCROLL DEPTH — kitne log products tak pahunchte hain ─────────────────
+(function() {{
+  const marks = [25, 50, 75, 100];
+  const hit = new Set();
+  window.addEventListener('scroll', () => {{
+    const pct = Math.round((window.scrollY + window.innerHeight) / document.body.scrollHeight * 100);
+    for (const m of marks) {{
+      if (pct >= m && !hit.has(m)) {{
+        hit.add(m);
+        try {{ if (typeof gtag === 'function') gtag('event', 'scroll_depth', {{ percent: m }}); }} catch(e) {{}}
+      }}
+    }}
+  }}, {{ passive: true }});
+}})();
 </script>
 </body>
 </html>"""
