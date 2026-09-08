@@ -19,7 +19,8 @@ from datetime import datetime
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 log = logging.getLogger("updater")
 
-AFFILIATE_TAG = "rahulfinds20c-21"
+AFFILIATE_TAG = os.environ.get("AMAZON_AFFILIATE_TAG", "rrcool786-21")
+# Tag badalna ho to yahan ya AMAZON_AFFILIATE_TAG env var / GitHub Secret se
 
 # ─── CATEGORIES TO SCRAPE ─────────────────────────────────
 # Amazon India bestseller category URLs

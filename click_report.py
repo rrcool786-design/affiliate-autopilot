@@ -16,7 +16,8 @@ from datetime import datetime
 TRACKER_URL       = os.environ.get("TRACKER_URL", "")       # Cloudflare Worker URL
 BOT_TOKEN         = os.environ.get("TELEGRAM_BOT_TOKEN", "")
 CHANNEL_ID        = os.environ.get("TELEGRAM_CHANNEL_ID", "@TechDealsIndia_channel")
-AFFILIATE_TAG     = "rahulfinds20c-21"
+AFFILIATE_TAG = os.environ.get("AMAZON_AFFILIATE_TAG", "rrcool786-21")
+# Tag badalna ho to yahan ya AMAZON_AFFILIATE_TAG env var / GitHub Secret se
 MIN_CLICKS        = 1  # minimum clicks to show in report
 
 def get_today_stats():

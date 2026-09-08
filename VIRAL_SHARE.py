@@ -11,7 +11,7 @@ Output:  SHARE_NOW.txt  (copy-paste ke liye ready messages)
 from datetime import datetime
 
 SITE     = "https://rrcool786-design.github.io/affiliate-autopilot/"
-TAG      = "rahulfinds20c-21"
+TAG      = "rrcool786-21"
 TELEGRAM = "https://t.me/TechDealsIndia_channel"
 
 TODAY = datetime.now().strftime("%d %b %Y")
@@ -24,7 +24,7 @@ DEALS = [
         "orig":    "₹19,999",
         "save":    "₹4,000",
         "pct":     "20%",
-        "url":     "https://www.amazon.in/dp/B0GS5Y6BD3/?tag=rahulfinds20c-21",
+        "url":     "https://www.amazon.in/dp/B0GS5Y6BD3/?tag=rrcool786-21",
         "why":     "Budget 5G phone with 50MP camera & 5000mAh battery",
     },
     {
@@ -33,7 +33,7 @@ DEALS = [
         "orig":    "₹2,999",
         "save":    "₹1,000",
         "pct":     "33%",
-        "url":     "https://www.amazon.in/dp/B0FMDL81GS/?tag=rahulfinds20c-21",
+        "url":     "https://www.amazon.in/dp/B0FMDL81GS/?tag=rrcool786-21",
         "why":     "ANC earbuds with 44hr battery — lowest price ever",
     },
     {
@@ -42,7 +42,7 @@ DEALS = [
         "orig":    "₹29,999",
         "save":    "₹7,000",
         "pct":     "23%",
-        "url":     "https://www.amazon.in/dp/B0FHB5V36G/?tag=rahulfinds20c-21",
+        "url":     "https://www.amazon.in/dp/B0FHB5V36G/?tag=rrcool786-21",
         "why":     "6000mAh beast with 144Hz display & Snapdragon 7s Gen 3",
     },
     {
@@ -51,7 +51,7 @@ DEALS = [
         "orig":    "₹22,999",
         "save":    "₹5,000",
         "pct":     "22%",
-        "url":     "https://www.amazon.in/dp/B0GVYDLJJQ/?tag=rahulfinds20c-21",
+        "url":     "https://www.amazon.in/dp/B0GVYDLJJQ/?tag=rrcool786-21",
         "why":     "OnePlus quality at budget price — limited stock",
     },
 ]

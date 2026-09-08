@@ -18,7 +18,8 @@ try:
 except ImportError:
     BS4_AVAILABLE = False
 
-AFFILIATE_TAG    = "rahulfinds20c-21"
+AFFILIATE_TAG = os.environ.get("AMAZON_AFFILIATE_TAG", "rrcool786-21")
+# Tag badalna ho to yahan ya AMAZON_AFFILIATE_TAG env var / GitHub Secret se
 TELEGRAM_CHANNEL = "https://t.me/TechDealsIndia_channel"
 SITE_URL         = "https://rrcool786-design.github.io/affiliate-autopilot"
 

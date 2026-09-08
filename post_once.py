@@ -27,7 +27,8 @@ except ImportError:
 GROQ_API_KEY        = os.environ.get("GROQ_API_KEY", "")
 TELEGRAM_BOT_TOKEN  = os.environ.get("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHANNEL_ID = os.environ.get("TELEGRAM_CHANNEL_ID", "@TechDealsIndia_channel")
-AFFILIATE_TAG       = "rahulfinds20c-21"
+AFFILIATE_TAG = os.environ.get("AMAZON_AFFILIATE_TAG", "rrcool786-21")
+# Tag badalna ho to yahan ya AMAZON_AFFILIATE_TAG env var / GitHub Secret se
 
 # products.json — same folder mein hoga
 PRODUCTS_JSON = os.path.join(os.path.dirname(os.path.abspath(__file__)), "products.json")

@@ -52,7 +52,7 @@ msg = (
     "Redmi A7 Pro 5G check kiya maine \U0001f4f1\n\n"
     "Rs 15,999 mein 5G — yaar sach mein value for money hai!\n"
     "Fastest processor + pure day battery\n\n"
-    "Amazon pe: https://www.amazon.in/dp/B0GS5Y6BD3/?tag=rahulfinds20c-21\n\n"
+    "Amazon pe: https://www.amazon.in/dp/B0GS5Y6BD3/?tag=rrcool786-21\n\n"
     "#Gadgets #Tech #AmazonIndia #TechDeals"
 )
 
