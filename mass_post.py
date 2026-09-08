@@ -77,44 +77,59 @@ MAX_DELAY     = 25
 
 
 def load_products():
+    """
+    products.json se products lo.
+
+    NOTE: pehle ye code p["discount_pct"] se sort karta tha aur
+    p["url"] / p["price"] padhta tha — par products.json mein wo keys
+    hain hi nahi (usmein name/link/category/benefit/commission/emoji
+    hain). Isliye channel pe khali price wale (💰 **) post ja rahe the
+    aur link bhi website pe fallback ho jaata tha.
+    """
     if not os.path.exists(PRODUCTS_JSON):
         print("❌ products.json not found.")
         return []
     with open(PRODUCTS_JSON, "r", encoding="utf-8") as f:
         data = json.load(f)
     products = data if isinstance(data, list) else data.get("products", [])
-    products.sort(
-        key=lambda p: float(str(p.get("discount_pct", 0)).replace("%", "").strip() or 0),
-        reverse=True,
-    )
+
+    # Sirf wahi products jinke paas kaam ka naam aur asli Amazon link ho
+    products = [p for p in products
+                if p.get("name") and "amazon.in" in (p.get("link") or p.get("url") or "")]
+
+    # commission zyada wale pehle — yahi ek asli number hai jo maujood hai
+    products.sort(key=lambda p: p.get("commission", 0), reverse=True)
     return products[:MAX_PRODUCTS]
 
 
 def build_message(product, index, total):
-    name     = product.get("name", "Amazing Deal")
-    price    = product.get("price", "")
-    original = product.get("original_price", "")
-    discount = product.get("discount_pct", "")
+    name     = product.get("name", "").strip() or "Amazon pick"
     category = product.get("category", "")
-    url      = product.get("url", WEBSITE_URL)
+    benefit  = product.get("benefit", "")
+    rating   = product.get("rating", 0)
+    reviews  = product.get("reviews", 0)
+    price    = product.get("price", 0)
+    url      = product.get("link") or product.get("url") or WEBSITE_URL
 
     if "amazon.in" in url and AFFILIATE_TAG not in url:
         url += ("&" if "?" in url else "?") + f"tag={AFFILIATE_TAG}"
 
-    header   = f"🔥 *Deal {index}/{total}* — {datetime.now().strftime('%d %b %Y')}\n\n"
-    disc_ln  = f"🏷️ *{discount} OFF*\n" if discount else ""
-    cat_ln   = f"📂 _{category}_\n" if category else ""
-    orig_ln  = f"~~{original}~~ → " if original else ""
+    # Har line sirf tab jab uske peeche asli data ho — warna line hi mat
+    # dikhao. Pehle khali price pe "💰 **" chhap jaata tha.
+    lines = [f"🛒 *{name}*", ""]
+    if category:
+        lines.append(f"📂 _{category}_")
+    if price:
+        lines.append(f"💰 Rs {price:,}")
+    if rating and reviews:
+        lines.append(f"⭐ {rating}/5 · {reviews:,} reviews")
+    elif benefit:
+        lines.append(benefit)
 
-    return (
-        f"{header}"
-        f"🛒 *{name}*\n\n"
-        f"{disc_ln}{cat_ln}"
-        f"💰 {orig_ln}*{price}*\n\n"
-        f"👉 [Buy on Amazon]({url})\n\n"
-        f"📢 All deals: {WEBSITE_URL}\n"
-        f"🔔 Join channel: {TELEGRAM_CHANNEL}"
-    )
+    lines += ["", f"👉 [Amazon pe dekho]({url})", "",
+              f"📢 Aur picks: {WEBSITE_URL}",
+              f"🔔 Channel: {TELEGRAM_CHANNEL}"]
+    return "\n".join(lines)
 
 
 async def run():

@@ -15,6 +15,7 @@ import random
 import re
 import os
 import json
+import time
 from datetime import datetime
 
 try:
@@ -39,18 +40,26 @@ PRODUCTS_JSON = os.path.join(os.path.dirname(os.path.abspath(__file__)), "produc
 STATE_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "posted_asins.json")
 
 # ─── AMAZON CATEGORIES ───────────────────────────────────────────────
+# Channel ka naam "TechDeals India" hai — to sirf TECH post hoga.
+# Pehle yahan 10 category thi (fashion, beauty, toys, books, kitchen...)
+# aur channel pe saree petticoat, garbage bags aur Krishna costume ja
+# rahe the. Jo banda tech deals ke liye join karta hai wo ye dekh kar
+# turant leave kar deta hai — isliye follower nahi badh rahe the.
 BESTSELLER_URLS = [
-    {"url": "https://www.amazon.in/gp/bestsellers/electronics/",    "category": "electronics", "emoji": "📱", "commission_pct": 0.04},
-    {"url": "https://www.amazon.in/gp/bestsellers/computers/",      "category": "computers",   "emoji": "💻", "commission_pct": 0.04},
-    {"url": "https://www.amazon.in/gp/bestsellers/kitchen/",        "category": "kitchen",     "emoji": "🍳", "commission_pct": 0.05},
-    {"url": "https://www.amazon.in/gp/bestsellers/home/",           "category": "home",        "emoji": "🏠", "commission_pct": 0.05},
-    {"url": "https://www.amazon.in/gp/bestsellers/apparel/",        "category": "fashion",     "emoji": "👕", "commission_pct": 0.09},
-    {"url": "https://www.amazon.in/gp/bestsellers/sporting-goods/", "category": "sports",      "emoji": "⚽", "commission_pct": 0.05},
-    {"url": "https://www.amazon.in/gp/bestsellers/beauty/",         "category": "beauty",      "emoji": "💄", "commission_pct": 0.06},
-    {"url": "https://www.amazon.in/gp/bestsellers/books/",          "category": "books",       "emoji": "📚", "commission_pct": 0.05},
-    {"url": "https://www.amazon.in/gp/bestsellers/toys/",           "category": "toys",        "emoji": "🧸", "commission_pct": 0.05},
-    {"url": "https://www.amazon.in/gp/bestsellers/health/",         "category": "health",      "emoji": "💊", "commission_pct": 0.05},
+    {"url": "https://www.amazon.in/gp/bestsellers/electronics/", "category": "electronics", "emoji": "📱", "commission_pct": 0.04},
+    {"url": "https://www.amazon.in/gp/bestsellers/computers/",   "category": "computers",   "emoji": "💻", "commission_pct": 0.04},
 ]
+
+# ─── PRODUCT QUALITY FILTER ──────────────────────────────────────────
+# Random bestseller nahi — sirf wo products jo log pehle se pasand kar
+# rahe hain. Achhi rating + bahut saare reviews = kam refund, zyada
+# conversion. Ye "har customer pasand kare" ke sabse kareeb hai jo
+# imaandaari se ho sakta hai.
+MIN_RATING       = 4.0
+MIN_REVIEWS      = 1000
+MIN_PRICE        = 199      # bahut sasti cheez pe commission hi nahi banta
+JUNK_KEYWORDS    = ("cylinder booking", "gift card", "recharge", "subscription",
+                    "prepaid", "e-gift", "top up", "top-up", "bill payment")
 
 HEADERS_LIST = [
     {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36", "Accept-Language": "en-IN,en;q=0.9"},
@@ -67,13 +76,14 @@ EMERGENCY_PRODUCTS = [
 ]
 
 POST_STYLES = [
-    "personal story — meri apni experience share karo",
     "problem solution format — user ka pain point pehle",
-    "before/after — pehle vs ab comparison",
     "quick tip format — ek useful tip with product mention",
     "question se start karo — curiosity hook",
-    "deal alert — LIMITED TIME feel, urgency create karo",
-    "comparison — yeh product vs expensive alternatives",
+    "social proof — kitne logon ne rate kiya wo highlight karo",
+    "kis ke liye sahi hai / kis ke liye nahi — seedhi salah",
+    "ek line mein spec highlight — jo cheez sach mein kaam ki hai",
+    # NOTE: "LIMITED TIME urgency" style hata diya gaya. Hamare paas
+    # koi deal expiry data hai hi nahi, to wo AI se jhooth likhwata tha.
 ]
 
 HASHTAGS = {
@@ -99,31 +109,44 @@ def layer1_live_scrape():
     if not BS4_AVAILABLE:
         return []
 
-    cats = random.sample(BESTSELLER_URLS, min(3, len(BESTSELLER_URLS)))
+    # Ab sirf 2 tech category hain, isliye dono har run pe scrape karo
+    cats = list(BESTSELLER_URLS)
     products = []
+    rejected = {"rating": 0, "reviews": 0, "price": 0, "junk": 0}
 
     for cat in cats:
         try:
-            headers = dict(random.choice(HEADERS_LIST))
-            headers["Accept"]          = "text/html,application/xhtml+xml,*/*;q=0.8"
-            headers["Accept-Encoding"] = "gzip, deflate, br"
-
-            resp = requests.Session().get(cat["url"], headers=headers, timeout=15)
-            if resp.status_code != 200:
-                continue
-
-            soup  = BeautifulSoup(resp.text, "html.parser")
+            # Amazon har request pe alag layout bhej deta hai — kabhi
+            # bestseller grid milta hai, kabhi khali page. Isliye 3 baar
+            # try karo, har baar alag User-Agent ke saath.
             items = []
-            for sel in ["div.zg-grid-general-faceout", "li.zg-item-immersion", "div[data-asin]"]:
-                items = soup.select(sel)
+            for attempt in range(3):
+                headers = dict(HEADERS_LIST[attempt % len(HEADERS_LIST)])
+                headers["Accept"]          = "text/html,application/xhtml+xml,*/*;q=0.8"
+                headers["Accept-Encoding"] = "gzip, deflate, br"
+
+                resp = requests.Session().get(cat["url"], headers=headers, timeout=15)
+                if resp.status_code != 200:
+                    continue
+
+                soup = BeautifulSoup(resp.text, "html.parser")
+                for sel in ["div.zg-grid-general-faceout", "li.zg-item-immersion", "div[data-asin]"]:
+                    items = soup.select(sel)
+                    if items:
+                        break
+                if not items:
+                    items = soup.find_all("div", attrs={"data-asin": True})
                 if items:
                     break
+                time.sleep(1.5)
+
             if not items:
-                items = soup.find_all("div", attrs={"data-asin": True})
+                print(f"   [L1] {cat['category']}: 3 try ke baad bhi page khali mila")
+                continue
 
             count = 0
-            for item in items[:15]:
-                if count >= 2:
+            for item in items[:30]:
+                if count >= 6:          # kam category hain to har ek se zyada lo
                     break
                 try:
                     asin = item.get("data-asin", "")
@@ -157,14 +180,45 @@ def layer1_live_scrape():
                                 if 50 <= pv <= 500000:
                                     price = pv
                                     break
-                    if not price:
-                        price = 999
+
+                    # ── ASLI RATING — "4.3 out of 5 stars" ────────────
+                    rating = 0.0
+                    rat_el = item.select_one("i[class*=a-icon-star] span.a-icon-alt, span.a-icon-alt")
+                    if rat_el:
+                        m = re.search(r"([\d.]+)\s*out of", rat_el.get_text(strip=True))
+                        if m:
+                            try:
+                                rating = float(m.group(1))
+                            except ValueError:
+                                rating = 0.0
+
+                    # ── ASLI REVIEW COUNT ─────────────────────────────
+                    reviews = 0
+                    for rev_el in item.select("span.a-size-small, a.a-size-small span"):
+                        t = rev_el.get_text(strip=True).replace(",", "")
+                        if t.isdigit():
+                            reviews = int(t)
+                            break
+
+                    # ── QUALITY GATE ─────────────────────────────────
+                    # Sirf wo products jo log pehle se pasand kar rahe hain
+                    if any(b in name.lower() for b in JUNK_KEYWORDS):
+                        rejected["junk"] += 1;    continue
+                    if price < MIN_PRICE:
+                        rejected["price"] += 1;   continue
+                    if rating < MIN_RATING:
+                        rejected["rating"] += 1;  continue
+                    if reviews < MIN_REVIEWS:
+                        rejected["reviews"] += 1; continue
 
                     products.append({
                         "name":       name,
                         "link":       f"https://www.amazon.in/dp/{asin}/?tag={AFFILIATE_TAG}",
                         "category":   cat["category"],
-                        "benefit":    f"Rs {price:,} mein Amazon bestseller trending {cat['category']} product",
+                        "rating":     rating,
+                        "reviews":    reviews,
+                        "price":      price,
+                        "benefit":    f"{rating}★ ({reviews:,} reviews) — Rs {price:,}",
                         "commission": max(int(price * cat["commission_pct"]), 40),
                         "emoji":      cat["emoji"],
                     })
@@ -173,10 +227,15 @@ def layer1_live_scrape():
                     continue
 
             if count:
-                print(f"   [L1] {cat['emoji']} {cat['category']}: {count} live products")
+                print(f"   [L1] {cat['emoji']} {cat['category']}: {count} products quality gate paas kiye")
 
         except Exception as e:
             print(f"   [L1] {cat['category']}: {e}")
+
+    if any(rejected.values()):
+        print(f"   [L1] filter ne hataye — rating<{MIN_RATING}: {rejected['rating']}, "
+              f"reviews<{MIN_REVIEWS}: {rejected['reviews']}, "
+              f"price<Rs{MIN_PRICE}: {rejected['price']}, junk: {rejected['junk']}")
 
     return products
 
@@ -311,13 +370,20 @@ def pick_product(state, hot_asins):
 #  AI POST GENERATION
 # ════════════════════════════════════════════════════════════════
 def generate_post(product, style):
-    client   = openai.OpenAI(api_key=GROQ_API_KEY, base_url="https://api.groq.com/openai/v1")
     hashtags = HASHTAGS.get(product.get("category", "default"), HASHTAGS["default"])
+    rating   = product.get("rating", 0)
+    reviews  = product.get("reviews", 0)
+    price    = product.get("price", 0)
 
-    prompt = f"""Ek viral Telegram channel post likho affiliate product ke liye.
+    proof = ""
+    if rating and reviews:
+        proof = f"Amazon rating: {rating} out of 5, {reviews:,} logon ne review kiya"
+
+    prompt = f"""Ek Telegram channel post likho Amazon product ke liye.
 
 Product: {product['name']} {product['emoji']}
-Benefit: {product['benefit']}
+Price: Rs {price:,}
+{proof}
 Affiliate link: {product['link']}
 Writing style: {style}
 Hashtags: {hashtags}
@@ -330,6 +396,15 @@ Rules:
 - Hashtags end mein
 - First line mein hook — scroll ruk jaaye
 - 2-3 emojis max
+
+BAHUT ZAROORI — ye sab likhna MANA hai:
+- Koi discount ya "% OFF" mat likhna. Hamare paas MRP ka data hai hi nahi.
+- "Limited time", "aaj hi", "stock khatam", "jaldi karo" — koi urgency mat
+  banana. Hamein nahi pata deal kab tak hai.
+- "Sabse sasta", "lowest price ever" jaisa koi claim mat karna.
+- Sirf wahi likhna jo upar diya gaya hai — price aur rating. Kuch aur
+  number apne se mat banana.
+Jhootha claim likhne se Amazon Associates account band ho sakta hai.
 
 Sirf post text do. Koi explanation nahi."""
 

@@ -3,16 +3,13 @@ name: Affiliate Autopilot — 10x/day Telegram Posts
 on:
   schedule:
     # IST times (UTC = IST - 5:30)
-    - cron: '30 1 * * *'   # 07:00 IST
-    - cron: '0 3 * * *'    # 08:30 IST
-    - cron: '30 4 * * *'   # 10:00 IST
-    - cron: '0 6 * * *'    # 11:30 IST
-    - cron: '30 7 * * *'   # 13:00 IST
-    - cron: '0 9 * * *'    # 14:30 IST
-    - cron: '30 10 * * *'  # 16:00 IST
-    - cron: '0 12 * * *'   # 17:30 IST
-    - cron: '30 13 * * *'  # 19:00 IST
-    - cron: '30 15 * * *'  # 21:00 IST
+    # Pehle 10 post roz jaate the. Ek chhote channel pe itni posting
+    # spam lagti hai — log mute ya leave kar dete hain. 4 post rakhe
+    # hain, wo bhi un waqt pe jab India mein log phone dekhte hain.
+    - cron: '30 3 * * *'   # 09:00 IST — subah commute
+    - cron: '30 7 * * *'   # 13:00 IST — lunch break
+    - cron: '30 13 * * *'  # 19:00 IST — shaam, sabse zyada active
+    - cron: '30 16 * * *'  # 22:00 IST — sone se pehle scroll
 
   workflow_dispatch:  # Manual trigger bhi possible
 
