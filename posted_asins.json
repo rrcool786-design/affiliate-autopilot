@@ -16,7 +16,8 @@
     "B0DCNWN8NZ",
     "B01DGVKBC6",
     "B0CF1M3PF9",
-    "B0DGJHBX5Y"
+    "B0DGJHBX5Y",
+    "B0GP8XYL7H"
   ],
   "posted_names": [
     "ambrane unbreakable 3a fast",
@@ -34,7 +35,8 @@
     "apple earpods usb c",
     "fedus cat6 ethernet cable",
     "pikkme flip cover leather",
-    "iphone 16 128 gb"
+    "iphone 16 128 gb",
+    "iqoo z11x 5g prismatic"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -50,9 +52,9 @@
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.3,
-      "reviews": 49449,
+      "reviews": 49450,
       "price": 1999,
-      "benefit": "4.3★ (49,449 reviews) — Rs 1,999",
+      "benefit": "4.3★ (49,450 reviews) — Rs 1,999",
       "commission": 79,
       "emoji": "📱"
     },
@@ -115,9 +117,9 @@
       "link": "https://www.amazon.in/dp/B0D2R2MXXJ/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 22732,
-      "price": 620,
-      "benefit": "4.4★ (22,732 reviews) — Rs 620",
+      "reviews": 22731,
+      "price": 613,
+      "benefit": "4.4★ (22,731 reviews) — Rs 613",
       "commission": 40,
       "emoji": "📱"
     },
@@ -126,9 +128,9 @@
       "link": "https://www.amazon.in/dp/B0DDHM6D3L/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 12539,
+      "reviews": 12540,
       "price": 322,
-      "benefit": "4.1★ (12,539 reviews) — Rs 322",
+      "benefit": "4.1★ (12,540 reviews) — Rs 322",
       "commission": 40,
       "emoji": "📱"
     },
@@ -207,9 +209,9 @@
       "link": "https://www.amazon.in/dp/B0FBRGKXHG/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 234161,
+      "reviews": 234162,
       "price": 1999,
-      "benefit": "4.1★ (234,161 reviews) — Rs 1,999",
+      "benefit": "4.1★ (234,162 reviews) — Rs 1,999",
       "commission": 79,
       "emoji": "📱"
     },
@@ -229,9 +231,9 @@
       "link": "https://www.amazon.in/dp/B0B296NTFV/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.0,
-      "reviews": 16353,
+      "reviews": 16357,
       "price": 259,
-      "benefit": "4.0★ (16,353 reviews) — Rs 259",
+      "benefit": "4.0★ (16,357 reviews) — Rs 259",
       "commission": 40,
       "emoji": "💻"
     },
@@ -280,5 +282,5 @@
       "emoji": "📱"
     }
   },
-  "updated_at": "2026-09-10 17:03:04 UTC"
+  "updated_at": "2026-09-10 19:11:57 UTC"
 }
