@@ -19,7 +19,8 @@
     "B0DGJHBX5Y",
     "B0GP8XYL7H",
     "B0DCZ3WDTB",
-    "B0FM38916Y"
+    "B0FM38916Y",
+    "B0CQRNWJM2"
   ],
   "posted_names": [
     "ambrane unbreakable 3a fast",
@@ -40,7 +41,8 @@
     "iphone 16 128 gb",
     "iqoo z11x 5g prismatic",
     "xiaomi power bank 4i",
-    "boat bassheads 300c wired"
+    "boat bassheads 300c wired",
+    "zebronics blanc slim wireless"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -56,9 +58,9 @@
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.3,
-      "reviews": 49538,
+      "reviews": 49540,
       "price": 1999,
-      "benefit": "4.3★ (49,538 reviews) — Rs 1,999",
+      "benefit": "4.3★ (49,540 reviews) — Rs 1,999",
       "commission": 79,
       "emoji": "📱"
     },
@@ -102,9 +104,9 @@
       "link": "https://www.amazon.in/dp/B097JJ2CK6/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.2,
-      "reviews": 16956,
+      "reviews": 16955,
       "price": 709,
-      "benefit": "4.2★ (16,956 reviews) — Rs 709",
+      "benefit": "4.2★ (16,955 reviews) — Rs 709",
       "commission": 40,
       "emoji": "💻"
     },
@@ -121,9 +123,9 @@
       "link": "https://www.amazon.in/dp/B0D2R2MXXJ/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 22760,
-      "price": 600,
-      "benefit": "4.4★ (22,760 reviews) — Rs 600",
+      "reviews": 22762,
+      "price": 599,
+      "benefit": "4.4★ (22,762 reviews) — Rs 599",
       "commission": 40,
       "emoji": "📱"
     },
@@ -191,9 +193,9 @@
       "link": "https://www.amazon.in/dp/B008FWZ5MS/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.0,
-      "reviews": 3214,
-      "price": 376,
-      "benefit": "4.0★ (3,214 reviews) — Rs 376",
+      "reviews": 3215,
+      "price": 369,
+      "benefit": "4.0★ (3,215 reviews) — Rs 369",
       "commission": 40,
       "emoji": "💻"
     },
@@ -213,9 +215,9 @@
       "link": "https://www.amazon.in/dp/B0FBRGKXHG/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 234238,
+      "reviews": 234239,
       "price": 1999,
-      "benefit": "4.1★ (234,238 reviews) — Rs 1,999",
+      "benefit": "4.1★ (234,239 reviews) — Rs 1,999",
       "commission": 79,
       "emoji": "📱"
     },
@@ -224,9 +226,9 @@
       "link": "https://www.amazon.in/dp/B0CF1M3PF9/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 56810,
+      "reviews": 56811,
       "price": 199,
-      "benefit": "4.0★ (56,810 reviews) — Rs 199",
+      "benefit": "4.0★ (56,811 reviews) — Rs 199",
       "commission": 40,
       "emoji": "📱"
     },
@@ -268,9 +270,9 @@
       "link": "https://www.amazon.in/dp/B0FM38916Y/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 120795,
+      "reviews": 120798,
       "price": 549,
-      "benefit": "4.0★ (120,795 reviews) — Rs 549",
+      "benefit": "4.0★ (120,798 reviews) — Rs 549",
       "commission": 40,
       "emoji": "📱"
     },
@@ -297,5 +299,5 @@
       "emoji": "💻"
     }
   },
-  "updated_at": "2026-09-11 12:15:51 UTC"
+  "updated_at": "2026-09-11 17:04:00 UTC"
 }
