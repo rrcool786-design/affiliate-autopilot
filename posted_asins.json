@@ -20,7 +20,8 @@
     "B0GP8XYL7H",
     "B0DCZ3WDTB",
     "B0FM38916Y",
-    "B0CQRNWJM2"
+    "B0CQRNWJM2",
+    "B0DDHM6D3L"
   ],
   "posted_names": [
     "ambrane unbreakable 3a fast",
@@ -42,7 +43,8 @@
     "iqoo z11x 5g prismatic",
     "xiaomi power bank 4i",
     "boat bassheads 300c wired",
-    "zebronics blanc slim wireless"
+    "zebronics blanc slim wireless",
+    "portronics conch theta c"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -58,9 +60,9 @@
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.3,
-      "reviews": 49540,
+      "reviews": 49541,
       "price": 1999,
-      "benefit": "4.3★ (49,540 reviews) — Rs 1,999",
+      "benefit": "4.3★ (49,541 reviews) — Rs 1,999",
       "commission": 79,
       "emoji": "📱"
     },
@@ -123,9 +125,9 @@
       "link": "https://www.amazon.in/dp/B0D2R2MXXJ/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 22762,
-      "price": 599,
-      "benefit": "4.4★ (22,762 reviews) — Rs 599",
+      "reviews": 22763,
+      "price": 620,
+      "benefit": "4.4★ (22,763 reviews) — Rs 620",
       "commission": 40,
       "emoji": "📱"
     },
@@ -226,9 +228,9 @@
       "link": "https://www.amazon.in/dp/B0CF1M3PF9/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 56811,
+      "reviews": 56812,
       "price": 199,
-      "benefit": "4.0★ (56,811 reviews) — Rs 199",
+      "benefit": "4.0★ (56,812 reviews) — Rs 199",
       "commission": 40,
       "emoji": "📱"
     },
@@ -237,9 +239,9 @@
       "link": "https://www.amazon.in/dp/B0B296NTFV/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.0,
-      "reviews": 16376,
+      "reviews": 16379,
       "price": 259,
-      "benefit": "4.0★ (16,376 reviews) — Rs 259",
+      "benefit": "4.0★ (16,379 reviews) — Rs 259",
       "commission": 40,
       "emoji": "💻"
     },
@@ -299,5 +301,5 @@
       "emoji": "💻"
     }
   },
-  "updated_at": "2026-09-11 17:04:00 UTC"
+  "updated_at": "2026-09-11 19:14:05 UTC"
 }
