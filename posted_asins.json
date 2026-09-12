@@ -23,7 +23,8 @@
     "B0CQRNWJM2",
     "B0DDHM6D3L",
     "B0HCNC1Z9X",
-    "B0BTD4S4XF"
+    "B0BTD4S4XF",
+    "B09BFV96TS"
   ],
   "posted_names": [
     "ambrane unbreakable 3a fast",
@@ -48,7 +49,8 @@
     "zebronics blanc slim wireless",
     "portronics conch theta c",
     "iqoo z11 5g aurora",
-    "american tourister valex"
+    "american tourister valex",
+    "dyazo water resistant laptop"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -64,9 +66,9 @@
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.3,
-      "reviews": 49606,
+      "reviews": 49607,
       "price": 1999,
-      "benefit": "4.3★ (49,606 reviews) — Rs 1,999",
+      "benefit": "4.3★ (49,607 reviews) — Rs 1,999",
       "commission": 79,
       "emoji": "📱"
     },
@@ -83,9 +85,9 @@
       "link": "https://www.amazon.in/dp/B08LHTJTBB/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.2,
-      "reviews": 20247,
+      "reviews": 20248,
       "price": 389,
-      "benefit": "4.2★ (20,247 reviews) — Rs 389",
+      "benefit": "4.2★ (20,248 reviews) — Rs 389",
       "commission": 40,
       "emoji": "💻"
     },
@@ -110,9 +112,9 @@
       "link": "https://www.amazon.in/dp/B097JJ2CK6/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.2,
-      "reviews": 16968,
+      "reviews": 16969,
       "price": 709,
-      "benefit": "4.2★ (16,968 reviews) — Rs 709",
+      "benefit": "4.2★ (16,969 reviews) — Rs 709",
       "commission": 40,
       "emoji": "💻"
     },
@@ -129,9 +131,9 @@
       "link": "https://www.amazon.in/dp/B0D2R2MXXJ/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 22793,
-      "price": 578,
-      "benefit": "4.4★ (22,793 reviews) — Rs 578",
+      "reviews": 22792,
+      "price": 620,
+      "benefit": "4.4★ (22,792 reviews) — Rs 620",
       "commission": 40,
       "emoji": "📱"
     },
@@ -140,9 +142,9 @@
       "link": "https://www.amazon.in/dp/B0DDHM6D3L/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 12626,
+      "reviews": 12628,
       "price": 322,
-      "benefit": "4.1★ (12,626 reviews) — Rs 322",
+      "benefit": "4.1★ (12,628 reviews) — Rs 322",
       "commission": 40,
       "emoji": "📱"
     },
@@ -305,5 +307,5 @@
       "emoji": "💻"
     }
   },
-  "updated_at": "2026-09-12 11:39:56 UTC"
+  "updated_at": "2026-09-12 16:23:50 UTC"
 }
