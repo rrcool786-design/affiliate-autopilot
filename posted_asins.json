@@ -24,7 +24,8 @@
     "B0DDHM6D3L",
     "B0HCNC1Z9X",
     "B0BTD4S4XF",
-    "B09BFV96TS"
+    "B09BFV96TS",
+    "B0DNFSSF3F"
   ],
   "posted_names": [
     "ambrane unbreakable 3a fast",
@@ -50,7 +51,8 @@
     "portronics conch theta c",
     "iqoo z11 5g aurora",
     "american tourister valex",
-    "dyazo water resistant laptop"
+    "dyazo water resistant laptop",
+    "sandisk ultra dual drive"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -112,9 +114,9 @@
       "link": "https://www.amazon.in/dp/B097JJ2CK6/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.2,
-      "reviews": 16969,
+      "reviews": 16970,
       "price": 709,
-      "benefit": "4.2★ (16,969 reviews) — Rs 709",
+      "benefit": "4.2★ (16,970 reviews) — Rs 709",
       "commission": 40,
       "emoji": "💻"
     },
@@ -131,9 +133,9 @@
       "link": "https://www.amazon.in/dp/B0D2R2MXXJ/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 22792,
-      "price": 620,
-      "benefit": "4.4★ (22,792 reviews) — Rs 620",
+      "reviews": 22793,
+      "price": 574,
+      "benefit": "4.4★ (22,793 reviews) — Rs 574",
       "commission": 40,
       "emoji": "📱"
     },
@@ -202,8 +204,8 @@
       "category": "computers",
       "rating": 4.0,
       "reviews": 3221,
-      "price": 375,
-      "benefit": "4.0★ (3,221 reviews) — Rs 375",
+      "price": 348,
+      "benefit": "4.0★ (3,221 reviews) — Rs 348",
       "commission": 40,
       "emoji": "💻"
     },
@@ -278,9 +280,9 @@
       "link": "https://www.amazon.in/dp/B0FM38916Y/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 120829,
+      "reviews": 120830,
       "price": 549,
-      "benefit": "4.0★ (120,829 reviews) — Rs 549",
+      "benefit": "4.0★ (120,830 reviews) — Rs 549",
       "commission": 40,
       "emoji": "📱"
     },
@@ -307,5 +309,5 @@
       "emoji": "💻"
     }
   },
-  "updated_at": "2026-09-12 16:23:50 UTC"
+  "updated_at": "2026-09-12 18:36:22 UTC"
 }
