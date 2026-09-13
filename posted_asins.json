@@ -25,7 +25,8 @@
     "B0HCNC1Z9X",
     "B0BTD4S4XF",
     "B09BFV96TS",
-    "B0DNFSSF3F"
+    "B0DNFSSF3F",
+    "B0H5VWCNWN"
   ],
   "posted_names": [
     "ambrane unbreakable 3a fast",
@@ -52,7 +53,8 @@
     "iqoo z11 5g aurora",
     "american tourister valex",
     "dyazo water resistant laptop",
-    "sandisk ultra dual drive"
+    "sandisk ultra dual drive",
+    "jiotag 2nd generation grey"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -68,11 +70,12 @@
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.3,
-      "reviews": 49607,
+      "reviews": 49664,
       "price": 1999,
-      "benefit": "4.3★ (49,607 reviews) — Rs 1,999",
+      "benefit": "4.3★ (49,664 reviews) — Rs 1,999",
       "commission": 79,
-      "emoji": "📱"
+      "emoji": "📱",
+      "is_new": false
     },
     "B098NS6PVG": {
       "name": "Ambrane Unbreakable 3A Fast Charging 1.5m Braided Type ",
@@ -87,11 +90,12 @@
       "link": "https://www.amazon.in/dp/B08LHTJTBB/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.2,
-      "reviews": 20248,
+      "reviews": 20260,
       "price": 389,
-      "benefit": "4.2★ (20,248 reviews) — Rs 389",
+      "benefit": "4.2★ (20,260 reviews) — Rs 389",
       "commission": 40,
-      "emoji": "💻"
+      "emoji": "💻",
+      "is_new": false
     },
     "B0FQFYXCC4": {
       "name": "Apple iPhone 17 256 GB: 15.93 cm (6.3″) Display with Pr",
@@ -114,11 +118,12 @@
       "link": "https://www.amazon.in/dp/B097JJ2CK6/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.2,
-      "reviews": 16970,
+      "reviews": 16987,
       "price": 709,
-      "benefit": "4.2★ (16,970 reviews) — Rs 709",
+      "benefit": "4.2★ (16,987 reviews) — Rs 709",
       "commission": 40,
-      "emoji": "💻"
+      "emoji": "💻",
+      "is_new": false
     },
     "B0G822MS12": {
       "name": "Samsung Galaxy M06 5G Mobile",
@@ -133,22 +138,24 @@
       "link": "https://www.amazon.in/dp/B0D2R2MXXJ/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 22793,
-      "price": 574,
-      "benefit": "4.4★ (22,793 reviews) — Rs 574",
+      "reviews": 22820,
+      "price": 564,
+      "benefit": "4.4★ (22,820 reviews) — Rs 564",
       "commission": 40,
-      "emoji": "📱"
+      "emoji": "📱",
+      "is_new": false
     },
     "B0DDHM6D3L": {
       "name": "Portronics Conch Theta C in Ear Type C Wired Earphones ",
       "link": "https://www.amazon.in/dp/B0DDHM6D3L/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 12628,
+      "reviews": 12651,
       "price": 322,
-      "benefit": "4.1★ (12,628 reviews) — Rs 322",
+      "benefit": "4.1★ (12,651 reviews) — Rs 322",
       "commission": 40,
-      "emoji": "📱"
+      "emoji": "📱",
+      "is_new": false
     },
     "B0H1WVW8VY": {
       "name": "iQOO Z11 Lite 44W 5G",
@@ -203,11 +210,12 @@
       "link": "https://www.amazon.in/dp/B008FWZ5MS/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.0,
-      "reviews": 3221,
-      "price": 348,
-      "benefit": "4.0★ (3,221 reviews) — Rs 348",
+      "reviews": 3224,
+      "price": 362,
+      "benefit": "4.0★ (3,224 reviews) — Rs 362",
       "commission": 40,
-      "emoji": "💻"
+      "emoji": "💻",
+      "is_new": false
     },
     "B0DCNWN8NZ": {
       "name": "Apple EarPods (USB-C) ​​​​​​​",
@@ -236,55 +244,60 @@
       "link": "https://www.amazon.in/dp/B0CF1M3PF9/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 56836,
+      "reviews": 56859,
       "price": 199,
-      "benefit": "4.0★ (56,836 reviews) — Rs 199",
+      "benefit": "4.0★ (56,859 reviews) — Rs 199",
       "commission": 40,
-      "emoji": "📱"
+      "emoji": "📱",
+      "is_new": false
     },
     "B0B296NTFV": {
       "name": "Portronics Toad 23 Wireless Optical Mouse with 2.4GHz, ",
       "link": "https://www.amazon.in/dp/B0B296NTFV/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.0,
-      "reviews": 16393,
+      "reviews": 16405,
       "price": 259,
-      "benefit": "4.0★ (16,393 reviews) — Rs 259",
+      "benefit": "4.0★ (16,405 reviews) — Rs 259",
       "commission": 40,
-      "emoji": "💻"
+      "emoji": "💻",
+      "is_new": false
     },
     "B09BFV96TS": {
       "name": "Dyazo Water Resistant Laptop Sleeve/Laptop case/laptop ",
       "link": "https://www.amazon.in/dp/B09BFV96TS/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.3,
-      "reviews": 24335,
+      "reviews": 24352,
       "price": 299,
-      "benefit": "4.3★ (24,335 reviews) — Rs 299",
+      "benefit": "4.3★ (24,352 reviews) — Rs 299",
       "commission": 40,
-      "emoji": "💻"
+      "emoji": "💻",
+      "is_new": false
     },
     "B01DGVKBC6": {
       "name": "FEDUS Cat6 Ethernet Cable, 10M High Speed 550MHZ / 10 G",
       "link": "https://www.amazon.in/dp/B01DGVKBC6/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.4,
-      "reviews": 20944,
+      "reviews": 20949,
       "price": 286,
-      "benefit": "4.4★ (20,944 reviews) — Rs 286",
+      "benefit": "4.4★ (20,949 reviews) — Rs 286",
       "commission": 40,
-      "emoji": "💻"
+      "emoji": "💻",
+      "is_new": false
     },
     "B0FM38916Y": {
       "name": "boAt Bassheads 300C Wired Earphones,Type-C Jack, 10mm D",
       "link": "https://www.amazon.in/dp/B0FM38916Y/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 120830,
+      "reviews": 120857,
       "price": 549,
-      "benefit": "4.0★ (120,830 reviews) — Rs 549",
+      "benefit": "4.0★ (120,857 reviews) — Rs 549",
       "commission": 40,
-      "emoji": "📱"
+      "emoji": "📱",
+      "is_new": false
     },
     "B0DCZ3WDTB": {
       "name": "Xiaomi Power Bank 4i 20000mAh 33W Super Fast Charging P",
@@ -307,7 +320,151 @@
       "benefit": "4.3★ (5,286 reviews) — Rs 2,069",
       "commission": 82,
       "emoji": "💻"
+    },
+    "B0FDGVNSLH": {
+      "name": "Samsung Galaxy Buds Core (Black) Galaxy AI Enabled in-E",
+      "link": "https://www.amazon.in/dp/B0FDGVNSLH/?tag=rrcool786-21",
+      "category": "electronics",
+      "rating": 4.0,
+      "reviews": 3432,
+      "price": 4199,
+      "benefit": "4.0★ (3,432 reviews) — Rs 4,199",
+      "commission": 167,
+      "emoji": "📱",
+      "is_new": false
+    },
+    "B0H5VWCNWN": {
+      "name": "JioTag (2nd Generation) (Grey) - Android or iOS Compati",
+      "link": "https://www.amazon.in/dp/B0H5VWCNWN/?tag=rrcool786-21",
+      "category": "electronics",
+      "rating": 4.0,
+      "reviews": 186,
+      "price": 1049,
+      "benefit": "4.0★ (186 reviews) — Rs 1,049",
+      "commission": 41,
+      "emoji": "🆕",
+      "is_new": true
+    },
+    "B0H3Q5DPP9": {
+      "name": "OnePlus Nord Buds 4 TWS Earbuds with 52dB Real-time ANC",
+      "link": "https://www.amazon.in/dp/B0H3Q5DPP9/?tag=rrcool786-21",
+      "category": "electronics",
+      "rating": 4.1,
+      "reviews": 482,
+      "price": 3299,
+      "benefit": "4.1★ (482 reviews) — Rs 3,299",
+      "commission": 131,
+      "emoji": "🆕",
+      "is_new": true
+    },
+    "B0FJGDS5W3": {
+      "name": "45W GaN Type- C Super Fast Charger Compatible with Sams",
+      "link": "https://www.amazon.in/dp/B0FJGDS5W3/?tag=rrcool786-21",
+      "category": "electronics",
+      "rating": 4.0,
+      "reviews": 3460,
+      "price": 625,
+      "benefit": "4.0★ (3,460 reviews) — Rs 625",
+      "commission": 40,
+      "emoji": "🆕",
+      "is_new": true
+    },
+    "B0H2YY6N27": {
+      "name": "pTron Bassbuds Encore in-Ear TWS Ear Buds w/ 50Hrs Play",
+      "link": "https://www.amazon.in/dp/B0H2YY6N27/?tag=rrcool786-21",
+      "category": "electronics",
+      "rating": 4.7,
+      "reviews": 43,
+      "price": 699,
+      "benefit": "4.7★ (43 reviews) — Rs 699",
+      "commission": 40,
+      "emoji": "🆕",
+      "is_new": true
+    },
+    "B0H1X5XP25": {
+      "name": "Samsung Galaxy A56 5G (Awesome Midnight Blue, 8GB, 128G",
+      "link": "https://www.amazon.in/dp/B0H1X5XP25/?tag=rrcool786-21",
+      "category": "electronics",
+      "rating": 4.3,
+      "reviews": 582,
+      "price": 34999,
+      "benefit": "4.3★ (582 reviews) — Rs 34,999",
+      "commission": 1399,
+      "emoji": "🆕",
+      "is_new": true
+    },
+    "B01HJI0FS2": {
+      "name": "Dell MS116 Wired Mouse, 1000 DPI, Scrolling Wheel, 2 Bu",
+      "link": "https://www.amazon.in/dp/B01HJI0FS2/?tag=rrcool786-21",
+      "category": "computers",
+      "rating": 4.4,
+      "reviews": 48652,
+      "price": 295,
+      "benefit": "4.4★ (48,652 reviews) — Rs 295",
+      "commission": 40,
+      "emoji": "💻",
+      "is_new": false
+    },
+    "B0H84855N1": {
+      "name": "Mota Barman Study Table Bed Table Premium Laptop Table/",
+      "link": "https://www.amazon.in/dp/B0H84855N1/?tag=rrcool786-21",
+      "category": "computers",
+      "rating": 4.1,
+      "reviews": 101,
+      "price": 399,
+      "benefit": "4.1★ (101 reviews) — Rs 399",
+      "commission": 40,
+      "emoji": "🆕",
+      "is_new": true
+    },
+    "B0HCVYQS46": {
+      "name": "Etekcity Study Table Bed Table Premium Laptop Table/Fol",
+      "link": "https://www.amazon.in/dp/B0HCVYQS46/?tag=rrcool786-21",
+      "category": "computers",
+      "rating": 4.7,
+      "reviews": 20488,
+      "price": 489,
+      "benefit": "4.7★ (20,488 reviews) — Rs 489",
+      "commission": 40,
+      "emoji": "💻",
+      "is_new": false
+    },
+    "B0H6JP1SM4": {
+      "name": "Skybags Brat Pro Max 15.6 Inch Compatible Unisex 35L La",
+      "link": "https://www.amazon.in/dp/B0H6JP1SM4/?tag=rrcool786-21",
+      "category": "computers",
+      "rating": 4.6,
+      "reviews": 175,
+      "price": 999,
+      "benefit": "4.6★ (175 reviews) — Rs 999",
+      "commission": 40,
+      "emoji": "🆕",
+      "is_new": true
+    },
+    "B0GZKXZ1NB": {
+      "name": "TEKCOOL Study Table Foldable Wooden Laptop Bed Tray Tab",
+      "link": "https://www.amazon.in/dp/B0GZKXZ1NB/?tag=rrcool786-21",
+      "category": "computers",
+      "rating": 4.1,
+      "reviews": 2363,
+      "price": 497,
+      "benefit": "4.1★ (2,363 reviews) — Rs 497",
+      "commission": 40,
+      "emoji": "🆕",
+      "is_new": true
+    },
+    "B0H9916DRH": {
+      "name": "HP Original 65W Laptop Charger with Power Cable H2O",
+      "link": "https://www.amazon.in/dp/B0H9916DRH/?tag=rrcool786-21",
+      "category": "computers",
+      "rating": 4.7,
+      "reviews": 27,
+      "price": 855,
+      "benefit": "4.7★ (27 reviews) — Rs 855",
+      "commission": 40,
+      "emoji": "🆕",
+      "is_new": true
     }
   },
-  "updated_at": "2026-09-12 18:36:22 UTC"
+  "updated_at": "2026-09-13 08:28:13 UTC"
 }
