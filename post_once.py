@@ -45,10 +45,27 @@ STATE_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "posted_as
 # aur channel pe saree petticoat, garbage bags aur Krishna costume ja
 # rahe the. Jo banda tech deals ke liye join karta hai wo ye dekh kar
 # turant leave kar deta hai — isliye follower nahi badh rahe the.
+#
+# Do tarah ki list:
+#   "bestseller" — pehle se hit products (hazaaron reviews)
+#   "new"        — Amazon ki New Releases list: naye launch hue gadgets.
+#                  Naye hain to reviews kam honge — isliye inka gate alag
+#                  hai (warna ek bhi naya gadget kabhi pass nahi hota).
 BESTSELLER_URLS = [
-    {"url": "https://www.amazon.in/gp/bestsellers/electronics/", "category": "electronics", "emoji": "📱", "commission_pct": 0.04},
-    {"url": "https://www.amazon.in/gp/bestsellers/computers/",   "category": "computers",   "emoji": "💻", "commission_pct": 0.04},
+    {"url": "https://www.amazon.in/gp/bestsellers/electronics/",   "category": "electronics", "emoji": "📱", "commission_pct": 0.04, "kind": "bestseller"},
+    {"url": "https://www.amazon.in/gp/bestsellers/computers/",     "category": "computers",   "emoji": "💻", "commission_pct": 0.04, "kind": "bestseller"},
+    {"url": "https://www.amazon.in/gp/new-releases/electronics/",  "category": "electronics", "emoji": "🆕", "commission_pct": 0.04, "kind": "new"},
+    {"url": "https://www.amazon.in/gp/new-releases/computers/",    "category": "computers",   "emoji": "🆕", "commission_pct": 0.04, "kind": "new"},
 ]
+
+# Naye gadget ka gate: rating achhi ho, aur itne reviews ho ki rating
+# bharose ki ho (5.0★ with 3 reviews ka koi matlab nahi)
+NEW_MIN_RATING  = 4.0
+NEW_MIN_REVIEWS = 20
+NEW_MAX_REVIEWS = 5000   # isse zyada reviews = purana product, "naya" label nahi
+
+# Kitne % post naye gadget ke hon (baaki proven bestsellers)
+NEW_GADGET_SHARE = 0.6
 
 # ─── PRODUCT QUALITY FILTER ──────────────────────────────────────────
 # Random bestseller nahi — sirf wo products jo log pehle se pasand kar
@@ -206,10 +223,20 @@ def layer1_live_scrape():
                         rejected["junk"] += 1;    continue
                     if price < MIN_PRICE:
                         rejected["price"] += 1;   continue
-                    if rating < MIN_RATING:
+                    is_new = cat.get("kind") == "new"
+                    min_rat = NEW_MIN_RATING  if is_new else MIN_RATING
+                    min_rev = NEW_MIN_REVIEWS if is_new else MIN_REVIEWS
+                    if rating < min_rat:
                         rejected["rating"] += 1;  continue
-                    if reviews < MIN_REVIEWS:
+                    if reviews < min_rev:
                         rejected["reviews"] += 1; continue
+
+                    # Amazon ki New Releases list mein kabhi purane products
+                    # bhi aa jaate hain (Dell MS116 mouse, 48K reviews). Itne
+                    # reviews wala "naya launch" nahi ho sakta — label hatao,
+                    # product achha hai to normal post ki tarah jayega.
+                    if is_new and reviews > NEW_MAX_REVIEWS:
+                        is_new = False
 
                     products.append({
                         "name":       name,
@@ -220,14 +247,16 @@ def layer1_live_scrape():
                         "price":      price,
                         "benefit":    f"{rating}★ ({reviews:,} reviews) — Rs {price:,}",
                         "commission": max(int(price * cat["commission_pct"]), 40),
-                        "emoji":      cat["emoji"],
+                        "emoji":      "🆕" if is_new else ("📱" if cat["category"] == "electronics" else "💻"),
+                        "is_new":     is_new,
                     })
                     count += 1
                 except Exception:
                     continue
 
             if count:
-                print(f"   [L1] {cat['emoji']} {cat['category']}: {count} products quality gate paas kiye")
+                label = "NEW LAUNCH" if cat.get("kind") == "new" else "bestseller"
+                print(f"   [L1] {cat['emoji']} {cat['category']} ({label}): {count} products quality gate paas kiye")
 
         except Exception as e:
             print(f"   [L1] {cat['category']}: {e}")
@@ -413,6 +442,13 @@ def pick_product(state, hot_asins):
                 print(f"   [HOT] click data se hot product chuna: {unposted[asin]['name']}")
                 return asin, unposted[asin]
 
+    # Naye gadget ko preference — jitne % NEW_GADGET_SHARE mein likha hai
+    new_ones = sorted(a for a, p in unposted.items() if p.get("is_new"))
+    if new_ones and random.random() < NEW_GADGET_SHARE:
+        asin = random.choice(new_ones)
+        print(f"   [NEW] naya launch chuna ({len(new_ones)} naye gadget available)")
+        return asin, unposted[asin]
+
     asin = random.choice(sorted(unposted.keys()))
     return asin, unposted[asin]
 
@@ -430,11 +466,18 @@ def generate_post(product, style):
     if rating and reviews:
         proof = f"Amazon rating: {rating} out of 5, {reviews:,} logon ne review kiya"
 
+    new_line = ""
+    if product.get("is_new"):
+        new_line = ("Ye Amazon India ki NEW RELEASES list mein hai — naya launch hua gadget. "
+                    "Post ki pehli line mein '🆕 Naya launch' likho aur batao ki kya naya/alag hai "
+                    "(sirf product naam se jo samajh aaye, apne se spec mat banana).")
+
     prompt = f"""Ek Telegram channel post likho Amazon product ke liye.
 
 Product: {product['name']} {product['emoji']}
 Price: Rs {price:,}
 {proof}
+{new_line}
 Affiliate link: {product['link']}
 Writing style: {style}
 Hashtags: {hashtags}
@@ -471,7 +514,8 @@ Sirf post text do. Koi explanation nahi."""
     except Exception as e:
         print(f"   AI error: {e}")
         hashtags = HASHTAGS.get(product.get("category", "default"), HASHTAGS["default"])
-        return f"{product['emoji']} {product['name']} — {product['benefit']}\n\n{product['link']}\n\n{hashtags}"
+        head = "🆕 Naya launch — " if product.get("is_new") else ""
+        return f"{head}{product['emoji']} {product['name']} — {product['benefit']}\n\n{product['link']}\n\n{hashtags}"
 
 
 # ════════════════════════════════════════════════════════════════
