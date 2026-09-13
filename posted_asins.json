@@ -28,7 +28,8 @@
     "B0DNFSSF3F",
     "B0H5VWCNWN",
     "B0H84855N1",
-    "B0H6JP1SM4"
+    "B0H6JP1SM4",
+    "B0FJGDS5W3"
   ],
   "posted_names": [
     "ambrane unbreakable 3a fast",
@@ -58,7 +59,8 @@
     "sandisk ultra dual drive",
     "jiotag 2nd generation grey",
     "mota barman study table",
-    "skybags brat pro max"
+    "skybags brat pro max",
+    "45w gan type c"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -74,9 +76,9 @@
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.3,
-      "reviews": 49665,
+      "reviews": 49666,
       "price": 1999,
-      "benefit": "4.3★ (49,665 reviews) — Rs 1,999",
+      "benefit": "4.3★ (49,666 reviews) — Rs 1,999",
       "commission": 79,
       "emoji": "📱",
       "is_new": false
@@ -94,9 +96,9 @@
       "link": "https://www.amazon.in/dp/B08LHTJTBB/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.2,
-      "reviews": 20261,
+      "reviews": 20262,
       "price": 389,
-      "benefit": "4.2★ (20,261 reviews) — Rs 389",
+      "benefit": "4.2★ (20,262 reviews) — Rs 389",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -142,9 +144,9 @@
       "link": "https://www.amazon.in/dp/B0D2R2MXXJ/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 22821,
+      "reviews": 22822,
       "price": 485,
-      "benefit": "4.4★ (22,821 reviews) — Rs 485",
+      "benefit": "4.4★ (22,822 reviews) — Rs 485",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -215,8 +217,8 @@
       "category": "computers",
       "rating": 4.0,
       "reviews": 3225,
-      "price": 359,
-      "benefit": "4.0★ (3,225 reviews) — Rs 359",
+      "price": 356,
+      "benefit": "4.0★ (3,225 reviews) — Rs 356",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -272,9 +274,9 @@
       "link": "https://www.amazon.in/dp/B09BFV96TS/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.3,
-      "reviews": 24352,
+      "reviews": 24353,
       "price": 299,
-      "benefit": "4.3★ (24,352 reviews) — Rs 299",
+      "benefit": "4.3★ (24,353 reviews) — Rs 299",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -366,9 +368,9 @@
       "link": "https://www.amazon.in/dp/B0FJGDS5W3/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 3461,
+      "reviews": 3462,
       "price": 625,
-      "benefit": "4.0★ (3,461 reviews) — Rs 625",
+      "benefit": "4.0★ (3,462 reviews) — Rs 625",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -378,9 +380,9 @@
       "link": "https://www.amazon.in/dp/B0H2YY6N27/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.7,
-      "reviews": 43,
+      "reviews": 44,
       "price": 699,
-      "benefit": "4.7★ (43 reviews) — Rs 699",
+      "benefit": "4.7★ (44 reviews) — Rs 699",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -414,9 +416,9 @@
       "link": "https://www.amazon.in/dp/B0H84855N1/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.1,
-      "reviews": 101,
+      "reviews": 102,
       "price": 399,
-      "benefit": "4.1★ (101 reviews) — Rs 399",
+      "benefit": "4.1★ (102 reviews) — Rs 399",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -482,5 +484,5 @@
       "is_new": false
     }
   },
-  "updated_at": "2026-09-13 16:59:45 UTC"
+  "updated_at": "2026-09-13 18:53:27 UTC"
 }
