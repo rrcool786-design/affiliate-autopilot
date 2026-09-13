@@ -26,7 +26,8 @@
     "B0BTD4S4XF",
     "B09BFV96TS",
     "B0DNFSSF3F",
-    "B0H5VWCNWN"
+    "B0H5VWCNWN",
+    "B0H84855N1"
   ],
   "posted_names": [
     "ambrane unbreakable 3a fast",
@@ -54,7 +55,8 @@
     "american tourister valex",
     "dyazo water resistant laptop",
     "sandisk ultra dual drive",
-    "jiotag 2nd generation grey"
+    "jiotag 2nd generation grey",
+    "mota barman study table"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -70,9 +72,9 @@
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.3,
-      "reviews": 49664,
+      "reviews": 49665,
       "price": 1999,
-      "benefit": "4.3★ (49,664 reviews) — Rs 1,999",
+      "benefit": "4.3★ (49,665 reviews) — Rs 1,999",
       "commission": 79,
       "emoji": "📱",
       "is_new": false
@@ -138,9 +140,9 @@
       "link": "https://www.amazon.in/dp/B0D2R2MXXJ/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 22820,
-      "price": 564,
-      "benefit": "4.4★ (22,820 reviews) — Rs 564",
+      "reviews": 22821,
+      "price": 500,
+      "benefit": "4.4★ (22,821 reviews) — Rs 500",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -150,9 +152,9 @@
       "link": "https://www.amazon.in/dp/B0DDHM6D3L/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 12651,
+      "reviews": 12653,
       "price": 322,
-      "benefit": "4.1★ (12,651 reviews) — Rs 322",
+      "benefit": "4.1★ (12,653 reviews) — Rs 322",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -211,8 +213,8 @@
       "category": "computers",
       "rating": 4.0,
       "reviews": 3224,
-      "price": 362,
-      "benefit": "4.0★ (3,224 reviews) — Rs 362",
+      "price": 359,
+      "benefit": "4.0★ (3,224 reviews) — Rs 359",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -256,9 +258,9 @@
       "link": "https://www.amazon.in/dp/B0B296NTFV/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.0,
-      "reviews": 16405,
+      "reviews": 16404,
       "price": 259,
-      "benefit": "4.0★ (16,405 reviews) — Rs 259",
+      "benefit": "4.0★ (16,404 reviews) — Rs 259",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -280,9 +282,9 @@
       "link": "https://www.amazon.in/dp/B01DGVKBC6/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.4,
-      "reviews": 20949,
+      "reviews": 20950,
       "price": 286,
-      "benefit": "4.4★ (20,949 reviews) — Rs 286",
+      "benefit": "4.4★ (20,950 reviews) — Rs 286",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -422,9 +424,9 @@
       "link": "https://www.amazon.in/dp/B0HCVYQS46/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.7,
-      "reviews": 20488,
+      "reviews": 20490,
       "price": 489,
-      "benefit": "4.7★ (20,488 reviews) — Rs 489",
+      "benefit": "4.7★ (20,490 reviews) — Rs 489",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -464,7 +466,19 @@
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
+    },
+    "B0088TKTY2": {
+      "name": "TP-LINK WiFi Dongle 300 Mbps Mini Wireless Network USB ",
+      "link": "https://www.amazon.in/dp/B0088TKTY2/?tag=rrcool786-21",
+      "category": "computers",
+      "rating": 4.1,
+      "reviews": 68797,
+      "price": 649,
+      "benefit": "4.1★ (68,797 reviews) — Rs 649",
+      "commission": 40,
+      "emoji": "💻",
+      "is_new": false
     }
   },
-  "updated_at": "2026-09-13 08:28:13 UTC"
+  "updated_at": "2026-09-13 12:47:13 UTC"
 }
