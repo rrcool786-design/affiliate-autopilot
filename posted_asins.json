@@ -32,7 +32,8 @@
     "B0FJGDS5W3",
     "B0H2YY6N27",
     "B0H9916DRH",
-    "B01HJI0FS2"
+    "B01HJI0FS2",
+    "B0H3Q5DPP9"
   ],
   "posted_names": [
     "ambrane unbreakable 3a fast",
@@ -66,7 +67,8 @@
     "45w gan type c",
     "ptron bassbuds encore in",
     "hp original 65w laptop",
-    "dell ms116 wired mouse"
+    "dell ms116 wired mouse",
+    "oneplus nord buds 4"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -82,9 +84,9 @@
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.3,
-      "reviews": 49698,
+      "reviews": 49701,
       "price": 1999,
-      "benefit": "4.3★ (49,698 reviews) — Rs 1,999",
+      "benefit": "4.3★ (49,701 reviews) — Rs 1,999",
       "commission": 79,
       "emoji": "📱",
       "is_new": false
@@ -102,9 +104,9 @@
       "link": "https://www.amazon.in/dp/B08LHTJTBB/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.2,
-      "reviews": 20273,
+      "reviews": 20274,
       "price": 389,
-      "benefit": "4.2★ (20,273 reviews) — Rs 389",
+      "benefit": "4.2★ (20,274 reviews) — Rs 389",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -151,8 +153,8 @@
       "category": "electronics",
       "rating": 4.4,
       "reviews": 22841,
-      "price": 568,
-      "benefit": "4.4★ (22,841 reviews) — Rs 568",
+      "price": 594,
+      "benefit": "4.4★ (22,841 reviews) — Rs 594",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -256,9 +258,9 @@
       "link": "https://www.amazon.in/dp/B0CF1M3PF9/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 56886,
+      "reviews": 56887,
       "price": 199,
-      "benefit": "4.0★ (56,886 reviews) — Rs 199",
+      "benefit": "4.0★ (56,887 reviews) — Rs 199",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -304,9 +306,9 @@
       "link": "https://www.amazon.in/dp/B0FM38916Y/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 120876,
+      "reviews": 120877,
       "price": 549,
-      "benefit": "4.0★ (120,876 reviews) — Rs 549",
+      "benefit": "4.0★ (120,877 reviews) — Rs 549",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -459,9 +461,9 @@
       "link": "https://www.amazon.in/dp/B0GZKXZ1NB/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.1,
-      "reviews": 2388,
+      "reviews": 2391,
       "price": 497,
-      "benefit": "4.1★ (2,388 reviews) — Rs 497",
+      "benefit": "4.1★ (2,391 reviews) — Rs 497",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -503,5 +505,5 @@
       "is_new": false
     }
   },
-  "updated_at": "2026-09-14 18:46:20 UTC"
+  "updated_at": "2026-09-14 20:25:42 UTC"
 }
