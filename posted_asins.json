@@ -31,7 +31,8 @@
     "B0H6JP1SM4",
     "B0FJGDS5W3",
     "B0H2YY6N27",
-    "B0H9916DRH"
+    "B0H9916DRH",
+    "B01HJI0FS2"
   ],
   "posted_names": [
     "ambrane unbreakable 3a fast",
@@ -64,7 +65,8 @@
     "skybags brat pro max",
     "45w gan type c",
     "ptron bassbuds encore in",
-    "hp original 65w laptop"
+    "hp original 65w laptop",
+    "dell ms116 wired mouse"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -100,9 +102,9 @@
       "link": "https://www.amazon.in/dp/B08LHTJTBB/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.2,
-      "reviews": 20272,
+      "reviews": 20273,
       "price": 389,
-      "benefit": "4.2★ (20,272 reviews) — Rs 389",
+      "benefit": "4.2★ (20,273 reviews) — Rs 389",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -149,8 +151,8 @@
       "category": "electronics",
       "rating": 4.4,
       "reviews": 22841,
-      "price": 491,
-      "benefit": "4.4★ (22,841 reviews) — Rs 491",
+      "price": 568,
+      "benefit": "4.4★ (22,841 reviews) — Rs 568",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -160,9 +162,9 @@
       "link": "https://www.amazon.in/dp/B0DDHM6D3L/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 12677,
+      "reviews": 12678,
       "price": 322,
-      "benefit": "4.1★ (12,677 reviews) — Rs 322",
+      "benefit": "4.1★ (12,678 reviews) — Rs 322",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -254,9 +256,9 @@
       "link": "https://www.amazon.in/dp/B0CF1M3PF9/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 56883,
+      "reviews": 56886,
       "price": 199,
-      "benefit": "4.0★ (56,883 reviews) — Rs 199",
+      "benefit": "4.0★ (56,886 reviews) — Rs 199",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -302,9 +304,9 @@
       "link": "https://www.amazon.in/dp/B0FM38916Y/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 120874,
+      "reviews": 120876,
       "price": 549,
-      "benefit": "4.0★ (120,874 reviews) — Rs 549",
+      "benefit": "4.0★ (120,876 reviews) — Rs 549",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -350,9 +352,9 @@
       "category": "electronics",
       "rating": 4.0,
       "reviews": 186,
-      "price": 1049,
-      "benefit": "4.0★ (186 reviews) — Rs 1,049",
-      "commission": 41,
+      "price": 1249,
+      "benefit": "4.0★ (186 reviews) — Rs 1,249",
+      "commission": 49,
       "emoji": "🆕",
       "is_new": true
     },
@@ -373,9 +375,9 @@
       "link": "https://www.amazon.in/dp/B0FJGDS5W3/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 3483,
+      "reviews": 3485,
       "price": 625,
-      "benefit": "4.0★ (3,483 reviews) — Rs 625",
+      "benefit": "4.0★ (3,485 reviews) — Rs 625",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -433,9 +435,9 @@
       "link": "https://www.amazon.in/dp/B0HCVYQS46/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.7,
-      "reviews": 20491,
+      "reviews": 20492,
       "price": 489,
-      "benefit": "4.7★ (20,491 reviews) — Rs 489",
+      "benefit": "4.7★ (20,492 reviews) — Rs 489",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -457,9 +459,9 @@
       "link": "https://www.amazon.in/dp/B0GZKXZ1NB/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.1,
-      "reviews": 2384,
+      "reviews": 2388,
       "price": 497,
-      "benefit": "4.1★ (2,384 reviews) — Rs 497",
+      "benefit": "4.1★ (2,388 reviews) — Rs 497",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -469,9 +471,9 @@
       "link": "https://www.amazon.in/dp/B0H9916DRH/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.6,
-      "reviews": 29,
+      "reviews": 30,
       "price": 854,
-      "benefit": "4.6★ (29 reviews) — Rs 854",
+      "benefit": "4.6★ (30 reviews) — Rs 854",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -501,5 +503,5 @@
       "is_new": false
     }
   },
-  "updated_at": "2026-09-14 14:17:02 UTC"
+  "updated_at": "2026-09-14 18:46:20 UTC"
 }
