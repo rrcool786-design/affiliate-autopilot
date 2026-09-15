@@ -36,7 +36,8 @@
     "B0H3Q5DPP9",
     "B0GZKXZ1NB",
     "B0H1X5XP25",
-    "B08LHTJTBB"
+    "B08LHTJTBB",
+    "B0FDGVNSLH"
   ],
   "posted_names": [
     "ambrane unbreakable 3a fast",
@@ -74,7 +75,8 @@
     "oneplus nord buds 4",
     "tekcool study table foldable",
     "samsung galaxy a56 5g",
-    "dyazo 6 angles adjustable"
+    "dyazo 6 angles adjustable",
+    "samsung galaxy buds core"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -158,9 +160,9 @@
       "link": "https://www.amazon.in/dp/B0D2R2MXXJ/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 22857,
+      "reviews": 22858,
       "price": 615,
-      "benefit": "4.4★ (22,857 reviews) — Rs 615",
+      "benefit": "4.4★ (22,858 reviews) — Rs 615",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -383,12 +385,12 @@
       "link": "https://www.amazon.in/dp/B0FJGDS5W3/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 3498,
+      "reviews": 13324,
       "price": 625,
-      "benefit": "4.0★ (3,498 reviews) — Rs 625",
+      "benefit": "4.0★ (13,324 reviews) — Rs 625",
       "commission": 40,
-      "emoji": "🆕",
-      "is_new": true
+      "emoji": "📱",
+      "is_new": false
     },
     "B0H2YY6N27": {
       "name": "pTron Bassbuds Encore in-Ear TWS Ear Buds w/ 50Hrs Play",
@@ -417,13 +419,13 @@
     "B01HJI0FS2": {
       "name": "Dell MS116 Wired Mouse, 1000 DPI, Scrolling Wheel, 2 Bu",
       "link": "https://www.amazon.in/dp/B01HJI0FS2/?tag=rrcool786-21",
-      "category": "electronics",
+      "category": "computers",
       "rating": 4.4,
       "reviews": 48670,
       "price": 299,
       "benefit": "4.4★ (48,670 reviews) — Rs 299",
       "commission": 40,
-      "emoji": "📱",
+      "emoji": "💻",
       "is_new": false
     },
     "B0H84855N1": {
@@ -467,9 +469,9 @@
       "link": "https://www.amazon.in/dp/B0GZKXZ1NB/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.1,
-      "reviews": 2310,
+      "reviews": 2311,
       "price": 497,
-      "benefit": "4.1★ (2,310 reviews) — Rs 497",
+      "benefit": "4.1★ (2,311 reviews) — Rs 497",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -523,5 +525,5 @@
       "is_new": false
     }
   },
-  "updated_at": "2026-09-15 17:42:44 UTC"
+  "updated_at": "2026-09-15 19:47:07 UTC"
 }
