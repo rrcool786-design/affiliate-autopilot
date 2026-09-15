@@ -35,7 +35,8 @@
     "B01HJI0FS2",
     "B0H3Q5DPP9",
     "B0GZKXZ1NB",
-    "B0H1X5XP25"
+    "B0H1X5XP25",
+    "B08LHTJTBB"
   ],
   "posted_names": [
     "ambrane unbreakable 3a fast",
@@ -72,7 +73,8 @@
     "dell ms116 wired mouse",
     "oneplus nord buds 4",
     "tekcool study table foldable",
-    "samsung galaxy a56 5g"
+    "samsung galaxy a56 5g",
+    "dyazo 6 angles adjustable"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -156,9 +158,9 @@
       "link": "https://www.amazon.in/dp/B0D2R2MXXJ/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 22856,
-      "price": 625,
-      "benefit": "4.4★ (22,856 reviews) — Rs 625",
+      "reviews": 22857,
+      "price": 615,
+      "benefit": "4.4★ (22,857 reviews) — Rs 615",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -262,9 +264,9 @@
       "link": "https://www.amazon.in/dp/B0CF1M3PF9/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 56914,
+      "reviews": 56913,
       "price": 199,
-      "benefit": "4.0★ (56,914 reviews) — Rs 199",
+      "benefit": "4.0★ (56,913 reviews) — Rs 199",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -369,9 +371,9 @@
       "link": "https://www.amazon.in/dp/B0H3Q5DPP9/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 494,
+      "reviews": 495,
       "price": 3299,
-      "benefit": "4.1★ (494 reviews) — Rs 3,299",
+      "benefit": "4.1★ (495 reviews) — Rs 3,299",
       "commission": 131,
       "emoji": "🆕",
       "is_new": true
@@ -415,13 +417,13 @@
     "B01HJI0FS2": {
       "name": "Dell MS116 Wired Mouse, 1000 DPI, Scrolling Wheel, 2 Bu",
       "link": "https://www.amazon.in/dp/B01HJI0FS2/?tag=rrcool786-21",
-      "category": "computers",
+      "category": "electronics",
       "rating": 4.4,
-      "reviews": 48671,
+      "reviews": 48670,
       "price": 299,
-      "benefit": "4.4★ (48,671 reviews) — Rs 299",
+      "benefit": "4.4★ (48,670 reviews) — Rs 299",
       "commission": 40,
-      "emoji": "💻",
+      "emoji": "📱",
       "is_new": false
     },
     "B0H84855N1": {
@@ -465,9 +467,9 @@
       "link": "https://www.amazon.in/dp/B0GZKXZ1NB/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.1,
-      "reviews": 2406,
+      "reviews": 2310,
       "price": 497,
-      "benefit": "4.1★ (2,406 reviews) — Rs 497",
+      "benefit": "4.1★ (2,310 reviews) — Rs 497",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -521,5 +523,5 @@
       "is_new": false
     }
   },
-  "updated_at": "2026-09-15 12:45:25 UTC"
+  "updated_at": "2026-09-15 17:42:44 UTC"
 }
