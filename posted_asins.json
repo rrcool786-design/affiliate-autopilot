@@ -34,7 +34,8 @@
     "B0H9916DRH",
     "B01HJI0FS2",
     "B0H3Q5DPP9",
-    "B0GZKXZ1NB"
+    "B0GZKXZ1NB",
+    "B0H1X5XP25"
   ],
   "posted_names": [
     "ambrane unbreakable 3a fast",
@@ -70,7 +71,8 @@
     "hp original 65w laptop",
     "dell ms116 wired mouse",
     "oneplus nord buds 4",
-    "tekcool study table foldable"
+    "tekcool study table foldable",
+    "samsung galaxy a56 5g"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -134,9 +136,9 @@
       "link": "https://www.amazon.in/dp/B097JJ2CK6/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.2,
-      "reviews": 17014,
+      "reviews": 17013,
       "price": 709,
-      "benefit": "4.2★ (17,014 reviews) — Rs 709",
+      "benefit": "4.2★ (17,013 reviews) — Rs 709",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -154,9 +156,9 @@
       "link": "https://www.amazon.in/dp/B0D2R2MXXJ/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 22857,
-      "price": 491,
-      "benefit": "4.4★ (22,857 reviews) — Rs 491",
+      "reviews": 22856,
+      "price": 625,
+      "benefit": "4.4★ (22,856 reviews) — Rs 625",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -166,9 +168,9 @@
       "link": "https://www.amazon.in/dp/B0DDHM6D3L/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 12699,
+      "reviews": 12702,
       "price": 322,
-      "benefit": "4.1★ (12,699 reviews) — Rs 322",
+      "benefit": "4.1★ (12,702 reviews) — Rs 322",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -260,9 +262,9 @@
       "link": "https://www.amazon.in/dp/B0CF1M3PF9/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 56915,
+      "reviews": 56914,
       "price": 199,
-      "benefit": "4.0★ (56,915 reviews) — Rs 199",
+      "benefit": "4.0★ (56,914 reviews) — Rs 199",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -379,9 +381,9 @@
       "link": "https://www.amazon.in/dp/B0FJGDS5W3/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 3497,
+      "reviews": 3498,
       "price": 625,
-      "benefit": "4.0★ (3,497 reviews) — Rs 625",
+      "benefit": "4.0★ (3,498 reviews) — Rs 625",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -415,9 +417,9 @@
       "link": "https://www.amazon.in/dp/B01HJI0FS2/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.4,
-      "reviews": 48672,
-      "price": 290,
-      "benefit": "4.4★ (48,672 reviews) — Rs 290",
+      "reviews": 48671,
+      "price": 299,
+      "benefit": "4.4★ (48,671 reviews) — Rs 299",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -439,9 +441,9 @@
       "link": "https://www.amazon.in/dp/B0HCVYQS46/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.7,
-      "reviews": 20494,
-      "price": 489,
-      "benefit": "4.7★ (20,494 reviews) — Rs 489",
+      "reviews": 20493,
+      "price": 485,
+      "benefit": "4.7★ (20,493 reviews) — Rs 485",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -487,9 +489,9 @@
       "link": "https://www.amazon.in/dp/B0088TKTY2/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.1,
-      "reviews": 68798,
+      "reviews": 68802,
       "price": 649,
-      "benefit": "4.1★ (68,798 reviews) — Rs 649",
+      "benefit": "4.1★ (68,802 reviews) — Rs 649",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -511,13 +513,13 @@
       "link": "https://www.amazon.in/dp/B0H8TCFL8X/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 25186,
+      "reviews": 25187,
       "price": 279,
-      "benefit": "4.0★ (25,186 reviews) — Rs 279",
+      "benefit": "4.0★ (25,187 reviews) — Rs 279",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
     }
   },
-  "updated_at": "2026-09-15 08:51:37 UTC"
+  "updated_at": "2026-09-15 12:45:25 UTC"
 }
