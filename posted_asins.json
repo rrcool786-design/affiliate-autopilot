@@ -40,7 +40,8 @@
     "B0FDGVNSLH",
     "B09QGZFBPM",
     "B0H2FD3L97",
-    "B0HCVYQS46"
+    "B0HCVYQS46",
+    "B0088TKTY2"
   ],
   "posted_names": [
     "ambrane unbreakable 3a fast",
@@ -82,7 +83,8 @@
     "samsung galaxy buds core",
     "wayona type c to",
     "lenovo idea tab smartchoice",
-    "etekcity study table bed"
+    "etekcity study table bed",
+    "tp link wifi dongle"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -98,9 +100,9 @@
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.3,
-      "reviews": 49775,
+      "reviews": 49776,
       "price": 1999,
-      "benefit": "4.3★ (49,775 reviews) — Rs 1,999",
+      "benefit": "4.3★ (49,776 reviews) — Rs 1,999",
       "commission": 79,
       "emoji": "📱",
       "is_new": false
@@ -166,9 +168,9 @@
       "link": "https://www.amazon.in/dp/B0D2R2MXXJ/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 22865,
+      "reviews": 22866,
       "price": 625,
-      "benefit": "4.4★ (22,865 reviews) — Rs 625",
+      "benefit": "4.4★ (22,866 reviews) — Rs 625",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -178,9 +180,9 @@
       "link": "https://www.amazon.in/dp/B0DDHM6D3L/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 12729,
+      "reviews": 12730,
       "price": 322,
-      "benefit": "4.1★ (12,729 reviews) — Rs 322",
+      "benefit": "4.1★ (12,730 reviews) — Rs 322",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -238,9 +240,9 @@
       "link": "https://www.amazon.in/dp/B008FWZ5MS/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.0,
-      "reviews": 3234,
-      "price": 347,
-      "benefit": "4.0★ (3,234 reviews) — Rs 347",
+      "reviews": 3239,
+      "price": 369,
+      "benefit": "4.0★ (3,239 reviews) — Rs 369",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -296,9 +298,9 @@
       "link": "https://www.amazon.in/dp/B09BFV96TS/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.3,
-      "reviews": 24393,
+      "reviews": 24392,
       "price": 299,
-      "benefit": "4.3★ (24,393 reviews) — Rs 299",
+      "benefit": "4.3★ (24,392 reviews) — Rs 299",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -332,9 +334,9 @@
       "link": "https://www.amazon.in/dp/B0DCZ3WDTB/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.2,
-      "reviews": 12940,
+      "reviews": 12939,
       "price": 2299,
-      "benefit": "4.2★ (12,940 reviews) — Rs 2,299",
+      "benefit": "4.2★ (12,939 reviews) — Rs 2,299",
       "commission": 91,
       "emoji": "📱",
       "is_new": false
@@ -392,9 +394,9 @@
       "link": "https://www.amazon.in/dp/B0FJGDS5W3/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 13340,
+      "reviews": 13341,
       "price": 625,
-      "benefit": "4.0★ (13,340 reviews) — Rs 625",
+      "benefit": "4.0★ (13,341 reviews) — Rs 625",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -464,9 +466,9 @@
       "link": "https://www.amazon.in/dp/B0H6JP1SM4/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.5,
-      "reviews": 180,
+      "reviews": 181,
       "price": 999,
-      "benefit": "4.5★ (180 reviews) — Rs 999",
+      "benefit": "4.5★ (181 reviews) — Rs 999",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -500,9 +502,9 @@
       "link": "https://www.amazon.in/dp/B0088TKTY2/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.1,
-      "reviews": 68811,
+      "reviews": 68810,
       "price": 649,
-      "benefit": "4.1★ (68,811 reviews) — Rs 649",
+      "benefit": "4.1★ (68,810 reviews) — Rs 649",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -556,5 +558,5 @@
       "is_new": true
     }
   },
-  "updated_at": "2026-09-16 17:40:07 UTC"
+  "updated_at": "2026-09-16 19:39:06 UTC"
 }
