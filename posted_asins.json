@@ -38,7 +38,8 @@
     "B0H1X5XP25",
     "B08LHTJTBB",
     "B0FDGVNSLH",
-    "B09QGZFBPM"
+    "B09QGZFBPM",
+    "B0H2FD3L97"
   ],
   "posted_names": [
     "ambrane unbreakable 3a fast",
@@ -78,7 +79,8 @@
     "samsung galaxy a56 5g",
     "dyazo 6 angles adjustable",
     "samsung galaxy buds core",
-    "wayona type c to"
+    "wayona type c to",
+    "lenovo idea tab smartchoice"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -163,8 +165,8 @@
       "category": "electronics",
       "rating": 4.4,
       "reviews": 22865,
-      "price": 615,
-      "benefit": "4.4★ (22,865 reviews) — Rs 615",
+      "price": 600,
+      "benefit": "4.4★ (22,865 reviews) — Rs 600",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -292,9 +294,9 @@
       "link": "https://www.amazon.in/dp/B09BFV96TS/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.3,
-      "reviews": 24392,
+      "reviews": 24393,
       "price": 299,
-      "benefit": "4.3★ (24,392 reviews) — Rs 299",
+      "benefit": "4.3★ (24,393 reviews) — Rs 299",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -316,9 +318,9 @@
       "link": "https://www.amazon.in/dp/B0FM38916Y/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 120903,
+      "reviews": 120904,
       "price": 549,
-      "benefit": "4.0★ (120,903 reviews) — Rs 549",
+      "benefit": "4.0★ (120,904 reviews) — Rs 549",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -422,13 +424,13 @@
     "B01HJI0FS2": {
       "name": "Dell MS116 Wired Mouse, 1000 DPI, Scrolling Wheel, 2 Bu",
       "link": "https://www.amazon.in/dp/B01HJI0FS2/?tag=rrcool786-21",
-      "category": "computers",
+      "category": "electronics",
       "rating": 4.4,
       "reviews": 48674,
       "price": 299,
       "benefit": "4.4★ (48,674 reviews) — Rs 299",
       "commission": 40,
-      "emoji": "💻",
+      "emoji": "📱",
       "is_new": false
     },
     "B0H84855N1": {
@@ -436,9 +438,9 @@
       "link": "https://www.amazon.in/dp/B0H84855N1/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.0,
-      "reviews": 119,
+      "reviews": 120,
       "price": 399,
-      "benefit": "4.0★ (119 reviews) — Rs 399",
+      "benefit": "4.0★ (120 reviews) — Rs 399",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -472,9 +474,9 @@
       "link": "https://www.amazon.in/dp/B0GZKXZ1NB/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.1,
-      "reviews": 2328,
+      "reviews": 2330,
       "price": 497,
-      "benefit": "4.1★ (2,328 reviews) — Rs 497",
+      "benefit": "4.1★ (2,330 reviews) — Rs 497",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -538,7 +540,19 @@
       "commission": 40,
       "emoji": "💻",
       "is_new": false
+    },
+    "B0H2FD3L97": {
+      "name": "Lenovo Idea Tab (Smartchoice) with Folio Keyboard + Tab",
+      "link": "https://www.amazon.in/dp/B0H2FD3L97/?tag=rrcool786-21",
+      "category": "computers",
+      "rating": 4.2,
+      "reviews": 57,
+      "price": 35999,
+      "benefit": "4.2★ (57 reviews) — Rs 35,999",
+      "commission": 1439,
+      "emoji": "🆕",
+      "is_new": true
     }
   },
-  "updated_at": "2026-09-16 08:45:16 UTC"
+  "updated_at": "2026-09-16 12:40:08 UTC"
 }
