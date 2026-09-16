@@ -39,7 +39,8 @@
     "B08LHTJTBB",
     "B0FDGVNSLH",
     "B09QGZFBPM",
-    "B0H2FD3L97"
+    "B0H2FD3L97",
+    "B0HCVYQS46"
   ],
   "posted_names": [
     "ambrane unbreakable 3a fast",
@@ -80,7 +81,8 @@
     "dyazo 6 angles adjustable",
     "samsung galaxy buds core",
     "wayona type c to",
-    "lenovo idea tab smartchoice"
+    "lenovo idea tab smartchoice",
+    "etekcity study table bed"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -165,8 +167,8 @@
       "category": "electronics",
       "rating": 4.4,
       "reviews": 22865,
-      "price": 600,
-      "benefit": "4.4★ (22,865 reviews) — Rs 600",
+      "price": 625,
+      "benefit": "4.4★ (22,865 reviews) — Rs 625",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -330,9 +332,9 @@
       "link": "https://www.amazon.in/dp/B0DCZ3WDTB/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.2,
-      "reviews": 12939,
+      "reviews": 12940,
       "price": 2299,
-      "benefit": "4.2★ (12,939 reviews) — Rs 2,299",
+      "benefit": "4.2★ (12,940 reviews) — Rs 2,299",
       "commission": 91,
       "emoji": "📱",
       "is_new": false
@@ -390,9 +392,9 @@
       "link": "https://www.amazon.in/dp/B0FJGDS5W3/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 13339,
+      "reviews": 13340,
       "price": 625,
-      "benefit": "4.0★ (13,339 reviews) — Rs 625",
+      "benefit": "4.0★ (13,340 reviews) — Rs 625",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -402,9 +404,9 @@
       "link": "https://www.amazon.in/dp/B0H2YY6N27/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.7,
-      "reviews": 49,
+      "reviews": 51,
       "price": 699,
-      "benefit": "4.7★ (49 reviews) — Rs 699",
+      "benefit": "4.7★ (51 reviews) — Rs 699",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -424,13 +426,13 @@
     "B01HJI0FS2": {
       "name": "Dell MS116 Wired Mouse, 1000 DPI, Scrolling Wheel, 2 Bu",
       "link": "https://www.amazon.in/dp/B01HJI0FS2/?tag=rrcool786-21",
-      "category": "electronics",
+      "category": "computers",
       "rating": 4.4,
       "reviews": 48674,
       "price": 299,
       "benefit": "4.4★ (48,674 reviews) — Rs 299",
       "commission": 40,
-      "emoji": "📱",
+      "emoji": "💻",
       "is_new": false
     },
     "B0H84855N1": {
@@ -473,10 +475,10 @@
       "name": "TEKCOOL Study Table Foldable Wooden Laptop Bed Tray Tab",
       "link": "https://www.amazon.in/dp/B0GZKXZ1NB/?tag=rrcool786-21",
       "category": "computers",
-      "rating": 4.1,
-      "reviews": 2330,
+      "rating": 4.2,
+      "reviews": 29,
       "price": 497,
-      "benefit": "4.1★ (2,330 reviews) — Rs 497",
+      "benefit": "4.2★ (29 reviews) — Rs 497",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -510,9 +512,9 @@
       "link": "https://www.amazon.in/dp/B0HFS96WPN/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 30765,
+      "reviews": 30770,
       "price": 449,
-      "benefit": "4.4★ (30,765 reviews) — Rs 449",
+      "benefit": "4.4★ (30,770 reviews) — Rs 449",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -554,5 +556,5 @@
       "is_new": true
     }
   },
-  "updated_at": "2026-09-16 12:40:08 UTC"
+  "updated_at": "2026-09-16 17:40:07 UTC"
 }
