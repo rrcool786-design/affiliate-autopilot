@@ -12,7 +12,8 @@
     "B0H2FD3L97",
     "B0H9916DRH",
     "B0GZKXZ1NB",
-    "B0H6JP1SM4"
+    "B0H6JP1SM4",
+    "B0H1X5XP25"
   ],
   "posted_names": [
     "dyazo water resistant laptop",
@@ -26,7 +27,8 @@
     "lenovo idea tab smartchoice",
     "hp original 65w laptop",
     "tekcool study table foldable",
-    "skybags brat pro max"
+    "skybags brat pro max",
+    "samsung galaxy a56 5g"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -228,9 +230,9 @@
       "link": "https://www.amazon.in/dp/B0B296NTFV/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.0,
-      "reviews": 16487,
+      "reviews": 16488,
       "price": 259,
-      "benefit": "4.0★ (16,487 reviews) — Rs 259",
+      "benefit": "4.0★ (16,488 reviews) — Rs 259",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -252,9 +254,9 @@
       "link": "https://www.amazon.in/dp/B01DGVKBC6/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.4,
-      "reviews": 21023,
+      "reviews": 21024,
       "price": 255,
-      "benefit": "4.4★ (21,023 reviews) — Rs 255",
+      "benefit": "4.4★ (21,024 reviews) — Rs 255",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -372,9 +374,9 @@
       "link": "https://www.amazon.in/dp/B01HJI0FS2/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.4,
-      "reviews": 48728,
+      "reviews": 48734,
       "price": 299,
-      "benefit": "4.4★ (48,728 reviews) — Rs 299",
+      "benefit": "4.4★ (48,734 reviews) — Rs 299",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -408,9 +410,9 @@
       "link": "https://www.amazon.in/dp/B0H6JP1SM4/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.6,
-      "reviews": 180,
+      "reviews": 182,
       "price": 999,
-      "benefit": "4.6★ (180 reviews) — Rs 999",
+      "benefit": "4.6★ (182 reviews) — Rs 999",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -432,9 +434,9 @@
       "link": "https://www.amazon.in/dp/B0H9916DRH/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.6,
-      "reviews": 34,
+      "reviews": 35,
       "price": 829,
-      "benefit": "4.6★ (34 reviews) — Rs 829",
+      "benefit": "4.6★ (35 reviews) — Rs 829",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -444,9 +446,9 @@
       "link": "https://www.amazon.in/dp/B0088TKTY2/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.1,
-      "reviews": 68842,
+      "reviews": 68843,
       "price": 649,
-      "benefit": "4.1★ (68,842 reviews) — Rs 649",
+      "benefit": "4.1★ (68,843 reviews) — Rs 649",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -491,10 +493,10 @@
       "name": "Lenovo Idea Tab (Smartchoice) with Folio Keyboard + Tab",
       "link": "https://www.amazon.in/dp/B0H2FD3L97/?tag=rrcool786-21",
       "category": "computers",
-      "rating": 4.2,
-      "reviews": 57,
+      "rating": 4.3,
+      "reviews": 60,
       "price": 35999,
-      "benefit": "4.2★ (57 reviews) — Rs 35,999",
+      "benefit": "4.3★ (60 reviews) — Rs 35,999",
       "commission": 1439,
       "emoji": "🆕",
       "is_new": true
@@ -524,5 +526,5 @@
       "is_new": false
     }
   },
-  "updated_at": "2026-09-20 12:31:18 UTC"
+  "updated_at": "2026-09-20 16:54:11 UTC"
 }
