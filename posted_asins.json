@@ -17,7 +17,8 @@
     "B0HFS96WPN",
     "B0FDGVNSLH",
     "B0H7S6LT9P",
-    "B0FJGDS5W3"
+    "B0FJGDS5W3",
+    "B0CQRNWJM2"
   ],
   "posted_names": [
     "dyazo water resistant laptop",
@@ -36,7 +37,8 @@
     "remote control original compatible",
     "samsung galaxy buds core",
     "oneplus n6x",
-    "45w gan type c"
+    "45w gan type c",
+    "zebronics blanc slim wireless"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -52,9 +54,9 @@
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.3,
-      "reviews": 50145,
+      "reviews": 50146,
       "price": 1999,
-      "benefit": "4.3★ (50,145 reviews) — Rs 1,999",
+      "benefit": "4.3★ (50,146 reviews) — Rs 1,999",
       "commission": 79,
       "emoji": "📱",
       "is_new": false
@@ -132,9 +134,9 @@
       "link": "https://www.amazon.in/dp/B0DDHM6D3L/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 12953,
+      "reviews": 12954,
       "price": 311,
-      "benefit": "4.1★ (12,953 reviews) — Rs 311",
+      "benefit": "4.1★ (12,954 reviews) — Rs 311",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -250,9 +252,9 @@
       "link": "https://www.amazon.in/dp/B09BFV96TS/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.3,
-      "reviews": 24481,
+      "reviews": 24482,
       "price": 299,
-      "benefit": "4.3★ (24,481 reviews) — Rs 299",
+      "benefit": "4.3★ (24,482 reviews) — Rs 299",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -380,13 +382,13 @@
     "B01HJI0FS2": {
       "name": "Dell MS116 Wired Mouse, 1000 DPI, Scrolling Wheel, 2 Bu",
       "link": "https://www.amazon.in/dp/B01HJI0FS2/?tag=rrcool786-21",
-      "category": "computers",
+      "category": "electronics",
       "rating": 4.4,
       "reviews": 48754,
       "price": 295,
       "benefit": "4.4★ (48,754 reviews) — Rs 295",
       "commission": 40,
-      "emoji": "💻",
+      "emoji": "📱",
       "is_new": false
     },
     "B0H84855N1": {
@@ -466,9 +468,9 @@
       "link": "https://www.amazon.in/dp/B0HFS96WPN/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.3,
-      "reviews": 30775,
+      "reviews": 30776,
       "price": 492,
-      "benefit": "4.3★ (30,775 reviews) — Rs 492",
+      "benefit": "4.3★ (30,776 reviews) — Rs 492",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -503,8 +505,8 @@
       "category": "computers",
       "rating": 4.3,
       "reviews": 61,
-      "price": 35999,
-      "benefit": "4.3★ (61 reviews) — Rs 35,999",
+      "price": 35998,
+      "benefit": "4.3★ (61 reviews) — Rs 35,998",
       "commission": 1439,
       "emoji": "🆕",
       "is_new": true
@@ -514,9 +516,9 @@
       "link": "https://www.amazon.in/dp/B0FP22HBH9/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 68628,
+      "reviews": 68629,
       "price": 291,
-      "benefit": "4.0★ (68,628 reviews) — Rs 291",
+      "benefit": "4.0★ (68,629 reviews) — Rs 291",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -526,13 +528,13 @@
       "link": "https://www.amazon.in/dp/B0FJG84M6X/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 13401,
+      "reviews": 13404,
       "price": 555,
-      "benefit": "4.0★ (13,401 reviews) — Rs 555",
+      "benefit": "4.0★ (13,404 reviews) — Rs 555",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
     }
   },
-  "updated_at": "2026-09-21 18:50:10 UTC"
+  "updated_at": "2026-09-21 20:30:22 UTC"
 }
