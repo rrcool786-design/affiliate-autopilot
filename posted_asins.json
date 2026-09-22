@@ -19,7 +19,8 @@
     "B0H7S6LT9P",
     "B0FJGDS5W3",
     "B0CQRNWJM2",
-    "B0FMDL81GS"
+    "B0FMDL81GS",
+    "B0H9D2TWK2"
   ],
   "posted_names": [
     "dyazo water resistant laptop",
@@ -40,7 +41,8 @@
     "oneplus n6x",
     "45w gan type c",
     "zebronics blanc slim wireless",
-    "oneplus nord buds 3r"
+    "oneplus nord buds 3r",
+    "ptron studio pro w"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -337,10 +339,10 @@
       "name": "OnePlus Nord Buds 4 TWS Earbuds with 52dB Real-time ANC",
       "link": "https://www.amazon.in/dp/B0H3Q5DPP9/?tag=rrcool786-21",
       "category": "electronics",
-      "rating": 4.1,
-      "reviews": 542,
+      "rating": 4.2,
+      "reviews": 550,
       "price": 3299,
-      "benefit": "4.1★ (542 reviews) — Rs 3,299",
+      "benefit": "4.2★ (550 reviews) — Rs 3,299",
       "commission": 131,
       "emoji": "🆕",
       "is_new": true
@@ -350,9 +352,9 @@
       "link": "https://www.amazon.in/dp/B0FJGDS5W3/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 13366,
+      "reviews": 13412,
       "price": 625,
-      "benefit": "4.0★ (13,366 reviews) — Rs 625",
+      "benefit": "4.0★ (13,412 reviews) — Rs 625",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -386,9 +388,9 @@
       "link": "https://www.amazon.in/dp/B01HJI0FS2/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.4,
-      "reviews": 48756,
+      "reviews": 48771,
       "price": 295,
-      "benefit": "4.4★ (48,756 reviews) — Rs 295",
+      "benefit": "4.4★ (48,771 reviews) — Rs 295",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -410,9 +412,9 @@
       "link": "https://www.amazon.in/dp/B0HCVYQS46/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.5,
-      "reviews": 20522,
+      "reviews": 20526,
       "price": 485,
-      "benefit": "4.5★ (20,522 reviews) — Rs 485",
+      "benefit": "4.5★ (20,526 reviews) — Rs 485",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -421,10 +423,10 @@
       "name": "Skybags Brat Pro Max 35L Laptop Backpack (Upto 15.6\"), ",
       "link": "https://www.amazon.in/dp/B0H6JP1SM4/?tag=rrcool786-21",
       "category": "computers",
-      "rating": 4.6,
-      "reviews": 186,
+      "rating": 4.5,
+      "reviews": 187,
       "price": 999,
-      "benefit": "4.6★ (186 reviews) — Rs 999",
+      "benefit": "4.5★ (187 reviews) — Rs 999",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -446,9 +448,9 @@
       "link": "https://www.amazon.in/dp/B0H9916DRH/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.6,
-      "reviews": 36,
-      "price": 829,
-      "benefit": "4.6★ (36 reviews) — Rs 829",
+      "reviews": 39,
+      "price": 827,
+      "benefit": "4.6★ (39 reviews) — Rs 827",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -458,9 +460,9 @@
       "link": "https://www.amazon.in/dp/B0088TKTY2/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.1,
-      "reviews": 68853,
+      "reviews": 68860,
       "price": 625,
-      "benefit": "4.1★ (68,853 reviews) — Rs 625",
+      "benefit": "4.1★ (68,860 reviews) — Rs 625",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -470,9 +472,9 @@
       "link": "https://www.amazon.in/dp/B0HFS96WPN/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.3,
-      "reviews": 30778,
+      "reviews": 30780,
       "price": 492,
-      "benefit": "4.3★ (30,778 reviews) — Rs 492",
+      "benefit": "4.3★ (30,780 reviews) — Rs 492",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -482,9 +484,9 @@
       "link": "https://www.amazon.in/dp/B0H8TCFL8X/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 25220,
+      "reviews": 25221,
       "price": 279,
-      "benefit": "4.0★ (25,220 reviews) — Rs 279",
+      "benefit": "4.0★ (25,221 reviews) — Rs 279",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -554,13 +556,13 @@
       "link": "https://www.amazon.in/dp/B0HC2VX349/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.0,
-      "reviews": 34,
+      "reviews": 35,
       "price": 2499,
-      "benefit": "4.0★ (34 reviews) — Rs 2,499",
+      "benefit": "4.0★ (35 reviews) — Rs 2,499",
       "commission": 99,
       "emoji": "🆕",
       "is_new": true
     }
   },
-  "updated_at": "2026-09-22 08:42:45 UTC"
+  "updated_at": "2026-09-22 12:42:10 UTC"
 }
