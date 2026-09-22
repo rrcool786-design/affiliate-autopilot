@@ -21,7 +21,8 @@
     "B0CQRNWJM2",
     "B0FMDL81GS",
     "B0H9D2TWK2",
-    "B0HC2VX349"
+    "B0HC2VX349",
+    "B09QGZFBPM"
   ],
   "posted_names": [
     "dyazo water resistant laptop",
@@ -44,7 +45,8 @@
     "zebronics blanc slim wireless",
     "oneplus nord buds 3r",
     "ptron studio pro w",
-    "amazon basics 4g lte"
+    "amazon basics 4g lte",
+    "wayona type c to"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -60,9 +62,9 @@
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.3,
-      "reviews": 50165,
+      "reviews": 50167,
       "price": 1999,
-      "benefit": "4.3★ (50,165 reviews) — Rs 1,999",
+      "benefit": "4.3★ (50,167 reviews) — Rs 1,999",
       "commission": 79,
       "emoji": "📱",
       "is_new": false
@@ -128,9 +130,9 @@
       "link": "https://www.amazon.in/dp/B0D2R2MXXJ/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 23075,
+      "reviews": 23074,
       "price": 570,
-      "benefit": "4.4★ (23,075 reviews) — Rs 570",
+      "benefit": "4.4★ (23,074 reviews) — Rs 570",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -234,9 +236,9 @@
       "link": "https://www.amazon.in/dp/B0CF1M3PF9/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 57090,
+      "reviews": 57091,
       "price": 199,
-      "benefit": "4.0★ (57,090 reviews) — Rs 199",
+      "benefit": "4.0★ (57,091 reviews) — Rs 199",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -282,9 +284,9 @@
       "link": "https://www.amazon.in/dp/B0FM38916Y/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 121098,
+      "reviews": 121099,
       "price": 525,
-      "benefit": "4.0★ (121,098 reviews) — Rs 525",
+      "benefit": "4.0★ (121,099 reviews) — Rs 525",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -354,9 +356,9 @@
       "link": "https://www.amazon.in/dp/B0FJGDS5W3/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 13413,
+      "reviews": 13414,
       "price": 625,
-      "benefit": "4.0★ (13,413 reviews) — Rs 625",
+      "benefit": "4.0★ (13,414 reviews) — Rs 625",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -366,9 +368,9 @@
       "link": "https://www.amazon.in/dp/B0H2YY6N27/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 61,
+      "reviews": 66,
       "price": 699,
-      "benefit": "4.4★ (61 reviews) — Rs 699",
+      "benefit": "4.4★ (66 reviews) — Rs 699",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -545,10 +547,10 @@
       "name": "pTron Studio Pro w/ 65Hrs Playtime, Wireless Over Ear H",
       "link": "https://www.amazon.in/dp/B0H9D2TWK2/?tag=rrcool786-21",
       "category": "electronics",
-      "rating": 4.4,
-      "reviews": 47,
+      "rating": 4.3,
+      "reviews": 48,
       "price": 799,
-      "benefit": "4.4★ (47 reviews) — Rs 799",
+      "benefit": "4.3★ (48 reviews) — Rs 799",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -558,13 +560,13 @@
       "link": "https://www.amazon.in/dp/B0HC2VX349/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.0,
-      "reviews": 35,
+      "reviews": 36,
       "price": 2499,
-      "benefit": "4.0★ (35 reviews) — Rs 2,499",
+      "benefit": "4.0★ (36 reviews) — Rs 2,499",
       "commission": 99,
       "emoji": "🆕",
       "is_new": true
     }
   },
-  "updated_at": "2026-09-22 17:40:44 UTC"
+  "updated_at": "2026-09-22 19:50:02 UTC"
 }
