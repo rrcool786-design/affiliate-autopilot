@@ -26,7 +26,8 @@
     "B0CF1M3PF9",
     "B0B296NTFV",
     "B0FP22HBH9",
-    "B0GVYXPZBS"
+    "B0GVYXPZBS",
+    "B0DCNWN8NZ"
   ],
   "posted_names": [
     "dyazo water resistant laptop",
@@ -54,7 +55,8 @@
     "pikkme flip cover leather",
     "portronics toad 23 wireless",
     "opentech military grade tempered",
-    "oneplus nord ce6 lite"
+    "oneplus nord ce6 lite",
+    "apple earpods usb c"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -70,9 +72,9 @@
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.3,
-      "reviews": 50095,
+      "reviews": 50160,
       "price": 1999,
-      "benefit": "4.3★ (50,095 reviews) — Rs 1,999",
+      "benefit": "4.3★ (50,160 reviews) — Rs 1,999",
       "commission": 79,
       "emoji": "📱",
       "is_new": false
@@ -90,9 +92,9 @@
       "link": "https://www.amazon.in/dp/B08LHTJTBB/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.2,
-      "reviews": 20384,
+      "reviews": 20399,
       "price": 389,
-      "benefit": "4.2★ (20,384 reviews) — Rs 389",
+      "benefit": "4.2★ (20,399 reviews) — Rs 389",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -118,9 +120,9 @@
       "link": "https://www.amazon.in/dp/B097JJ2CK6/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.2,
-      "reviews": 17062,
+      "reviews": 17086,
       "price": 709,
-      "benefit": "4.2★ (17,062 reviews) — Rs 709",
+      "benefit": "4.2★ (17,086 reviews) — Rs 709",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -138,9 +140,9 @@
       "link": "https://www.amazon.in/dp/B0D2R2MXXJ/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 23002,
-      "price": 570,
-      "benefit": "4.4★ (23,002 reviews) — Rs 570",
+      "reviews": 23047,
+      "price": 613,
+      "benefit": "4.4★ (23,047 reviews) — Rs 613",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -150,9 +152,9 @@
       "link": "https://www.amazon.in/dp/B0DDHM6D3L/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 12973,
+      "reviews": 13019,
       "price": 311,
-      "benefit": "4.1★ (12,973 reviews) — Rs 311",
+      "benefit": "4.1★ (13,019 reviews) — Rs 311",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -169,18 +171,22 @@
       "name": "American Tourister Valex",
       "link": "https://www.amazon.in/dp/B0BTD4S4XF/?tag=rrcool786-21",
       "category": "computers",
-      "benefit": "Rs 1,299 mein Amazon bestseller trending computers product",
-      "commission": 51,
-      "emoji": "💻"
+      "rating": 4.3,
+      "reviews": 12199,
+      "price": 849,
+      "benefit": "4.3★ (12,199 reviews) — Rs 849",
+      "commission": 40,
+      "emoji": "💻",
+      "is_new": false
     },
     "B0GVYXPZBS": {
       "name": "OnePlus Nord CE6 Lite",
       "link": "https://www.amazon.in/dp/B0GVYXPZBS/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 849,
+      "reviews": 853,
       "price": 30999,
-      "benefit": "4.4★ (849 reviews) — Rs 30,999",
+      "benefit": "4.4★ (853 reviews) — Rs 30,999",
       "commission": 1239,
       "emoji": "🆕",
       "is_new": true
@@ -248,9 +254,9 @@
       "link": "https://www.amazon.in/dp/B0CF1M3PF9/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 56570,
+      "reviews": 56603,
       "price": 199,
-      "benefit": "4.0★ (56,570 reviews) — Rs 199",
+      "benefit": "4.0★ (56,603 reviews) — Rs 199",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -284,9 +290,9 @@
       "link": "https://www.amazon.in/dp/B01DGVKBC6/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.4,
-      "reviews": 21010,
+      "reviews": 21024,
       "price": 255,
-      "benefit": "4.4★ (21,010 reviews) — Rs 255",
+      "benefit": "4.4★ (21,024 reviews) — Rs 255",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -296,9 +302,9 @@
       "link": "https://www.amazon.in/dp/B0FM38916Y/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 121091,
+      "reviews": 121119,
       "price": 499,
-      "benefit": "4.0★ (121,091 reviews) — Rs 499",
+      "benefit": "4.0★ (121,119 reviews) — Rs 499",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -356,9 +362,9 @@
       "link": "https://www.amazon.in/dp/B0H3Q5DPP9/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.2,
-      "reviews": 553,
+      "reviews": 564,
       "price": 3299,
-      "benefit": "4.2★ (553 reviews) — Rs 3,299",
+      "benefit": "4.2★ (564 reviews) — Rs 3,299",
       "commission": 131,
       "emoji": "🆕",
       "is_new": true
@@ -404,9 +410,9 @@
       "link": "https://www.amazon.in/dp/B01HJI0FS2/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.4,
-      "reviews": 48759,
+      "reviews": 48767,
       "price": 295,
-      "benefit": "4.4★ (48,759 reviews) — Rs 295",
+      "benefit": "4.4★ (48,767 reviews) — Rs 295",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -428,9 +434,9 @@
       "link": "https://www.amazon.in/dp/B0HCVYQS46/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.5,
-      "reviews": 20525,
+      "reviews": 20528,
       "price": 485,
-      "benefit": "4.5★ (20,525 reviews) — Rs 485",
+      "benefit": "4.5★ (20,528 reviews) — Rs 485",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -463,10 +469,10 @@
       "name": "HP Original 65W Laptop Charger with Power Cable H2O",
       "link": "https://www.amazon.in/dp/B0H9916DRH/?tag=rrcool786-21",
       "category": "computers",
-      "rating": 4.6,
-      "reviews": 39,
-      "price": 829,
-      "benefit": "4.6★ (39 reviews) — Rs 829",
+      "rating": 4.5,
+      "reviews": 41,
+      "price": 849,
+      "benefit": "4.5★ (41 reviews) — Rs 849",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -476,9 +482,9 @@
       "link": "https://www.amazon.in/dp/B0088TKTY2/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.1,
-      "reviews": 68834,
-      "price": 625,
-      "benefit": "4.1★ (68,834 reviews) — Rs 625",
+      "reviews": 68842,
+      "price": 649,
+      "benefit": "4.1★ (68,842 reviews) — Rs 649",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -488,9 +494,9 @@
       "link": "https://www.amazon.in/dp/B0HFS96WPN/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.3,
-      "reviews": 30783,
+      "reviews": 30788,
       "price": 492,
-      "benefit": "4.3★ (30,783 reviews) — Rs 492",
+      "benefit": "4.3★ (30,788 reviews) — Rs 492",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -548,9 +554,9 @@
       "link": "https://www.amazon.in/dp/B0FJG84M6X/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 13417,
+      "reviews": 13435,
       "price": 555,
-      "benefit": "4.0★ (13,417 reviews) — Rs 555",
+      "benefit": "4.0★ (13,435 reviews) — Rs 555",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -559,10 +565,10 @@
       "name": "pTron Studio Pro w/ 65Hrs Playtime, Wireless Over Ear H",
       "link": "https://www.amazon.in/dp/B0H9D2TWK2/?tag=rrcool786-21",
       "category": "electronics",
-      "rating": 4.3,
-      "reviews": 51,
+      "rating": 4.1,
+      "reviews": 54,
       "price": 799,
-      "benefit": "4.3★ (51 reviews) — Rs 799",
+      "benefit": "4.1★ (54 reviews) — Rs 799",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -578,7 +584,31 @@
       "commission": 99,
       "emoji": "🆕",
       "is_new": true
+    },
+    "B0CJ17HHHD": {
+      "name": "OpenTech® Military-Grade Gorilla Tempered Glass for iPh",
+      "link": "https://www.amazon.in/dp/B0CJ17HHHD/?tag=rrcool786-21",
+      "category": "electronics",
+      "rating": 4.0,
+      "reviews": 68655,
+      "price": 298,
+      "benefit": "4.0★ (68,655 reviews) — Rs 298",
+      "commission": 40,
+      "emoji": "📱",
+      "is_new": false
+    },
+    "B0HJM9M2BJ": {
+      "name": "TheGiftKart Genuine Liquid Silicone Back Cover Case for",
+      "link": "https://www.amazon.in/dp/B0HJM9M2BJ/?tag=rrcool786-21",
+      "category": "electronics",
+      "rating": 4.0,
+      "reviews": 5213,
+      "price": 299,
+      "benefit": "4.0★ (5,213 reviews) — Rs 299",
+      "commission": 40,
+      "emoji": "📱",
+      "is_new": false
     }
   },
-  "updated_at": "2026-09-23 19:45:46 UTC"
+  "updated_at": "2026-09-24 08:38:13 UTC"
 }
