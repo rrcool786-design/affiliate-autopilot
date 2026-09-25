@@ -33,7 +33,8 @@
     "B0FQFYXCC4",
     "B0D2R2MXXJ",
     "B008FWZ5MS",
-    "B0DDHM6D3L"
+    "B0DDHM6D3L",
+    "B0HCNC1Z9X"
   ],
   "posted_names": [
     "dyazo water resistant laptop",
@@ -68,7 +69,8 @@
     "apple iphone 17 256",
     "samsung original 25w usb",
     "samsung original type c",
-    "portronics conch theta c"
+    "portronics conch theta c",
+    "iqoo z11 5g aurora"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -84,9 +86,9 @@
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.3,
-      "reviews": 50232,
+      "reviews": 50234,
       "price": 1987,
-      "benefit": "4.3★ (50,232 reviews) — Rs 1,987",
+      "benefit": "4.3★ (50,234 reviews) — Rs 1,987",
       "commission": 79,
       "emoji": "📱",
       "is_new": false
@@ -153,8 +155,8 @@
       "category": "electronics",
       "rating": 4.4,
       "reviews": 23097,
-      "price": 500,
-      "benefit": "4.4★ (23,097 reviews) — Rs 500",
+      "price": 517,
+      "benefit": "4.4★ (23,097 reviews) — Rs 517",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -164,9 +166,9 @@
       "link": "https://www.amazon.in/dp/B0DDHM6D3L/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 13056,
+      "reviews": 13057,
       "price": 311,
-      "benefit": "4.1★ (13,056 reviews) — Rs 311",
+      "benefit": "4.1★ (13,057 reviews) — Rs 311",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -196,9 +198,9 @@
       "link": "https://www.amazon.in/dp/B0GVYXPZBS/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 864,
+      "reviews": 863,
       "price": 30999,
-      "benefit": "4.4★ (864 reviews) — Rs 30,999",
+      "benefit": "4.4★ (863 reviews) — Rs 30,999",
       "commission": 1239,
       "emoji": "🆕",
       "is_new": true
@@ -420,13 +422,13 @@
     "B01HJI0FS2": {
       "name": "Dell MS116 Wired Mouse, 1000 DPI, Scrolling Wheel, 2 Bu",
       "link": "https://www.amazon.in/dp/B01HJI0FS2/?tag=rrcool786-21",
-      "category": "electronics",
+      "category": "computers",
       "rating": 4.4,
       "reviews": 48780,
       "price": 279,
       "benefit": "4.4★ (48,780 reviews) — Rs 279",
       "commission": 40,
-      "emoji": "📱",
+      "emoji": "💻",
       "is_new": false
     },
     "B0H84855N1": {
@@ -481,10 +483,10 @@
       "name": "HP Original 65W Laptop Charger with Power Cable H2O",
       "link": "https://www.amazon.in/dp/B0H9916DRH/?tag=rrcool786-21",
       "category": "computers",
-      "rating": 4.6,
-      "reviews": 43,
-      "price": 849,
-      "benefit": "4.6★ (43 reviews) — Rs 849",
+      "rating": 4.5,
+      "reviews": 44,
+      "price": 829,
+      "benefit": "4.5★ (44 reviews) — Rs 829",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -590,9 +592,9 @@
       "link": "https://www.amazon.in/dp/B0HC2VX349/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.0,
-      "reviews": 37,
+      "reviews": 38,
       "price": 2499,
-      "benefit": "4.0★ (37 reviews) — Rs 2,499",
+      "benefit": "4.0★ (38 reviews) — Rs 2,499",
       "commission": 99,
       "emoji": "🆕",
       "is_new": true
@@ -634,5 +636,5 @@
       "is_new": false
     }
   },
-  "updated_at": "2026-09-25 18:00:22 UTC"
+  "updated_at": "2026-09-25 20:05:27 UTC"
 }
