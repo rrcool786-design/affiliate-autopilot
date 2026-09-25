@@ -32,7 +32,8 @@
     "B01DGVKBC6",
     "B0FQFYXCC4",
     "B0D2R2MXXJ",
-    "B008FWZ5MS"
+    "B008FWZ5MS",
+    "B0DDHM6D3L"
   ],
   "posted_names": [
     "dyazo water resistant laptop",
@@ -66,7 +67,8 @@
     "fedus cat6 ethernet cable",
     "apple iphone 17 256",
     "samsung original 25w usb",
-    "samsung original type c"
+    "samsung original type c",
+    "portronics conch theta c"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -82,9 +84,9 @@
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.3,
-      "reviews": 50233,
+      "reviews": 50232,
       "price": 1987,
-      "benefit": "4.3★ (50,233 reviews) — Rs 1,987",
+      "benefit": "4.3★ (50,232 reviews) — Rs 1,987",
       "commission": 79,
       "emoji": "📱",
       "is_new": false
@@ -102,9 +104,9 @@
       "link": "https://www.amazon.in/dp/B08LHTJTBB/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.2,
-      "reviews": 20417,
+      "reviews": 20418,
       "price": 389,
-      "benefit": "4.2★ (20,417 reviews) — Rs 389",
+      "benefit": "4.2★ (20,418 reviews) — Rs 389",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -130,9 +132,9 @@
       "link": "https://www.amazon.in/dp/B097JJ2CK6/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.2,
-      "reviews": 17110,
+      "reviews": 17111,
       "price": 709,
-      "benefit": "4.2★ (17,110 reviews) — Rs 709",
+      "benefit": "4.2★ (17,111 reviews) — Rs 709",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -162,9 +164,9 @@
       "link": "https://www.amazon.in/dp/B0DDHM6D3L/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 13054,
+      "reviews": 13056,
       "price": 311,
-      "benefit": "4.1★ (13,054 reviews) — Rs 311",
+      "benefit": "4.1★ (13,056 reviews) — Rs 311",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -372,9 +374,9 @@
       "link": "https://www.amazon.in/dp/B0H3Q5DPP9/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.2,
-      "reviews": 571,
+      "reviews": 572,
       "price": 3299,
-      "benefit": "4.2★ (571 reviews) — Rs 3,299",
+      "benefit": "4.2★ (572 reviews) — Rs 3,299",
       "commission": 131,
       "emoji": "🆕",
       "is_new": true
@@ -481,8 +483,8 @@
       "category": "computers",
       "rating": 4.6,
       "reviews": 43,
-      "price": 829,
-      "benefit": "4.6★ (43 reviews) — Rs 829",
+      "price": 849,
+      "benefit": "4.6★ (43 reviews) — Rs 849",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -564,9 +566,9 @@
       "link": "https://www.amazon.in/dp/B0FJG84M6X/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 13459,
+      "reviews": 13461,
       "price": 555,
-      "benefit": "4.0★ (13,459 reviews) — Rs 555",
+      "benefit": "4.0★ (13,461 reviews) — Rs 555",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -632,5 +634,5 @@
       "is_new": false
     }
   },
-  "updated_at": "2026-09-25 12:50:46 UTC"
+  "updated_at": "2026-09-25 18:00:22 UTC"
 }
