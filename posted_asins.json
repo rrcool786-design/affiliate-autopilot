@@ -37,7 +37,8 @@
     "B0HCNC1Z9X",
     "B0GZBDPWJZ",
     "B0H4VZ7K86",
-    "B0H8TCFL8X"
+    "B0H8TCFL8X",
+    "B0BTD4S4XF"
   ],
   "posted_names": [
     "dyazo water resistant laptop",
@@ -76,7 +77,8 @@
     "iqoo z11 5g aurora",
     "nilkar laptop table smart",
     "boat stone 350 pro",
-    "goboult wiredx 500 earphones"
+    "goboult wiredx 500 earphones",
+    "american tourister valex"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -112,9 +114,9 @@
       "link": "https://www.amazon.in/dp/B08LHTJTBB/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.2,
-      "reviews": 20448,
+      "reviews": 20449,
       "price": 389,
-      "benefit": "4.2★ (20,448 reviews) — Rs 389",
+      "benefit": "4.2★ (20,449 reviews) — Rs 389",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -140,9 +142,9 @@
       "link": "https://www.amazon.in/dp/B097JJ2CK6/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.2,
-      "reviews": 17153,
+      "reviews": 17154,
       "price": 709,
-      "benefit": "4.2★ (17,153 reviews) — Rs 709",
+      "benefit": "4.2★ (17,154 reviews) — Rs 709",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -160,9 +162,9 @@
       "link": "https://www.amazon.in/dp/B0D2R2MXXJ/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 23176,
+      "reviews": 23177,
       "price": 514,
-      "benefit": "4.4★ (23,176 reviews) — Rs 514",
+      "benefit": "4.4★ (23,177 reviews) — Rs 514",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -274,9 +276,9 @@
       "link": "https://www.amazon.in/dp/B0CF1M3PF9/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 56701,
+      "reviews": 56702,
       "price": 199,
-      "benefit": "4.0★ (56,701 reviews) — Rs 199",
+      "benefit": "4.0★ (56,702 reviews) — Rs 199",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -574,9 +576,9 @@
       "link": "https://www.amazon.in/dp/B0FJG84M6X/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 13475,
+      "reviews": 13476,
       "price": 555,
-      "benefit": "4.0★ (13,475 reviews) — Rs 555",
+      "benefit": "4.0★ (13,476 reviews) — Rs 555",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -658,9 +660,9 @@
       "link": "https://www.amazon.in/dp/B0H4VZ7K86/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.2,
-      "reviews": 4094,
+      "reviews": 4095,
       "price": 1599,
-      "benefit": "4.2★ (4,094 reviews) — Rs 1,599",
+      "benefit": "4.2★ (4,095 reviews) — Rs 1,599",
       "commission": 63,
       "emoji": "🆕",
       "is_new": true
@@ -678,5 +680,5 @@
       "is_new": true
     }
   },
-  "updated_at": "2026-09-26 17:18:35 UTC"
+  "updated_at": "2026-09-26 19:18:39 UTC"
 }
