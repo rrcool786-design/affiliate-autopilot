@@ -35,7 +35,8 @@
     "B008FWZ5MS",
     "B0DDHM6D3L",
     "B0HCNC1Z9X",
-    "B0GZBDPWJZ"
+    "B0GZBDPWJZ",
+    "B0H4VZ7K86"
   ],
   "posted_names": [
     "dyazo water resistant laptop",
@@ -72,7 +73,8 @@
     "samsung original type c",
     "portronics conch theta c",
     "iqoo z11 5g aurora",
-    "nilkar laptop table smart"
+    "nilkar laptop table smart",
+    "boat stone 350 pro"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -157,8 +159,8 @@
       "category": "electronics",
       "rating": 4.4,
       "reviews": 23140,
-      "price": 500,
-      "benefit": "4.4★ (23,140 reviews) — Rs 500",
+      "price": 514,
+      "benefit": "4.4★ (23,140 reviews) — Rs 514",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -189,8 +191,8 @@
       "category": "computers",
       "rating": 4.3,
       "reviews": 12220,
-      "price": 849,
-      "benefit": "4.3★ (12,220 reviews) — Rs 849",
+      "price": 949,
+      "benefit": "4.3★ (12,220 reviews) — Rs 949",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -487,8 +489,8 @@
       "category": "computers",
       "rating": 4.5,
       "reviews": 45,
-      "price": 849,
-      "benefit": "4.5★ (45 reviews) — Rs 849",
+      "price": 848,
+      "benefit": "4.5★ (45 reviews) — Rs 848",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -570,9 +572,9 @@
       "link": "https://www.amazon.in/dp/B0FJG84M6X/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 13464,
+      "reviews": 13465,
       "price": 555,
-      "benefit": "4.0★ (13,464 reviews) — Rs 555",
+      "benefit": "4.0★ (13,465 reviews) — Rs 555",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -674,5 +676,5 @@
       "is_new": true
     }
   },
-  "updated_at": "2026-09-26 08:45:24 UTC"
+  "updated_at": "2026-09-26 12:18:18 UTC"
 }
