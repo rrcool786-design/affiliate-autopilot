@@ -56,7 +56,8 @@
     "B0088TKTY2",
     "B098NS6PVG",
     "B0H1WVW8VY",
-    "B0BJJMZ3TZ"
+    "B0BJJMZ3TZ",
+    "B0CJ17HHHD"
   ],
   "posted_names": [
     "dyazo water resistant laptop",
@@ -114,7 +115,8 @@
     "tp link wifi dongle",
     "ambrane unbreakable 3a fast",
     "iqoo z11 lite 44w",
-    "pikkme samsung galaxy a22"
+    "pikkme samsung galaxy a22",
+    "opentech military grade gorilla"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -198,9 +200,9 @@
       "link": "https://www.amazon.in/dp/B0D2R2MXXJ/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 23396,
-      "price": 560,
-      "benefit": "4.4★ (23,396 reviews) — Rs 560",
+      "reviews": 23398,
+      "price": 550,
+      "benefit": "4.4★ (23,398 reviews) — Rs 550",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -210,9 +212,9 @@
       "link": "https://www.amazon.in/dp/B0DDHM6D3L/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 13353,
+      "reviews": 13355,
       "price": 311,
-      "benefit": "4.1★ (13,353 reviews) — Rs 311",
+      "benefit": "4.1★ (13,355 reviews) — Rs 311",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -360,9 +362,9 @@
       "link": "https://www.amazon.in/dp/B0FM38916Y/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 121343,
+      "reviews": 121344,
       "price": 499,
-      "benefit": "4.0★ (121,343 reviews) — Rs 499",
+      "benefit": "4.0★ (121,344 reviews) — Rs 499",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -764,5 +766,5 @@
       "is_new": true
     }
   },
-  "updated_at": "2026-10-01 14:37:22 UTC"
+  "updated_at": "2026-10-01 18:57:27 UTC"
 }
