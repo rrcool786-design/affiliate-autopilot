@@ -4,13 +4,15 @@
     "B0HCZT8BCL",
     "B0H2YY6N27",
     "B0FBRGKXHG",
-    "B0H5VWCNWN"
+    "B0H5VWCNWN",
+    "B0H9916DRH"
   ],
   "posted_names": [
     "skybags pace 30l laptop",
     "ptron bassbuds encore in",
     "oneplus bullets wireless z3",
-    "jiotag 2nd generation grey"
+    "jiotag 2nd generation grey",
+    "hp original 65w laptop"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -208,9 +210,9 @@
       "link": "https://www.amazon.in/dp/B0CF1M3PF9/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 57410,
+      "reviews": 57442,
       "price": 199,
-      "benefit": "4.0★ (57,410 reviews) — Rs 199",
+      "benefit": "4.0★ (57,442 reviews) — Rs 199",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -256,9 +258,9 @@
       "link": "https://www.amazon.in/dp/B0FM38916Y/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 121366,
+      "reviews": 121367,
       "price": 499,
-      "benefit": "4.0★ (121,366 reviews) — Rs 499",
+      "benefit": "4.0★ (121,367 reviews) — Rs 499",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -362,13 +364,13 @@
     "B01HJI0FS2": {
       "name": "Dell MS116 Wired Mouse, 1000 DPI, Scrolling Wheel, 2 Bu",
       "link": "https://www.amazon.in/dp/B01HJI0FS2/?tag=rrcool786-21",
-      "category": "electronics",
+      "category": "computers",
       "rating": 4.4,
       "reviews": 48880,
       "price": 289,
       "benefit": "4.4★ (48,880 reviews) — Rs 289",
       "commission": 40,
-      "emoji": "📱",
+      "emoji": "💻",
       "is_new": false
     },
     "B0H84855N1": {
@@ -401,8 +403,8 @@
       "category": "computers",
       "rating": 4.6,
       "reviews": 222,
-      "price": 885,
-      "benefit": "4.6★ (222 reviews) — Rs 885",
+      "price": 799,
+      "benefit": "4.6★ (222 reviews) — Rs 799",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -412,9 +414,9 @@
       "link": "https://www.amazon.in/dp/B0GZKXZ1NB/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.0,
-      "reviews": 2231,
-      "price": 787,
-      "benefit": "4.0★ (2,231 reviews) — Rs 787",
+      "reviews": 2247,
+      "price": 499,
+      "benefit": "4.0★ (2,247 reviews) — Rs 499",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -696,5 +698,5 @@
       "is_new": true
     }
   },
-  "updated_at": "2026-10-02 18:34:05 UTC"
+  "updated_at": "2026-10-02 20:52:55 UTC"
 }
