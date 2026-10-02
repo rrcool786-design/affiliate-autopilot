@@ -1,10 +1,12 @@
 {
   "cycle": 10,
   "posted": [
-    "B0HCZT8BCL"
+    "B0HCZT8BCL",
+    "B0H2YY6N27"
   ],
   "posted_names": [
-    "skybags pace 30l laptop"
+    "skybags pace 30l laptop",
+    "ptron bassbuds encore in"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -20,9 +22,9 @@
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.3,
-      "reviews": 50721,
+      "reviews": 50723,
       "price": 1949,
-      "benefit": "4.3★ (50,721 reviews) — Rs 1,949",
+      "benefit": "4.3★ (50,723 reviews) — Rs 1,949",
       "commission": 77,
       "emoji": "📱",
       "is_new": false
@@ -40,9 +42,9 @@
       "link": "https://www.amazon.in/dp/B08LHTJTBB/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.2,
-      "reviews": 20542,
+      "reviews": 20544,
       "price": 389,
-      "benefit": "4.2★ (20,542 reviews) — Rs 389",
+      "benefit": "4.2★ (20,544 reviews) — Rs 389",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -88,9 +90,9 @@
       "link": "https://www.amazon.in/dp/B0D2R2MXXJ/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 23394,
-      "price": 549,
-      "benefit": "4.4★ (23,394 reviews) — Rs 549",
+      "reviews": 23396,
+      "price": 500,
+      "benefit": "4.4★ (23,396 reviews) — Rs 500",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -100,9 +102,9 @@
       "link": "https://www.amazon.in/dp/B0DDHM6D3L/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 13355,
-      "price": 311,
-      "benefit": "4.1★ (13,355 reviews) — Rs 311",
+      "reviews": 13356,
+      "price": 299,
+      "benefit": "4.1★ (13,356 reviews) — Rs 299",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -120,9 +122,9 @@
       "link": "https://www.amazon.in/dp/B0BTD4S4XF/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.3,
-      "reviews": 12281,
+      "reviews": 12280,
       "price": 1049,
-      "benefit": "4.3★ (12,281 reviews) — Rs 1,049",
+      "benefit": "4.3★ (12,280 reviews) — Rs 1,049",
       "commission": 41,
       "emoji": "💻",
       "is_new": false
@@ -214,9 +216,9 @@
       "link": "https://www.amazon.in/dp/B0B296NTFV/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.0,
-      "reviews": 16507,
-      "price": 299,
-      "benefit": "4.0★ (16,507 reviews) — Rs 299",
+      "reviews": 16643,
+      "price": 269,
+      "benefit": "4.0★ (16,643 reviews) — Rs 269",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -238,9 +240,9 @@
       "link": "https://www.amazon.in/dp/B01DGVKBC6/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.4,
-      "reviews": 21113,
+      "reviews": 21112,
       "price": 289,
-      "benefit": "4.4★ (21,113 reviews) — Rs 289",
+      "benefit": "4.4★ (21,112 reviews) — Rs 289",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -250,9 +252,9 @@
       "link": "https://www.amazon.in/dp/B0FM38916Y/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 121344,
+      "reviews": 121345,
       "price": 499,
-      "benefit": "4.0★ (121,344 reviews) — Rs 499",
+      "benefit": "4.0★ (121,345 reviews) — Rs 499",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -262,9 +264,9 @@
       "link": "https://www.amazon.in/dp/B0DCZ3WDTB/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.2,
-      "reviews": 12954,
+      "reviews": 13347,
       "price": 2299,
-      "benefit": "4.2★ (12,954 reviews) — Rs 2,299",
+      "benefit": "4.2★ (13,347 reviews) — Rs 2,299",
       "commission": 91,
       "emoji": "📱",
       "is_new": false
@@ -393,10 +395,10 @@
       "name": "Skybags Brat Pro Max 35L Laptop Backpack (Upto 15.6\"), ",
       "link": "https://www.amazon.in/dp/B0H6JP1SM4/?tag=rrcool786-21",
       "category": "computers",
-      "rating": 4.6,
-      "reviews": 214,
+      "rating": 4.5,
+      "reviews": 216,
       "price": 885,
-      "benefit": "4.6★ (214 reviews) — Rs 885",
+      "benefit": "4.5★ (216 reviews) — Rs 885",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -419,8 +421,8 @@
       "category": "computers",
       "rating": 4.3,
       "reviews": 54,
-      "price": 840,
-      "benefit": "4.3★ (54 reviews) — Rs 840",
+      "price": 839,
+      "benefit": "4.3★ (54 reviews) — Rs 839",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -430,9 +432,9 @@
       "link": "https://www.amazon.in/dp/B0088TKTY2/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.1,
-      "reviews": 68890,
+      "reviews": 68891,
       "price": 649,
-      "benefit": "4.1★ (68,890 reviews) — Rs 649",
+      "benefit": "4.1★ (68,891 reviews) — Rs 649",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -502,9 +504,9 @@
       "link": "https://www.amazon.in/dp/B0FJG84M6X/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 13552,
+      "reviews": 13553,
       "price": 555,
-      "benefit": "4.0★ (13,552 reviews) — Rs 555",
+      "benefit": "4.0★ (13,553 reviews) — Rs 555",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -610,9 +612,9 @@
       "link": "https://www.amazon.in/dp/B0HFSCGL57/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 18511,
+      "reviews": 18514,
       "price": 378,
-      "benefit": "4.1★ (18,511 reviews) — Rs 378",
+      "benefit": "4.1★ (18,514 reviews) — Rs 378",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -652,7 +654,43 @@
       "commission": 139,
       "emoji": "🆕",
       "is_new": true
+    },
+    "B09GP6FBZT": {
+      "name": "OpenTech® Military-Grade Premium Tempered Glass Screen ",
+      "link": "https://www.amazon.in/dp/B09GP6FBZT/?tag=rrcool786-21",
+      "category": "electronics",
+      "rating": 4.0,
+      "reviews": 68784,
+      "price": 298,
+      "benefit": "4.0★ (68,784 reviews) — Rs 298",
+      "commission": 40,
+      "emoji": "📱",
+      "is_new": false
+    },
+    "B0HKJYPPMS": {
+      "name": "Samsung 25W C-Type PD Super-Fast Charging Adapter for G",
+      "link": "https://www.amazon.in/dp/B0HKJYPPMS/?tag=rrcool786-21",
+      "category": "electronics",
+      "rating": 4.6,
+      "reviews": 10256,
+      "price": 379,
+      "benefit": "4.6★ (10,256 reviews) — Rs 379",
+      "commission": 40,
+      "emoji": "📱",
+      "is_new": false
+    },
+    "B0H5WMLXXK": {
+      "name": "amazon basics Adjustable Sofa Side Table with Wheels, P",
+      "link": "https://www.amazon.in/dp/B0H5WMLXXK/?tag=rrcool786-21",
+      "category": "computers",
+      "rating": 4.1,
+      "reviews": 1330,
+      "price": 1499,
+      "benefit": "4.1★ (1,330 reviews) — Rs 1,499",
+      "commission": 59,
+      "emoji": "🆕",
+      "is_new": true
     }
   },
-  "updated_at": "2026-10-01 21:12:35 UTC"
+  "updated_at": "2026-10-02 09:57:56 UTC"
 }
