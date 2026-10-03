@@ -8,7 +8,8 @@
     "B0H9916DRH",
     "B0CQRNWJM2",
     "B0GVYXPZBS",
-    "B0GZBDPWJZ"
+    "B0GZBDPWJZ",
+    "B0H1X5XP25"
   ],
   "posted_names": [
     "skybags pace 30l laptop",
@@ -18,7 +19,8 @@
     "hp original 65w laptop",
     "zebronics blanc slim wireless",
     "oneplus nord ce6 lite",
-    "nilkar laptop table smart"
+    "nilkar laptop table smart",
+    "samsung galaxy a56 5g"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -54,9 +56,9 @@
       "link": "https://www.amazon.in/dp/B08LHTJTBB/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.2,
-      "reviews": 20576,
+      "reviews": 20577,
       "price": 389,
-      "benefit": "4.2★ (20,576 reviews) — Rs 389",
+      "benefit": "4.2★ (20,577 reviews) — Rs 389",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -103,8 +105,8 @@
       "category": "electronics",
       "rating": 4.4,
       "reviews": 23447,
-      "price": 485,
-      "benefit": "4.4★ (23,447 reviews) — Rs 485",
+      "price": 479,
+      "benefit": "4.4★ (23,447 reviews) — Rs 479",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -265,8 +267,8 @@
       "category": "electronics",
       "rating": 4.0,
       "reviews": 121388,
-      "price": 499,
-      "benefit": "4.0★ (121,388 reviews) — Rs 499",
+      "price": 489,
+      "benefit": "4.0★ (121,388 reviews) — Rs 489",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -696,9 +698,9 @@
       "link": "https://www.amazon.in/dp/B0H5WMLXXK/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.1,
-      "reviews": 1341,
+      "reviews": 1342,
       "price": 1499,
-      "benefit": "4.1★ (1,341 reviews) — Rs 1,499",
+      "benefit": "4.1★ (1,342 reviews) — Rs 1,499",
       "commission": 59,
       "emoji": "🆕",
       "is_new": true
@@ -708,9 +710,9 @@
       "link": "https://www.amazon.in/dp/B0H4R38VQG/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 13578,
+      "reviews": 13579,
       "price": 701,
-      "benefit": "4.0★ (13,578 reviews) — Rs 701",
+      "benefit": "4.0★ (13,579 reviews) — Rs 701",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -740,5 +742,5 @@
       "is_new": false
     }
   },
-  "updated_at": "2026-10-03 17:28:08 UTC"
+  "updated_at": "2026-10-03 19:20:27 UTC"
 }
