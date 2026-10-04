@@ -10,7 +10,8 @@
     "B0GVYXPZBS",
     "B0GZBDPWJZ",
     "B0H1X5XP25",
-    "B0H84855N1"
+    "B0H84855N1",
+    "B0H4VZ7K86"
   ],
   "posted_names": [
     "skybags pace 30l laptop",
@@ -22,7 +23,8 @@
     "oneplus nord ce6 lite",
     "nilkar laptop table smart",
     "samsung galaxy a56 5g",
-    "mota barman study table"
+    "mota barman study table",
+    "boat stone 350 pro"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -268,9 +270,9 @@
       "link": "https://www.amazon.in/dp/B0FM38916Y/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 121419,
+      "reviews": 121418,
       "price": 499,
-      "benefit": "4.0★ (121,419 reviews) — Rs 499",
+      "benefit": "4.0★ (121,418 reviews) — Rs 499",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -744,5 +746,5 @@
       "is_new": false
     }
   },
-  "updated_at": "2026-10-04 09:59:14 UTC"
+  "updated_at": "2026-10-04 13:19:35 UTC"
 }
