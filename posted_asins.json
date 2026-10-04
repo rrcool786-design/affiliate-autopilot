@@ -11,7 +11,8 @@
     "B0GZBDPWJZ",
     "B0H1X5XP25",
     "B0H84855N1",
-    "B0H4VZ7K86"
+    "B0H4VZ7K86",
+    "B01DGVKBC6"
   ],
   "posted_names": [
     "skybags pace 30l laptop",
@@ -24,7 +25,8 @@
     "nilkar laptop table smart",
     "samsung galaxy a56 5g",
     "mota barman study table",
-    "boat stone 350 pro"
+    "boat stone 350 pro",
+    "fedus cat6 ethernet cable"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -40,9 +42,9 @@
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.3,
-      "reviews": 50892,
+      "reviews": 50893,
       "price": 1949,
-      "benefit": "4.3★ (50,892 reviews) — Rs 1,949",
+      "benefit": "4.3★ (50,893 reviews) — Rs 1,949",
       "commission": 77,
       "emoji": "📱",
       "is_new": false
@@ -88,9 +90,9 @@
       "link": "https://www.amazon.in/dp/B097JJ2CK6/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.2,
-      "reviews": 17324,
+      "reviews": 17325,
       "price": 709,
-      "benefit": "4.2★ (17,324 reviews) — Rs 709",
+      "benefit": "4.2★ (17,325 reviews) — Rs 709",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -109,8 +111,8 @@
       "category": "electronics",
       "rating": 4.4,
       "reviews": 23481,
-      "price": 469,
-      "benefit": "4.4★ (23,481 reviews) — Rs 469",
+      "price": 560,
+      "benefit": "4.4★ (23,481 reviews) — Rs 560",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -120,9 +122,9 @@
       "link": "https://www.amazon.in/dp/B0DDHM6D3L/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 13487,
+      "reviews": 13488,
       "price": 299,
-      "benefit": "4.1★ (13,487 reviews) — Rs 299",
+      "benefit": "4.1★ (13,488 reviews) — Rs 299",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -414,9 +416,9 @@
       "link": "https://www.amazon.in/dp/B0H6JP1SM4/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.6,
-      "reviews": 230,
+      "reviews": 231,
       "price": 799,
-      "benefit": "4.6★ (230 reviews) — Rs 799",
+      "benefit": "4.6★ (231 reviews) — Rs 799",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -678,9 +680,9 @@
       "link": "https://www.amazon.in/dp/B09GP6FBZT/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 68823,
+      "reviews": 68822,
       "price": 298,
-      "benefit": "4.0★ (68,823 reviews) — Rs 298",
+      "benefit": "4.0★ (68,822 reviews) — Rs 298",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -714,9 +716,9 @@
       "link": "https://www.amazon.in/dp/B0H4R38VQG/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 13588,
+      "reviews": 13590,
       "price": 700,
-      "benefit": "4.0★ (13,588 reviews) — Rs 700",
+      "benefit": "4.0★ (13,590 reviews) — Rs 700",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -746,5 +748,5 @@
       "is_new": false
     }
   },
-  "updated_at": "2026-10-04 13:19:35 UTC"
+  "updated_at": "2026-10-04 17:43:24 UTC"
 }
