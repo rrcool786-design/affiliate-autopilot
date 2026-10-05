@@ -16,7 +16,8 @@
     "B0H3Q5DPP9",
     "B0H1HYZP1X",
     "B0BTD4S4XF",
-    "B0H5WMLXXK"
+    "B0H5WMLXXK",
+    "B0H6JP1SM4"
   ],
   "posted_names": [
     "skybags pace 30l laptop",
@@ -34,7 +35,8 @@
     "oneplus nord buds 4",
     "boat energyshroom pb331 magsafe",
     "american tourister valex",
-    "amazon basics adjustable sofa"
+    "amazon basics adjustable sofa",
+    "skybags brat pro max"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -50,9 +52,9 @@
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.3,
-      "reviews": 50964,
+      "reviews": 50965,
       "price": 1949,
-      "benefit": "4.3★ (50,964 reviews) — Rs 1,949",
+      "benefit": "4.3★ (50,965 reviews) — Rs 1,949",
       "commission": 77,
       "emoji": "📱",
       "is_new": false
@@ -280,9 +282,9 @@
       "link": "https://www.amazon.in/dp/B0FM38916Y/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 120963,
-      "price": 499,
-      "benefit": "4.0★ (120,963 reviews) — Rs 499",
+      "reviews": 120962,
+      "price": 489,
+      "benefit": "4.0★ (120,962 reviews) — Rs 489",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -304,9 +306,9 @@
       "link": "https://www.amazon.in/dp/B0DNFSSF3F/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.3,
-      "reviews": 5641,
+      "reviews": 5642,
       "price": 2069,
-      "benefit": "4.3★ (5,641 reviews) — Rs 2,069",
+      "benefit": "4.3★ (5,642 reviews) — Rs 2,069",
       "commission": 82,
       "emoji": "💻",
       "is_new": false
@@ -352,9 +354,9 @@
       "link": "https://www.amazon.in/dp/B0FJGDS5W3/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 13605,
+      "reviews": 13606,
       "price": 572,
-      "benefit": "4.0★ (13,605 reviews) — Rs 572",
+      "benefit": "4.0★ (13,606 reviews) — Rs 572",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -449,8 +451,8 @@
       "category": "computers",
       "rating": 4.4,
       "reviews": 63,
-      "price": 829,
-      "benefit": "4.4★ (63 reviews) — Rs 829",
+      "price": 798,
+      "benefit": "4.4★ (63 reviews) — Rs 798",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -688,9 +690,9 @@
       "link": "https://www.amazon.in/dp/B09GP6FBZT/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 68845,
+      "reviews": 68847,
       "price": 298,
-      "benefit": "4.0★ (68,845 reviews) — Rs 298",
+      "benefit": "4.0★ (68,847 reviews) — Rs 298",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -756,5 +758,5 @@
       "is_new": false
     }
   },
-  "updated_at": "2026-10-05 21:15:49 UTC"
+  "updated_at": "2026-10-05 22:51:35 UTC"
 }
