@@ -18,7 +18,8 @@
     "B0BTD4S4XF",
     "B0H5WMLXXK",
     "B0H6JP1SM4",
-    "B0HC2VX349"
+    "B0HC2VX349",
+    "B0GZKXZ1NB"
   ],
   "posted_names": [
     "skybags pace 30l laptop",
@@ -38,7 +39,8 @@
     "american tourister valex",
     "amazon basics adjustable sofa",
     "skybags brat pro max",
-    "amazon basics 4g lte"
+    "amazon basics 4g lte",
+    "tekcool study table foldable"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -123,8 +125,8 @@
       "category": "electronics",
       "rating": 4.4,
       "reviews": 23545,
-      "price": 485,
-      "benefit": "4.4★ (23,545 reviews) — Rs 485",
+      "price": 538,
+      "benefit": "4.4★ (23,545 reviews) — Rs 538",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -203,8 +205,8 @@
       "category": "computers",
       "rating": 4.0,
       "reviews": 3340,
-      "price": 345,
-      "benefit": "4.0★ (3,340 reviews) — Rs 345",
+      "price": 347,
+      "benefit": "4.0★ (3,340 reviews) — Rs 347",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -248,9 +250,9 @@
       "link": "https://www.amazon.in/dp/B0B296NTFV/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.0,
-      "reviews": 16708,
+      "reviews": 16709,
       "price": 256,
-      "benefit": "4.0★ (16,708 reviews) — Rs 256",
+      "benefit": "4.0★ (16,709 reviews) — Rs 256",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -284,9 +286,9 @@
       "link": "https://www.amazon.in/dp/B0FM38916Y/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 120986,
+      "reviews": 120985,
       "price": 489,
-      "benefit": "4.0★ (120,986 reviews) — Rs 489",
+      "benefit": "4.0★ (120,985 reviews) — Rs 489",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -772,5 +774,5 @@
       "is_new": false
     }
   },
-  "updated_at": "2026-10-06 10:37:20 UTC"
+  "updated_at": "2026-10-06 14:17:56 UTC"
 }
