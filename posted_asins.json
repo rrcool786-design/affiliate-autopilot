@@ -28,7 +28,8 @@
     "B0088TKTY2",
     "B0H293SFTR",
     "B0HCB1Z9BR",
-    "B0GXV5313B"
+    "B0GXV5313B",
+    "B0HG96MZ9P"
   ],
   "posted_names": [
     "skybags pace 30l laptop",
@@ -58,7 +59,8 @@
     "tp link wifi dongle",
     "redmi turbo 5 8gb",
     "iqoo 15r dark knight",
-    "samsung 55 inch 138cm"
+    "samsung 55 inch 138cm",
+    "iqoo z11xa 5g prismatic"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -226,9 +228,9 @@
       "link": "https://www.amazon.in/dp/B008FWZ5MS/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.0,
-      "reviews": 3357,
+      "reviews": 3358,
       "price": 348,
-      "benefit": "4.0★ (3,357 reviews) — Rs 348",
+      "benefit": "4.0★ (3,358 reviews) — Rs 348",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -249,11 +251,12 @@
       "link": "https://www.amazon.in/dp/B0FBRGKXHG/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 234239,
-      "price": 1999,
-      "benefit": "4.1★ (234,239 reviews) — Rs 1,999",
-      "commission": 79,
-      "emoji": "📱"
+      "reviews": 235438,
+      "price": 1599,
+      "benefit": "4.1★ (235,438 reviews) — Rs 1,599",
+      "commission": 63,
+      "emoji": "📱",
+      "is_new": false
     },
     "B0CF1M3PF9": {
       "name": "Pikkme Flip Cover Leather Finish",
@@ -892,5 +895,5 @@
       "is_new": true
     }
   },
-  "updated_at": "2026-10-08 19:20:21 UTC"
+  "updated_at": "2026-10-08 21:26:25 UTC"
 }
