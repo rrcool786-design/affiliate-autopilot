@@ -27,7 +27,8 @@
     "B0FM38916Y",
     "B0088TKTY2",
     "B0H293SFTR",
-    "B0HCB1Z9BR"
+    "B0HCB1Z9BR",
+    "B0GXV5313B"
   ],
   "posted_names": [
     "skybags pace 30l laptop",
@@ -56,7 +57,8 @@
     "boat bassheads 300c wired",
     "tp link wifi dongle",
     "redmi turbo 5 8gb",
-    "iqoo 15r dark knight"
+    "iqoo 15r dark knight",
+    "samsung 55 inch 138cm"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -72,9 +74,9 @@
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.3,
-      "reviews": 51149,
+      "reviews": 51150,
       "price": 1699,
-      "benefit": "4.3★ (51,149 reviews) — Rs 1,699",
+      "benefit": "4.3★ (51,150 reviews) — Rs 1,699",
       "commission": 67,
       "emoji": "📱",
       "is_new": false
@@ -124,9 +126,9 @@
       "link": "https://www.amazon.in/dp/B097JJ2CK6/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.2,
-      "reviews": 17416,
+      "reviews": 17417,
       "price": 579,
-      "benefit": "4.2★ (17,416 reviews) — Rs 579",
+      "benefit": "4.2★ (17,417 reviews) — Rs 579",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -224,9 +226,9 @@
       "link": "https://www.amazon.in/dp/B008FWZ5MS/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.0,
-      "reviews": 3356,
+      "reviews": 3357,
       "price": 348,
-      "benefit": "4.0★ (3,356 reviews) — Rs 348",
+      "benefit": "4.0★ (3,357 reviews) — Rs 348",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -318,9 +320,9 @@
       "link": "https://www.amazon.in/dp/B0DCZ3WDTB/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 13525,
+      "reviews": 13526,
       "price": 1899,
-      "benefit": "4.1★ (13,525 reviews) — Rs 1,899",
+      "benefit": "4.1★ (13,526 reviews) — Rs 1,899",
       "commission": 75,
       "emoji": "📱",
       "is_new": false
@@ -366,9 +368,9 @@
       "link": "https://www.amazon.in/dp/B0H3Q5DPP9/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 702,
+      "reviews": 703,
       "price": 2899,
-      "benefit": "4.1★ (702 reviews) — Rs 2,899",
+      "benefit": "4.1★ (703 reviews) — Rs 2,899",
       "commission": 115,
       "emoji": "🆕",
       "is_new": true
@@ -582,9 +584,9 @@
       "link": "https://www.amazon.in/dp/B0HC2VX349/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.1,
-      "reviews": 72,
+      "reviews": 73,
       "price": 2369,
-      "benefit": "4.1★ (72 reviews) — Rs 2,369",
+      "benefit": "4.1★ (73 reviews) — Rs 2,369",
       "commission": 94,
       "emoji": "🆕",
       "is_new": true
@@ -738,9 +740,9 @@
       "link": "https://www.amazon.in/dp/B0H5WMLXXK/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.0,
-      "reviews": 1359,
+      "reviews": 1360,
       "price": 1279,
-      "benefit": "4.0★ (1,359 reviews) — Rs 1,279",
+      "benefit": "4.0★ (1,360 reviews) — Rs 1,279",
       "commission": 51,
       "emoji": "🆕",
       "is_new": true
@@ -762,9 +764,9 @@
       "link": "https://www.amazon.in/dp/B0H1HYZP1X/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 3420,
+      "reviews": 3423,
       "price": 1299,
-      "benefit": "4.0★ (3,420 reviews) — Rs 1,299",
+      "benefit": "4.0★ (3,423 reviews) — Rs 1,299",
       "commission": 51,
       "emoji": "🆕",
       "is_new": true
@@ -798,9 +800,9 @@
       "link": "https://www.amazon.in/dp/B0DSKNKCYX/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.5,
-      "reviews": 2851,
+      "reviews": 2852,
       "price": 94999,
-      "benefit": "4.5★ (2,851 reviews) — Rs 94,999",
+      "benefit": "4.5★ (2,852 reviews) — Rs 94,999",
       "commission": 3799,
       "emoji": "📱",
       "is_new": false
@@ -870,9 +872,9 @@
       "link": "https://www.amazon.in/dp/B0H293SFTR/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 743,
+      "reviews": 744,
       "price": 40999,
-      "benefit": "4.1★ (743 reviews) — Rs 40,999",
+      "benefit": "4.1★ (744 reviews) — Rs 40,999",
       "commission": 1639,
       "emoji": "🆕",
       "is_new": true
@@ -890,5 +892,5 @@
       "is_new": true
     }
   },
-  "updated_at": "2026-10-08 14:43:07 UTC"
+  "updated_at": "2026-10-08 19:20:21 UTC"
 }
