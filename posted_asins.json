@@ -39,7 +39,8 @@
     "B01HJI0FS2",
     "B0FJGDS5W3",
     "B0H4R38VQG",
-    "B08LHTJTBB"
+    "B08LHTJTBB",
+    "B0HKJN82V3"
   ],
   "posted_names": [
     "skybags pace 30l laptop",
@@ -80,7 +81,8 @@
     "dell ms116 wired mouse",
     "45w gan type c",
     "100w usb a to",
-    "dyazo 6 angles adjustable"
+    "dyazo 6 angles adjustable",
+    "motorola 68w turbopower type"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -168,9 +170,9 @@
       "link": "https://www.amazon.in/dp/B0D2R2MXXJ/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 23708,
-      "price": 583,
-      "benefit": "4.4★ (23,708 reviews) — Rs 583",
+      "reviews": 23710,
+      "price": 575,
+      "benefit": "4.4★ (23,710 reviews) — Rs 575",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -343,9 +345,9 @@
       "link": "https://www.amazon.in/dp/B0DCZ3WDTB/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 13526,
+      "reviews": 13602,
       "price": 1899,
-      "benefit": "4.1★ (13,526 reviews) — Rs 1,899",
+      "benefit": "4.1★ (13,602 reviews) — Rs 1,899",
       "commission": 75,
       "emoji": "📱",
       "is_new": false
@@ -823,9 +825,9 @@
       "link": "https://www.amazon.in/dp/B0DSKNKCYX/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.5,
-      "reviews": 2919,
+      "reviews": 2924,
       "price": 94999,
-      "benefit": "4.5★ (2,919 reviews) — Rs 94,999",
+      "benefit": "4.5★ (2,924 reviews) — Rs 94,999",
       "commission": 3799,
       "emoji": "📱",
       "is_new": false
@@ -847,9 +849,9 @@
       "link": "https://www.amazon.in/dp/B0GWLHVJRH/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.3,
-      "reviews": 3333,
+      "reviews": 3334,
       "price": 34999,
-      "benefit": "4.3★ (3,333 reviews) — Rs 34,999",
+      "benefit": "4.3★ (3,334 reviews) — Rs 34,999",
       "commission": 1399,
       "emoji": "📱",
       "is_new": false
@@ -1039,9 +1041,9 @@
       "link": "https://www.amazon.in/dp/B0CXDN7V9N/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.3,
-      "reviews": 12830,
+      "reviews": 12829,
       "price": 209,
-      "benefit": "4.3★ (12,830 reviews) — Rs 209",
+      "benefit": "4.3★ (12,829 reviews) — Rs 209",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -1059,5 +1061,5 @@
       "is_new": true
     }
   },
-  "updated_at": "2026-10-11 14:14:34 UTC"
+  "updated_at": "2026-10-11 18:12:46 UTC"
 }
