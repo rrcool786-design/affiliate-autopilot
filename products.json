@@ -1,44 +1,52 @@
 {
-  "updated_at": "2026-10-04 05:08 IST",
-  "total": 20,
+  "updated_at": "2026-10-11 04:59 IST",
+  "total": 21,
   "products": [
     {
-      "name": "Portronics Conch Theta C in Ear Type C Wired Earphones ",
-      "link": "https://www.amazon.in/dp/B0DDHM6D3L/?tag=rrcool786-21",
+      "name": "Samsung Galaxy S25 Ultra 5G AI Smartphone",
+      "link": "https://www.amazon.in/dp/B0DSKNKCYX/?tag=rrcool786-21",
       "category": "electronics",
-      "benefit": "Rs 299 mein Amazon bestseller — trending electronics product",
-      "commission": 40,
+      "benefit": "Rs 94,999 mein Amazon bestseller — trending electronics product",
+      "commission": 3799,
+      "emoji": "📱"
+    },
+    {
+      "name": "OnePlus Nord Buds 3r TWS Earbuds up to 54 Hours Playbac",
+      "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rrcool786-21",
+      "category": "electronics",
+      "benefit": "Rs 1,692 mein Amazon bestseller — trending electronics product",
+      "commission": 67,
+      "emoji": "📱"
+    },
+    {
+      "name": "Samsung Galaxy A56 5G Mobile",
+      "link": "https://www.amazon.in/dp/B0H1X5XP25/?tag=rrcool786-21",
+      "category": "electronics",
+      "benefit": "Rs 32,999 mein Amazon bestseller — trending electronics product",
+      "commission": 1319,
       "emoji": "📱"
     },
     {
       "name": "Ambrane Unbreakable 60W Fast Charging 1.5M Braided Type",
       "link": "https://www.amazon.in/dp/B082LSVT4B/?tag=rrcool786-21",
-      "category": "electronics",
-      "benefit": "Rs 129 mein Amazon bestseller — trending electronics product",
-      "commission": 40,
-      "emoji": "📱"
-    },
-    {
-      "name": "Samsung Original 25W USB Type-C Travel Adaptor Without ",
-      "link": "https://www.amazon.in/dp/B0D2R2MXXJ/?tag=rrcool786-21",
-      "category": "electronics",
-      "benefit": "Rs 479 mein Amazon bestseller — trending electronics product",
-      "commission": 40,
-      "emoji": "📱"
-    },
-    {
-      "name": "Samsung Original Type C to C Cable - 3.28 Feet",
-      "link": "https://www.amazon.in/dp/B008FWZGSG/?tag=rrcool786-21",
       "category": "computers",
-      "benefit": "Rs 365 mein Amazon bestseller — trending computers product",
+      "benefit": "Rs 129 mein Amazon bestseller — trending computers product",
       "commission": 40,
       "emoji": "💻"
     },
     {
-      "name": "Dyazo 6 Angles Adjustable Aluminum Ergonomic Foldable P",
-      "link": "https://www.amazon.in/dp/B08LHTJTBB/?tag=rrcool786-21",
+      "name": "Samsung Galaxy Tab S10 Lite [Smartchoice], 10.9-inch",
+      "link": "https://www.amazon.in/dp/B0FNWQWY2G/?tag=rrcool786-21",
       "category": "computers",
-      "benefit": "Rs 389 mein Amazon bestseller — trending computers product",
+      "benefit": "Rs 30,999 mein Amazon bestseller — trending computers product",
+      "commission": 1239,
+      "emoji": "💻"
+    },
+    {
+      "name": "Safari Omega spacious/large laptop backpack with Rainco",
+      "link": "https://www.amazon.in/dp/B097JJ2CK6/?tag=rrcool786-21",
+      "category": "computers",
+      "benefit": "Rs 579 mein Amazon bestseller — trending computers product",
       "commission": 40,
       "emoji": "💻"
     },
@@ -54,41 +62,57 @@
       "name": "Amazon Brand - Presto! Garbage Bags",
       "link": "https://www.amazon.in/dp/B0821PN8L4/?tag=rrcool786-21",
       "category": "kitchen",
-      "benefit": "Rs 319 mein Amazon bestseller — trending kitchen product",
+      "benefit": "Rs 239 mein Amazon bestseller — trending kitchen product",
       "commission": 40,
       "emoji": "🍳"
     },
     {
-      "name": "Ezee Live Life Ezee Way Black Garbage Bags for Dustbin",
-      "link": "https://www.amazon.in/dp/B06VX8YR6Q/?tag=rrcool786-21",
+      "name": "DesiDiya® 35 Feet Long LED Power Pixel Serial String Li",
+      "link": "https://www.amazon.in/dp/B0BBFCG66M/?tag=rrcool786-21",
       "category": "kitchen",
-      "benefit": "Rs 179 mein Amazon bestseller — trending kitchen product",
+      "benefit": "Rs 76 mein Amazon bestseller — trending kitchen product",
       "commission": 40,
       "emoji": "🍳"
     },
     {
-      "name": "Jockey 1406 Women Cotton Hipster",
-      "link": "https://www.amazon.in/dp/B010FMJKFS/?tag=rrcool786-21",
+      "name": "Allen Solly Men’s Polo T‑Shirt",
+      "link": "https://www.amazon.in/dp/B06Y2FG6R7/?tag=rrcool786-21",
       "category": "fashion",
-      "benefit": "Rs 449 mein Amazon bestseller — trending fashion product",
+      "benefit": "Rs 417 mein Amazon bestseller — trending fashion product",
       "commission": 40,
+      "emoji": "👕"
+    },
+    {
+      "name": "KLOSIA Women's Rayon Printed Anarkali Kurta and Pant wi",
+      "link": "https://www.amazon.in/dp/B0FRFXX2C3/?tag=rrcool786-21",
+      "category": "fashion",
+      "benefit": "Rs 639 mein Amazon bestseller — trending fashion product",
+      "commission": 57,
       "emoji": "👕"
     },
     {
       "name": "GoSriKi Kurta Set Women Viscose Printed",
       "link": "https://www.amazon.in/dp/B0H3PZQQHH/?tag=rrcool786-21",
       "category": "fashion",
-      "benefit": "Rs 699 mein Amazon bestseller — trending fashion product",
-      "commission": 62,
+      "benefit": "Rs 589 mein Amazon bestseller — trending fashion product",
+      "commission": 53,
       "emoji": "👕"
     },
     {
-      "name": "Allen Solly Men’s Polo T‑Shirt",
-      "link": "https://www.amazon.in/dp/B06Y2FG6R7/?tag=rrcool786-21",
-      "category": "fashion",
-      "benefit": "Rs 695 mein Amazon bestseller — trending fashion product",
-      "commission": 62,
-      "emoji": "👕"
+      "name": "Fiama Gel Bar Mega Celebration Pack 1kg",
+      "link": "https://www.amazon.in/dp/B09G33GLP8/?tag=rrcool786-21",
+      "category": "beauty",
+      "benefit": "Rs 299 mein Amazon bestseller — trending beauty product",
+      "commission": 40,
+      "emoji": "💄"
+    },
+    {
+      "name": "Cetaphil Gentle Skin Hydrating Face Wash 118ml, Paraben",
+      "link": "https://www.amazon.in/dp/B01CCGW4OE/?tag=rrcool786-21",
+      "category": "beauty",
+      "benefit": "Rs 319 mein Amazon bestseller — trending beauty product",
+      "commission": 40,
+      "emoji": "💄"
     },
     {
       "name": "Ghar Soaps Sandalwood & Saffron Magic Bar For Bath",
@@ -99,20 +123,12 @@
       "emoji": "💄"
     },
     {
-      "name": "Cetaphil Gentle Skin Hydrating Face Wash 118ml, Paraben",
-      "link": "https://www.amazon.in/dp/B01CCGW4OE/?tag=rrcool786-21",
-      "category": "beauty",
-      "benefit": "Rs 353 mein Amazon bestseller — trending beauty product",
-      "commission": 40,
-      "emoji": "💄"
-    },
-    {
-      "name": "Ghar Soaps De-Tan Face Wash",
-      "link": "https://www.amazon.in/dp/B0GYCT961V/?tag=rrcool786-21",
-      "category": "beauty",
-      "benefit": "Rs 249 mein Amazon bestseller — trending beauty product",
-      "commission": 40,
-      "emoji": "💄"
+      "name": "Next Toppers CBSE Class 10 Sample Papers 2026-27",
+      "link": "https://www.amazon.in/dp/816888888X/?tag=rrcool786-21",
+      "category": "books",
+      "benefit": "Rs 999 mein Amazon bestseller — trending books product",
+      "commission": 49,
+      "emoji": "📚"
     },
     {
       "name": "NCERT Ganita Manjari, Part 2 for Class 9 Eng Med 905 20",
@@ -123,43 +139,35 @@
       "emoji": "📚"
     },
     {
-      "name": "My First Library Boxset For Kids",
-      "link": "https://www.amazon.in/dp/9387779262/?tag=rrcool786-21",
+      "name": "NCERT Understanding Society – India and Beyond, Textboo",
+      "link": "https://www.amazon.in/dp/9357292799/?tag=rrcool786-21",
       "category": "books",
-      "benefit": "Rs 375 mein Amazon bestseller — trending books product",
+      "benefit": "Rs 130 mein Amazon bestseller — trending books product",
       "commission": 40,
       "emoji": "📚"
     },
     {
-      "name": "DON'T SWEAT THE SMALL STUFF",
-      "link": "https://www.amazon.in/dp/1473672872/?tag=rrcool786-21",
-      "category": "books",
-      "benefit": "Rs 271 mein Amazon bestseller — trending books product",
-      "commission": 40,
-      "emoji": "📚"
+      "name": "LEGO Speed Champions Ferrari SF-24 F1 Race Car Driver S",
+      "link": "https://www.amazon.in/dp/B0DHSBBV6R/?tag=rrcool786-21",
+      "category": "toys",
+      "benefit": "Rs 1,347 mein Amazon bestseller — trending toys product",
+      "commission": 67,
+      "emoji": "🧸"
     },
     {
-      "name": "DaMpLiNg Squisy Ball",
-      "link": "https://www.amazon.in/dp/B0HJWVJKYY/?tag=rrcool786-21",
+      "name": "Lifelong LLKS03 Foldable Kick Skating Cycle",
+      "link": "https://www.amazon.in/dp/B0C862R9VF/?tag=rrcool786-21",
       "category": "toys",
-      "benefit": "Rs 289 mein Amazon bestseller — trending toys product",
+      "benefit": "Rs 699 mein Amazon bestseller — trending toys product",
       "commission": 40,
       "emoji": "🧸"
     },
     {
-      "name": "Lifelong Foldable Kids Kick Scooter with LED Wheels & A",
-      "link": "https://www.amazon.in/dp/B0CV5MR8BH/?tag=rrcool786-21",
+      "name": "Kidsmate Cruiser Kick Scooter for Kids with Broad Wheel",
+      "link": "https://www.amazon.in/dp/B0D4DZ7WL2/?tag=rrcool786-21",
       "category": "toys",
-      "benefit": "Rs 1,099 mein Amazon bestseller — trending toys product",
-      "commission": 54,
-      "emoji": "🧸"
-    },
-    {
-      "name": "Frendo Remote Control Drift Stunt Car 4WD",
-      "link": "https://www.amazon.in/dp/B0FYWTYXNW/?tag=rrcool786-21",
-      "category": "toys",
-      "benefit": "Rs 990 mein Amazon bestseller — trending toys product",
-      "commission": 49,
+      "benefit": "Rs 699 mein Amazon bestseller — trending toys product",
+      "commission": 40,
       "emoji": "🧸"
     }
   ]
