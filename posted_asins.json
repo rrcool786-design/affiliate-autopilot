@@ -44,7 +44,8 @@
     "B0H5J8R78K",
     "B0H5JD9JJV",
     "B098NS6PVG",
-    "B0HCVYQS46"
+    "B0HCVYQS46",
+    "B097GNF52Q"
   ],
   "posted_names": [
     "skybags pace 30l laptop",
@@ -90,7 +91,8 @@
     "footloose by vip kinetic",
     "footloose by vip yin",
     "ambrane unbreakable 3a fast",
-    "etekcity study table bed"
+    "etekcity study table bed",
+    "safari 45l expandable overnighter"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -106,9 +108,9 @@
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.3,
-      "reviews": 51449,
+      "reviews": 51452,
       "price": 1749,
-      "benefit": "4.3★ (51,449 reviews) — Rs 1,749",
+      "benefit": "4.3★ (51,452 reviews) — Rs 1,749",
       "commission": 69,
       "emoji": "📱",
       "is_new": false
@@ -158,9 +160,9 @@
       "link": "https://www.amazon.in/dp/B097JJ2CK6/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.2,
-      "reviews": 17482,
+      "reviews": 17483,
       "price": 679,
-      "benefit": "4.2★ (17,482 reviews) — Rs 679",
+      "benefit": "4.2★ (17,483 reviews) — Rs 679",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -365,9 +367,9 @@
       "link": "https://www.amazon.in/dp/B0DNFSSF3F/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.3,
-      "reviews": 5673,
+      "reviews": 5674,
       "price": 1899,
-      "benefit": "4.3★ (5,673 reviews) — Rs 1,899",
+      "benefit": "4.3★ (5,674 reviews) — Rs 1,899",
       "commission": 75,
       "emoji": "💻",
       "is_new": false
@@ -833,9 +835,9 @@
       "link": "https://www.amazon.in/dp/B0DSKNKCYX/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 3014,
+      "reviews": 3015,
       "price": 94999,
-      "benefit": "4.4★ (3,014 reviews) — Rs 94,999",
+      "benefit": "4.4★ (3,015 reviews) — Rs 94,999",
       "commission": 3799,
       "emoji": "📱",
       "is_new": false
@@ -893,9 +895,9 @@
       "link": "https://www.amazon.in/dp/B0GXV5313B/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 724,
+      "reviews": 725,
       "price": 46990,
-      "benefit": "4.1★ (724 reviews) — Rs 46,990",
+      "benefit": "4.1★ (725 reviews) — Rs 46,990",
       "commission": 1879,
       "emoji": "🆕",
       "is_new": true
@@ -1037,9 +1039,9 @@
       "link": "https://www.amazon.in/dp/B0F7Y54PJX/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 13830,
+      "reviews": 13831,
       "price": 699,
-      "benefit": "4.0★ (13,830 reviews) — Rs 699",
+      "benefit": "4.0★ (13,831 reviews) — Rs 699",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -1081,5 +1083,5 @@
       "is_new": true
     }
   },
-  "updated_at": "2026-10-12 21:47:35 UTC"
+  "updated_at": "2026-10-12 23:08:54 UTC"
 }
