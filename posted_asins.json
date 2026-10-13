@@ -46,7 +46,8 @@
     "B098NS6PVG",
     "B0HCVYQS46",
     "B097GNF52Q",
-    "B0GP8XYL7H"
+    "B0GP8XYL7H",
+    "B08ZJG6TVT"
   ],
   "posted_names": [
     "skybags pace 30l laptop",
@@ -94,7 +95,8 @@
     "ambrane unbreakable 3a fast",
     "etekcity study table bed",
     "safari 45l expandable overnighter",
-    "iqoo z11x 5g prismatic"
+    "iqoo z11x 5g prismatic",
+    "seagate expansion 2tb external"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -162,9 +164,9 @@
       "link": "https://www.amazon.in/dp/B097JJ2CK6/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.2,
-      "reviews": 17496,
+      "reviews": 17497,
       "price": 679,
-      "benefit": "4.2★ (17,496 reviews) — Rs 679",
+      "benefit": "4.2★ (17,497 reviews) — Rs 679",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -183,8 +185,8 @@
       "category": "electronics",
       "rating": 4.4,
       "reviews": 23812,
-      "price": 545,
-      "benefit": "4.4★ (23,812 reviews) — Rs 545",
+      "price": 526,
+      "benefit": "4.4★ (23,812 reviews) — Rs 526",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -194,9 +196,9 @@
       "link": "https://www.amazon.in/dp/B0DDHM6D3L/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 13822,
+      "reviews": 13823,
       "price": 309,
-      "benefit": "4.1★ (13,822 reviews) — Rs 309",
+      "benefit": "4.1★ (13,823 reviews) — Rs 309",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -263,8 +265,8 @@
       "category": "computers",
       "rating": 4.0,
       "reviews": 3384,
-      "price": 319,
-      "benefit": "4.0★ (3,384 reviews) — Rs 319",
+      "price": 314,
+      "benefit": "4.0★ (3,384 reviews) — Rs 314",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -368,10 +370,10 @@
       "name": "SANDISK Ultra Dual Drive Go Type-C 128GB, OTG, Upto 400",
       "link": "https://www.amazon.in/dp/B0DNFSSF3F/?tag=rrcool786-21",
       "category": "computers",
-      "rating": 4.2,
-      "reviews": 5687,
+      "rating": 4.3,
+      "reviews": 5149,
       "price": 1899,
-      "benefit": "4.2★ (5,687 reviews) — Rs 1,899",
+      "benefit": "4.3★ (5,149 reviews) — Rs 1,899",
       "commission": 75,
       "emoji": "💻",
       "is_new": false
@@ -417,9 +419,9 @@
       "link": "https://www.amazon.in/dp/B0FJGDS5W3/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 13748,
+      "reviews": 13749,
       "price": 571,
-      "benefit": "4.0★ (13,748 reviews) — Rs 571",
+      "benefit": "4.0★ (13,749 reviews) — Rs 571",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -837,9 +839,9 @@
       "link": "https://www.amazon.in/dp/B0DSKNKCYX/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 3089,
+      "reviews": 3095,
       "price": 94999,
-      "benefit": "4.4★ (3,089 reviews) — Rs 94,999",
+      "benefit": "4.4★ (3,095 reviews) — Rs 94,999",
       "commission": 3799,
       "emoji": "📱",
       "is_new": false
@@ -861,9 +863,9 @@
       "link": "https://www.amazon.in/dp/B0GWLHVJRH/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.3,
-      "reviews": 3356,
+      "reviews": 3357,
       "price": 34999,
-      "benefit": "4.3★ (3,356 reviews) — Rs 34,999",
+      "benefit": "4.3★ (3,357 reviews) — Rs 34,999",
       "commission": 1399,
       "emoji": "📱",
       "is_new": false
@@ -1041,9 +1043,9 @@
       "link": "https://www.amazon.in/dp/B0F7Y54PJX/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 13846,
+      "reviews": 13847,
       "price": 699,
-      "benefit": "4.0★ (13,846 reviews) — Rs 699",
+      "benefit": "4.0★ (13,847 reviews) — Rs 699",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -1085,5 +1087,5 @@
       "is_new": true
     }
   },
-  "updated_at": "2026-10-13 10:53:05 UTC"
+  "updated_at": "2026-10-13 15:09:50 UTC"
 }
