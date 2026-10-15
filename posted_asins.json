@@ -54,7 +54,8 @@
     "B0HKJTZBQS",
     "B0DSFTRX77",
     "B0GWLHVJRH",
-    "B0GRB3FBBB"
+    "B0GRB3FBBB",
+    "B0DNJYXWW5"
   ],
   "posted_names": [
     "skybags pace 30l laptop",
@@ -110,7 +111,8 @@
     "25w type c super",
     "samsung galaxy 45w travel",
     "oneplus nord ce6",
-    "oneplus nord 6"
+    "oneplus nord 6",
+    "dizoro compatible for iphone"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -178,9 +180,9 @@
       "link": "https://www.amazon.in/dp/B097JJ2CK6/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.2,
-      "reviews": 17518,
+      "reviews": 17519,
       "price": 679,
-      "benefit": "4.2★ (17,518 reviews) — Rs 679",
+      "benefit": "4.2★ (17,519 reviews) — Rs 679",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -198,9 +200,9 @@
       "link": "https://www.amazon.in/dp/B0D2R2MXXJ/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 23843,
+      "reviews": 23842,
       "price": 500,
-      "benefit": "4.4★ (23,843 reviews) — Rs 500",
+      "benefit": "4.4★ (23,842 reviews) — Rs 500",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -278,9 +280,9 @@
       "link": "https://www.amazon.in/dp/B008FWZ5MS/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.0,
-      "reviews": 3387,
-      "price": 330,
-      "benefit": "4.0★ (3,387 reviews) — Rs 330",
+      "reviews": 3386,
+      "price": 325,
+      "benefit": "4.0★ (3,386 reviews) — Rs 325",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -421,9 +423,9 @@
       "link": "https://www.amazon.in/dp/B0H3Q5DPP9/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 750,
+      "reviews": 752,
       "price": 3099,
-      "benefit": "4.1★ (750 reviews) — Rs 3,099",
+      "benefit": "4.1★ (752 reviews) — Rs 3,099",
       "commission": 123,
       "emoji": "🆕",
       "is_new": true
@@ -853,9 +855,9 @@
       "link": "https://www.amazon.in/dp/B0DSKNKCYX/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 3221,
+      "reviews": 3229,
       "price": 94999,
-      "benefit": "4.4★ (3,221 reviews) — Rs 94,999",
+      "benefit": "4.4★ (3,229 reviews) — Rs 94,999",
       "commission": 3799,
       "emoji": "📱",
       "is_new": false
@@ -925,9 +927,9 @@
       "link": "https://www.amazon.in/dp/B0H293SFTR/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 785,
+      "reviews": 784,
       "price": 40999,
-      "benefit": "4.1★ (785 reviews) — Rs 40,999",
+      "benefit": "4.1★ (784 reviews) — Rs 40,999",
       "commission": 1639,
       "emoji": "🆕",
       "is_new": true
@@ -1034,8 +1036,8 @@
       "category": "electronics",
       "rating": 4.2,
       "reviews": 2486,
-      "price": 994,
-      "benefit": "4.2★ (2,486 reviews) — Rs 994",
+      "price": 959,
+      "benefit": "4.2★ (2,486 reviews) — Rs 959",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -1057,9 +1059,9 @@
       "link": "https://www.amazon.in/dp/B0F7Y54PJX/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 13899,
-      "price": 699,
-      "benefit": "4.0★ (13,899 reviews) — Rs 699",
+      "reviews": 13900,
+      "price": 690,
+      "benefit": "4.0★ (13,900 reviews) — Rs 690",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -1082,8 +1084,8 @@
       "category": "computers",
       "rating": 4.4,
       "reviews": 47,
-      "price": 449,
-      "benefit": "4.4★ (47 reviews) — Rs 449",
+      "price": 529,
+      "benefit": "4.4★ (47 reviews) — Rs 529",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -1125,5 +1127,5 @@
       "is_new": false
     }
   },
-  "updated_at": "2026-10-15 08:29:31 UTC"
+  "updated_at": "2026-10-15 12:44:07 UTC"
 }
