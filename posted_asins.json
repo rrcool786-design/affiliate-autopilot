@@ -66,7 +66,8 @@
     "B0HKK1QV24",
     "B0B296NTFV",
     "B0HKJYPPMS",
-    "B0HFS96WPN"
+    "B0HFS96WPN",
+    "B0FQFYXCC4"
   ],
   "posted_names": [
     "skybags pace 30l laptop",
@@ -134,7 +135,8 @@
     "nothing 45w pps type",
     "portronics toad 23 wireless",
     "samsung 25w c type",
-    "remote control original compatible"
+    "remote control original compatible",
+    "apple iphone 17 256"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -150,9 +152,9 @@
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.3,
-      "reviews": 51740,
+      "reviews": 51742,
       "price": 1799,
-      "benefit": "4.3★ (51,740 reviews) — Rs 1,799",
+      "benefit": "4.3★ (51,742 reviews) — Rs 1,799",
       "commission": 71,
       "emoji": "📱",
       "is_new": false
@@ -190,9 +192,9 @@
       "link": "https://www.amazon.in/dp/B0DGJHBX5Y/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.5,
-      "reviews": 2787,
+      "reviews": 2788,
       "price": 76999,
-      "benefit": "4.5★ (2,787 reviews) — Rs 76,999",
+      "benefit": "4.5★ (2,788 reviews) — Rs 76,999",
       "commission": 3079,
       "emoji": "📱",
       "is_new": false
@@ -202,9 +204,9 @@
       "link": "https://www.amazon.in/dp/B097JJ2CK6/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.2,
-      "reviews": 17589,
+      "reviews": 17588,
       "price": 609,
-      "benefit": "4.2★ (17,589 reviews) — Rs 609",
+      "benefit": "4.2★ (17,588 reviews) — Rs 609",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -409,9 +411,9 @@
       "link": "https://www.amazon.in/dp/B0DNFSSF3F/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.2,
-      "reviews": 5714,
+      "reviews": 5715,
       "price": 1899,
-      "benefit": "4.2★ (5,714 reviews) — Rs 1,899",
+      "benefit": "4.2★ (5,715 reviews) — Rs 1,899",
       "commission": 75,
       "emoji": "💻",
       "is_new": false
@@ -457,9 +459,9 @@
       "link": "https://www.amazon.in/dp/B0FJGDS5W3/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 13835,
+      "reviews": 13836,
       "price": 571,
-      "benefit": "4.0★ (13,835 reviews) — Rs 571",
+      "benefit": "4.0★ (13,836 reviews) — Rs 571",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -877,9 +879,9 @@
       "link": "https://www.amazon.in/dp/B0DSKNKCYX/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 3439,
+      "reviews": 3443,
       "price": 94999,
-      "benefit": "4.4★ (3,439 reviews) — Rs 94,999",
+      "benefit": "4.4★ (3,443 reviews) — Rs 94,999",
       "commission": 3799,
       "emoji": "📱",
       "is_new": false
@@ -1081,9 +1083,9 @@
       "link": "https://www.amazon.in/dp/B0F7Y54PJX/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 14012,
+      "reviews": 14011,
       "price": 694,
-      "benefit": "4.0★ (14,012 reviews) — Rs 694",
+      "benefit": "4.0★ (14,011 reviews) — Rs 694",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -1173,5 +1175,5 @@
       "is_new": false
     }
   },
-  "updated_at": "2026-10-18 08:12:58 UTC"
+  "updated_at": "2026-10-18 12:07:20 UTC"
 }
