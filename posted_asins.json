@@ -88,7 +88,8 @@
     "B0G822MS12",
     "B0F7Y54PJX",
     "B0FMDL81GS",
-    "B0HFSCGL57"
+    "B0HFSCGL57",
+    "B0DSKNKCYX"
   ],
   "posted_names": [
     "skybags pace 30l laptop",
@@ -178,7 +179,8 @@
     "samsung galaxy m06 5g",
     "boat rockerz 113 40",
     "oneplus nord buds 3r",
-    "thegiftkart ultra hybrid crystal"
+    "thegiftkart ultra hybrid crystal",
+    "samsung galaxy s25 ultra"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -194,9 +196,9 @@
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.3,
-      "reviews": 52105,
+      "reviews": 52104,
       "price": 1999,
-      "benefit": "4.3★ (52,105 reviews) — Rs 1,999",
+      "benefit": "4.3★ (52,104 reviews) — Rs 1,999",
       "commission": 79,
       "emoji": "📱",
       "is_new": false
@@ -266,9 +268,9 @@
       "link": "https://www.amazon.in/dp/B0D2R2MXXJ/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 24221,
-      "price": 445,
-      "benefit": "4.4★ (24,221 reviews) — Rs 445",
+      "reviews": 24220,
+      "price": 450,
+      "benefit": "4.4★ (24,220 reviews) — Rs 450",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -278,9 +280,9 @@
       "link": "https://www.amazon.in/dp/B0DDHM6D3L/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 14140,
+      "reviews": 14141,
       "price": 299,
-      "benefit": "4.1★ (14,140 reviews) — Rs 299",
+      "benefit": "4.1★ (14,141 reviews) — Rs 299",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -405,9 +407,9 @@
       "link": "https://www.amazon.in/dp/B09BFV96TS/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.3,
-      "reviews": 24923,
+      "reviews": 24924,
       "price": 269,
-      "benefit": "4.3★ (24,923 reviews) — Rs 269",
+      "benefit": "4.3★ (24,924 reviews) — Rs 269",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -489,9 +491,9 @@
       "link": "https://www.amazon.in/dp/B0H3Q5DPP9/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 825,
+      "reviews": 824,
       "price": 3299,
-      "benefit": "4.0★ (825 reviews) — Rs 3,299",
+      "benefit": "4.0★ (824 reviews) — Rs 3,299",
       "commission": 131,
       "emoji": "🆕",
       "is_new": true
@@ -501,9 +503,9 @@
       "link": "https://www.amazon.in/dp/B0FJGDS5W3/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 13945,
+      "reviews": 13949,
       "price": 571,
-      "benefit": "4.0★ (13,945 reviews) — Rs 571",
+      "benefit": "4.0★ (13,949 reviews) — Rs 571",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -921,9 +923,9 @@
       "link": "https://www.amazon.in/dp/B0DSKNKCYX/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 3746,
+      "reviews": 3758,
       "price": 96999,
-      "benefit": "4.4★ (3,746 reviews) — Rs 96,999",
+      "benefit": "4.4★ (3,758 reviews) — Rs 96,999",
       "commission": 3879,
       "emoji": "📱",
       "is_new": false
@@ -1101,9 +1103,9 @@
       "link": "https://www.amazon.in/dp/B0DSFTRX77/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.2,
-      "reviews": 2586,
-      "price": 910,
-      "benefit": "4.2★ (2,586 reviews) — Rs 910",
+      "reviews": 2589,
+      "price": 900,
+      "benefit": "4.2★ (2,589 reviews) — Rs 900",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -1185,9 +1187,9 @@
       "link": "https://www.amazon.in/dp/B0HKK1QV24/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.6,
-      "reviews": 10313,
+      "reviews": 10314,
       "price": 569,
-      "benefit": "4.6★ (10,313 reviews) — Rs 569",
+      "benefit": "4.6★ (10,314 reviews) — Rs 569",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -1221,9 +1223,9 @@
       "link": "https://www.amazon.in/dp/B0HJZ7V1PL/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 21304,
+      "reviews": 21302,
       "price": 1599,
-      "benefit": "4.1★ (21,304 reviews) — Rs 1,599",
+      "benefit": "4.1★ (21,302 reviews) — Rs 1,599",
       "commission": 63,
       "emoji": "📱",
       "is_new": false
@@ -1244,14 +1246,14 @@
       "name": "Amazon Basics 8-in-1 USB Hub with Dual Plug (USB-A & US",
       "link": "https://www.amazon.in/dp/B0H7MKDG6H/?tag=rrcool786-21",
       "category": "computers",
-      "rating": 4.6,
-      "reviews": 20,
+      "rating": 4.4,
+      "reviews": 21,
       "price": 589,
-      "benefit": "4.6★ (20 reviews) — Rs 589",
+      "benefit": "4.4★ (21 reviews) — Rs 589",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
     }
   },
-  "updated_at": "2026-10-23 17:54:46 UTC"
+  "updated_at": "2026-10-23 20:01:46 UTC"
 }
