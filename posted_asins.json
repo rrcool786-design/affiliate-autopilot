@@ -6,7 +6,8 @@
     "B0HCB97YK5",
     "B0H293SFTR",
     "B0H5JD9JJV",
-    "B0H1HYZP1X"
+    "B0H1HYZP1X",
+    "B0GZKXZ1NB"
   ],
   "posted_names": [
     "etekcity study table bed",
@@ -14,7 +15,8 @@
     "iqoo 15r triumph silver",
     "redmi turbo 5 8gb",
     "footloose by vip yin",
-    "boat energyshroom pb331 magsafe"
+    "boat energyshroom pb331 magsafe",
+    "tekcool study table foldable"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -70,9 +72,9 @@
       "link": "https://www.amazon.in/dp/B0DGJHBX5Y/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.5,
-      "reviews": 2821,
+      "reviews": 2822,
       "price": 76999,
-      "benefit": "4.5★ (2,821 reviews) — Rs 76,999",
+      "benefit": "4.5★ (2,822 reviews) — Rs 76,999",
       "commission": 3079,
       "emoji": "📱",
       "is_new": false
@@ -82,9 +84,9 @@
       "link": "https://www.amazon.in/dp/B097JJ2CK6/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.2,
-      "reviews": 17799,
+      "reviews": 17798,
       "price": 549,
-      "benefit": "4.2★ (17,799 reviews) — Rs 549",
+      "benefit": "4.2★ (17,798 reviews) — Rs 549",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -102,9 +104,9 @@
       "link": "https://www.amazon.in/dp/B0D2R2MXXJ/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 24335,
-      "price": 445,
-      "benefit": "4.4★ (24,335 reviews) — Rs 445",
+      "reviews": 24337,
+      "price": 450,
+      "benefit": "4.4★ (24,337 reviews) — Rs 450",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -114,9 +116,9 @@
       "link": "https://www.amazon.in/dp/B0DDHM6D3L/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 14227,
+      "reviews": 14229,
       "price": 299,
-      "benefit": "4.1★ (14,227 reviews) — Rs 299",
+      "benefit": "4.1★ (14,229 reviews) — Rs 299",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -134,9 +136,9 @@
       "link": "https://www.amazon.in/dp/B0BTD4S4XF/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.3,
-      "reviews": 12554,
+      "reviews": 12556,
       "price": 839,
-      "benefit": "4.3★ (12,554 reviews) — Rs 839",
+      "benefit": "4.3★ (12,556 reviews) — Rs 839",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -241,9 +243,9 @@
       "link": "https://www.amazon.in/dp/B09BFV96TS/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.3,
-      "reviews": 24993,
+      "reviews": 24994,
       "price": 269,
-      "benefit": "4.3★ (24,993 reviews) — Rs 269",
+      "benefit": "4.3★ (24,994 reviews) — Rs 269",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -337,9 +339,9 @@
       "link": "https://www.amazon.in/dp/B0FJGDS5W3/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 14002,
+      "reviews": 14003,
       "price": 571,
-      "benefit": "4.0★ (14,002 reviews) — Rs 571",
+      "benefit": "4.0★ (14,003 reviews) — Rs 571",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -469,9 +471,9 @@
       "link": "https://www.amazon.in/dp/B0H8TCFL8X/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 25489,
+      "reviews": 25490,
       "price": 279,
-      "benefit": "4.0★ (25,489 reviews) — Rs 279",
+      "benefit": "4.0★ (25,490 reviews) — Rs 279",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -757,9 +759,9 @@
       "link": "https://www.amazon.in/dp/B0DSKNKCYX/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 3919,
+      "reviews": 3923,
       "price": 96999,
-      "benefit": "4.4★ (3,919 reviews) — Rs 96,999",
+      "benefit": "4.4★ (3,923 reviews) — Rs 96,999",
       "commission": 3879,
       "emoji": "📱",
       "is_new": false
@@ -938,8 +940,8 @@
       "category": "electronics",
       "rating": 4.1,
       "reviews": 2633,
-      "price": 800,
-      "benefit": "4.1★ (2,633 reviews) — Rs 800",
+      "price": 919,
+      "benefit": "4.1★ (2,633 reviews) — Rs 919",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -1101,5 +1103,5 @@
       "is_new": true
     }
   },
-  "updated_at": "2026-10-26 14:25:53 UTC"
+  "updated_at": "2026-10-26 19:27:27 UTC"
 }
