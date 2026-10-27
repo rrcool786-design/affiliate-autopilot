@@ -9,7 +9,8 @@
     "B0H1HYZP1X",
     "B0GZKXZ1NB",
     "B0HG96MZ9P",
-    "B0H74SZKHV"
+    "B0H74SZKHV",
+    "B0H6JP1SM4"
   ],
   "posted_names": [
     "etekcity study table bed",
@@ -20,7 +21,8 @@
     "boat energyshroom pb331 magsafe",
     "tekcool study table foldable",
     "iqoo z11xa 5g prismatic",
-    "xiaomi power bank 5i"
+    "xiaomi power bank 5i",
+    "skybags brat pro max"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -37,9 +39,9 @@
       "category": "electronics",
       "rating": 4.3,
       "reviews": 52346,
-      "price": 1799,
-      "benefit": "4.3★ (52,346 reviews) — Rs 1,799",
-      "commission": 71,
+      "price": 198900,
+      "benefit": "4.3★ (52,346 reviews) — Rs 198,900",
+      "commission": 7956,
       "emoji": "📱",
       "is_new": false
     },
@@ -76,9 +78,9 @@
       "link": "https://www.amazon.in/dp/B0DGJHBX5Y/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.5,
-      "reviews": 2821,
+      "reviews": 2822,
       "price": 76999,
-      "benefit": "4.5★ (2,821 reviews) — Rs 76,999",
+      "benefit": "4.5★ (2,822 reviews) — Rs 76,999",
       "commission": 3079,
       "emoji": "📱",
       "is_new": false
@@ -109,9 +111,9 @@
       "category": "electronics",
       "rating": 4.4,
       "reviews": 24383,
-      "price": 500,
-      "benefit": "4.4★ (24,383 reviews) — Rs 500",
-      "commission": 40,
+      "price": 50000,
+      "benefit": "4.4★ (24,383 reviews) — Rs 50,000",
+      "commission": 2000,
       "emoji": "📱",
       "is_new": false
     },
@@ -120,9 +122,9 @@
       "link": "https://www.amazon.in/dp/B0DDHM6D3L/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 14258,
+      "reviews": 14257,
       "price": 299,
-      "benefit": "4.1★ (14,258 reviews) — Rs 299",
+      "benefit": "4.1★ (14,257 reviews) — Rs 299",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -189,8 +191,8 @@
       "category": "computers",
       "rating": 4.0,
       "reviews": 3452,
-      "price": 300,
-      "benefit": "4.0★ (3,452 reviews) — Rs 300",
+      "price": 304,
+      "benefit": "4.0★ (3,452 reviews) — Rs 304",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -343,9 +345,9 @@
       "link": "https://www.amazon.in/dp/B0FJGDS5W3/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 14017,
+      "reviews": 14018,
       "price": 571,
-      "benefit": "4.0★ (14,017 reviews) — Rs 571",
+      "benefit": "4.0★ (14,018 reviews) — Rs 571",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -943,9 +945,9 @@
       "link": "https://www.amazon.in/dp/B0DSFTRX77/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 2648,
-      "price": 859,
-      "benefit": "4.1★ (2,648 reviews) — Rs 859",
+      "reviews": 2650,
+      "price": 800,
+      "benefit": "4.1★ (2,650 reviews) — Rs 800",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -1107,5 +1109,5 @@
       "is_new": true
     }
   },
-  "updated_at": "2026-10-27 09:14:23 UTC"
+  "updated_at": "2026-10-27 13:24:16 UTC"
 }
