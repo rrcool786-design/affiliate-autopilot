@@ -13,7 +13,8 @@
     "B0H6JP1SM4",
     "B0FJGDS5W3",
     "B0H4R38VQG",
-    "B0H2YY6N27"
+    "B0H2YY6N27",
+    "B0H4VZ7K86"
   ],
   "posted_names": [
     "etekcity study table bed",
@@ -28,7 +29,8 @@
     "skybags brat pro max",
     "45w gan type c",
     "100w usb a to",
-    "ptron bassbuds encore in"
+    "ptron bassbuds encore in",
+    "boat stone 350 pro"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -44,9 +46,9 @@
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.3,
-      "reviews": 52409,
+      "reviews": 52410,
       "price": 1749,
-      "benefit": "4.3★ (52,409 reviews) — Rs 1,749",
+      "benefit": "4.3★ (52,410 reviews) — Rs 1,749",
       "commission": 69,
       "emoji": "📱",
       "is_new": false
@@ -117,8 +119,8 @@
       "category": "electronics",
       "rating": 4.4,
       "reviews": 24461,
-      "price": 495,
-      "benefit": "4.4★ (24,461 reviews) — Rs 495",
+      "price": 490,
+      "benefit": "4.4★ (24,461 reviews) — Rs 490",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -128,9 +130,9 @@
       "link": "https://www.amazon.in/dp/B0DDHM6D3L/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 14294,
+      "reviews": 14295,
       "price": 299,
-      "benefit": "4.0★ (14,294 reviews) — Rs 299",
+      "benefit": "4.0★ (14,295 reviews) — Rs 299",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -160,9 +162,9 @@
       "link": "https://www.amazon.in/dp/B0GVYXPZBS/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 1138,
+      "reviews": 1139,
       "price": 26499,
-      "benefit": "4.4★ (1,138 reviews) — Rs 26,499",
+      "benefit": "4.4★ (1,139 reviews) — Rs 26,499",
       "commission": 1059,
       "emoji": "📱",
       "is_new": false
@@ -339,9 +341,9 @@
       "link": "https://www.amazon.in/dp/B0H3Q5DPP9/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 877,
+      "reviews": 878,
       "price": 3099,
-      "benefit": "4.0★ (877 reviews) — Rs 3,099",
+      "benefit": "4.0★ (878 reviews) — Rs 3,099",
       "commission": 123,
       "emoji": "🆕",
       "is_new": true
@@ -483,9 +485,9 @@
       "link": "https://www.amazon.in/dp/B0H8TCFL8X/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 25518,
+      "reviews": 25519,
       "price": 473,
-      "benefit": "4.0★ (25,518 reviews) — Rs 473",
+      "benefit": "4.0★ (25,519 reviews) — Rs 473",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -854,10 +856,10 @@
       "name": "iQOO Z11xa 5G (Prismatic Green, 8GB RAM, 128 GB Storage",
       "link": "https://www.amazon.in/dp/B0HG96MZ9P/?tag=rrcool786-21",
       "category": "electronics",
-      "rating": 4.1,
-      "reviews": 115,
+      "rating": 4.0,
+      "reviews": 223,
       "price": 28998,
-      "benefit": "4.1★ (115 reviews) — Rs 28,998",
+      "benefit": "4.0★ (223 reviews) — Rs 28,998",
       "commission": 1159,
       "emoji": "🆕",
       "is_new": true
@@ -1096,8 +1098,8 @@
       "category": "computers",
       "rating": 4.2,
       "reviews": 24,
-      "price": 629,
-      "benefit": "4.2★ (24 reviews) — Rs 629",
+      "price": 619,
+      "benefit": "4.2★ (24 reviews) — Rs 619",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -1127,5 +1129,5 @@
       "is_new": false
     }
   },
-  "updated_at": "2026-10-28 09:54:49 UTC"
+  "updated_at": "2026-10-28 14:10:55 UTC"
 }
