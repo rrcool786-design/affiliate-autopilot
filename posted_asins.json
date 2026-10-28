@@ -14,7 +14,8 @@
     "B0FJGDS5W3",
     "B0H4R38VQG",
     "B0H2YY6N27",
-    "B0H4VZ7K86"
+    "B0H4VZ7K86",
+    "B0FBRGKXHG"
   ],
   "posted_names": [
     "etekcity study table bed",
@@ -30,7 +31,8 @@
     "45w gan type c",
     "100w usb a to",
     "ptron bassbuds encore in",
-    "boat stone 350 pro"
+    "boat stone 350 pro",
+    "oneplus bullets wireless z3"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -46,9 +48,9 @@
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.3,
-      "reviews": 52410,
-      "price": 1749,
-      "benefit": "4.3★ (52,410 reviews) — Rs 1,749",
+      "reviews": 52412,
+      "price": 1748,
+      "benefit": "4.3★ (52,412 reviews) — Rs 1,748",
       "commission": 69,
       "emoji": "📱",
       "is_new": false
@@ -118,10 +120,10 @@
       "link": "https://www.amazon.in/dp/B0D2R2MXXJ/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 24461,
-      "price": 490,
-      "benefit": "4.4★ (24,461 reviews) — Rs 490",
-      "commission": 40,
+      "reviews": 24462,
+      "price": 50000,
+      "benefit": "4.4★ (24,462 reviews) — Rs 50,000",
+      "commission": 2000,
       "emoji": "📱",
       "is_new": false
     },
@@ -199,8 +201,8 @@
       "category": "computers",
       "rating": 4.0,
       "reviews": 3465,
-      "price": 320,
-      "benefit": "4.0★ (3,465 reviews) — Rs 320",
+      "price": 337,
+      "benefit": "4.0★ (3,465 reviews) — Rs 337",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -305,9 +307,9 @@
       "link": "https://www.amazon.in/dp/B0DNFSSF3F/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.2,
-      "reviews": 5822,
+      "reviews": 5823,
       "price": 1899,
-      "benefit": "4.2★ (5,822 reviews) — Rs 1,899",
+      "benefit": "4.2★ (5,823 reviews) — Rs 1,899",
       "commission": 75,
       "emoji": "💻",
       "is_new": false
@@ -485,9 +487,9 @@
       "link": "https://www.amazon.in/dp/B0H8TCFL8X/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 25519,
-      "price": 473,
-      "benefit": "4.0★ (25,519 reviews) — Rs 473",
+      "reviews": 25520,
+      "price": 279,
+      "benefit": "4.0★ (25,520 reviews) — Rs 279",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -857,9 +859,9 @@
       "link": "https://www.amazon.in/dp/B0HG96MZ9P/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 223,
+      "reviews": 224,
       "price": 28998,
-      "benefit": "4.0★ (223 reviews) — Rs 28,998",
+      "benefit": "4.0★ (224 reviews) — Rs 28,998",
       "commission": 1159,
       "emoji": "🆕",
       "is_new": true
@@ -953,9 +955,9 @@
       "link": "https://www.amazon.in/dp/B0DSFTRX77/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.1,
-      "reviews": 2671,
+      "reviews": 2670,
       "price": 800,
-      "benefit": "4.1★ (2,671 reviews) — Rs 800",
+      "benefit": "4.1★ (2,670 reviews) — Rs 800",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -1062,8 +1064,8 @@
       "category": "computers",
       "rating": 4.5,
       "reviews": 7638,
-      "price": 479,
-      "benefit": "4.5★ (7,638 reviews) — Rs 479",
+      "price": 489,
+      "benefit": "4.5★ (7,638 reviews) — Rs 489",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -1129,5 +1131,5 @@
       "is_new": false
     }
   },
-  "updated_at": "2026-10-28 14:10:55 UTC"
+  "updated_at": "2026-10-28 18:57:21 UTC"
 }
