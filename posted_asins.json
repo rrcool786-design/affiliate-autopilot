@@ -18,7 +18,8 @@
     "B0FBRGKXHG",
     "B0HGQMNHFH",
     "B0H5WMLXXK",
-    "B0H9916DRH"
+    "B0H9916DRH",
+    "B0H7MKDG6H"
   ],
   "posted_names": [
     "etekcity study table bed",
@@ -38,7 +39,8 @@
     "oneplus bullets wireless z3",
     "dizoro compatible with iphone",
     "amazon basics adjustable sofa",
-    "hp original 65w laptop"
+    "hp original 65w laptop",
+    "amazon basics 8 in"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -54,9 +56,9 @@
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.3,
-      "reviews": 52486,
-      "price": 1748,
-      "benefit": "4.3★ (52,486 reviews) — Rs 1,748",
+      "reviews": 52488,
+      "price": 1747,
+      "benefit": "4.3★ (52,488 reviews) — Rs 1,747",
       "commission": 69,
       "emoji": "📱",
       "is_new": false
@@ -126,9 +128,9 @@
       "link": "https://www.amazon.in/dp/B0D2R2MXXJ/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 24496,
-      "price": 530,
-      "benefit": "4.4★ (24,496 reviews) — Rs 530",
+      "reviews": 24495,
+      "price": 534,
+      "benefit": "4.4★ (24,495 reviews) — Rs 534",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -138,9 +140,9 @@
       "link": "https://www.amazon.in/dp/B0DDHM6D3L/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 14325,
+      "reviews": 14326,
       "price": 299,
-      "benefit": "4.0★ (14,325 reviews) — Rs 299",
+      "benefit": "4.0★ (14,326 reviews) — Rs 299",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -170,9 +172,9 @@
       "link": "https://www.amazon.in/dp/B0GVYXPZBS/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 1143,
+      "reviews": 1144,
       "price": 26499,
-      "benefit": "4.4★ (1,143 reviews) — Rs 26,499",
+      "benefit": "4.4★ (1,144 reviews) — Rs 26,499",
       "commission": 1059,
       "emoji": "📱",
       "is_new": false
@@ -210,9 +212,9 @@
       "link": "https://www.amazon.in/dp/B008FWZ5MS/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.0,
-      "reviews": 3475,
+      "reviews": 3474,
       "price": 337,
-      "benefit": "4.0★ (3,475 reviews) — Rs 337",
+      "benefit": "4.0★ (3,474 reviews) — Rs 337",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -317,9 +319,9 @@
       "link": "https://www.amazon.in/dp/B0DNFSSF3F/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.2,
-      "reviews": 5831,
+      "reviews": 5832,
       "price": 1899,
-      "benefit": "4.2★ (5,831 reviews) — Rs 1,899",
+      "benefit": "4.2★ (5,832 reviews) — Rs 1,899",
       "commission": 75,
       "emoji": "💻",
       "is_new": false
@@ -353,9 +355,9 @@
       "link": "https://www.amazon.in/dp/B0H3Q5DPP9/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 889,
+      "reviews": 890,
       "price": 3099,
-      "benefit": "4.0★ (889 reviews) — Rs 3,099",
+      "benefit": "4.0★ (890 reviews) — Rs 3,099",
       "commission": 123,
       "emoji": "🆕",
       "is_new": true
@@ -785,9 +787,9 @@
       "link": "https://www.amazon.in/dp/B0DSKNKCYX/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 4049,
+      "reviews": 4053,
       "price": 94999,
-      "benefit": "4.4★ (4,049 reviews) — Rs 94,999",
+      "benefit": "4.4★ (4,053 reviews) — Rs 94,999",
       "commission": 3799,
       "emoji": "📱",
       "is_new": false
@@ -917,9 +919,9 @@
       "link": "https://www.amazon.in/dp/B0HCB97YK5/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 1052,
+      "reviews": 1053,
       "price": 53999,
-      "benefit": "4.4★ (1,052 reviews) — Rs 53,999",
+      "benefit": "4.4★ (1,053 reviews) — Rs 53,999",
       "commission": 2159,
       "emoji": "🆕",
       "is_new": true
@@ -1153,5 +1155,5 @@
       "is_new": true
     }
   },
-  "updated_at": "2026-10-29 14:31:25 UTC"
+  "updated_at": "2026-10-29 19:04:19 UTC"
 }
