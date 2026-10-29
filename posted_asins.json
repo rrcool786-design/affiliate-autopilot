@@ -16,7 +16,8 @@
     "B0H2YY6N27",
     "B0H4VZ7K86",
     "B0FBRGKXHG",
-    "B0HGQMNHFH"
+    "B0HGQMNHFH",
+    "B0H5WMLXXK"
   ],
   "posted_names": [
     "etekcity study table bed",
@@ -34,7 +35,8 @@
     "ptron bassbuds encore in",
     "boat stone 350 pro",
     "oneplus bullets wireless z3",
-    "dizoro compatible with iphone"
+    "dizoro compatible with iphone",
+    "amazon basics adjustable sofa"
   ],
   "catalog": {
     "B0H7S6LT9P": {
@@ -50,9 +52,9 @@
       "link": "https://www.amazon.in/dp/B0FMDL81GS/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.3,
-      "reviews": 52413,
+      "reviews": 52472,
       "price": 1748,
-      "benefit": "4.3★ (52,413 reviews) — Rs 1,748",
+      "benefit": "4.3★ (52,472 reviews) — Rs 1,748",
       "commission": 69,
       "emoji": "📱",
       "is_new": false
@@ -90,9 +92,9 @@
       "link": "https://www.amazon.in/dp/B0DGJHBX5Y/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.5,
-      "reviews": 2831,
+      "reviews": 2832,
       "price": 76999,
-      "benefit": "4.5★ (2,831 reviews) — Rs 76,999",
+      "benefit": "4.5★ (2,832 reviews) — Rs 76,999",
       "commission": 3079,
       "emoji": "📱",
       "is_new": false
@@ -102,9 +104,9 @@
       "link": "https://www.amazon.in/dp/B097JJ2CK6/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.2,
-      "reviews": 17845,
+      "reviews": 17866,
       "price": 549,
-      "benefit": "4.2★ (17,845 reviews) — Rs 549",
+      "benefit": "4.2★ (17,866 reviews) — Rs 549",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -122,10 +124,10 @@
       "link": "https://www.amazon.in/dp/B0D2R2MXXJ/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 24463,
-      "price": 52900,
-      "benefit": "4.4★ (24,463 reviews) — Rs 52,900",
-      "commission": 2116,
+      "reviews": 24487,
+      "price": 530,
+      "benefit": "4.4★ (24,487 reviews) — Rs 530",
+      "commission": 40,
       "emoji": "📱",
       "is_new": false
     },
@@ -134,9 +136,9 @@
       "link": "https://www.amazon.in/dp/B0DDHM6D3L/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 14297,
+      "reviews": 14319,
       "price": 299,
-      "benefit": "4.0★ (14,297 reviews) — Rs 299",
+      "benefit": "4.0★ (14,319 reviews) — Rs 299",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -154,9 +156,9 @@
       "link": "https://www.amazon.in/dp/B0BTD4S4XF/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.3,
-      "reviews": 12582,
+      "reviews": 12596,
       "price": 899,
-      "benefit": "4.3★ (12,582 reviews) — Rs 899",
+      "benefit": "4.3★ (12,596 reviews) — Rs 899",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -166,9 +168,9 @@
       "link": "https://www.amazon.in/dp/B0GVYXPZBS/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 1139,
+      "reviews": 1142,
       "price": 26499,
-      "benefit": "4.4★ (1,139 reviews) — Rs 26,499",
+      "benefit": "4.4★ (1,142 reviews) — Rs 26,499",
       "commission": 1059,
       "emoji": "📱",
       "is_new": false
@@ -193,18 +195,22 @@
       "name": "iQOO Z11 5G (Aurora Green, 8GB RAM, 128GB Storage)",
       "link": "https://www.amazon.in/dp/B0HCNC1Z9X/?tag=rrcool786-21",
       "category": "electronics",
-      "benefit": "Rs 39,999 mein Amazon bestseller trending electronics product",
+      "rating": 4.3,
+      "reviews": 62,
+      "price": 39999,
+      "benefit": "4.3★ (62 reviews) — Rs 39,999",
       "commission": 1599,
-      "emoji": "📱"
+      "emoji": "🆕",
+      "is_new": true
     },
     "B008FWZ5MS": {
       "name": "Samsung Original Type C to C Cable - 3.28 Feet (1 Meter",
       "link": "https://www.amazon.in/dp/B008FWZ5MS/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.0,
-      "reviews": 3467,
-      "price": 320,
-      "benefit": "4.0★ (3,467 reviews) — Rs 320",
+      "reviews": 3470,
+      "price": 337,
+      "benefit": "4.0★ (3,470 reviews) — Rs 337",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -309,9 +315,9 @@
       "link": "https://www.amazon.in/dp/B0DNFSSF3F/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.2,
-      "reviews": 5823,
+      "reviews": 5830,
       "price": 1899,
-      "benefit": "4.2★ (5,823 reviews) — Rs 1,899",
+      "benefit": "4.2★ (5,830 reviews) — Rs 1,899",
       "commission": 75,
       "emoji": "💻",
       "is_new": false
@@ -345,9 +351,9 @@
       "link": "https://www.amazon.in/dp/B0H3Q5DPP9/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 878,
+      "reviews": 888,
       "price": 3099,
-      "benefit": "4.0★ (878 reviews) — Rs 3,099",
+      "benefit": "4.0★ (888 reviews) — Rs 3,099",
       "commission": 123,
       "emoji": "🆕",
       "is_new": true
@@ -465,9 +471,9 @@
       "link": "https://www.amazon.in/dp/B0088TKTY2/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.1,
-      "reviews": 69025,
+      "reviews": 69030,
       "price": 579,
-      "benefit": "4.1★ (69,025 reviews) — Rs 579",
+      "benefit": "4.1★ (69,030 reviews) — Rs 579",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -489,9 +495,9 @@
       "link": "https://www.amazon.in/dp/B0H8TCFL8X/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.0,
-      "reviews": 25521,
+      "reviews": 25526,
       "price": 279,
-      "benefit": "4.0★ (25,521 reviews) — Rs 279",
+      "benefit": "4.0★ (25,526 reviews) — Rs 279",
       "commission": 40,
       "emoji": "📱",
       "is_new": false
@@ -777,9 +783,9 @@
       "link": "https://www.amazon.in/dp/B0DSKNKCYX/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 3974,
+      "reviews": 4045,
       "price": 94999,
-      "benefit": "4.4★ (3,974 reviews) — Rs 94,999",
+      "benefit": "4.4★ (4,045 reviews) — Rs 94,999",
       "commission": 3799,
       "emoji": "📱",
       "is_new": false
@@ -909,9 +915,9 @@
       "link": "https://www.amazon.in/dp/B0HCB97YK5/?tag=rrcool786-21",
       "category": "electronics",
       "rating": 4.4,
-      "reviews": 1010,
+      "reviews": 1051,
       "price": 53999,
-      "benefit": "4.4★ (1,010 reviews) — Rs 53,999",
+      "benefit": "4.4★ (1,051 reviews) — Rs 53,999",
       "commission": 2159,
       "emoji": "🆕",
       "is_new": true
@@ -993,9 +999,9 @@
       "link": "https://www.amazon.in/dp/B0CXDN7V9N/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.3,
-      "reviews": 13066,
+      "reviews": 13075,
       "price": 219,
-      "benefit": "4.3★ (13,066 reviews) — Rs 219",
+      "benefit": "4.3★ (13,075 reviews) — Rs 219",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -1066,8 +1072,8 @@
       "category": "computers",
       "rating": 4.5,
       "reviews": 7638,
-      "price": 489,
-      "benefit": "4.5★ (7,638 reviews) — Rs 489",
+      "price": 479,
+      "benefit": "4.5★ (7,638 reviews) — Rs 479",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
@@ -1100,10 +1106,10 @@
       "name": "Amazon Basics 8-in-1 USB Hub with Dual Plug (USB-A & US",
       "link": "https://www.amazon.in/dp/B0H7MKDG6H/?tag=rrcool786-21",
       "category": "computers",
-      "rating": 4.2,
-      "reviews": 24,
+      "rating": 4.3,
+      "reviews": 26,
       "price": 619,
-      "benefit": "4.2★ (24 reviews) — Rs 619",
+      "benefit": "4.3★ (26 reviews) — Rs 619",
       "commission": 40,
       "emoji": "🆕",
       "is_new": true
@@ -1125,13 +1131,25 @@
       "link": "https://www.amazon.in/dp/B0GDG1681P/?tag=rrcool786-21",
       "category": "computers",
       "rating": 4.1,
-      "reviews": 1541,
+      "reviews": 1546,
       "price": 269,
-      "benefit": "4.1★ (1,541 reviews) — Rs 269",
+      "benefit": "4.1★ (1,546 reviews) — Rs 269",
       "commission": 40,
       "emoji": "💻",
       "is_new": false
+    },
+    "B0HGM8PBNL": {
+      "name": "iQOO Z11x 5G (Matrix Green, 6GB RAM, 128GB Storage)",
+      "link": "https://www.amazon.in/dp/B0HGM8PBNL/?tag=rrcool786-21",
+      "category": "electronics",
+      "rating": 4.1,
+      "reviews": 968,
+      "price": 27999,
+      "benefit": "4.1★ (968 reviews) — Rs 27,999",
+      "commission": 1119,
+      "emoji": "🆕",
+      "is_new": true
     }
   },
-  "updated_at": "2026-10-28 21:15:12 UTC"
+  "updated_at": "2026-10-29 10:17:12 UTC"
 }
